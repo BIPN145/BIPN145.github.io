@@ -4,5 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
+- file: 00-Introduction.ipynb
+- file: 01-PlotScatter.ipynb
+- file: 02-PlotLabChartRecording
