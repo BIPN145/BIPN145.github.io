@@ -1,7 +1,8 @@
-# Welcome to your Jupyter Book
+# BIPN 145 Digital Manual
 
-This is a small sample book to give you a feel for how book content is
-structured.
+This website contains code & tutorials to help you analyze & visualize your data for neurobiology lab (BIPN 145).
+
+## How to use this book
 
 :::{note}
 Here is a note!
