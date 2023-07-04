@@ -4,6 +4,13 @@
 format: jb-book
 root: intro
 chapters:
-- file: 00-Introduction.ipynb
-- file: 01-PlotScatter.ipynb
-- file: 02-PlotLabChartRecording
+- file: LabChart/Introduction.md
+  sections:
+  - file: LabChart/ExportingLabChart.md
+  - file: LabChart/ImportingExcel.md
+  - file: LabChart/ImportingPython.ipynb
+- file: Python/Introduction
+  sections:
+  - file: Python/00-Introduction.ipynb
+  - file: Python/01-PlotScatter.ipynb
+

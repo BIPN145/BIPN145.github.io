@@ -1,0 +1,814 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Jupyter Notebooks &#8212; BIPN 145 Lab Digital Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Python/00-Introduction';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plot Scatter" href="01-PlotScatter.html" />
+    <link rel="prev" title="Visualizing Data in Python" href="Introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/BIPN145_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/BIPN145_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    BIPN 145 Digital Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../LabChart/Introduction.html">Working with LabChart Files</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ExportingLabChart.html">Exporting LabChart Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingExcel.html">Importing LabChart Files (Excel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingPython.html">Plot LabChart Recordings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Visualizing Data in Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-PlotScatter.html">Plot Scatter</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BIPN145/BIPN145.github.io/blob/master/Python/00-Introduction.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Python/00-Introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Jupyter Notebooks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-the-end-of-this-notebook-you-ll-be-able-to">At the end of this notebook, you’ll be able to:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-about-jupyter-notebooks">Part I. About Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menu-options-shortcuts">Menu Options &amp; Shortcuts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-cells">Types of Cells</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-using-markdown">Part II. Using Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-basic-python-syntax">Part III: Basic Python Syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-expressions">Python Expressions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assigning-variables">Assigning variables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-generate-some-plots">Part IV: Generate some plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-import-packages">Step 1. Import packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-enter-some-data-to-plot">Step 2: Enter some data to plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-plot-your-data">Step 3: Plot your data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-some-more-data">Step 4: Add some more data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-celebrate">Step 5: Celebrate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-jupyter-notebooks">
+<h1>Introduction to Jupyter Notebooks<a class="headerlink" href="#introduction-to-jupyter-notebooks" title="Permalink to this heading">#</a></h1>
+<p>This first notebook will introduce you using Jupyter Notebooks, a handy coding environment for learning as well as sharing code with others.</p>
+<section id="at-the-end-of-this-notebook-you-ll-be-able-to">
+<h2>At the end of this notebook, you’ll be able to:<a class="headerlink" href="#at-the-end-of-this-notebook-you-ll-be-able-to" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Recognize the main features of Jupyter Notebooks</p></li>
+<li><p>Use Jupyter Notebooks to run Python Code</p></li>
+<li><p>Identify and edit simple Markdown code</p></li>
+<li><p>Create a list and a NumPy array</p></li>
+<li><p>Use matplotlib to create line and scatter plots</p></li>
+</ul>
+<section id="table-of-contents">
+<h3>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="xref myst">Part I. About Jupyter Notebooks</span></p></li>
+<li><p><span class="xref myst">Part II. Using Markdown</span></p></li>
+<li><p><span class="xref myst">Part III. Python Syntax</span></p></li>
+<li><p><span class="xref myst">Part IV. Generate some plots</span></p></li>
+</ol>
+<hr><p><a id="one"></a></p>
+</section>
+</section>
+<section id="part-i-about-jupyter-notebooks">
+<h2>Part I. About Jupyter Notebooks<a class="headerlink" href="#part-i-about-jupyter-notebooks" title="Permalink to this heading">#</a></h2>
+<p>Jupyter notebooks are a way to combine executable code, code outputs, and text into one connected file. They run in a web browser, but don’t require the internet (unless you’re running it on a Jupyter Hub).</p>
+<p>The <b>’kernel’</b> is the thing that executes your code. It is what connects the notebook (as you see it) with the part of your computer, or the DataHub computers, that runs code.</p>
+<section id="menu-options-shortcuts">
+<h3>Menu Options &amp; Shortcuts<a class="headerlink" href="#menu-options-shortcuts" title="Permalink to this heading">#</a></h3>
+<p>To get a quick tour of the Jupyter user-interface, click on the ‘Help’ menu, then click ‘User Interface Tour’. There are also a large number of useful keyboard shortcuts. Click on the ‘Help’ menu, and then ‘Keyboard Shortcuts’ to see a list.</p>
+</section>
+<section id="types-of-cells">
+<h3>Types of Cells<a class="headerlink" href="#types-of-cells" title="Permalink to this heading">#</a></h3>
+<p>Jupyter Notebooks have two types of cells, a <b>Markdown</b> (like this one) and <b>Code</b>. Most of the time you won’t need to run the Markdown cells, just read through them. However, when we get to a code cell, you need to tell Jupyter to run the lines of code that it contains.</p>
+<p>Code cells will be read by the Python interpreter. In other words, the Python kernel will run whatever it recognizes as code within the cell.</p>
+<p><span style="color:blue">When you’re in <b>Command mode</b>, cells are outlined in blue</span>. <span style="color:green">When you’re in <b>Edit mode</b>, blocks are outlined in green</span>.</p>
+<blockquote>
+<div><p><b>Task:</b> Run the cell below!</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In Python, anything with a &quot;#&quot; in front of it is code annotation,</span>
+<span class="c1"># and is not read by the computer.</span>
+<span class="c1"># You can run a cell (this box) by pressing shift-enter.</span>
+<span class="c1"># Click in this cell and then press shift and enter simultaneously.</span>
+<span class="c1"># This print function below allows us to generate a message.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice work!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice work!
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="markdown"></a></p>
+</section>
+</section>
+<section id="part-ii-using-markdown">
+<h2>Part II. Using Markdown<a class="headerlink" href="#part-ii-using-markdown" title="Permalink to this heading">#</a></h2>
+<p>Markdown is useful because it can be formatted using simple symbols. <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Here’s a full cheatsheet of markdown</a> for more tips, but the main syntax is below:</p>
+<ul class="simple">
+<li><p>You can create bulleted lists using asterisks.</p></li>
+<li><p>Similarly, you can create numbered lists using numbers.</p></li>
+<li><p>You can <strong>bold</strong> with two asterisks or underscores on either side (<code class="docutils literal notranslate"><span class="pre">**bold**</span></code>) or <em>italicize</em> with one asterisk or underscore (<code class="docutils literal notranslate"><span class="pre">*italicize*</span></code>)</p></li>
+<li><p>Pound signs (#) create headers. More pound signs means a smaller header.</p></li>
+</ul>
+<blockquote>
+<div><p><b>Task:</b> Edit the markdown cell below with a quick biography of yourself. You should have your name as a big header, a short quippy subtitle for yourself as a smaller header, and a three bullet points that use both <b>bold</b> and <i>italic</i>.</p>
+</div></blockquote>
+<p>Edit this markdown cell!</p>
+<p><a id="python"></a></p>
+</section>
+<section id="part-iii-basic-python-syntax">
+<h2>Part III: Basic Python Syntax<a class="headerlink" href="#part-iii-basic-python-syntax" title="Permalink to this heading">#</a></h2>
+<p>Like any language, Python follows a set of rules, known as the language <strong>syntax</strong>. Below, we’ll see how to write expressions in Python, create variables, and then manipulate those variables.</p>
+<section id="python-expressions">
+<h3>Python Expressions<a class="headerlink" href="#python-expressions" title="Permalink to this heading">#</a></h3>
+<p>We can perform various arithmetic operations in Python:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Symbol</p></th>
+<th class="head text-center"><p>Operation</p></th>
+<th class="head text-center"><p>Usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>+</p></td>
+<td class="text-center"><p>Addition</p></td>
+<td class="text-center"><p>10+2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>-</p></td>
+<td class="text-center"><p>Subtraction</p></td>
+<td class="text-center"><p>10-2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>*</p></td>
+<td class="text-center"><p>Multiplication</p></td>
+<td class="text-center"><p>10*2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>/</p></td>
+<td class="text-center"><p>Division</p></td>
+<td class="text-center"><p>10/2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>**</p></td>
+<td class="text-center"><p>Exponent</p></td>
+<td class="text-center"><p>10**2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>%</p></td>
+<td class="text-center"><p>Modulo</p></td>
+<td class="text-center"><p>10%2</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>The default order of operations is the same as in mathematics! (PEMDAS)</p></li>
+<li><p>If you want a whole number from your division, use // instead</p></li>
+</ul>
+<blockquote>
+<div><p><b>Task:</b> Try each of the operators above. Before using the modulo operator, predict what it will output, and make sure it produces what you expect. You can use <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements to see the outcome of multiple lines of code.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s play with numbers weee</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<p>Variables enable us to store a value and come back to it later. They are defined with <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">value</span></code>. <em>Assignment is not the same thing as equality,</em> as in mathematics. Instead, think of this as storing a value in a jar (the variable).</p>
+<section id="assigning-variables">
+<h3>Assigning variables<a class="headerlink" href="#assigning-variables" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p><b>Task:</b> Create two variables: <code>a</code> &amp; <code>b</code>. Then, use an expression that combines <code>a</code> and <code>b</code>, and assign this to <code>c</code>. In the end, <code>c</code> should be equal to <b>6</b>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Complete the task above here</span>
+<span class="n">a</span> <span class="o">=</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">a</span> <span class="o">=</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p><b>Note</b>: Most code cells will not give you an output unless you ask for it. You can use <code class="docutils literal notranslate"><span class="pre">print(</span> <span class="pre">)</span></code> to output a variable or string. However, cells that <em>only</em> contain one variable will print its value.</p>
+<p>Usefully, you can run your cells out of order. This is useful for testing and debugging.</p>
+<blockquote>
+<div><p><b>Task</b>: Change your equation for <code>c</code> in the cell above and then use <code>print(c)</code> to check its value. For example, if you originally multipled two times three, change the equation to two plus three.</p>
+</div></blockquote>
+<p><a id="plots"></a></p>
+</section>
+</section>
+<section id="part-iv-generate-some-plots">
+<h2>Part IV: Generate some plots<a class="headerlink" href="#part-iv-generate-some-plots" title="Permalink to this heading">#</a></h2>
+<section id="step-1-import-packages">
+<h3>Step 1. Import packages<a class="headerlink" href="#step-1-import-packages" title="Permalink to this heading">#</a></h3>
+<p>We can take advantage of pre-packaged code for many common functions in Python. But first, we need to tell Python to import it. This is a really common step for most Python code.</p>
+<p>Below, we’ll import a package called “numpy” and nickname it “np” and “matplotlib.pyplot” and nickname it “plt.”</p>
+<blockquote>
+<div><p><b>Task:</b> Add <code>as plt</code> after <code>import matplotlib.pyplot</code> to instruct Python to import the <a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/pyplot.html">Matplotlib pyplot package</a> but nickname it plt. When you see <code>plt</code> in our script, it’s actually calling scripts from this package.</p>
+</div></blockquote>
+<p>After you import it, we’ll use <code class="docutils literal notranslate"><span class="pre">%whos</span></code> to show all of the variables in the namespace, including our packages. Having printed messages like these is a really nice way to check that your cell actually ran, and that your packages are available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add your code here</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>
+<span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-enter-some-data-to-plot">
+<h3>Step 2: Enter some data to plot<a class="headerlink" href="#step-2-enter-some-data-to-plot" title="Permalink to this heading">#</a></h3>
+<p><strong>Lists</strong> are a type of <strong>data structure</strong> in Python. They are defined using brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> with individual items separated by commas. For example, if you wanted to create a list, you could write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Task</strong>: Below, generate a random list of 10 numbers for Python to plot. Assign it to <code class="docutils literal notranslate"><span class="pre">random_list</span></code>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the ... with your list of numbers. Don&#39;t forget brackets!</span>
+<span class="n">random_list</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><b>Task</b>: Let’s make sure Python did what we wanted it to do – store our random list as a variable called <code>random_list</code>. Check by typing the variable name into the next cell, and running it. If that worked, you should see a list of values.</p>
+</div></blockquote>
+</section>
+<section id="step-3-plot-your-data">
+<h3>Step 3: Plot your data<a class="headerlink" href="#step-3-plot-your-data" title="Permalink to this heading">#</a></h3>
+<p>Let’s pretend this is data from an awesome experiment we ran. We need to plot the data. Remember that we imported <code>matplotlib.pyplot</code> as <code>plt</code>. We can now use the <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function to plot our random list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;plot&quot; is matploblib pyplot&#39;s basic plotting function</span>
+<span class="c1"># Below, we&#39;re asking it to plot the random_list we just created</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">random_list</span><span class="p">)</span>
+
+<span class="c1"># this is where you can add additional changes to your plot</span>
+
+<span class="c1"># plt.show() will show our plot below this code cell</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><b>Tasks:</b></p>
+<ol class="arabic simple">
+<li><p>Add axes to your plots by adding <code>plt.xlabel(‘yourxlabelhere’)</code> and <code>plt.ylabel(‘yourylabel’)</code>. Add those above <i>before</i> <code>plt.show()</code>.</p></li>
+<li><p>Add some markers to your line! Do this by adding an additional argument to <code>plt.plot(random_list)</code>, so that it says <code>plt.plot(random_list, marker =”o”)</code>. <a href="https://matplotlib.org/api/markers_api.html">You can add various markers of your choosing!</a>.</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="step-4-add-some-more-data">
+<h3>Step 4: Add some more data<a class="headerlink" href="#step-4-add-some-more-data" title="Permalink to this heading">#</a></h3>
+<p>Let’s create another random list and create a scatterplot of the data. To do so, we’ll take a couple of steps.</p>
+<ol class="arabic simple">
+<li><p>Import another package, called <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (numerical python). The convention is to import this as np.</p></li>
+<li><p>Convert our list into a numpy array. This will allow us to perform numerical operations on it.</p></li>
+<li><p><b>Task</b>: Create a second array named <code>random_array_2</code> where each value is <strong>equal to all of the values in random_array times two</strong>. You can do this with the same operators as above. For example, if we wanted to divide all of the values in <code class="docutils literal notranslate"><span class="pre">random_array</span></code>, we would use <code class="docutils literal notranslate"><span class="pre">random_array/2</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1 - Import numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># 2 - Convert random_list to an array</span>
+<span class="n">random_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">random_list</span><span class="p">)</span>
+
+<span class="c1"># 3 - Create random_array_2 below</span>
+<span class="n">random_array_2</span> <span class="o">=</span> <span class="o">...</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><b>Task</b>: In the box below, make a scatterplot of your data using the matplotlib’s scatter function. You should plot <code class="docutils literal notranslate"><span class="pre">random_array</span></code> on the x axis, and <code class="docutils literal notranslate"><span class="pre">random_array_2</span></code> on the y axis. Be sure to label your axes as well. You can find documentation on the scatter function <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html">here</a> or <a href="https://matplotlib.org/gallery/lines_bars_and_markers/scatter_symbol.html#sphx-glr-gallery-lines-bars-and-markers-scatter-symbol-py">here (for more fun)</a>.</p>
+</div></blockquote>
+</section>
+<section id="step-5-celebrate">
+<h3>Step 5: Celebrate<a class="headerlink" href="#step-5-celebrate" title="Permalink to this heading">#</a></h3>
+<p>That’s the Jupyter Notebook tutorial! You’re ready to tackle more complex notebooks. At the top right corner of your screen, choose Control Panel, and then ‘Stop by Server’ to shut down your DataHub.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;https://media.tenor.com/images/99cff34bdcb675975b2b0cc661f2e4ce/tenor.gif&quot;&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<p>For additional Jupyter Notebook information and practice, see <a class="reference external" href="https://www.dataquest.io/blog/jupyter-notebook-tutorial/">this tutorial</a> from DataQuest.</p>
+</section>
+<section id="about-this-notebook">
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
+<p>This notebook was created by <a class="reference external" href="https://github.com/ajuavinett">Ashley Juavinett</a> for classes at UC San Diego.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Visualizing Data in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01-PlotScatter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plot Scatter</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-the-end-of-this-notebook-you-ll-be-able-to">At the end of this notebook, you’ll be able to:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-about-jupyter-notebooks">Part I. About Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menu-options-shortcuts">Menu Options &amp; Shortcuts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-cells">Types of Cells</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-using-markdown">Part II. Using Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-basic-python-syntax">Part III: Basic Python Syntax</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-expressions">Python Expressions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assigning-variables">Assigning variables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-generate-some-plots">Part IV: Generate some plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-import-packages">Step 1. Import packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-enter-some-data-to-plot">Step 2: Enter some data to plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-plot-your-data">Step 3: Plot your data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-some-more-data">Step 4: Add some more data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-celebrate">Step 5: Celebrate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
