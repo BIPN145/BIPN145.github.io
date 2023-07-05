@@ -1,0 +1,690 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Analyze EEG data &#8212; BIPN 145 Lab Digital Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Python/SpectralAnalysis';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Plot Dot Plot" href="DotPlotStats.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/BIPN145_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/BIPN145_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    BIPN 145 Digital Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../LabChart/Introduction.html">Working with LabChart Files</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ExportingLabChart.html">Exporting LabChart Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingExcel.html">Importing LabChart Files (Excel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingPython.html">Importing LabChart (Python)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Visualizing Data in Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="JupyterNotebooks.html">Introduction to Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlotScatter.html">Plot Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FitCurve.html">Fit a curved line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DotPlotStats.html">Plot Dot Plot</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analyze EEG data</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BIPN145/BIPN145.github.io/blob/master/Python/SpectralAnalysis.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Python/SpectralAnalysis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analyze EEG data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">Plot the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-power-spectrum-of-our-eeg-data">Calculate the power spectrum of our EEG data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-plot-spectrogram">Generate &amp; plot spectrogram</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analyze-eeg-data">
+<h1>Analyze EEG data<a class="headerlink" href="#analyze-eeg-data" title="Permalink to this heading">#</a></h1>
+<p>This notebook will help you prepare the figures for your EEG lab report.</p>
+<p>To run this notebook:</p>
+<ol class="arabic simple">
+<li><p><mark>Export two separate <strong>LabChart Text File (.txt)</strong> of 30 seconds of data for <i>both</i> eyes open and closed. </mark></p></li>
+<li><p>Upload the file to your DataHub, into same folder as this notebook.</p></li>
+<li><p>Change the filename below to match the name of your file.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Change the filenames to EXACTLY match your files</span>
+<span class="n">closed_filename</span> <span class="o">=</span> <span class="s1">&#39;EEG_Trial1_EyesClosed.txt&#39;</span>
+<span class="n">open_filename</span> <span class="o">=</span> <span class="s1">&#39;EEG_Trial1_EyesOpen.txt&#39;</span>
+
+<span class="n">sampling_freq</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="c1"># Define column names</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;recording&#39;</span><span class="p">]</span>
+
+<span class="c1"># Use numpy genfromtxt to import both files</span>
+<span class="n">closed_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">closed_filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
+<span class="n">open_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">open_filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define a function to remove nan values</span>
+<span class="k">def</span> <span class="nf">nan_helper</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="n">z</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Save recording &amp; timestamps as variables</span>
+<span class="n">closed_timestamps</span> <span class="o">=</span> <span class="n">closed_data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+<span class="n">closed_recording</span> <span class="o">=</span> <span class="n">closed_data</span><span class="p">[</span><span class="s1">&#39;recording&#39;</span><span class="p">]</span>
+<span class="n">nans</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">nan_helper</span><span class="p">(</span><span class="n">closed_recording</span><span class="p">)</span>
+<span class="n">closed_recording</span><span class="p">[</span><span class="n">nans</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">nans</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="o">~</span><span class="n">nans</span><span class="p">),</span> <span class="n">closed_recording</span><span class="p">[</span><span class="o">~</span><span class="n">nans</span><span class="p">])</span>
+
+<span class="n">open_timestamps</span> <span class="o">=</span> <span class="n">open_data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+<span class="n">open_recording</span> <span class="o">=</span> <span class="n">open_data</span><span class="p">[</span><span class="s1">&#39;recording&#39;</span><span class="p">]</span>
+<span class="n">nans</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">nan_helper</span><span class="p">(</span><span class="n">open_recording</span><span class="p">)</span>
+<span class="n">open_recording</span><span class="p">[</span><span class="n">nans</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">nans</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="o">~</span><span class="n">nans</span><span class="p">),</span> <span class="n">open_recording</span><span class="p">[</span><span class="o">~</span><span class="n">nans</span><span class="p">])</span>
+
+<span class="n">closed_recording</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;recording&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Use numpy genfromtxt to import both files</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">closed_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">closed_filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">open_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">open_filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Define a function to remove nan values</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/numpy/lib/npyio.py:1980,</span> in <span class="ni">genfromtxt</span><span class="nt">(fname, dtype, comments, delimiter, skip_header, skip_footer, converters, missing_values, filling_values, usecols, names, excludelist, deletechars, replace_space, autostrip, case_sensitive, defaultfmt, unpack, usemask, loose, invalid_raise, max_rows, encoding, ndmin, like)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1978</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os_fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1979</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1980</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1981</span>     <span class="n">fid_ctx</span> <span class="o">=</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">closing</span><span class="p">(</span><span class="n">fid</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1982</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/numpy/lib/_datasource.py:193,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">193</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/numpy/lib/_datasource.py:533,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">533</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: EEG_Trial1_EyesClosed.txt not found.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plot-the-data">
+<h2>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this heading">#</a></h2>
+<p>Now, we can plot the data!</p>
+<p><strong>Notes</strong>:</p>
+<ul class="simple">
+<li><p>You may want to change the x and y labels below.</p></li>
+<li><p>You can also uncomment the line that says <code class="docutils literal notranslate"><span class="pre">plt.xlim</span></code> to change how much of the data is plotted.</p></li>
+<li><p>You can use this same cell to plot your eyes open data by changing <code class="docutils literal notranslate"><span class="pre">closed_timestamps</span></code> to <code class="docutils literal notranslate"><span class="pre">open_timestamps</span></code> and <code class="docutils literal notranslate"><span class="pre">closed_recording</span></code> to <code class="docutils literal notranslate"><span class="pre">open_recording</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import plotting packages</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+
+<span class="c1"># Set up figure</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Change the variables below if you&#39;d like to plot eyes open instead</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">closed_timestamps</span><span class="p">,</span><span class="n">closed_recording</span><span class="p">)</span>
+
+<span class="c1"># You may need to change the x label!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span> 
+
+<span class="c1"># You may need to change the y label!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage&#39;</span><span class="p">)</span>
+
+<span class="c1"># You can uncomment the line below to restrict the x axis plotting -- for example, to zoom into alpha waves</span>
+<span class="c1">#plt.xlim([45,50])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculate-the-power-spectrum-of-our-eeg-data">
+<h2>Calculate the power spectrum of our EEG data<a class="headerlink" href="#calculate-the-power-spectrum-of-our-eeg-data" title="Permalink to this heading">#</a></h2>
+<p>Below, we’ll implement a <strong>fast Fourier transform</strong> (fft) to see the frequencies in our data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the fourier transform of complex signal</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">closed_recording</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">closed_timestamps</span><span class="p">)</span> <span class="c1"># Compute the fft, normalized by time</span>
+
+<span class="c1"># Find frequency values for the x axis</span>
+<span class="n">nyq</span> <span class="o">=</span> <span class="n">sampling_freq</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># Determine the nyquist frequency</span>
+
+<span class="c1"># Create freq bins for plotting by creating a vector from 0 to nyquist, with as many points as in fft</span>
+<span class="n">fx_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nyq</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">closed_recording</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># plotting up to 200 Hz</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fx_bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1500</span><span class="p">],</span><span class="nb">abs</span><span class="p">(</span><span class="n">ft</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1500</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Power (V^2 / Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FFT of our EEG signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hmm, this is interesting but a bit noisy. Maybe we need a method that is <em>better</em> than the simple fast fourier transform for this type of data. Thankfully, there’s a way to smooth out our fft without losing too much information.</p>
+<p>The most widely-used method to do that is <a class="reference external" href="https://en.wikipedia.org/wiki/Welch%27s_method"><strong>Welch’s Method</strong></a>, which consists in averaging consecutive Fourier transform of small windows of the signal, with or without overlapping. Basically, we calculate the fft of a signal across a few sliding windows, and then calculate the mean PSD from all the sliding windows. This is how LabChart generates the <strong>power spectral density</strong> plot as well!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">freqs</span></code> vector contains the x-axis (frequency bins) and the <code class="docutils literal notranslate"><span class="pre">psd</span></code> vector contains the y-axis (power spectral density). The units of the power spectral density here are V^2 per Hz, reflecting that these values are for a particular frequency range.</p>
+<p><strong>Notes</strong>:</p>
+<ul class="simple">
+<li><p><mark>Check that the values here are <em>almost identical</em> to your PSD in LabChart. If not, you may need to change the y-axis labels.</mark></p></li>
+<li><p>If you’d like to plot both the eyes opened and closed data, you can uncomment the three lines indicated below.</p></li>
+<li><p>You can change the x limit by uncommenting &amp; editing the <code class="docutils literal notranslate"><span class="pre">plt.xlim</span></code> line.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+
+<span class="c1"># Define sliding window length (4 seconds, which will give us 2 full cycles at 0.5 Hz)</span>
+<span class="n">win</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">sampling_freq</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">psd</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">closed_recording</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
+
+<span class="c1"># Plot the power spectrum</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">psd</span><span class="p">)</span>
+
+<span class="c1"># Uncomment the lines below to plot two lines</span>
+<span class="c1">#open_freqs, open_psd = signal.welch(open_recording, sampling_freq, nperseg=win)</span>
+<span class="c1">#plt.plot(open_freqs, open_psd)</span>
+<span class="c1">#plt.legend([&#39;Closed&#39;,&#39;Open&#39;])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Power spectral density (pV^2 / Hz)&#39;</span><span class="p">)</span> <span class="c1"># Check that these units make sense!</span>
+<span class="c1">#plt.xlim([0,75]) # Change x limit</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Welch&#39;s PSD&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="generate-plot-spectrogram">
+<h2>Generate &amp; plot spectrogram<a class="headerlink" href="#generate-plot-spectrogram" title="Permalink to this heading">#</a></h2>
+<p>As a final step, we can plot a <strong>spectrogram</strong> of our signal. This is a common way to visualize EEG signals. The spectrogram results from doing the FFT on the snippet of the signal that falls into a “window,” plotting the frequency content in the window, then moving the window in time and plotting the frequency content again (and again) until the window has moved across the entire signal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vmax</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># change the max value on your spectogram -- you may need to adjust this</span>
+
+<span class="n">wind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hanning</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span> <span class="c1"># Create a &quot;hanning&quot; window with a given binning window size</span>
+
+<span class="c1"># Create the spectrogram and plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> 
+
+<span class="c1"># Change closed to open below to generate for open</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">tt</span><span class="p">,</span> <span class="n">Sxx</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">spectrogram</span><span class="p">(</span><span class="n">closed_recording</span><span class="p">,</span><span class="n">sampling_freq</span><span class="p">,</span><span class="n">wind</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">wind</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">wind</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># You can change cmap &amp; vmax if you want</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">Sxx</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span>
+<span class="c1"># plt.ylim([0,75]) # set the ylimit</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Power ($V^2$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DotPlotStats.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Plot Dot Plot</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">Plot the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-power-spectrum-of-our-eeg-data">Calculate the power spectrum of our EEG data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-plot-spectrogram">Generate &amp; plot spectrogram</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
