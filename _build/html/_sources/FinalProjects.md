@@ -1,4 +1,4 @@
-# BIPN 145 Final Projects 
+# Guide to Final Projects 
 
 ## Project Overview
 
