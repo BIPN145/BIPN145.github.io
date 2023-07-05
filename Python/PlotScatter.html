@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Plot Scatter &#8212; BIPN 145 Lab Digital Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Python/PlotScatter';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fit a curved line" href="FitCurve.html" />
+    <link rel="prev" title="Introduction to Jupyter Notebooks" href="JupyterNotebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/BIPN145_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/BIPN145_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    BIPN 145 Digital Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../LabChart/Introduction.html">Working with LabChart Files</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ExportingLabChart.html">Exporting LabChart Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingExcel.html">Importing LabChart Files (Excel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingPython.html">Importing LabChart (Python)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Visualizing Data in Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="JupyterNotebooks.html">Introduction to Jupyter Notebooks</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Plot Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FitCurve.html">Fit a curved line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DotPlotStats.html">Plot Dot Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpectralAnalysis.html">Analyze EEG data</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BIPN145/BIPN145.github.io/blob/master/Python/PlotScatter.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Python/PlotScatter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Plot Scatter</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-values-to-plot">Define values to plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-label">Plot &amp; label</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-linear-regression-line">Add a linear regression line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-regression-line-to-the-plot-optional">Add your regression line to the plot <em>(optional)</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes-resources">Additional notes &amp; resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="plot-scatter">
+<h1>Plot Scatter<a class="headerlink" href="#plot-scatter" title="Permalink to this heading">#</a></h1>
+<p>This notebook will help you generate a scatterplot in Python. <strong>Scatterplots</strong> help us visually inspect the relationship between two continuous variables. This notebook should be used to plot your <strong>resistance</strong> vs. <strong>time constant</strong> observations from the RC circuit lab, for example.</p>
+<p>After plotting, we’ll also show how to generate a linear regression line for your data. <strong>Linear regression</strong> is a common tool to look for a linear relationship between two variables.</p>
+<p><mark>If you’re new to Jupyter Notebooks and/or Python, please be sure to work through the Introduction notebook before this one.</mark></p>
+<p><img alt="" src="https://imgs.xkcd.com/comics/linear_regression.png" /></p>
+<br>
+<div align="center"><i>Comic: XKCD https://xkcd.com/1725/</i></div>
+<hr><section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<p>At the start of almost every coding notebook, we’ll import the packages we need. To plot our scatter plot, we just need package: <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>.</p>
+<blockquote>
+<div><p><strong>Task</strong>: Import the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> package as <code class="docutils literal notranslate"><span class="pre">plt</span></code>, just as you did in the introduction notebook.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no-exec</span>
+<span class="c1"># Import necessary packages here</span>
+
+<span class="c1"># These lines are additional configuration steps for matplotlib</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="define-values-to-plot">
+<h2>Define values to plot<a class="headerlink" href="#define-values-to-plot" title="Permalink to this heading">#</a></h2>
+<p>With matplotlib imported, we can now use the scatter function by calling <code class="docutils literal notranslate"><span class="pre">plt.scatter()</span></code>. However, we need to define what to plot first. One straightforward way to think about this is to define an x variable and a y variable. Below, there are <strong>lists</strong> of values (defined in brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>) assigned to <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. Replace these with your own values, depending on what you’d like to plot on the x and y axis.</p>
+<p><strong>Note</strong>: Remember that in a scatterplot, each dot has both an x and a y value. Therefore, these lists should be the same length. The coordinate for each point will be the values at the same <strong>index</strong> in <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. For example, the coordinate for the very first point will be <code class="docutils literal notranslate"><span class="pre">x[0],y[0]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace your scatterplot values here</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-label">
+<h2>Plot &amp; label<a class="headerlink" href="#plot-label" title="Permalink to this heading">#</a></h2>
+<p>We can now plot our values using the code below. Remember that you can add axis labels using <code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code>. If you need a reminder for how to do this, refer to the Introduction notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no-exec</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Add labels here</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># no-exec</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Add labels here</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="add-a-linear-regression-line">
+<h2>Add a linear regression line<a class="headerlink" href="#add-a-linear-regression-line" title="Permalink to this heading">#</a></h2>
+<p>If we have an a priori hypothesis about the relationship between our variables, or would like to predict additional data points, we can attempt to fit a linear regression line to our data. To do so, we will do the following:</p>
+<ol class="arabic simple">
+<li><p>Import two more packages: <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (numerical python; the convention is to import this as <code class="docutils literal notranslate"><span class="pre">np</span></code>) and the <code class="docutils literal notranslate"><span class="pre">stats</span></code> package from <code class="docutils literal notranslate"><span class="pre">scipy</span></code> (scientific python).</p></li>
+<li><p>Convert our x and y lists into arrays, so that we can perform math on them.</p></li>
+<li><p>Perform a linear regression using <code class="docutils literal notranslate"><span class="pre">linregress()</span></code> from the <code class="docutils literal notranslate"><span class="pre">stats</span></code> library. The <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.linregress.html"><code class="docutils literal notranslate"><span class="pre">linregress()</span></code></a> function calculates a <strong>linear least-squares regression</strong> for two sets of measurements. It returns several parameters, including the slope (<code class="docutils literal notranslate"><span class="pre">slope</span></code>), the y-intercept (<code class="docutils literal notranslate"><span class="pre">intercept</span></code>), the correlation coefficient (<code class="docutils literal notranslate"><span class="pre">r_value</span></code>), the two-tailed p-value (<code class="docutils literal notranslate"><span class="pre">p_value</span></code>), and the standard error of the estimate (<code class="docutils literal notranslate"><span class="pre">std_err</span></code>).</p></li>
+<li><p>Plot the regression line, using the computed slope and intercept to construct it (mx+b).</p></li>
+<li><p>Plot the original data points.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1 - Import additional packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># 2 - Convert x and y to numpy arrays</span>
+<span class="n">x_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 3 - Perform linear regression</span>
+<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">x_array</span><span class="p">,</span><span class="n">y_array</span><span class="p">)</span>
+
+<span class="c1"># 4 - Plot a regression line, using the slope &amp; intercept</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_array</span><span class="p">,</span> <span class="n">slope</span><span class="o">*</span><span class="n">x_array</span><span class="o">+</span><span class="n">intercept</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;fitted line&#39;</span><span class="p">)</span>
+
+<span class="c1"># 5 - Plot our original data points and show</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_array</span><span class="p">,</span><span class="n">y_array</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;original data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e16999fcc3145ffe8adde8f88437fe2c697f95b2a2f882f7dfe430a298e3a5d4.png" src="../_images/e16999fcc3145ffe8adde8f88437fe2c697f95b2a2f882f7dfe430a298e3a5d4.png" />
+</div>
+</div>
+<p>It is also a good idea to print the statistics from our linear regression above. These are contained in <code class="docutils literal notranslate"><span class="pre">r_value</span></code> and <code class="docutils literal notranslate"><span class="pre">p_value</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r_value</span></code>: This is the correlation coefficient, also known as the R-value. It measures the strength and direction of the linear relationship between the two variables. It ranges from -1 to 1, where a value of -1 indicates a strong negative linear relationship, a value of 0 indicates no linear relationship, and a value of 1 indicates a strong positive linear relationship.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p_value</span></code>: This is the two-tailed p-value. A small p-value (typically less than 0.05) indicates that the correlation is statistically significant and that there is a low probability that the observed correlation occurred by chance.</p></li>
+</ul>
+<p>It can also be helpful to look at <code class="docutils literal notranslate"><span class="pre">std_err</span></code>: the standard error of the estimate. It represents the standard deviation of the residuals (the differences between the observed y values and the predicted y values). A small standard error indicates that the fitted line is a good fit for the data.</p>
+<blockquote>
+<div><p><strong>Task</strong>: Print your values below.</p>
+</div></blockquote>
+<p>Finally, sometimes it is useful to have the fitted line equation. We can create a text string by adding variables together, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_string</span> <span class="o">=</span> <span class="s1">&#39;this is &#39;</span> <span class="o">+</span> <span class="n">variable</span>
+</pre></div>
+</div>
+<p><em>However</em>, Python will not allow us to add anything that isn’t a string – we have to convert it to a string first using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function. To do so, we could write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_string</span> <span class="o">=</span> <span class="s1">&#39;this is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Task</strong>: Below, create a text string for the fitted line equation, in the form of Y = MX + B, where M is your slope, and B is your intercept. In other words, it should look something like this:</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="mf">1.0</span><span class="n">X</span> <span class="o">+</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+<p>Assign the fitted line equation to a variable called <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="add-your-regression-line-to-the-plot-optional">
+<h2>Add your regression line to the plot <em>(optional)</em><a class="headerlink" href="#add-your-regression-line-to-the-plot-optional" title="Permalink to this heading">#</a></h2>
+<p>It is useful to report the fitted line equation either on the plot itself or in the figure caption. The code below will show you how to add text using <code class="docutils literal notranslate"><span class="pre">plt.text()</span></code>. This function takes three inputs: the x,y location of the text as well as the string itself (s). If you’d like, you can integrate this into your code above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3e82b4bc7503b9044b7f48388fb3a1508d372c42787a15d345d0f35a2d952392.png" src="../_images/3e82b4bc7503b9044b7f48388fb3a1508d372c42787a15d345d0f35a2d952392.png" />
+</div>
+</div>
+<hr>
+</section>
+<section id="additional-notes-resources">
+<h2>Additional notes &amp; resources<a class="headerlink" href="#additional-notes-resources" title="Permalink to this heading">#</a></h2>
+<p>Another way to generate a scatterplot with a linear regression line is the <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.regplot.html">seaborn regplot function</a>!</p>
+</section>
+<section id="about-this-notebook">
+<h2>About this Notebook<a class="headerlink" href="#about-this-notebook" title="Permalink to this heading">#</a></h2>
+<p>This notebook was created by <a class="reference external" href="https://github.com/ajuavinett">Ashley Juavinett</a> for classes at UC San Diego.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="JupyterNotebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Jupyter Notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="FitCurve.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fit a curved line</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-values-to-plot">Define values to plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-label">Plot &amp; label</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-linear-regression-line">Add a linear regression line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-regression-line-to-the-plot-optional">Add your regression line to the plot <em>(optional)</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes-resources">Additional notes &amp; resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
