@@ -411,7 +411,7 @@ a = r + \frac{r+c}{t}
 </div>
 </div>
 </div>
-<p>To demonstrate what this function looks like, we’ll use <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> to generate a list of 100 numbers from 0 to 1, with 0.01 spacing. We’ll also define a sample rheobase and chronaxie. Then, from those points, we’ll fit a hyperbolic curve using <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code>, which uses non-linear least squares to fit a function to data. [<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">curve_fit documentation</a>].</p>
+<p>To demonstrate what this function looks like, we’ll use <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> to generate a list of 100 numbers from 0 to 1, with 0.01 spacing. We’ll also define a sample rheobase and chronaxie. Then, from those points, we’ll fit a hyperbolic curve using <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code>, which uses non-linear least squares to fit a function to data. See the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">curve_fit documentation</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import numpy &amp; curve fitting package</span>
@@ -449,24 +449,13 @@ a = r + \frac{r+c}{t}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import numpy &amp; curve fitting package</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Import &amp; configure plotting packages</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
-</pre></div>
-</div>
+<img alt="../_images/3a475efae2cf2c968e5bb1cfc1ad3f3eff0219b1a8d9b70880773af01ec01bf7.png" src="../_images/3a475efae2cf2c968e5bb1cfc1ad3f3eff0219b1a8d9b70880773af01ec01bf7.png" />
 </div>
 </div>
 </section>
 <section id="step-3-fit-a-hyperbolic-curve-to-your-data">
 <h2>Step 3. Fit a hyperbolic curve to <em>your</em> data<a class="headerlink" href="#step-3-fit-a-hyperbolic-curve-to-your-data" title="Permalink to this heading">#</a></h2>
-<p>Above, you can see a perfectly fit curve, with the <font color='red'><b>rheobase<b/></font> and  <font color='blue'><b>chronaxie</b></font>  labeled.</p>
+<p>Above, you can see a perfectly fit curve, with the <font color='red'><b>rheobase</b></font> and  <font color='blue'><b>chronaxie</b></font>  labeled.</p>
 <p>Now, let’s do the same, but with your data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -492,6 +481,9 @@ a = r + \frac{r+c}{t}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/481a1cf8566eabc6f7e82b1fc712bb4f95ea0519874214427665a5c7e89d03c6.png" src="../_images/481a1cf8566eabc6f7e82b1fc712bb4f95ea0519874214427665a5c7e89d03c6.png" />
+</div>
 </div>
 <p>It is also important to know how well our curve fits. To do so, we’ll calculate the residuals and then the sum of squares.</p>
 <div class="cell docutils container">
@@ -511,6 +503,13 @@ a = r + \frac{r+c}{t}
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R^2 = &#39;</span><span class="p">,</span><span class="n">r_squared</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rheobase: &#39;</span> <span class="p">,</span> <span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chronaxie:  &#39;</span><span class="p">,</span> <span class="n">popt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R^2 =  0.9239011751642454
+Rheobase:  0.278745874411597
+Chronaxie:   2.749230408204977
 </pre></div>
 </div>
 </div>

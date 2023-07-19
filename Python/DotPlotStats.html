@@ -372,13 +372,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="plot-dot-plot">
 <h1>Plot Dot Plot<a class="headerlink" href="#plot-dot-plot" title="Permalink to this heading">#</a></h1>
-<p>This notebook will help you generate “Prism-style” dot plots in Python, inspect the distribution of your data and run two-sample statistics.</p>
+<p>This notebook will help you generate “Prism-style” dot plots in Python, inspect the distribution of your data, and run two-sample statistics.</p>
 <hr><section id="import-data">
 <h2>Import Data<a class="headerlink" href="#import-data" title="Permalink to this heading">#</a></h2>
+<p>For this notebook, we can either import our data from a CSV file, or by manually entering the values.</p>
+<p>If you’d like to import your data from a CSV file, you will need to follow the instructions for uploading data to Colab on <a class="reference external" href="https://bipn145.github.io/intro.html">the home page</a>. If you are using this option, comment out the lines of code under Option 2.</p>
 <blockquote>
 <div><p><strong>Task</strong>:</p>
 <ol class="arabic simple">
-<li><p>Change <code class="docutils literal notranslate"><span class="pre">data_1</span></code> and <code class="docutils literal notranslate"><span class="pre">data_2</span></code> to be your two group of data. <em>Make sure you leave these as lists, with brackets on each end, and each data point separated by a comma.</em></p></li>
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">data_1</span></code> and <code class="docutils literal notranslate"><span class="pre">data_2</span></code> to be your two groups of data. <em>Make sure you leave these as lists, with brackets on each end, and each data point separated by a comma.</em></p></li>
 <li><p><em>Optional</em>: Rename <code class="docutils literal notranslate"><span class="pre">Condition_1</span></code> and <code class="docutils literal notranslate"><span class="pre">Condition_2</span></code>. <em>Make sure you keep these in single quotes, so Python recognizes them as a string!</em></p></li>
 </ol>
 </div></blockquote>
@@ -393,6 +395,8 @@ document.write(`
 <span class="n">data_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">data_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Condition_1&#39;</span><span class="p">:</span><span class="n">data_1</span><span class="p">,</span><span class="s1">&#39;Condition_2&#39;</span><span class="p">:</span><span class="n">data_2</span><span class="p">})</span>
+
+<span class="c1"># Show the data</span>
 <span class="n">data</span>
 </pre></div>
 </div>
@@ -511,7 +515,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fa60d103820c8bb83f2ec1f7a425d2cf948244ac32307fa91b9f0951efae9596.png" src="../_images/fa60d103820c8bb83f2ec1f7a425d2cf948244ac32307fa91b9f0951efae9596.png" />
+<img alt="../_images/71e5422fa7ee5f878dd648903393f478b5bf054682231596c9c7d2750bfc5c61.png" src="../_images/71e5422fa7ee5f878dd648903393f478b5bf054682231596c9c7d2750bfc5c61.png" />
 </div>
 </div>
 </section>
@@ -520,7 +524,7 @@ document.write(`
 <h2>Check to see how skewed the data is<a class="headerlink" href="#check-to-see-how-skewed-the-data-is" title="Permalink to this heading">#</a></h2>
 <p>Before we run any hypoothesis tests, we need to know if our data is skewed or not. To test for skewness, we can use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skewtest.html#scipy.stats.skewtest"><code class="docutils literal notranslate"><span class="pre">stats.skewtest</span></code></a> to test. This method implements the <a href="https://www.jstor.org/stable/2684359?seq=1">D’Agostino-Pearson skewness test</a>, one of many different tests (e.g., the Kolmogorov-Smirov test) that can be used to check the normality of a distribution. <strong>If the skew test gives us a p-value of less than 0.05, the population is skewed.</strong></p>
 <blockquote>
-<div><p><strong>Task</strong>: Run the cell below, but then change the <code class="docutils literal notranslate"><span class="pre">sample</span></code> to <code class="docutils literal notranslate"><span class="pre">data_2</span></code> to test your second group of data points.</p>
+<div><p><strong>Task</strong>: Run the cell below, but then change the <code class="docutils literal notranslate"><span class="pre">sample</span></code> to <code class="docutils literal notranslate"><span class="pre">data_2</span></code> (or create a separate cell for <code class="docutils literal notranslate"><span class="pre">data_2</span></code> to test your second group of data points.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -544,7 +548,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The skewtest p-value is 0.346991576561619385898893597187
 </pre></div>
 </div>
-<img alt="../_images/06e5ef285638ee3bb0964252aa2675790ba54436d13e0b822e9048de9f550fd9.png" src="../_images/06e5ef285638ee3bb0964252aa2675790ba54436d13e0b822e9048de9f550fd9.png" />
+<img alt="../_images/cd26a9832b3681e2142504eea231d50771fda9245c2ebc9d76b040867373ce0b.png" src="../_images/cd26a9832b3681e2142504eea231d50771fda9245c2ebc9d76b040867373ce0b.png" />
 </div>
 </div>
 </section>
@@ -553,26 +557,28 @@ document.write(`
 <section id="inferential-statistics-generalize-from-observed-data-to-the-world-at-large">
 <h3><em>Inferential statistics</em> generalize from observed data to the world at large<a class="headerlink" href="#inferential-statistics-generalize-from-observed-data-to-the-world-at-large" title="Permalink to this heading">#</a></h3>
 <p>Most often, the goal of our hypothesis testing is to test whether or not two distributions are different, or if a distribution has a different mean than the underlying population distribution.</p>
-<p>The SciPy stats package has <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">many hypothesis testing tools</a> (see Statistical Tests). In most cases, we’d like to test whether two or more distributions are different from eachother.</p>
-<p>If we know our distributions are normal (they’re generated from a normal distribution!) we can use <strong>parametric statistics</strong> to test our hypothesis. To test for differences between normal populations, we can use the independent t-test in our stats package: <code class="docutils literal notranslate"><span class="pre">stats.ttest_ind()</span></code>. If we had paired samples, we would use a dependent t-test <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html#scipy.stats.ttest_rel">as seen here</a>.</p>
+<p>The SciPy stats package has <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">many hypothesis testing tools</a>. For many simple cases in biology or neuroscience research, we’d like to test whether two or more distributions are different from eachother.</p>
+<p>If we know our distributions are normal (they’re generated from a normal distribution!) we can use <strong>parametric statistics</strong> to test our hypothesis. To test for differences between normal populations, we can use the independent t-test in our stats package: <code class="docutils literal notranslate"><span class="pre">stats.ttest_ind()</span></code>.</p>
+<p>If we had paired samples, we would use a dependent t-test <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html#scipy.stats.ttest_rel">as seen here</a>.</p>
 <p>If one of our populations is skewed, however, we <strong>cannot use a t-test</strong>. A t-test assumes that the populations are normally distributed. For skewed populations, we can use either the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu">Mann-Whitney U</a> (for independent samples, <code class="docutils literal notranslate"><span class="pre">stats.mannwhitneyu()</span></code>) or the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html#scipy.stats.wilcoxon">Wilcoxon Signed Rank Test</a> (for dependent/paired samples,<code class="docutils literal notranslate"><span class="pre">stats.wilcoxon()</span></code>).</p>
-<p>Below, there is sample code to run three different statistical tests. You should use the one that is most appropriate for your data.</p>
+<p>Below, there is sample code to run three different statistical tests. <strong>You should use <em>only</em> the one that is most appropriate for your data by uncommenting that line.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">data_1</span><span class="p">,</span><span class="n">data_2</span><span class="p">))</span> <span class="c1"># to run an independent t-test</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">data_1</span><span class="p">,</span><span class="n">_2</span><span class="p">))</span> <span class="c1"># to run a mannwhitneyu</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">data_1</span><span class="p">,</span><span class="n">data_2</span><span class="p">))</span> <span class="c1"># to run a wilcoxon signed rank test</span>
+<span class="c1"># print(stats.ttest_rel(data_1,data_2)) # to run an dependent t-test</span>
+<span class="c1"># print(stats.mannwhitneyu(data_1,_2)) # to run a mannwhitneyu</span>
+<span class="c1"># print(stats.wilcoxon(data_1,data_2)) # to run a wilcoxon signed rank test</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=-2.4382276613229465, pvalue=0.026796307428331737)
-MannwhitneyuResult(statistic=array([40.5, 16.5]), pvalue=array([1.        , 0.03474103]))
-WilcoxonResult(statistic=5.0, pvalue=0.0390625)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=-2.4382276613229465, pvalue=0.026796307428331737, df=16.0)
+TtestResult(statistic=-2.6832815729997477, pvalue=0.027784351010990083, df=8)
 </pre></div>
 </div>
 </div>
 </div>
+<p>That’s it for this notebook! You can adapt this code for lots of different projects (including your final project!).</p>
 </section>
 </section>
 </section>
