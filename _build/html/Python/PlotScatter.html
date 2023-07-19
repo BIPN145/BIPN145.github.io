@@ -372,7 +372,9 @@ document.write(`
 <p>This notebook will help you generate a scatterplot in Python. <strong>Scatterplots</strong> help us visually inspect the relationship between two continuous variables. This notebook should be used to plot your <strong>resistance</strong> vs. <strong>time constant</strong> observations from the RC circuit lab, for example.</p>
 <p>After plotting, we’ll also show how to generate a linear regression line for your data. <strong>Linear regression</strong> is a common tool to look for a linear relationship between two variables.</p>
 <p><mark>If you’re new to Jupyter Notebooks and/or Python, please be sure to work through the Introduction notebook before this one.</mark></p>
-<p><img alt="" src="https://imgs.xkcd.com/comics/linear_regression.png" /></p>
+<p align="center">
+  <img src="https://imgs.xkcd.com/comics/linear_regression.png" />
+</p>
 <br>
 <div align="center"><i>Comic: XKCD https://xkcd.com/1725/</i></div>
 <hr><section id="setup">
@@ -383,8 +385,8 @@ document.write(`
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no-exec</span>
-<span class="c1"># Import necessary packages here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary packages here</span>
+
 
 <span class="c1"># These lines are additional configuration steps for matplotlib</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline 
@@ -411,31 +413,16 @@ document.write(`
 <section id="plot-label">
 <h2>Plot &amp; label<a class="headerlink" href="#plot-label" title="Permalink to this heading">#</a></h2>
 <p>We can now plot our values using the code below. Remember that you can add axis labels using <code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code>. If you need a reminder for how to do this, refer to the Introduction notebook.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no-exec</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># Add labels here</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># no-exec</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Add labels here</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
+<blockquote>
+<div><p><strong>Task</strong>: Create a cell below with the code above. Add code where it says <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Add</span> <span class="pre">labels</span> <span class="pre">here</span></code> to label your axes.</p>
+</div></blockquote>
 </section>
 <section id="add-a-linear-regression-line">
 <h2>Add a linear regression line<a class="headerlink" href="#add-a-linear-regression-line" title="Permalink to this heading">#</a></h2>
@@ -472,7 +459,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e16999fcc3145ffe8adde8f88437fe2c697f95b2a2f882f7dfe430a298e3a5d4.png" src="../_images/e16999fcc3145ffe8adde8f88437fe2c697f95b2a2f882f7dfe430a298e3a5d4.png" />
+<img alt="../_images/fabb91c1ef6c4918e8a5d8e44d038c27d89da61ac7070b9ff4653c6e8202347b.png" src="../_images/fabb91c1ef6c4918e8a5d8e44d038c27d89da61ac7070b9ff4653c6e8202347b.png" />
 </div>
 </div>
 <p>It is also a good idea to print the statistics from our linear regression above. These are contained in <code class="docutils literal notranslate"><span class="pre">r_value</span></code> and <code class="docutils literal notranslate"><span class="pre">p_value</span></code>:</p>
@@ -482,7 +469,7 @@ document.write(`
 </ul>
 <p>It can also be helpful to look at <code class="docutils literal notranslate"><span class="pre">std_err</span></code>: the standard error of the estimate. It represents the standard deviation of the residuals (the differences between the observed y values and the predicted y values). A small standard error indicates that the fitted line is a good fit for the data.</p>
 <blockquote>
-<div><p><strong>Task</strong>: Print your values below.</p>
+<div><p><strong>Task</strong>: Print your values in the cell below.</p>
 </div></blockquote>
 <p>Finally, sometimes it is useful to have the fitted line equation. We can create a text string by adding variables together, like so:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_string</span> <span class="o">=</span> <span class="s1">&#39;this is &#39;</span> <span class="o">+</span> <span class="n">variable</span>
@@ -519,7 +506,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3e82b4bc7503b9044b7f48388fb3a1508d372c42787a15d345d0f35a2d952392.png" src="../_images/3e82b4bc7503b9044b7f48388fb3a1508d372c42787a15d345d0f35a2d952392.png" />
+<img alt="../_images/d84ac5b690db792c373f76d1b0171818d225c21cb2098255f2b070e1cbb006fb.png" src="../_images/d84ac5b690db792c373f76d1b0171818d225c21cb2098255f2b070e1cbb006fb.png" />
 </div>
 </div>
 <hr>
