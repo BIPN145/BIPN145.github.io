@@ -226,6 +226,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://mybinder.org/v2/gh/BIPN145/BIPN145.github.io/master?urlpath=tree/Python/PlotScatter.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/BIPN145/BIPN145.github.io/blob/master/Python/PlotScatter.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -239,6 +257,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -353,7 +389,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-values-to-plot">Define values to plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-label">Plot &amp; label</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-linear-regression-line">Add a linear regression line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-regression-line-to-the-plot-optional">Add your regression line to the plot <em>(optional)</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-text-for-your-fitted-line-to-the-plot-optional">Add text for your fitted line to the plot <em>(optional)</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes-resources">Additional notes &amp; resources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
 </ul>
@@ -370,7 +406,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="plot-scatter">
 <h1>Plot scatter<a class="headerlink" href="#plot-scatter" title="Permalink to this heading">#</a></h1>
 <p>This notebook will help you generate a scatterplot in Python. <strong>Scatterplots</strong> help us visually inspect the relationship between two continuous variables. This notebook should be used to plot your <strong>resistance</strong> vs. <strong>time constant</strong> observations from the RC circuit lab, for example.</p>
-<p>After plotting, we’ll also show how to generate a linear regression line for your data. <strong>Linear regression</strong> is a common tool to look for a linear relationship between two variables.</p>
+<p>After plotting, we’ll also show how to generate a linear regression line for your data. <strong>Linear regression</strong> is a common tool to model a linear relationship between two variables.</p>
 <p><mark>If you’re new to Jupyter Notebooks and/or Python, please be sure to work through the Introduction notebook before this one.</mark></p>
 <p align="center">
   <img src="https://imgs.xkcd.com/comics/linear_regression.png" />
@@ -439,7 +475,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1 - Import additional packages</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># 2 - Convert x and y to numpy arrays</span>
 <span class="n">x_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -459,17 +494,28 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fabb91c1ef6c4918e8a5d8e44d038c27d89da61ac7070b9ff4653c6e8202347b.png" src="../_images/fabb91c1ef6c4918e8a5d8e44d038c27d89da61ac7070b9ff4653c6e8202347b.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">x_array</span><span class="p">,</span><span class="n">y_array</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># 4 - Plot a regression line, using the slope &amp; intercept</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_array</span><span class="p">,</span> <span class="n">slope</span><span class="o">*</span><span class="n">x_array</span><span class="o">+</span><span class="n">intercept</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;fitted line&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># 5 - Plot our original data points and show</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_array</span><span class="p">,</span><span class="n">y_array</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;original data&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
 </div>
 </div>
-<p>It is also a good idea to print the statistics from our linear regression above. These are contained in <code class="docutils literal notranslate"><span class="pre">r_value</span></code> and <code class="docutils literal notranslate"><span class="pre">p_value</span></code>:</p>
+</div>
+<p>It is also a good idea to print the computed statistics from our linear regression above. These are contained in <code class="docutils literal notranslate"><span class="pre">r_value</span></code> and <code class="docutils literal notranslate"><span class="pre">p_value</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">r_value</span></code>: This is the correlation coefficient, also known as the R-value. It measures the strength and direction of the linear relationship between the two variables. It ranges from -1 to 1, where a value of -1 indicates a strong negative linear relationship, a value of 0 indicates no linear relationship, and a value of 1 indicates a strong positive linear relationship.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">p_value</span></code>: This is the two-tailed p-value. A small p-value (typically less than 0.05) indicates that the correlation is statistically significant and that there is a low probability that the observed correlation occurred by chance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r_value</span></code>: This is the Perason correlation coefficient. It measures the strength and direction of the linear relationship between the two variables. It ranges from -1 to 1, where a value of -1 indicates a strong negative linear relationship, a value of 0 indicates no linear relationship, and a value of 1 indicates a strong positive linear relationship.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p_value</span></code>: The p-value for a hypothesis test whose null hypothesis is that the slope is zero (in other words, that there is no relationship between x and y. A smaller p value (we typically use a 0.05 cutoff) suggests that it is unlikely the slope is zero.</p></li>
 </ul>
 <p>It can also be helpful to look at <code class="docutils literal notranslate"><span class="pre">std_err</span></code>: the standard error of the estimate. It represents the standard deviation of the residuals (the differences between the observed y values and the predicted y values). A small standard error indicates that the fitted line is a good fit for the data.</p>
 <blockquote>
-<div><p><strong>Task</strong>: Print your values in the cell below.</p>
+<div><p><strong>Task</strong>: Print your values for <code class="docutils literal notranslate"><span class="pre">r_value</span></code>,<code class="docutils literal notranslate"><span class="pre">p_value</span></code>, and <code class="docutils literal notranslate"><span class="pre">std_err</span></code> in the cell below.</p>
 </div></blockquote>
 <p>Finally, sometimes it is useful to have the fitted line equation. We can create a text string by adding variables together, like so:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_string</span> <span class="o">=</span> <span class="s1">&#39;this is &#39;</span> <span class="o">+</span> <span class="n">variable</span>
@@ -494,9 +540,9 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="add-your-regression-line-to-the-plot-optional">
-<h2>Add your regression line to the plot <em>(optional)</em><a class="headerlink" href="#add-your-regression-line-to-the-plot-optional" title="Permalink to this heading">#</a></h2>
-<p>It is useful to report the fitted line equation either on the plot itself or in the figure caption. The code below will show you how to add text using <code class="docutils literal notranslate"><span class="pre">plt.text()</span></code>. This function takes three inputs: the x,y location of the text as well as the string itself (s). If you’d like, you can integrate this into your code above.</p>
+<section id="add-text-for-your-fitted-line-to-the-plot-optional">
+<h2>Add text for your fitted line to the plot <em>(optional)</em><a class="headerlink" href="#add-text-for-your-fitted-line-to-the-plot-optional" title="Permalink to this heading">#</a></h2>
+<p>It is useful to report the fitted line equation either on the plot itself or in the figure caption. The code below will show you how to add text using <code class="docutils literal notranslate"><span class="pre">plt.text()</span></code>, which takes three arguments: the x,y location of the text as well as the string itself (s). If you’d like, you can integrate this into your code above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -506,7 +552,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d84ac5b690db792c373f76d1b0171818d225c21cb2098255f2b070e1cbb006fb.png" src="../_images/d84ac5b690db792c373f76d1b0171818d225c21cb2098255f2b070e1cbb006fb.png" />
+<img alt="../_images/3e82b4bc7503b9044b7f48388fb3a1508d372c42787a15d345d0f35a2d952392.png" src="../_images/3e82b4bc7503b9044b7f48388fb3a1508d372c42787a15d345d0f35a2d952392.png" />
 </div>
 </div>
 <hr>
@@ -525,7 +571,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "BIPN145/BIPN145.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -592,7 +638,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-values-to-plot">Define values to plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-label">Plot &amp; label</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-linear-regression-line">Add a linear regression line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-regression-line-to-the-plot-optional">Add your regression line to the plot <em>(optional)</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-text-for-your-fitted-line-to-the-plot-optional">Add text for your fitted line to the plot <em>(optional)</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes-resources">Additional notes &amp; resources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-notebook">About this Notebook</a></li>
 </ul>

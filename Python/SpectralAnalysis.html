@@ -226,6 +226,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://mybinder.org/v2/gh/BIPN145/BIPN145.github.io/master?urlpath=tree/Python/SpectralAnalysis.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/BIPN145/BIPN145.github.io/blob/master/Python/SpectralAnalysis.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -239,6 +257,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -451,7 +487,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25751b865aef7ff276f7d4ce471fbafdf4ae1ab6d087478b116c26ff5a022f62.png" src="../_images/25751b865aef7ff276f7d4ce471fbafdf4ae1ab6d087478b116c26ff5a022f62.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/0546bae1ea74e35c0253270977575ad35902540a0950c6868eed676332b7cfdc.png" src="../_images/0546bae1ea74e35c0253270977575ad35902540a0950c6868eed676332b7cfdc.png" />
 </div>
 </div>
 </section>
@@ -480,7 +526,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/10182be8f8a7bb285fd29cc6f643d5daec12480a015dc2f329d3637e1e855830.png" src="../_images/10182be8f8a7bb285fd29cc6f643d5daec12480a015dc2f329d3637e1e855830.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/683163276fc978c80d5aab41704f15611a93c16a7a7a402a454aa9487da5e7b0.png" src="../_images/683163276fc978c80d5aab41704f15611a93c16a7a7a402a454aa9487da5e7b0.png" />
 </div>
 </div>
 <p>Hmm, this is interesting but a bit noisy. Maybe we need a method that is <em>better</em> than the simple fast fourier transform for this type of data. Thankfully, there’s a way to smooth out our fft without losing too much information.</p>
@@ -519,7 +575,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9ae291692cdf5806e8d9c2fd5fe28d7c973fd6e516d7f785877b79f3c8aa8124.png" src="../_images/9ae291692cdf5806e8d9c2fd5fe28d7c973fd6e516d7f785877b79f3c8aa8124.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/3d5d797fa7455d5dff4b87c71e8f5c89bb25fd08da45ee75ea6b94eab4795623.png" src="../_images/3d5d797fa7455d5dff4b87c71e8f5c89bb25fd08da45ee75ea6b94eab4795623.png" />
 </div>
 </div>
 </section>
@@ -550,7 +616,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9b0d5f3f847387747688a72d9704e36d64225ce7e244c62782ab081bedd52523.png" src="../_images/9b0d5f3f847387747688a72d9704e36d64225ce7e244c62782ab081bedd52523.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gn/T/ipykernel_69569/3043817803.py:12: MatplotlibDeprecationWarning: shading=&#39;flat&#39; when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading=&#39;auto&#39;, &#39;nearest&#39; or &#39;gouraud&#39;, or set rcParams[&#39;pcolor.shading&#39;].  This will become an error two minor releases later.
+  plt.pcolormesh(tt,f,Sxx,cmap=&#39;viridis&#39;,vmax=vmax)
+</pre></div>
+</div>
+<img alt="../_images/7b371fdb605723bd4567f54a84b569eaa986b1d1fd82651c2e960c3040cf9865.png" src="../_images/7b371fdb605723bd4567f54a84b569eaa986b1d1fd82651c2e960c3040cf9865.png" />
 </div>
 </div>
 </section>
@@ -560,7 +630,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "BIPN145/BIPN145.github.io",
             ref: "master",
         },
         codeMirrorConfig: {

@@ -22,22 +22,35 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# no-exec
-plt.scatter(x,y)
+# 1 - Import additional packages
+import numpy as np
+from scipy import stats
 
-# Add labels here
+# 2 - Convert x and y to numpy arrays
+x_array = np.array(x)
+y_array = np.array(y)
 
+# 3 - Perform linear regression
+slope, intercept, r_value, p_value, std_err = stats.linregress(x_array,y_array)
+
+# 4 - Plot a regression line, using the slope & intercept
+plt.plot(x_array, slope*x_array+intercept, color='gray',label='fitted line')
+
+# 5 - Plot our original data points and show
+plt.scatter(x_array,y_array,label='original data')
+plt.legend()
 plt.show()
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[3], line 2[0m
-[1;32m      1[0m [38;5;66;03m# no-exec[39;00m
-[0;32m----> 2[0m [43mplt[49m[38;5;241m.[39mscatter(x,y)
-[1;32m      4[0m [38;5;66;03m# Add labels here[39;00m
-[1;32m      6[0m plt[38;5;241m.[39mshow()
+Cell [0;32mIn[3], line 13[0m
+[1;32m     10[0m slope, intercept, r_value, p_value, std_err [38;5;241m=[39m stats[38;5;241m.[39mlinregress(x_array,y_array)
+[1;32m     12[0m [38;5;66;03m# 4 - Plot a regression line, using the slope & intercept[39;00m
+[0;32m---> 13[0m [43mplt[49m[38;5;241m.[39mplot(x_array, slope[38;5;241m*[39mx_array[38;5;241m+[39mintercept, color[38;5;241m=[39m[38;5;124m'[39m[38;5;124mgray[39m[38;5;124m'[39m,label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mfitted line[39m[38;5;124m'[39m)
+[1;32m     15[0m [38;5;66;03m# 5 - Plot our original data points and show[39;00m
+[1;32m     16[0m plt[38;5;241m.[39mscatter(x_array,y_array,label[38;5;241m=[39m[38;5;124m'[39m[38;5;124moriginal data[39m[38;5;124m'[39m)
 
 [0;31mNameError[0m: name 'plt' is not defined
 
