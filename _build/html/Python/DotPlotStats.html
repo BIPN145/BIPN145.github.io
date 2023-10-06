@@ -226,6 +226,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://mybinder.org/v2/gh/BIPN145/BIPN145.github.io/master?urlpath=tree/Python/DotPlotStats.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/BIPN145/BIPN145.github.io/blob/master/Python/DotPlotStats.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -239,6 +257,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -587,7 +623,7 @@ TtestResult(statistic=-2.6832815729997477, pvalue=0.027784351010990083, df=8)
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "BIPN145/BIPN145.github.io",
             ref: "master",
         },
         codeMirrorConfig: {

@@ -226,6 +226,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://mybinder.org/v2/gh/BIPN145/BIPN145.github.io/master?urlpath=tree/LabChart/ImportingPython.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/BIPN145/BIPN145.github.io/blob/master/LabChart/ImportingPython.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -239,6 +257,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -517,7 +553,17 @@ Time between each data point is:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f2c3ef8609bbdb15ab26ac6291e37fa01996f73a925d1966034821a0c646b4bd.png" src="../_images/f2c3ef8609bbdb15ab26ac6291e37fa01996f73a925d1966034821a0c646b4bd.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/bbe5a887ff8edd7e65377b6d9ab801fd485714ef16dcaf74481969cb33891af9.png" src="../_images/bbe5a887ff8edd7e65377b6d9ab801fd485714ef16dcaf74481969cb33891af9.png" />
 </div>
 </div>
 <p>Once you’ve filled out this notebook, you can use this to plot <em>any</em> exported text file from LabChart, from earthworms, to leeches, and beyond!</p>
@@ -528,7 +574,7 @@ Time between each data point is:
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "BIPN145/BIPN145.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
