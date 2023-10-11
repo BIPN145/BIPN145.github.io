@@ -23,7 +23,7 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 # Change the filename to EXACTLY match your file
-filename = 'leech spontaneous .txt'
+filename = 'recording.txt'
 
 # Load & check shape of file
 try:
