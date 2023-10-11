@@ -415,28 +415,12 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Decide if you want plots to be interactive or not</span>
-<span class="c1"># Set interactive to True if you do want interaction</span>
-<span class="n">interactive</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="k">if</span> <span class="n">interactive</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Figures are interactive.&#39;</span><span class="p">)</span>
-    <span class="c1"># Set up interactive matplot lib and define a function to interact with plots</span>
-    <span class="o">%</span><span class="k">matplotlib</span> nbagg
-    <span class="k">def</span> <span class="nf">onclick</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-        <span class="n">pos</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">event</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span><span class="n">event</span><span class="o">.</span><span class="n">ydata</span><span class="p">])</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Figures are not interactive.&#39;</span><span class="p">)</span>
-    <span class="o">%</span><span class="k">matplotlib</span> inline 
-    <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Packages imported.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Figures are not interactive.
-Packages imported.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages imported.
 </pre></div>
 </div>
 </div>
@@ -485,7 +469,6 @@ Packages imported.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Time between each data point is:&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39; seconds&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
@@ -497,9 +480,7 @@ Packages imported.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.137675 0.1377   0.137725 ... 9.135475 9.1355   9.135525]
-
-Time between each data point is:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time between each data point is:
 2.4999999999997247e-05  seconds
 </pre></div>
 </div>
@@ -526,7 +507,6 @@ Time between each data point is:
 <section id="step-3-plot-data">
 <h2>Step 3. Plot data<a class="headerlink" href="#step-3-plot-data" title="Permalink to this heading">#</a></h2>
 <p>The code below will plot your data using <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html"><code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code></a>. This function requires two inputs: x and y. When we’re plotting recordings, typically this means x = time, and y = voltage. If you’d like to plot your timestamps in milliseconds, you’ll need to replace <code class="docutils literal notranslate"><span class="pre">time</span></code> with <code class="docutils literal notranslate"><span class="pre">timestamps_ms</span></code>. You should also add x and y labels.</p>
-<p><strong>Note on using the interactive plot</strong> (only if you set interactive to True above): The x (time, in ms) and y (voltage, in volts) position of your cursor will update in the bottom left corner. You can use these values to make your calculations, if necessary. You can create a box to Zoom into using the Zoom button below, and return to the home view using the Home button. The crosshairs button will allow you to pan through the recording.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up figure &amp; plot</span>
@@ -563,7 +543,7 @@ Time between each data point is:
   fig.canvas.print_figure(bytes_io, **kw)
 </pre></div>
 </div>
-<img alt="../_images/bbe5a887ff8edd7e65377b6d9ab801fd485714ef16dcaf74481969cb33891af9.png" src="../_images/bbe5a887ff8edd7e65377b6d9ab801fd485714ef16dcaf74481969cb33891af9.png" />
+<img alt="../_images/566d7f76d986142324ae36d6ee863722e016025b95e0c4e89ce6b68660425968.png" src="../_images/566d7f76d986142324ae36d6ee863722e016025b95e0c4e89ce6b68660425968.png" />
 </div>
 </div>
 <p>Once you’ve filled out this notebook, you can use this to plot <em>any</em> exported text file from LabChart, from earthworms, to leeches, and beyond!</p>
