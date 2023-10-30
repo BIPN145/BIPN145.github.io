@@ -16,7 +16,10 @@ chapters:
   - file: Python/FitCurve.ipynb
   - file: Python/DotPlotStats.ipynb
   - file: Python/SpectralAnalysis.ipynb
-- file: FinalProjects
+- file: FinalProjects/FinalProjects.md
+  sections: 
+  - file: FinalProjects/ResearchProposals.md
+  - file: FinalProjects/ProjectPresentations.md
 
 
 
