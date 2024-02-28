@@ -171,7 +171,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="SpectralAnalysis.html">Analyze EEG data</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../FinalProjects.html">Guide to Final Projects</a></li>
 </ul>
 
     </div>
@@ -517,7 +516,7 @@ document.write(`
 <section id="notes">
 <h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>This will draw a <font color='gray'><strong>dotted gray</strong></font> line for the median, and a <strong>solid black line</strong> for the mean.</p></li>
+<li><p>This will draw a <font color='gray'><strong>dotted gray</strong></font> line for the mean, and a <strong>solid black line</strong> for the median.</p></li>
 <li><p>Change the <code class="docutils literal notranslate"><span class="pre">plt.ylabel</span></code> line to add your own label.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -551,7 +550,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71e5422fa7ee5f878dd648903393f478b5bf054682231596c9c7d2750bfc5c61.png" src="../_images/71e5422fa7ee5f878dd648903393f478b5bf054682231596c9c7d2750bfc5c61.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">8e5</span><span class="n">ecd360032</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># plot the mean line</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">meanline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="n">meanprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;ls&#39;</span><span class="p">:</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>             <span class="n">medianprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;visible&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;ls&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+</pre></div>
+</div>
+<img alt="../_images/4e3beb71a00d4e1800e006036079595db075dfd0f6004e06b76da96fe52a2cb8.png" src="../_images/4e3beb71a00d4e1800e006036079595db075dfd0f6004e06b76da96fe52a2cb8.png" />
 </div>
 </div>
 </section>
