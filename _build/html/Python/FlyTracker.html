@@ -411,10 +411,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-running-the-fly-tracker-script">Part 1: Running the Fly Tracker Script</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-anaconda-prompt">Step 1: Open Anaconda Prompt</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-the-script">Step 2: Download the Script</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-know-where-your-video-file-s-are">Step 3: Know Where Your Video File(s) Are</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-run-the-script">Step 4: Run the Script</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-find-your-output-files">Step 5: Find Your Output Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-the-scripts">Step 2: Download the Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-install-required-packages">Step 3: Install Required Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-know-where-your-video-file-s-are">Step 4: Know Where Your Video File(s) Are</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-run-the-script">Step 5: Run the Script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-find-your-output-files">Step 6: Find Your Output Files</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-working-with-your-data-in-python-optional">Part 2: Working with Your Data in Python (Optional)</a><ul class="nav section-nav flex-column">
@@ -460,8 +461,8 @@ document.write(`
 <p>This is intended to be run on the BIPN 145 Windows lab computers in York 1310. If you are running this on your own Mac computer, you can search for Python and run it that way. If you’re running it on your own Windows computer, you’ll need to download Python or Anaconda.</p>
 </div>
 </section>
-<section id="step-2-download-the-script">
-<h3>Step 2: Download the Script<a class="headerlink" href="#step-2-download-the-script" title="Link to this heading">#</a></h3>
+<section id="step-2-download-the-scripts">
+<h3>Step 2: Download the Scripts<a class="headerlink" href="#step-2-download-the-scripts" title="Link to this heading">#</a></h3>
 <p>In the Anaconda Prompt, first use the following to move into <em>your</em> folder. Replace USER with your user name.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -470,25 +471,32 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">USER</span>
 </pre></div>
 </div>
-<p>Then, run the following command to download the fly tracker script:</p>
+<p>Then, run the following commands to download the setup and fly tracker scripts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">o</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ajuavinett</span><span class="o">/</span><span class="n">fly_tracker</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">o</span> <span class="n">BIPN145_flytrack</span><span class="o">.</span><span class="n">py</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ajuavinett</span><span class="o">/</span><span class="n">fly_tracker</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">BIPN145_flytrack</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>This will save the file <code class="docutils literal notranslate"><span class="pre">BIPN145_flytrack.py</span></code> to whatever folder your Anaconda Prompt is currently in (usually <code class="docutils literal notranslate"><span class="pre">C:\Users\YourName</span></code>). If you already have an older version of the script, this will overwrite it with the latest version. You can also download the script manually from the <a class="reference external" href="https://github.com/ajuavinett/fly_tracker">fly_tracker GitHub page</a>.</p>
+<p>If you already have older versions of these scripts, this will overwrite them with the latest versions. You can also download the scripts manually from the <a class="reference external" href="https://github.com/ajuavinett/fly_tracker">fly_tracker GitHub page</a>.</p>
 </section>
-<section id="step-3-know-where-your-video-file-s-are">
-<h3>Step 3: Know Where Your Video File(s) Are<a class="headerlink" href="#step-3-know-where-your-video-file-s-are" title="Link to this heading">#</a></h3>
+<section id="step-3-install-required-packages">
+<h3>Step 3: Install Required Packages<a class="headerlink" href="#step-3-install-required-packages" title="Link to this heading">#</a></h3>
+<p>Run the setup script to install the required Python packages. You only need to do this <strong>once</strong> per computer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>You should see a message confirming that each package is installed. Once you see “Setup complete!”, you’re ready to go.</p>
+</section>
+<section id="step-4-know-where-your-video-file-s-are">
+<h3>Step 4: Know Where Your Video File(s) Are<a class="headerlink" href="#step-4-know-where-your-video-file-s-are" title="Link to this heading">#</a></h3>
 <p>Make sure you know where your fly video file(s) (<code class="docutils literal notranslate"><span class="pre">.avi</span></code>, <code class="docutils literal notranslate"><span class="pre">.mp4</span></code>, etc.) are saved on your computer. When you run the script, a file picker window will pop up and you can navigate to them from there.</p>
 </section>
-<section id="step-4-run-the-script">
-<h3>Step 4: Run the Script<a class="headerlink" href="#step-4-run-the-script" title="Link to this heading">#</a></h3>
+<section id="step-5-run-the-script">
+<h3>Step 5: Run the Script<a class="headerlink" href="#step-5-run-the-script" title="Link to this heading">#</a></h3>
 <p>In the Anaconda Prompt, type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">BIPN145_flytrack</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The first time you run the script, it will automatically install any missing Python packages (<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">opencv-python</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>). This only happens once.</p>
 </div>
 <p>The script will walk you through everything interactively:</p>
 <ol class="arabic">
@@ -503,8 +511,8 @@ document.write(`
 <li><p><strong>View results</strong> — When done, plots will appear and CSV files will be saved automatically. The plot windows will stay open so you can inspect them and <strong>save them by clicking on the disk icon</strong>.</p></li>
 </ol>
 </section>
-<section id="step-5-find-your-output-files">
-<h3>Step 5: Find Your Output Files<a class="headerlink" href="#step-5-find-your-output-files" title="Link to this heading">#</a></h3>
+<section id="step-6-find-your-output-files">
+<h3>Step 6: Find Your Output Files<a class="headerlink" href="#step-6-find-your-output-files" title="Link to this heading">#</a></h3>
 <p>After the script finishes, you’ll find two CSV files for each video in the same folder as your video:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -828,10 +836,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-running-the-fly-tracker-script">Part 1: Running the Fly Tracker Script</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-anaconda-prompt">Step 1: Open Anaconda Prompt</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-the-script">Step 2: Download the Script</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-know-where-your-video-file-s-are">Step 3: Know Where Your Video File(s) Are</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-run-the-script">Step 4: Run the Script</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-find-your-output-files">Step 5: Find Your Output Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-download-the-scripts">Step 2: Download the Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-install-required-packages">Step 3: Install Required Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-know-where-your-video-file-s-are">Step 4: Know Where Your Video File(s) Are</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-run-the-script">Step 5: Run the Script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-find-your-output-files">Step 6: Find Your Output Files</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-working-with-your-data-in-python-optional">Part 2: Working with Your Data in Python (Optional)</a><ul class="nav section-nav flex-column">
