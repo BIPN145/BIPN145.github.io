@@ -17,6 +17,7 @@ chapters:
   - file: Python/DotPlotStats.ipynb
   - file: Python/SpectralAnalysis.ipynb
   - file: Python/FlyTracker.ipynb
-
-
-
+- file: FlyTracking/Introduction.md
+  sections:
+  - file: FlyTracking/Script.ipynb
+  - file: FlyTracking/ColabNotebook.ipynb
