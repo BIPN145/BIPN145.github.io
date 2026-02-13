@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visualizing Data in Python &#8212; BIPN 145 Lab Digital Manual</title>
+    <title>Fly Tracking &#8212; BIPN 145 Lab Digital Manual</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Python/Introduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FlyTracking/Introduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Jupyter Notebooks" href="JupyterNotebooks.html" />
-    <link rel="prev" title="Importing LabChart (Python)" href="../LabChart/ImportingPython.html" />
+    <link rel="next" title="Fly Tracker (Local)" href="Script.html" />
+    <link rel="prev" title="Analyze EEG data" href="../Python/SpectralAnalysis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,17 +186,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingPython.html">Importing LabChart (Python)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Visualizing Data in Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="JupyterNotebooks.html">Introduction to Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PlotScatter.html">Plot scatter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FitCurve.html">Fit a curved line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DotPlotStats.html">Plot dot plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SpectralAnalysis.html">Analyze EEG data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Python/Introduction.html">Visualizing Data in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Python/JupyterNotebooks.html">Introduction to Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/PlotScatter.html">Plot scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/FitCurve.html">Fit a curved line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/DotPlotStats.html">Plot dot plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/SpectralAnalysis.html">Analyze EEG data</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../FlyTracking/Introduction.html">Fly Tracking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../FlyTracking/Script.html">Fly Tracker (Local)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../FlyTracking/ColabNotebook.html">Fly Tracker (Colab)</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Fly Tracking</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Script.html">Fly Tracker (Local)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ColabNotebook.html">Fly Tracker (Colab)</a></li>
 </ul>
 </details></li>
 </ul>
@@ -255,7 +253,7 @@
       
       
       
-      <li><a href="../_sources/Python/Introduction.md" target="_blank"
+      <li><a href="../_sources/FlyTracking/Introduction.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +335,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Visualizing Data in Python</h1>
+    <h1>Fly Tracking</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -351,9 +349,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualizing-data-in-python">
-<h1>Visualizing Data in Python<a class="headerlink" href="#visualizing-data-in-python" title="Link to this heading">#</a></h1>
-<p>The notebooks under this header will help you visualize data in Python.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="fly-tracking">
+<h1>Fly Tracking<a class="headerlink" href="#fly-tracking" title="Link to this heading">#</a></h1>
+<p>The code in this folder will help you track your fly videos.</p>
+<p><em>If you have your videos stored in your Google Drive</em> you should use the “Colab” version. Otherwise, if your videos are stored locally on the lab computer, use the “Local” version.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -371,7 +370,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Python"
+            path: "./FlyTracking"
         },
         predefinedOutput: true
     }
@@ -389,20 +388,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../LabChart/ImportingPython.html"
+       href="../Python/SpectralAnalysis.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Importing LabChart (Python)</p>
+        <p class="prev-next-title">Analyze EEG data</p>
       </div>
     </a>
     <a class="right-next"
-       href="JupyterNotebooks.html"
+       href="Script.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Jupyter Notebooks</p>
+        <p class="prev-next-title">Fly Tracker (Local)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
