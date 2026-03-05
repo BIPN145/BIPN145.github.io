@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'FlyTracking/ColabNotebook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Projects" href="../FinalProjects/Introduction.html" />
     <link rel="prev" title="Fly Tracker (Local)" href="Script.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -196,6 +197,9 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Fly Tracking</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Script.html">Fly Tracker (Local)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Fly Tracker (Colab)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
 </ul>
 </details></li>
 </ul>
@@ -416,10 +420,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-roi-region-of-interest">Select ROI (Region of Interest)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-plot-velocity">Calculate &amp; Plot Velocity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-across-all-videos">Summary Across All Videos</a></li>
@@ -466,6 +472,14 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 
+<span class="c1"># Initialize result containers (run once, then append to them)</span>
+<span class="k">if</span> <span class="s1">&#39;all_corrected&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span>
+    <span class="n">all_corrected</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">all_velocity</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialized result containers.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Existing results: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1"> video(s) processed so far.&#39;</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All packages loaded successfully!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -473,14 +487,14 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineCollection</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial.distance</span><span class="w"> </span><span class="kn">import</span> <span class="n">euclidean</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span><span class="p">,</span> <span class="n">output</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">IPImage</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#@title Install &amp; import packages { display-mode: &quot;form&quot; }</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mcolors</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;cv2&#39;
 </pre></div>
 </div>
 </div>
@@ -493,9 +507,22 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-
-<span class="n">video_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;video1.avi&#39;</span><span class="p">,</span> <span class="s1">&#39;video2.avi&#39;</span><span class="p">]</span>  <span class="c1"># Example list of video files</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">video_files</span><span class="p">)</span><span class="si">}</span><span class="s1"> file(s) uploaded: </span><span class="si">{</span><span class="n">video_files</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="select-video-file">
+<h2>Select Video File<a class="headerlink" href="#select-video-file" title="Link to this heading">#</a></h2>
+<p>Update the path below to your video file. You’ll process one video at a time, and results will accumulate in <code class="docutils literal notranslate"><span class="pre">all_corrected</span></code> and <code class="docutils literal notranslate"><span class="pre">all_velocity</span></code>.</p>
+<blockquote>
+<div><p><strong>Tip</strong>: In the window at left, you can use the three vertical dots to copy and paste the path to your video file.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the current video file to process</span>
+<span class="n">current_video</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/video1.avi&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current video: </span><span class="si">{</span><span class="n">current_video</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -503,32 +530,21 @@ document.write(`
 </section>
 <section id="set-parameters">
 <h2>Set Parameters<a class="headerlink" href="#set-parameters" title="Link to this heading">#</a></h2>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">frame_rate</span></code> below as needed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Parameters { run: &quot;auto&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Frame rate of the video</span>
+<span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span> 
 
-<span class="c1"># Diameter of the dish in centimeters</span>
-<span class="n">diameter</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1">#@param {type:&quot;number&quot;}</span>
-
-<span class="c1"># Frame rate of the video (frames per second)</span>
-<span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1">#@param {type:&quot;integer&quot;}</span>
-
-<span class="c1"># Search size for fly detection (in pixels) - generally leave at 20</span>
-<span class="n">search_size</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1">#@param {type:&quot;integer&quot;}</span>
-
-<span class="c1"># Per-pixel intensity threshold - generally leave at 1.5</span>
-<span class="n">per_pixel_threshold</span> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1">#@param {type:&quot;number&quot;}</span>
-
-<span class="c1"># Bin size for velocity calculation (in seconds)</span>
-<span class="n">bin_size</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#@param {type:&quot;number&quot;}</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Diameter of the dish in centimeters</span>
+<span class="n">search_size</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># Search size for fly detection (in pixels)</span>
+<span class="n">per_pixel_threshold</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">bin_size</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Bin size for velocity calculation (in seconds)</span>
 
 <span class="n">height</span> <span class="o">=</span> <span class="n">diameter</span>
 <span class="n">width</span> <span class="o">=</span> <span class="n">diameter</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dish diameter: </span><span class="si">{</span><span class="n">diameter</span><span class="si">}</span><span class="s1"> cm&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frame rate: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s1"> fps&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Search size: </span><span class="si">{</span><span class="n">search_size</span><span class="si">}</span><span class="s1"> px&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Velocity bin size: </span><span class="si">{</span><span class="n">bin_size</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -536,7 +552,7 @@ document.write(`
 </section>
 <section id="helper-functions">
 <h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading">#</a></h2>
-<p>These replicate the MATLAB helper functions (<code class="docutils literal notranslate"><span class="pre">flyFinder</span></code>, <code class="docutils literal notranslate"><span class="pre">distFilter</span></code>, <code class="docutils literal notranslate"><span class="pre">interpolatePos</span></code>).</p>
+<p>Just run the cell below to define a set of functions to run our analysis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Define helper functions (fly_finder, dist_filter, interpolate_pos) { display-mode: &quot;form&quot; }</span>
@@ -671,6 +687,29 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">interp_count</span><span class="si">}</span><span class="s1"> points recovered through interpolation.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 
+<span class="k">def</span><span class="w"> </span><span class="nf">boundary_filter</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">diameter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove points that fall outside the circular dish.</span>
+<span class="sd">    The dish is assumed to be a circle of the given diameter,</span>
+<span class="sd">    centered at (diameter/2, diameter/2).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">dist_from_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">cx</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">cy</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">outside</span> <span class="o">=</span> <span class="n">dist_from_center</span> <span class="o">&gt;</span> <span class="n">radius</span>
+    <span class="c1"># Don&#39;t count points that are already NaN</span>
+    <span class="n">outside</span> <span class="o">=</span> <span class="n">outside</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">filtered</span><span class="p">[</span><span class="n">outside</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outside</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> points removed by the boundary filter (outside dish).&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Helper functions defined.&#39;</span><span class="p">)</span>
 </pre></div>
@@ -686,11 +725,11 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Interactive ROI selector — click and drag on the image { display-mode: &quot;form&quot; }</span>
 
 <span class="c1"># Read first frame and encode as base64 for display</span>
-<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span>
 <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Could not read first frame of </span><span class="si">{</span><span class="n">video_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Could not read first frame of </span><span class="si">{</span><span class="n">current_video</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">frame_rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
 <span class="n">img_h</span><span class="p">,</span> <span class="n">img_w</span> <span class="o">=</span> <span class="n">frame_rgb</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
@@ -843,10 +882,7 @@ document.write(`
 <span class="k">def</span><span class="w"> </span><span class="nf">process_video</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span> <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Process a single fly video and return the corrected position array.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        corrected_array: Nx3 array [time_s, x_cm, y_cm]</span>
-<span class="sd">        fps: actual frame rate from the video</span>
+<span class="sd">    Returns (Nx3 array [time_s, x_cm, y_cm], frame_rate).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">height</span> <span class="o">=</span> <span class="n">diameter</span>
     <span class="n">width</span> <span class="o">=</span> <span class="n">diameter</span>
@@ -857,16 +893,34 @@ document.write(`
     <span class="n">total_frames</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_COUNT</span><span class="p">))</span>
     <span class="n">nfrm</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">-</span> <span class="mi">1</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Video FPS: </span><span class="si">{</span><span class="n">fps</span><span class="si">}</span><span class="s1">, Total frames: </span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Using frame_rate parameter: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s1"> for time conversion&#39;</span><span class="p">)</span>
+    <span class="c1"># Auto-detect frame rate from video if not specified</span>
+    <span class="k">if</span> <span class="n">frame_rate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">frame_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Auto-detected frame rate: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Could not detect frame rate, using default: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Re-run with --frame-rate to set the correct value.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Video FPS: </span><span class="si">{</span><span class="n">fps</span><span class="si">}</span><span class="s2">, using override: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Sanity check: warn if video duration seems unusual</span>
+    <span class="k">if</span> <span class="n">frame_rate</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">/</span> <span class="n">frame_rate</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Estimated duration: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="ow">or</span> <span class="n">duration</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Expected ~60s video but got </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    If this looks wrong, re-run with --frame-rate to override.&quot;</span><span class="p">)</span>
 
     <span class="c1"># --- Create background from 100 random frames ---</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Calculating background...&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Calculating background...&quot;</span><span class="p">)</span>
     <span class="n">bg_number</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">nfrm</span><span class="p">)</span>
     <span class="n">bg_indices</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nfrm</span><span class="p">,</span> <span class="n">bg_number</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 
-    <span class="c1"># Read first frame to get dimensions</span>
     <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">ret</span><span class="p">,</span> <span class="n">sample</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">gray_sample</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
@@ -881,7 +935,7 @@ document.write(`
     <span class="n">background</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bg_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 
     <span class="c1"># --- Process each frame ---</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Tracking fly positions...&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Tracking fly positions...&quot;</span><span class="p">)</span>
     <span class="n">threshold</span> <span class="o">=</span> <span class="p">(</span><span class="n">search_size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">per_pixel_threshold</span>
     <span class="n">half_search</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">search_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -897,7 +951,9 @@ document.write(`
         <span class="n">frame_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 
         <span class="c1"># Background subtraction using GIMP division formula</span>
-        <span class="n">frame_div</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">((</span><span class="mf">256.0</span> <span class="o">*</span> <span class="n">frame_gray</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">frame_div</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
+            <span class="p">(</span><span class="mf">256.0</span> <span class="o">*</span> <span class="n">frame_gray</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 
         <span class="c1"># Crop to ROI</span>
         <span class="n">frame_crop</span> <span class="o">=</span> <span class="n">frame_div</span><span class="p">[</span><span class="n">roi_y</span><span class="p">:</span><span class="n">roi_y</span> <span class="o">+</span> <span class="n">roi_h</span><span class="p">,</span> <span class="n">roi_x</span><span class="p">:</span><span class="n">roi_x</span> <span class="o">+</span> <span class="n">roi_w</span><span class="p">]</span>
@@ -909,7 +965,7 @@ document.write(`
         <span class="c1"># Progress update every 10%</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nfrm</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">pct</span> <span class="o">=</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">nfrm</span> <span class="o">*</span> <span class="mi">100</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;    </span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">% complete (</span><span class="si">{</span><span class="n">nofr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s1"> frames)&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">% complete (</span><span class="si">{</span><span class="n">nofr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
 
     <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 
@@ -918,41 +974,48 @@ document.write(`
     <span class="n">yscale</span> <span class="o">=</span> <span class="n">height</span> <span class="o">/</span> <span class="n">roi_h</span>
 
     <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
-        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">frame_rate</span><span class="p">,</span>  <span class="c1"># time in seconds</span>
-        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">xscale</span><span class="p">,</span>       <span class="c1"># x in cm</span>
-        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">yscale</span>        <span class="c1"># y in cm</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">frame_rate</span><span class="p">,</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">xscale</span><span class="p">,</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">yscale</span><span class="p">,</span>
     <span class="p">])</span>
 
     <span class="n">skipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="n">skipped</span><span class="si">}</span><span class="s1"> points skipped out of </span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">skipped</span><span class="si">}</span><span class="s2"> points skipped out of </span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 
-    <span class="c1"># Apply teleport filter and interpolation</span>
+    <span class="c1"># Apply filters and interpolation</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">boundary_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="n">diameter</span><span class="p">)</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">displacement_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">)</span>
     <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">dist_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">interpolate_pos</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-    <span class="c1"># Manual fix for 15fps videos (matching MATLAB behavior)</span>
-    <span class="k">if</span> <span class="n">frame_rate</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
-        <span class="n">corrected_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">corrected_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">4</span>
+    <span class="k">return</span> <span class="n">corrected_array</span><span class="p">,</span> <span class="n">frame_rate</span>
 
-    <span class="k">return</span> <span class="n">corrected_array</span>
+<span class="c1"># --- Process the current video ---</span>
+<span class="n">corrected</span> <span class="o">=</span> <span class="n">process_video</span><span class="p">(</span><span class="n">current_video</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span>
+                          <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">)</span>
+<span class="n">all_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span>
 
-
-<span class="c1"># --- Process all uploaded videos ---</span>
-<span class="n">all_corrected</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">vf</span> <span class="ow">in</span> <span class="n">video_files</span><span class="p">:</span>
-    <span class="n">corrected</span> <span class="o">=</span> <span class="n">process_video</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span>
-                              <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">)</span>
-    <span class="n">all_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Processed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1"> video(s).&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Total videos processed: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To process another video, go back to &quot;Select Video File&quot; cell and change `current_video`, then run this cell again.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="prepare-for-another-video-optional">
+<h2>Prepare for Another Video (Optional)<a class="headerlink" href="#prepare-for-another-video-optional" title="Link to this heading">#</a></h2>
+<p>If you want to process another video with the same ROI:</p>
+<ol class="arabic simple">
+<li><p>Go back to the <strong>Select Video File</strong> cell and update <code class="docutils literal notranslate"><span class="pre">current_video</span></code> to the new file path</p></li>
+<li><p>Re-run the video selection cell</p></li>
+<li><p>Skip the ROI selection (you can reuse the same ROI with <code class="docutils literal notranslate"><span class="pre">roi</span> <span class="pre">=</span> <span class="pre">roi</span></code> or draw a new one)</p></li>
+<li><p>Run the <strong>Track Fly</strong> cell again — results automatically append to <code class="docutils literal notranslate"><span class="pre">all_corrected</span></code></p></li>
+</ol>
+<p>Or, to apply a <strong>different ROI</strong> for the next video, re-run the ROI selection cells before tracking.</p>
+</section>
 <section id="plot-fly-path-s">
 <h2>Plot Fly Path(s)<a class="headerlink" href="#plot-fly-path-s" title="Link to this heading">#</a></h2>
-<p>Color-coded by time (blue = start, red = end).</p>
+<p>Color-coded by time (light blue = start, dark purple = end).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">corrected</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">):</span>
@@ -967,7 +1030,7 @@ document.write(`
     <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">valid</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">valid</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">segments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">:]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">lc</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">lc</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BuPu&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">lc</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">valid</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">lc</span><span class="p">)</span>
 
@@ -976,7 +1039,7 @@ document.write(`
     <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X-coordinate (cm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y-coordinate (cm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fly Path — </span><span class="si">{</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fly Path — Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">lc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
@@ -992,9 +1055,11 @@ document.write(`
 <h2>Calculate &amp; Plot Velocity<a class="headerlink" href="#calculate-plot-velocity" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_velocity</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate velocity for videos that haven&#39;t been processed yet</span>
+<span class="n">start_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">)</span>  <span class="c1"># Only calculate for newly added videos</span>
 
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">corrected</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_idx</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)):</span>
+    <span class="n">corrected</span> <span class="o">=</span> <span class="n">all_corrected</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 
@@ -1028,12 +1093,12 @@ document.write(`
 
     <span class="c1"># Warn about absurd velocities</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;WARNING (</span><span class="si">{</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s1">): Absurdly high velocities detected.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;WARNING (Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">): Absurdly high velocities detected.&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Consider changing the ROI or re-recording the video.&#39;</span><span class="p">)</span>
 
     <span class="n">mean_vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
     <span class="n">std_vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">--- </span><span class="si">{</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s1"> ---&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">--- Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1"> (from: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span><span class="si">}</span><span class="s1">) ---&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Mean velocity: </span><span class="si">{</span><span class="n">mean_vel</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Std deviation: </span><span class="si">{</span><span class="n">std_vel</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
 
@@ -1045,9 +1110,11 @@ document.write(`
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.5</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Velocity (mm/s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fly Velocity — </span><span class="si">{</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fly Velocity — Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Velocity analysis complete. Total videos analyzed: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1102,28 +1169,24 @@ document.write(`
 <p>Download the tracking data as CSV files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Download tracking data? { run: &quot;auto&quot; }</span>
-<span class="n">download_data</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1">#@param {type:&quot;boolean&quot;}</span>
-
-<span class="k">if</span> <span class="n">download_data</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">corrected</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">):</span>
-        <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_tracking.csv&#39;</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">corrected</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
-                   <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,X_cm,Y_cm&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-        <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">corrected</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_tracking.csv&#39;</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">corrected</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,X_cm,Y_cm&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="c1"># Also save velocity data</span>
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">vel</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">):</span>
-        <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_velocity.csv&#39;</span>
-        <span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vel</span><span class="p">))</span> <span class="o">*</span> <span class="n">bin_size</span>
-        <span class="n">vel_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">vel</span><span class="p">])</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">vel_data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
-                   <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,Velocity_mm_per_s&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-        <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">vel</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_velocity.csv&#39;</span>
+    <span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vel</span><span class="p">))</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="n">vel_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">vel</span><span class="p">])</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">vel_data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,Velocity_mm_per_s&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1140,16 +1203,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "jupyterbook_env"
         },
         kernelOptions: {
-            name: "python3",
+            name: "jupyterbook_env",
             path: "./FlyTracking"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'jupyterbook_env'</script>
 
                 </article>
               
@@ -1170,6 +1233,15 @@ document.write(`
         <p class="prev-next-title">Fly Tracker (Local)</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../FinalProjects/Introduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Final Projects</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1189,10 +1261,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-roi-region-of-interest">Select ROI (Region of Interest)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-plot-velocity">Calculate &amp; Plot Velocity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-across-all-videos">Summary Across All Videos</a></li>
