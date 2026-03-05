@@ -434,20 +434,21 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="analyze-emg-data">
 <h1>Analyze EMG data<a class="headerlink" href="#analyze-emg-data" title="Link to this heading">#</a></h1>
 <p>An <strong>electromyogram (EMG)</strong> measures the electrical activity produced by skeletal muscles. In this notebook, we will analyze the <strong>root mean square (RMS)</strong> of a biceps EMG signal recorded during a bicep curl. RMS processing smooths the raw EMG into a continuous envelope that reflects the overall level of muscle activation over time.</p>
-<p>To run this notebook:</p>
-<ol class="arabic simple">
-<li><p><mark>Export a <strong>LabChart Text File (.txt)</strong> of your EMG recording.</mark></p></li>
-<li><p>Upload the file to Colab (or place it in the same folder as this notebook).</p></li>
-<li><p><mark>Change the <code class="docutils literal notranslate"><span class="pre">filename</span></code> variable in the cell below to exactly match your file name.</mark></p></li>
+<div style="background:#fff3cd; border-left:5px solid #ffc107; padding:12px 16px; border-radius:4px;">
+<b>Before you begin:</b>
+<ol>
+<li>Export a <b>LabChart Text File (.txt)</b> of your EMG recording.</li>
+<li>Upload the file to Colab (or place it in the same folder as this notebook).</li>
+<li>Change the <code>filename</code> variable in the cell below to exactly match your file name.</li>
 </ol>
-<div class="cell docutils container">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
 
 <span class="c1"># Change the filename to EXACTLY match your file</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;sample_data/baseline_2.txt&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;baseline.txt&#39;</span>
 
 <span class="c1"># Define column names</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;recording&#39;</span><span class="p">]</span>
@@ -466,9 +467,8 @@ document.write(`
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">recording</span><span class="p">))</span>
 <span class="n">recording</span><span class="p">[</span><span class="n">nans</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">nans</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">~</span><span class="n">nans</span><span class="p">],</span> <span class="n">recording</span><span class="p">[</span><span class="o">~</span><span class="n">nans</span><span class="p">])</span>
 
-<span class="c1"># Build a continuous timestamp array from the sampling interval (timestamps in the</span>
-<span class="c1"># file reset mid-recording, so we construct our own)</span>
-<span class="n">interval</span>   <span class="o">=</span> <span class="mf">0.005</span>             <span class="c1"># seconds (from the LabChart header: Interval = 0.005 s)</span>
+<span class="c1"># Build a continuous timestamp array from the sampling interval</span>
+<span class="n">interval</span>   <span class="o">=</span> <span class="mf">0.005</span>  <span class="c1"># seconds (from the LabChart header: Interval = 0.005 s)</span>
 <span class="n">timestamps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">recording</span><span class="p">))</span> <span class="o">*</span> <span class="n">interval</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span><span class="si">}</span><span class="s1"> samples | duration: </span><span class="si">{</span><span class="n">timestamps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> s | interval: </span><span class="si">{</span><span class="n">interval</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
@@ -513,8 +513,9 @@ document.write(`
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">prominence_threshold</span></code></strong> — peaks must stand out from the surrounding signal by at least this much (mV).</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">min_peak_distance</span></code></strong> — if two peaks are closer than this many samples, only the taller one is kept.</p></li>
 </ul>
-<p>You can adjust these values if too many or too few curls are detected.</p>
-<div class="cell docutils container">
+<div style="background:#fff3cd; border-left:5px solid #ffc107; padding:12px 16px; border-radius:4px;">
+<b>Adjust if needed:</b> If too many or too few curls are detected, try increasing or decreasing <code>height_fraction</code> in the cell below.
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Tunable parameters ---</span>
 <span class="n">height_fraction</span>      <span class="o">=</span> <span class="mf">0.6</span>    <span class="c1"># peaks must exceed this fraction of the recording&#39;s max voltage</span>
