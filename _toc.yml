@@ -23,4 +23,4 @@ chapters:
   - file: FlyTracking/ColabNotebook.ipynb
 - file: FinalProjects/Introduction
   sections:
-  - file: EMG/EMGAnalysis.ipynb
+  - file: FinalProjects/EMGAnalysis.ipynb
