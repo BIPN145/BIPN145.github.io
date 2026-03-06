@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b6e8e520" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=66b0c8fd" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -202,6 +202,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../LabManual/Introduction.html">Lab Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/StringNervousSystems.html">Experiment #1: String Nervous Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabManual/Earthworm.html">Experiment #3: Earthworm Electrophysiology</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -423,13 +424,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-data">Import Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-import-data">Step 1. Import Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-plot-data">Step 2. Plot Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-to-see-how-skewed-the-data-is">Check to see how skewed the data is</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-two-sample-statistics">Run two-sample statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-check-to-see-how-skewed-the-data-is">Step 3. Check to see how skewed the data is</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-kolmogorov-smirnov-test-for-small-samples">Option B: Kolmogorov-Smirnov test (for small samples)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-run-two-sample-statistics">Step 4. Run two-sample statistics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics-generalize-from-observed-data-to-the-world-at-large"><em>Inferential statistics</em> generalize from observed data to the world at large</a></li>
 </ul>
 </li>
@@ -447,8 +451,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="plot-dot-plot">
 <h1>Plot dot plot<a class="headerlink" href="#plot-dot-plot" title="Link to this heading">#</a></h1>
 <p>This notebook will help you generate “Prism-style” dot plots in Python, inspect the distribution of your data, and run two-sample statistics.</p>
-<hr><section id="import-data">
-<h2>Import Data<a class="headerlink" href="#import-data" title="Link to this heading">#</a></h2>
+<hr><section id="step-1-import-data">
+<h2>Step 1. Import Data<a class="headerlink" href="#step-1-import-data" title="Link to this heading">#</a></h2>
 <p>For this notebook, we can either import our data from a CSV file, or by manually entering the values.</p>
 <p>If you’d like to import your data from a CSV file, you will need to follow the instructions for uploading data to Colab on <a class="reference external" href="https://bipn145.github.io/intro.html">the home page</a>. If you are using this option, comment out the lines of code under Option 2.</p>
 <blockquote>
@@ -549,8 +553,8 @@ document.write(`
 </div></div></div>
 </div>
 </section>
-<section id="plot-data">
-<h2>Plot Data<a class="headerlink" href="#plot-data" title="Link to this heading">#</a></h2>
+<section id="step-2-plot-data">
+<h2>Step 2. Plot Data<a class="headerlink" href="#step-2-plot-data" title="Link to this heading">#</a></h2>
 <p>Below, we’ll use a seaborn plotting function called <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.swarmplot.html">swarmplot</a> to plot each of our data points.</p>
 <section id="notes">
 <h3>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h3>
@@ -563,7 +567,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import needed packages</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline 
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
 <span class="c1"># Set up the plot</span>
@@ -589,29 +592,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">8e5</span><span class="n">ecd360032</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># plot the mean line</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">meanline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="n">meanprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;ls&#39;</span><span class="p">:</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>             <span class="n">medianprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;visible&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;ls&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
-
-<span class="ne">NameError</span>: name &#39;data&#39; is not defined
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="../_images/4e3beb71a00d4e1800e006036079595db075dfd0f6004e06b76da96fe52a2cb8.png"><img alt="../_images/4e3beb71a00d4e1800e006036079595db075dfd0f6004e06b76da96fe52a2cb8.png" src="../_images/4e3beb71a00d4e1800e006036079595db075dfd0f6004e06b76da96fe52a2cb8.png" style="width: 268px; height: 252px;" />
+<a class="reference internal image-reference" href="../_images/407362929d80676e6b84fad371fdeb85ec74fa4eac0ba6fb4b82e658e124b1c2.png"><img alt="../_images/407362929d80676e6b84fad371fdeb85ec74fa4eac0ba6fb4b82e658e124b1c2.png" src="../_images/407362929d80676e6b84fad371fdeb85ec74fa4eac0ba6fb4b82e658e124b1c2.png" style="width: 368px; height: 352px;" />
 </a>
 </div>
 </div>
 </section>
 </section>
-<section id="check-to-see-how-skewed-the-data-is">
-<h2>Check to see how skewed the data is<a class="headerlink" href="#check-to-see-how-skewed-the-data-is" title="Link to this heading">#</a></h2>
-<p>Before we run any hypoothesis tests, we need to know if our data is skewed or not. To test for skewness, we can use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skewtest.html#scipy.stats.skewtest"><code class="docutils literal notranslate"><span class="pre">stats.skewtest</span></code></a> to test. This method implements the <a href="https://www.jstor.org/stable/2684359?seq=1">D’Agostino-Pearson skewness test</a>, one of many different tests (e.g., the Kolmogorov-Smirov test) that can be used to check the normality of a distribution. <strong>If the skew test gives us a p-value of less than 0.05, the population is skewed.</strong></p>
+<section id="step-3-check-to-see-how-skewed-the-data-is">
+<h2>Step 3. Check to see how skewed the data is<a class="headerlink" href="#step-3-check-to-see-how-skewed-the-data-is" title="Link to this heading">#</a></h2>
+<p>Before we run any hypothesis tests, we need to know if our data is skewed or not. To test for skewness, we can use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skewtest.html#scipy.stats.skewtest"><code class="docutils literal notranslate"><span class="pre">stats.skewtest</span></code></a> to test. This method implements the <a href="https://www.jstor.org/stable/2684359?seq=1">D’Agostino-Pearson skewness test</a>, one of many different tests that can be used to check the normality of a distribution. <strong>If the skew test gives us a p-value of less than 0.05, the population is skewed.</strong></p>
 <blockquote>
-<div><p><strong>Task</strong>: Run the cell below, but then change the <code class="docutils literal notranslate"><span class="pre">sample</span></code> to <code class="docutils literal notranslate"><span class="pre">data_2</span></code> (or create a separate cell for <code class="docutils literal notranslate"><span class="pre">data_2</span></code> to test your second group of data points.</p>
+<div><p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">skewtest</span></code> requires <strong>at least 8 samples</strong>. If your group has fewer than 8 data points, skip to the <strong>Kolmogorov-Smirnov test</strong> option below instead.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Task</strong>: Run the cell below, but then change the <code class="docutils literal notranslate"><span class="pre">sample</span></code> to <code class="docutils literal notranslate"><span class="pre">data_2</span></code> (or create a separate cell for <code class="docutils literal notranslate"><span class="pre">data_2</span></code>) to test your second group of data points.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,13 +629,52 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The skewtest p-value is 0.346991576561619385898893597187
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/cd26a9832b3681e2142504eea231d50771fda9245c2ebc9d76b040867373ce0b.png"><img alt="../_images/cd26a9832b3681e2142504eea231d50771fda9245c2ebc9d76b040867373ce0b.png" src="../_images/cd26a9832b3681e2142504eea231d50771fda9245c2ebc9d76b040867373ce0b.png" style="width: 567px; height: 432px;" />
+<a class="reference internal image-reference" href="../_images/bcde175ef4b47acce7b61e4c3d3095c1b665e41987ce6db50c6cd1f3c186e1c8.png"><img alt="../_images/bcde175ef4b47acce7b61e4c3d3095c1b665e41987ce6db50c6cd1f3c186e1c8.png" src="../_images/bcde175ef4b47acce7b61e4c3d3095c1b665e41987ce6db50c6cd1f3c186e1c8.png" style="width: 567px; height: 432px;" />
+</a>
+</div>
+</div>
+<section id="option-b-kolmogorov-smirnov-test-for-small-samples">
+<h3>Option B: Kolmogorov-Smirnov test (for small samples)<a class="headerlink" href="#option-b-kolmogorov-smirnov-test-for-small-samples" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html">Kolmogorov-Smirnov (KS) test</a> compares your sample against a theoretical normal distribution and works for any sample size. <strong>If the KS test gives a p-value of less than 0.05, the data significantly deviates from normal.</strong></p>
+<blockquote>
+<div><p><strong>Task</strong>: Change <code class="docutils literal notranslate"><span class="pre">sample</span></code> to <code class="docutils literal notranslate"><span class="pre">data_1</span></code> or <code class="docutils literal notranslate"><span class="pre">data_2</span></code> and run the cell.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">sample</span> <span class="o">=</span> <span class="n">data_1</span>  <span class="c1"># Choose which data to use</span>
+
+<span class="c1"># Kolmogorov-Smirnov test for normality</span>
+<span class="c1"># Tests whether the sample could have come from a normal distribution.</span>
+<span class="c1"># Works for any sample size (including n &lt; 8).</span>
+<span class="c1"># If p &lt; 0.05, the data significantly deviates from normal (i.e., it is skewed).</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s1">&#39;norm&#39;</span><span class="p">,</span>
+                            <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">sample</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;KS statistic: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;KS p-value:   &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%.30f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pvalue</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Observations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Thing we</span><span class="se">\&#39;</span><span class="s1">re measuring&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KS statistic: 0.2263
+KS p-value:   0.666861007096217206502331009688
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/bcde175ef4b47acce7b61e4c3d3095c1b665e41987ce6db50c6cd1f3c186e1c8.png"><img alt="../_images/bcde175ef4b47acce7b61e4c3d3095c1b665e41987ce6db50c6cd1f3c186e1c8.png" src="../_images/bcde175ef4b47acce7b61e4c3d3095c1b665e41987ce6db50c6cd1f3c186e1c8.png" style="width: 567px; height: 432px;" />
 </a>
 </div>
 </div>
 </section>
-<section id="run-two-sample-statistics">
-<h2>Run two-sample statistics<a class="headerlink" href="#run-two-sample-statistics" title="Link to this heading">#</a></h2>
+</section>
+<section id="step-4-run-two-sample-statistics">
+<h2>Step 4. Run two-sample statistics<a class="headerlink" href="#step-4-run-two-sample-statistics" title="Link to this heading">#</a></h2>
 <section id="inferential-statistics-generalize-from-observed-data-to-the-world-at-large">
 <h3><em>Inferential statistics</em> generalize from observed data to the world at large<a class="headerlink" href="#inferential-statistics-generalize-from-observed-data-to-the-world-at-large" title="Link to this heading">#</a></h3>
 <p>Most often, the goal of our hypothesis testing is to test whether or not two distributions are different, or if a distribution has a different mean than the underlying population distribution.</p>
@@ -660,8 +693,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=-2.4382276613229465, pvalue=0.026796307428331737, df=16.0)
-TtestResult(statistic=-2.6832815729997477, pvalue=0.027784351010990083, df=8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=np.float64(-2.4382276613229465), pvalue=np.float64(0.026796307428331737), df=np.float64(16.0))
 </pre></div>
 </div>
 </div>
@@ -735,13 +767,16 @@ TtestResult(statistic=-2.6832815729997477, pvalue=0.027784351010990083, df=8)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-data">Import Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-import-data">Step 1. Import Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-plot-data">Step 2. Plot Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-to-see-how-skewed-the-data-is">Check to see how skewed the data is</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-two-sample-statistics">Run two-sample statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-check-to-see-how-skewed-the-data-is">Step 3. Check to see how skewed the data is</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-kolmogorov-smirnov-test-for-small-samples">Option B: Kolmogorov-Smirnov test (for small samples)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-run-two-sample-statistics">Step 4. Run two-sample statistics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics-generalize-from-observed-data-to-the-world-at-large"><em>Inferential statistics</em> generalize from observed data to the world at large</a></li>
 </ul>
 </li>
