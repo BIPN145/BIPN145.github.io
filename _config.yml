@@ -6,6 +6,11 @@ logo: /Users/ashley/Documents/BIPN145/BIPN145.github.io/BIPN145_logo.png
 author: Ashley Juavinett
 
 only_build_toc_files: true
+
+sphinx:
+  config:
+    html_theme_options:
+      primary_color: "#F4BC1C"
 repository:
   url: https://github.com/BIPN145/BIPN145.github.io
   branch: master

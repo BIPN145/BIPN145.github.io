@@ -21,27 +21,16 @@ Asking questions during this lab is a great idea, and will help you succeed in f
 
 ## Lab Protocol
 
-**Supplies**
-- String
-- Dissection tray
-- PowerLab 26T, connected to computer
-- Bio Amp
-- Sewing pins (2)
-- Faraday Cage
-- Large Petri Dish
-- Eyedropper (1)
-- Scientific tape
-
-**Cables & connectors**
-- BNC to single banana adapter (2)
-- BNC to double banana adapter
-- BNC to DIN8 cord
-- BNC to DIN8 adapter
-- Banana plug cords (2)
-- Alligator clip adapters (2)
-
-**Solutions**
-- Saline
+| **Supplies** | **Cables & connectors** | **Solutions** |
+|---|---|---|
+| String | BNC to single banana adapter (2) | Saline |
+| Dissection tray | BNC to double banana adapter | |
+| PowerLab 26T, connected to computer | BNC to DIN8 cord | |
+| Bio Amp | BNC to DIN8 adapter | |
+| Sewing pins (2) | Banana plug cords (2) | |
+| Faraday Cage | Alligator clip adapters (2) | |
+| Large Petri Dish | | |
+| Eyedropper | | |
 
 ---
 
@@ -207,7 +196,10 @@ Your setup for the string stimulation will look like this:
 4. If you do not see anything, increase the voltage (no more than 5 V).
    > **Note:** This recorded deflection is called the **stimulus artifact**. This artifact can exceed the range of our amplifier. Recovery from the artifact should be rapid, however, so that the baseline is reached within one millisecond or so after the stimulus pulse.
 
-> *Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?*
+:::{admonition} Question for reflection
+:class: tip
+Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?
+:::
 
 5. Increase the stimulator voltage, and stimulate again. What happens?
    > **Note:** Change the name of Scope pages, or make comments on the recording, to indicate what you've done during that run of the stimulus. You need to know the metadata for the experiment once you're ready to export.
