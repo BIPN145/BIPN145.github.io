@@ -100,8 +100,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -171,14 +171,6 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    BIPN 145 Digital Manual
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../LabChart/Introduction.html">Working with LabChart Files</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../LabChart/ExportingLabChart.html">Exporting LabChart Files</a></li>
@@ -408,31 +400,49 @@ document.write(`
 <hr class="docutils" />
 <section id="lab-protocol">
 <h2>Lab Protocol<a class="headerlink" href="#lab-protocol" title="Link to this heading">#</a></h2>
-<p><strong>Supplies</strong></p>
-<ul class="simple">
-<li><p>String</p></li>
-<li><p>Dissection tray</p></li>
-<li><p>PowerLab 26T, connected to computer</p></li>
-<li><p>Bio Amp</p></li>
-<li><p>Sewing pins (2)</p></li>
-<li><p>Faraday Cage</p></li>
-<li><p>Large Petri Dish</p></li>
-<li><p>Eyedropper (1)</p></li>
-<li><p>Scientific tape</p></li>
-</ul>
-<p><strong>Cables &amp; connectors</strong></p>
-<ul class="simple">
-<li><p>BNC to single banana adapter (2)</p></li>
-<li><p>BNC to double banana adapter</p></li>
-<li><p>BNC to DIN8 cord</p></li>
-<li><p>BNC to DIN8 adapter</p></li>
-<li><p>Banana plug cords (2)</p></li>
-<li><p>Alligator clip adapters (2)</p></li>
-</ul>
-<p><strong>Solutions</strong></p>
-<ul class="simple">
-<li><p>Saline</p></li>
-</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Supplies</strong></p></th>
+<th class="head"><p><strong>Cables &amp; connectors</strong></p></th>
+<th class="head"><p><strong>Solutions</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>String</p></td>
+<td><p>BNC to single banana adapter (2)</p></td>
+<td><p>Saline</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dissection tray</p></td>
+<td><p>BNC to double banana adapter</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>PowerLab 26T, connected to computer</p></td>
+<td><p>BNC to DIN8 cord</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bio Amp</p></td>
+<td><p>BNC to DIN8 adapter</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Sewing pins (2)</p></td>
+<td><p>Banana plug cords (2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Faraday Cage</p></td>
+<td><p>Alligator clip adapters (2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Large Petri Dish</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Eyedropper</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr class="docutils" />
 <section id="i-preparation">
 <h3>I. Preparation<a class="headerlink" href="#i-preparation" title="Link to this heading">#</a></h3>
@@ -629,9 +639,10 @@ document.write(`
 </div></blockquote>
 </li>
 </ol>
-<blockquote>
-<div><p><em>Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?</em></p>
-</div></blockquote>
+<div class="tip admonition">
+<p class="admonition-title">Question for reflection</p>
+<p>Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?</p>
+</div>
 <ol class="arabic" start="5">
 <li><p>Increase the stimulator voltage, and stimulate again. What happens?</p>
 <blockquote>
@@ -707,7 +718,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "BIPN145/BIPN145.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
