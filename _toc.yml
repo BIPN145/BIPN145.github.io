@@ -23,6 +23,7 @@ chapters:
 - file: LabManual/Introduction.md
   sections:
   - file: LabManual/StringNervousSystems.md
+  - file: LabManual/Earthworm.md
 - file: FinalProjects/Introduction
   sections:
   - file: FinalProjects/EMGAnalysis.ipynb
