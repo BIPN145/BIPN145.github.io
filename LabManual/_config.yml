@@ -1,0 +1,8 @@
+title: BIPN 145 Lab Manual
+author: Ashley Juavinett
+only_build_toc_files: true
+
+sphinx:
+  config:
+    html_static_path: ["../_static"]
+    html_css_files: ["custom.css"]
