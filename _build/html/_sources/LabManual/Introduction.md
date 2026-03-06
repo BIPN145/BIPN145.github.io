@@ -1,6 +1,6 @@
 # Lab Manual
 
-This is an online version of our lab manual. You can also [download the full lab manual as a PDF](../_static/LabManual.pdf).
+This is an online version of our lab manual. You can also <a href="../_static/LabManual.pdf">download the full lab manual as a PDF</a>.
 
 ## Saving a page as a PDF
 
