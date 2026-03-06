@@ -9,8 +9,9 @@ only_build_toc_files: true
 
 sphinx:
   config:
-    html_theme_options:
-      primary_color: "#F4BC1C"
+    html_static_path: ["_static"]
+    html_css_files: ["custom.css"]
+
 repository:
   url: https://github.com/BIPN145/BIPN145.github.io
   branch: master
