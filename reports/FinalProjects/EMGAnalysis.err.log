@@ -52,7 +52,7 @@ print(f'Loaded {len(timestamps)} samples | duration: {timestamps[-1]:.2f} s | in
 
 [31m---------------------------------------------------------------------------[39m
 [31mFileNotFoundError[39m                         Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 12[39m
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 12[39m
 [32m      9[39m columns = [[33m'[39m[33mtime[39m[33m'[39m, [33m'[39m[33mrecording[39m[33m'[39m]
 [32m     11[39m [38;5;66;03m# Load the data (skip the 6-line LabChart header)[39;00m
 [32m---> [39m[32m12[39m data = [43mnp[49m[43m.[49m[43mgenfromtxt[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[43mdtype[49m[43m=[49m[38;5;28;43mfloat[39;49m[43m,[49m[43m [49m[43musecols[49m[43m=[49m[43m([49m[32;43m0[39;49m[43m,[49m[43m [49m[32;43m1[39;49m[43m)[49m[43m,[49m[43m [49m[43mskip_header[49m[43m=[49m[32;43m6[39;49m[43m,[49m
