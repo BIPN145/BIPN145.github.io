@@ -1,10 +1,1 @@
-/* BIPN 145 custom theme — sidebar color */
-:root {
-    --pst-color-primary: #F4BC1C;
-    --pst-color-primary-highlight: #d4a018;  /* slightly darker for hover/active states */
-}
-
-/* Sidebar background */
-.bd-sidebar-primary {
-    background-color: #F4BC1C;
-}
+/* BIPN 145 custom theme */
