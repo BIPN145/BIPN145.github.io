@@ -1,4 +1,3 @@
 format: jb-book
-root: Introduction
-chapters:
-- file: StringNervousSystems
+root: StringNervousSystems
+chapters: []
