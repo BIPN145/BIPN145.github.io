@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b6e8e520" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=66b0c8fd" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -201,6 +201,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../LabManual/Introduction.html">Lab Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/StringNervousSystems.html">Experiment #1: String Nervous Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabManual/Earthworm.html">Experiment #3: Earthworm Electrophysiology</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Final Projects</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -640,8 +641,8 @@ Standardized burst duration: 4.00 s (800 samples)
 </section>
 <section id="step-3-calculate-the-area-under-each-burst">
 <h2>Step 3: Calculate the area under each burst<a class="headerlink" href="#step-3-calculate-the-area-under-each-burst" title="Link to this heading">#</a></h2>
-<p>The <strong>area under the curve (AUC)</strong> of an RMS EMG burst is a measure of total muscle activation — it reflects both how strongly and how long the muscle was recruited during each curl. We calculate it using the <strong>trapezoidal rule</strong> (<code class="docutils literal notranslate"><span class="pre">np.trapz</span></code>), which approximates the area by summing thin trapezoids under the signal.</p>
-<p>The result is in units of <strong>mV·s</strong> (millivolt-seconds).</p>
+<p>The <strong>area under the curve (AUC)</strong> of an RMS EMG burst is a measure of total muscle activation — it reflects both how strongly and how long the muscle was recruited during each curl. Sometimes this is called the “integrated EMG”. See Figure 54 in <a class="reference external" href="https://hermanwallace.com/download/The_ABC_of_EMG_by_Peter_Konrad.pdf">this guide</a> for an explanation of different ways of quantifying an EMG signal.</p>
+<p>Below, we’ll calculate the area under the curve using the <strong>trapezoidal rule</strong> (<code class="docutils literal notranslate"><span class="pre">np.trapz</span></code>), which approximates the area by summing thin trapezoids under the signal. The result is in units of <strong>mV·s</strong> (millivolt-seconds).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate AUC for each standardized burst using the trapezoidal rule</span>

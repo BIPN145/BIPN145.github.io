@@ -1,0 +1,1192 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Experiment #3: Earthworm Electrophysiology &#8212; BIPN 145 Lab Digital Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=66b0c8fd" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'LabManual/Earthworm';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Projects" href="../FinalProjects/Introduction.html" />
+    <link rel="prev" title="Experiment #1: String Nervous Systems" href="StringNervousSystems.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/BIPN145_logo.png" class="logo__image only-light" alt="BIPN 145 Lab Digital Manual - Home"/>
+    <script>document.write(`<img src="../_static/BIPN145_logo.png" class="logo__image only-dark" alt="BIPN 145 Lab Digital Manual - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    BIPN 145 Digital Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../LabChart/Introduction.html">Working with LabChart Files</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ExportingLabChart.html">Exporting LabChart Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingExcel.html">Importing LabChart Files (Excel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingPython.html">Importing LabChart (Python)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Python/Introduction.html">Visualizing Data in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Python/JupyterNotebooks.html">Introduction to Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/PlotScatter.html">Plot scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/FitCurve.html">Fit a curved line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/DotPlotStats.html">Plot dot plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python/SpectralAnalysis.html">Analyze EEG data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../FlyTracking/Introduction.html">Fly Tracking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../FlyTracking/Script.html">Fly Tracker (Local)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FlyTracking/ColabNotebook.html">Fly Tracker (Colab)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Lab Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="StringNervousSystems.html">Experiment #1: String Nervous Systems</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Experiment #3: Earthworm Electrophysiology</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../FinalProjects/EMGAnalysis.html">Analyze EMG data</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/LabManual/Earthworm.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Experiment #3: Earthworm Electrophysiology</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earthworm-essentials">Earthworm essentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earthworm-nervous-system">Earthworm nervous system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-action-potentials">Properties of action potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparation">I. Preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-powerlab-26t">Setting up the PowerLab 26T</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-labchart-8">Setting up LabChart 8</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-earthworm">Setting up your earthworm</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-determining-the-threshold-of-your-fibers">II. Determining the threshold of your fibers ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-activate-the-medial-giant-fiber">Determine the threshold to activate the Medial Giant Fiber</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers">Determine the threshold to recruit the Lateral Giant Fibers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-calculate-the-rheobase">III. Calculate the rheobase ★</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-determine-the-refractory-period">IV. Determine the refractory period</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-compute-the-conduction-velocity">V. Compute the conduction velocity ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment">VI. Design your own experiment ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-opportunities-for-student-projects">Possible opportunities for student projects</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="experiment-3-earthworm-electrophysiology">
+<h1>Experiment #3: Earthworm Electrophysiology<a class="headerlink" href="#experiment-3-earthworm-electrophysiology" title="Link to this heading">#</a></h1>
+<section id="background-goals">
+<h2>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h2>
+<section id="earthworm-essentials">
+<h3>Earthworm essentials<a class="headerlink" href="#earthworm-essentials" title="Link to this heading">#</a></h3>
+<p>Earthworms are a member of the Annelida phylum, which includes segmented worms such as the ragworm and our soon-to-be-friend, the leech. We’ll be working with earthworms in the Lumbricidae family.</p>
+<p>Earthworms are laid out with a mouth at one end, and an anus at the other. In the middle is the clitellum, a reproductive gland that can secrete a material that helps them form a cocoon. The clitellum is only visible in older worms that are ready to reproduce.</p>
+<p>Earthworms have a closed nervous system, with one main blood vessel running down the length of their body. They breathe through their skin, so it is important to keep it moist. They crawl using muscles that are located just underneath the epidermis.</p>
+</section>
+<section id="earthworm-nervous-system">
+<h3>Earthworm nervous system<a class="headerlink" href="#earthworm-nervous-system" title="Link to this heading">#</a></h3>
+<p>Earthworms have a pretty simple brain: it’s actually a fused pair of nerve ganglia, mostly located in their third segment. The earthworm has one main nerve cord on its ventral (bottom) side with three fibers running through it: one medial giant fiber, and two lateral giant fibers.</p>
+<p>These fibers are big bundles of axons. They serve as high-speed motor pathways that enable the worm to send movement signals throughout its body for quick, stereotyped reflexes.</p>
+<p>Each giant fiber is made up of large individual cells (one per segment) that are electrically coupled to each other through gap junctions. This results in the rapid conduction of action potentials from cell to cell so that each giant fiber behaves as though it were a single axon. There are cross-connections between the medial and lateral fibers, so they often function as one unit.</p>
+<p><strong>These fibers differ in important ways.</strong> The medial giant fiber transmits information from skin cells in the anterior (mouth) end of the worm, and the lateral giant fibers transmit information from the skin cells of the posterior end of the worm.</p>
+<p><strong>It’s quite easy to listen in to the activity of these large fibers, even from the skin of the earthworm.</strong> Importantly, these fibers fire action potentials very rarely. This type of nervous system activity is often called sparse coding. That means that we should be able to elicit one action potential and cleanly record it.</p>
+<p><em>Images from <a class="reference external" href="https://backyardbrains.com/experiments/speed">Backyard Brains</a>, © 2009–2017, used under a Creative Commons Attribution-ShareAlike license.</em></p>
+</section>
+<section id="properties-of-action-potentials">
+<h3>Properties of action potentials<a class="headerlink" href="#properties-of-action-potentials" title="Link to this heading">#</a></h3>
+<p>In this lab, we’ll determine the <strong>threshold</strong>, <strong>rheobase &amp; chronaxie</strong>, <strong>refractory period</strong>, and <strong>conduction velocity</strong> for the earthworm giant fiber system. We’re recording compound action potentials (CAPs) from many axons in these fiber bundles, but the underlying principles are the same.</p>
+<p>The <strong>threshold</strong> is defined as the minimum stimulus voltage that elicits an action potential 50% of the time. We’ll determine this with short stimuli. Stimulus voltages that don’t elicit an action potential are called subthreshold; stimulus voltages that do elicit an action potential are called suprathreshold.</p>
+<p>In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The <strong>rheobase</strong> is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the <strong>chronaxie</strong>. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie.</p>
+<p>The <strong>absolute refractory period</strong> is the minimum amount of time needed for a neuron to fire a second action potential. This is caused by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. Since we’re recording from many axons, your measured refractory period will be more variable than for a single axon. We’ll define the absolute refractory period as the time when the amplitude of the second CAP is 30% of the first.</p>
+<p>After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K⁺ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the <strong>relative refractory period</strong>. In this lab, we’ll identify it as the period where the amplitude of the second CAP is 30–90% of the first.</p>
+<p><strong>In these experiments you will:</strong></p>
+<ul class="simple">
+<li><p>Stimulate the ventral nerve cord of the earthworm to elicit an action potential</p></li>
+<li><p>Determine the voltage that is needed to recruit the lateral giant fibers</p></li>
+<li><p>Estimate the absolute and relative refractory period between action potentials</p></li>
+<li><p>Calculate the speed of an action potential</p></li>
+<li><p>Propose your own hypothesis about conduction velocity</p></li>
+<li><p>Conduct your experiment to test your hypothesis</p></li>
+</ul>
+</section>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bähring, R. &amp; Bauer C.K. (2014) Easy method to examine single nerve fiber excitability and conduction parameters using intact nonanesthetized earthworms. <em>Advances in Physiology Education</em> 38(3): 253–264.</p></li>
+<li><p>Bullock, T.H. (1945) Functional organization of the giant fibre system of Lumbricus. <em>J Neurophysiol</em> 8:54–71.</p></li>
+<li><p>Drewes CD, Landa KB, McFall JL (1978) Giant nerve fibre activity in intact, freely moving earthworms. <em>J Exp Biol</em> 72:217-227.</p></li>
+<li><p>Kladt et al. (2010) Teaching basic neurophysiology in intact earthworms. <em>JUNE</em> 9(1):20-35.</p></li>
+<li><p>Rudell &amp; Fox (1991) The Propagation potential: An Axonal response with implications for scalp-recorded EEG. <em>Biophysical Journal</em> 60: 556-567.</p></li>
+<li><p>Shannon et al. (2014) Portable conduction velocity experiments using earthworms for the college and high school neuroscience teaching laboratory. <em>Advances in Physiology Education</em> 38(1): 62-70.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lab-protocol">
+<h2>Lab Protocol<a class="headerlink" href="#lab-protocol" title="Link to this heading">#</a></h2>
+<p>There are multiple days dedicated to these earthworm experiments. You are encouraged to complete as many of the experiments below while you have a functioning earthworm.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Supplies</strong></p></th>
+<th class="head"><p><strong>Cables &amp; connectors</strong></p></th>
+<th class="head"><p><strong>Solutions</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Worm (&gt;3.5 g or &gt;60 mm)</p></td>
+<td><p>BNC to single banana adapter (2)</p></td>
+<td><p>Earthworm saline</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dissection tray</p></td>
+<td><p>Banana plug cords (2)</p></td>
+<td><p>Earthworm anesthetic (10% ethanol in Ringers)</p></td>
+</tr>
+<tr class="row-even"><td><p>PowerLab 26T, connected to computer</p></td>
+<td><p>Alligator clip adapters (2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>BioAmp</p></td>
+<td><p>Needle electrodes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Sewing pins (3)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Timer</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Ruler</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Thermometer</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Faraday Cage</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Large Petri Dish</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Eyedropper</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="i-preparation">
+<h3>I. Preparation<a class="headerlink" href="#i-preparation" title="Link to this heading">#</a></h3>
+<section id="setting-up-the-powerlab-26t">
+<h4>Setting up the PowerLab 26T<a class="headerlink" href="#setting-up-the-powerlab-26t" title="Link to this heading">#</a></h4>
+<p>Our first step is making sure our PowerLab &amp; Amplifier are wired up correctly.</p>
+<p>Make sure the PowerLab is turned off.</p>
+<ol class="arabic simple">
+<li><p><strong>Connect a single BNC adapter to the (+) Output</strong> of the PowerLab. Plug a red banana plug cable into the adapter.</p></li>
+<li><p><strong>Connect a single BNC to banana adapter to the (−) Output.</strong> Plug a black banana plug cable into the adapter.</p></li>
+<li><p>Make sure that the BioAmp is connected to the PowerLab, with three different needle electrodes plugged into it.</p></li>
+<li><p>Once you’re confident everything is connected correctly, turn on the PowerLab.</p></li>
+</ol>
+<p><em>Image courtesy of ADInstruments ©</em></p>
+</section>
+<section id="setting-up-labchart-8">
+<h4>Setting up LabChart 8<a class="headerlink" href="#setting-up-labchart-8" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p><strong>Open LabChart 8 with the settings file you saved during the string experiment.</strong> Most settings are saved within this settings file. However, it’s always good to ensure that you have the correct settings before beginning.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If for some reason you cannot access your settings file, you can find an appropriate settings file at <a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>. Use the “Earthworm bioAmp Settings.”</p>
+</div></blockquote>
+</li>
+<li><p><strong>Go to Setup &gt; Channel Settings</strong> and confirm that you have three recording channels, and that the third (“BioAmp Recording”) is connected to the BioAmp.</p></li>
+<li><p><strong>Go to Setup &gt; Stimulator</strong> and change the Stimulator settings as follows. Make sure your Marker Channel is Channel 1.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Start Delay</p></td>
+<td><p>0.1 ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Repeats</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Max Repeat Rate</p></td>
+<td><p>1 Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pulse Height</p></td>
+<td><p>0.2 V</p></td>
+</tr>
+<tr class="row-even"><td><p>Pulse Width</p></td>
+<td><p>0.2 ms</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ol>
+</section>
+<section id="setting-up-your-earthworm">
+<h4>Setting up your earthworm<a class="headerlink" href="#setting-up-your-earthworm" title="Link to this heading">#</a></h4>
+<blockquote>
+<div><p><strong>Note:</strong> Throughout every step of this procedure, be careful not to stretch the earthworm. This will damage the nerve and your experiment will not work.</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Obtain a large, lively earthworm, &gt;3.5 g, 60 mm long. Rinse it with saline if it is dirty.</p></li>
+<li><p><strong>Anesthetize the earthworm</strong> by placing it in the petri dish with 10% ethanol (in Earthworm Ringer’s solution) for 5 minutes.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Do not leave your earthworm unattended in anesthesia. With too little anesthesia, the earthworm will move around during the experiment, and the resulting muscle electrical activity (electromyogram) will drown out the small neural electrical signals you are interested in. Too much anesthesia and the nerves will not fire.</p>
+<p><strong>Note #2:</strong> Your earthworm may still react to pressure after 5 minutes — you can proceed with the experiment as long as you are able to handle the worm and pin it down.</p>
+</div></blockquote>
+</li>
+<li><p><strong>When your earthworm is anesthetized enough to pin it down,</strong> remove the earthworm from the ethanol and place it on the dissection tray with the dorsal (darker side) up.</p></li>
+<li><p>Pin the earthworm to the tray using one sewing pin on each end of the worm.</p></li>
+<li><p>Place the ruler down next to your worm.</p></li>
+<li><p><strong>Insert a third sewing pin into the anterior end of the earthworm,</strong> ~1 cm from the first pin. Connect the anode &amp; cathode stimulating electrodes to the first two pins.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The anterior end is the end nearest the clitellum, a smooth, non-segmented band.</p>
+</div></blockquote>
+</li>
+<li><p>To keep the worm anesthetized, apply a few drops of the earthworm anesthetic along the length of the earthworm with the eyedropper. Soak up any excess fluid.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Make sure there isn’t a large puddle of solution — too much may interfere with your recording.</p>
+</div></blockquote>
+</li>
+<li><p>Insert the three recording needle electrodes into the worm (same configuration as the string experiment!).</p>
+<blockquote>
+<div><p><strong>Note:</strong> Make sure no wire is touching any other wire. Be careful when positioning the wires to avoid damaging the worm.</p>
+<p><strong>Note #2:</strong> It helps to place your recording electrodes as lateral as possible, while still holding down the worm.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ii-determining-the-threshold-of-your-fibers">
+<h3>II. Determining the threshold of your fibers ★<a class="headerlink" href="#ii-determining-the-threshold-of-your-fibers" title="Link to this heading">#</a></h3>
+<p>In this experiment, you will send a stimulus into the earthworm while recording from it to determine the threshold voltage of the medial and lateral giant fibers.</p>
+<section id="determine-the-threshold-to-activate-the-medial-giant-fiber">
+<h4>Determine the threshold to activate the Medial Giant Fiber<a class="headerlink" href="#determine-the-threshold-to-activate-the-medial-giant-fiber" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p><strong>Open your Input Amplifier (BioAmp)</strong> for your Action Potential channel to make sure that your signal looks reasonable. You shouldn’t see 60 Hz noise, but it should look like a physiological signal. (If you have noise, see Troubleshooting.)</p></li>
+<li><p><strong>Open the Stimulator Panel</strong> by going to the Setup menu. Your stimulator should start with:</p>
+<ul class="simple">
+<li><p>Max Repeat Rate: 1 Hz</p></li>
+<li><p>Pulse Height: 0.2 V</p></li>
+<li><p>Pulse Width: 0.2 ms</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Note:</strong> Leave the Stimulator Panel open — we’ll need it throughout the experiment.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Press &gt; Start.</strong> LabChart should be in Scope View and display one 20 ms sweep every time you click Start. For each 20 ms sweep, a stimulus pulse is generated through the PowerLab Stimulator outputs.</p></li>
+<li><p><strong>Examine the recording</strong> — you should see a quick deflection very shortly after your stimulus pulse. The deflection just after the start of the sweep is your stimulus artifact, caused by spread of the stimulus voltage to the recording electrodes.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The stimulus artifact can be very large in amplitude, and can exceed the range of the recording amplifier. It is okay if it is cut off.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Change the Pulse Height to 1 V.</strong></p></li>
+<li><p>Each time you change the stimulus, click Start and a new page will appear to the left of the Scope View Window. This is the Page Explorer. <strong>Label the individual pages</strong> of your recording as you go along.</p></li>
+<li><p><strong>Increase the Pulse Height in 0.1 V steps</strong> until you see an inflection after the stimulus artifact. This means you’ve successfully elicited a response from the medial giant fiber! Note the stimulus voltage as an estimate of the threshold stimulus strength.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If you can’t see anything, right-click on the channel to change the scaling (or use the − and + buttons on the bottom left of the channel).</p>
+<p><strong>Note #2:</strong> If no response is seen with a stimulus of 3.5 V or greater, contact your instructor for assistance.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Find a more accurate threshold</strong> by first reducing the stimulus by 0.2 V (or more) to diminish your response. Then, increase the stimulus by 0.05 V between each sweep. You should report a threshold (Table 1) to the hundredth decimal point (e.g. 1.25 V).</p></li>
+<li><p>Save your data, but do not close the file.</p></li>
+</ol>
+</section>
+<section id="determine-the-threshold-to-recruit-the-lateral-giant-fibers">
+<h4>Determine the threshold to recruit the Lateral Giant Fibers<a class="headerlink" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers" title="Link to this heading">#</a></h4>
+<p>In the next stage, you will attempt to elicit an action potential in the lateral giant fibers.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Remember to keep the earthworm anesthetized!</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Set the Pulse Height to your threshold for the MGF.</p></li>
+<li><p>Keep increasing the stimulus in 0.1 V steps until you see a second inflection in your recorded trace.</p></li>
+<li><p>Once you see a second inflection, follow the same procedure as above to determine the threshold where you can elicit an action potential from the lateral giant fiber about 50% of the time. Record the stimulus threshold in Table 1 below.</p></li>
+<li><p>Save your data, but do not close the file.</p>
+<blockquote>
+<div><p><strong>Note:</strong> In some worms, the median and lateral fiber responses may not be separated — they will appear to have the same threshold. Other worms may not show the second response, possibly because the lateral giant fibers are damaged.</p>
+</div></blockquote>
+</li>
+<li><p>Save your LabChart file.</p></li>
+</ol>
+<p><strong>Table 1.</strong> MGF and LGF compound action potential (CAP) properties.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Threshold</p></th>
+<th class="head"><p>Amplitude</p></th>
+<th class="head"><p>Latency</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>MGF</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LGF</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>Did the shape or amplitude of the CAPs change with more stimulation voltage? What does this tell us about the action potential that is firing?</p></li>
+<li><p>Which fiber fires an action potential sooner (with a shorter latency)?</p></li>
+<li><p>Why would the MGF and LGF latencies differ?</p></li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="iii-calculate-the-rheobase">
+<h3>III. Calculate the rheobase ★<a class="headerlink" href="#iii-calculate-the-rheobase" title="Link to this heading">#</a></h3>
+<p>In Part III, we’ll change the stimulus amplitude and duration to calculate the rheobase and chronaxie of the earthworm medial giant fiber (read the Background if you forget what these are).</p>
+<p>In the previous experiment, we gave a stimulus for 0.2 ms. Now, we’ll modify the stimulus duration and amplitude to determine the minimum stimulus requirement, regardless of duration.</p>
+<ol class="arabic">
+<li><p>Write your MGF threshold in the column for 0.20 ms stimulus duration in Table 2.</p></li>
+<li><p>Change your Pulse Height to the threshold for your MGF.</p></li>
+<li><p>Systematically change the duration of your stimulus (Pulse Width) to the values in the table below. As necessary, change the stimulus voltage to successfully get a CAP from your MGF.</p></li>
+<li><p>For each duration, record the stimulus voltage (Pulse Height) values that successfully elicit a CAP in Table 2.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Be sure to label your pages in Scope view accordingly. You don’t need to save the pages that do not elicit an action potential.</p>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Table 2.</strong> Data for strength-duration curve.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Duration (ms)</p></th>
+<th class="head"><p>0.06</p></th>
+<th class="head"><p>0.08</p></th>
+<th class="head"><p>0.10</p></th>
+<th class="head"><p>0.20</p></th>
+<th class="head"><p>0.40</p></th>
+<th class="head"><p>0.60</p></th>
+<th class="head"><p>1.00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stimulus Amplitude (V)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="iv-determine-the-refractory-period">
+<h3>IV. Determine the refractory period<a class="headerlink" href="#iv-determine-the-refractory-period" title="Link to this heading">#</a></h3>
+<p>In the next step, you’ll determine the shortest time between stimuli where you can elicit two different CAPs from the MGF. In other words, we’ll determine the relative and absolute refractory period of these fibers.</p>
+<ol class="arabic">
+<li><p>Set your pulse height so that you can comfortably elicit a response from the MGF.</p></li>
+<li><p><strong>In Setup &gt; Stimulator, change Repeats to 2</strong> in order to play multiple pulses.</p></li>
+<li><p>We also need to change the time between each stimulus. PowerLab thinks of this interval as Hz. To start, we want 15 ms between each stimulus.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Remember that Hertz (Hz) means events per second. So, 1 Hz = 1 event per second, and 10 Hz = 10 events per second. 1 ÷ frequency (in Hz) = time between stimuli (in seconds).</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>How many milliseconds would there be between each stimulus at 10 Hz stimulation?</p></li>
+<li><p>For 15 ms between each stimulus, what should the frequency of stimulation (in Hz) be?</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Fill out this chart with the corresponding Hz values for each interval length:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Interval (ms)</p></th>
+<th class="head"><p>15</p></th>
+<th class="head"><p>14</p></th>
+<th class="head"><p>13</p></th>
+<th class="head"><p>12</p></th>
+<th class="head"><p>11</p></th>
+<th class="head"><p>10</p></th>
+<th class="head"><p>9</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Freq. (Hz)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic" start="5">
+<li><p><strong>Change your Max Repeat Rate</strong> to the equivalent frequency for 15 ms intervals.</p></li>
+<li><p>Change your Pulse Width to 0.2 ms and your Pulse Height to the threshold for your MGF.</p></li>
+<li><p><strong>Press &gt; Start</strong> to record a trial with two stimuli, separated by 15 ms.</p></li>
+<li><p>Right-click and choose <strong>Add Marker &gt; Clamp to Trace</strong> to place a marker at the moment the stimulus occurs. Move your cursor to the peak of the action potential. Look at the ΔV on the right-hand side to see the change in voltage from that point.</p></li>
+<li><p><strong>Measure the amplitude of your first and second action potentials.</strong> Determine how strong the second was relative to the first (e.g. if AP #2 amplitude was half as high as #1, it would be 50%). Record your response in row one of Table 3.</p></li>
+<li><p>Decrease the duration between stimuli by 1 ms by changing the Repeat Rate to the Hz for a 14 ms interval.</p></li>
+<li><p><strong>Record the amplitudes and corresponding percentages for each stimulus interval in Table 3.</strong></p></li>
+<li><p>At some point, AP #2 will diminish below 30% of AP #1. We can consider this our absolute refractory period.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Depending on the latency of your MGF CAP, it may be difficult to see a CAP with a stimulus interval of 1 or 2 ms. Reduce the stimulus interval to as short as you can before the MGF CAP is cut off by the second stimulus. If the shortest stimulus interval is &gt;3 ms, you should move your pins closer together.</p>
+</div></blockquote>
+</li>
+<li><p>Save your LabChart file.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If you have data that doesn’t seem quite right, you should repeat your experiment. You must be upfront about your number of repeats in your lab report, comprehensively reporting all of the data that you collected.</p>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Table 3.</strong> Amplitudes of CAPs elicited by stimuli with decreasing stimulus intervals.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Stimulus Interval (ms)</p></th>
+<th class="head"><p>#1 CAP Amplitude</p></th>
+<th class="head"><p>#2 CAP Amplitude</p></th>
+<th class="head"><p>% #2/#1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>15</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>What was the shortest duration between stimuli where the second action potential was less than 90% but more than 30% of the original CAP amplitude?</p></li>
+<li><p>What was the shortest duration between stimuli where the second CAP was diminished below 30%?</p></li>
+<li><p>Which of these values is your absolute refractory period, and which is the relative refractory period?</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="v-compute-the-conduction-velocity">
+<h3>V. Compute the conduction velocity ★<a class="headerlink" href="#v-compute-the-conduction-velocity" title="Link to this heading">#</a></h3>
+<p><em>(If you’re doing this on a different day, follow the same steps for preparing LabChart &amp; your earthworm as you did in the previous earthworm experiment.)</em></p>
+<p><strong>How far is your first recording pin (−) from your cathode (−) stimulation pin? Be sure to include units:</strong> ______________________</p>
+<ol class="arabic simple">
+<li><p><strong>In PowerLab, press Start.</strong> Confirm that you have two recording channels.</p></li>
+<li><p>Follow the same protocol as in the previous experiments to determine the threshold required to elicit an action potential from your medial giant fiber.</p></li>
+</ol>
+<p><strong>What is the stimulus voltage needed to elicit an MGF action potential from this worm?</strong> ______________________</p>
+<section id="determine-the-mgf-latency-to-spike">
+<h4>Determine the MGF latency to spike<a class="headerlink" href="#determine-the-mgf-latency-to-spike" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to your elicited action potential.</p></li>
+<li><p>Repeat this 5 times and record your data in Table 4.</p></li>
+</ol>
+<p><strong>Table 4.</strong> MGF conduction velocity data.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Trial</p></th>
+<th class="head"><p>MGF Baseline Latency (s)</p></th>
+<th class="head"><p>Speed (m/s)</p></th>
+<th class="head"><p>MGF Experimental Latency (s)</p></th>
+<th class="head"><p>Speed (m/s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Since we know when the AP occurred and the distance between your electrodes, we can calculate the speed of the action potential. Record these values in the “Speed” column of the table above. <em>(Reminder: speed = distance/time.)</em></p></li>
+</ol>
+<p><strong>How fast, on average, is your action potential traveling down the MGF?</strong> ______________________</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vi-design-your-own-experiment">
+<h3>VI. Design your own experiment ★<a class="headerlink" href="#vi-design-your-own-experiment" title="Link to this heading">#</a></h3>
+<p>What do you want to know about conduction velocity? You have the following options for your experiment:</p>
+<ul class="simple">
+<li><p>Does conduction velocity depend on temperature?</p></li>
+<li><p>What if you (gently) stretch the worm?</p></li>
+</ul>
+<p><strong>Propose your experiment here, and call over an instructor when you’re ready.</strong></p>
+<p>We will test the effect of ______________________________ on ______________________________.</p>
+<p>We will do this by:</p>
+<section id="conduct-your-experiment">
+<h4>Conduct your experiment<a class="headerlink" href="#conduct-your-experiment" title="Link to this heading">#</a></h4>
+<p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report.</p>
+<p>Record your results in the MGF Experimental AP Latency column of Table 4. You’ll need these later for the Results section of your lab report.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Observation</p></th>
+<th class="head"><p>Likely issue</p></th>
+<th class="head"><p>Possible solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The recording trace is flat</p></td>
+<td><p>Something is disconnected</p></td>
+<td><p>Check all of your connections</p></td>
+</tr>
+<tr class="row-odd"><td><p>I can’t see a stimulus trace in the Stimulus channel</p></td>
+<td><p>You don’t have a marker channel set up</p></td>
+<td><p>Go to Setup &gt; Stimulator to set up the Marker Channel</p></td>
+</tr>
+<tr class="row-even"><td><p>I can’t see a stimulus artifact in my action potential channel</p></td>
+<td><p>Your electrodes may not be in the worm, or stimulus amplitude is too weak</p></td>
+<td><p>Ensure all electrodes are in the worm (but not too medial), and try stimulating at 0.5 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>My worm is bleeding</p></td>
+<td><p>The electrode is through the blood vessel</p></td>
+<td><p>Move the electrode more lateral; if you don’t get an AP after this, get a new worm</p></td>
+</tr>
+<tr class="row-even"><td><p>There is a stimulus artifact, but no visible response to stimuli between 1–3 V</p></td>
+<td><p>Your electrodes may not be placed well, or your worm may be damaged</p></td>
+<td><p>Try to reposition the electrodes on a different place in the worm. If this doesn’t work, get a new worm.</p></td>
+</tr>
+<tr class="row-odd"><td><p>My recording just looks like a big up and down squiggle (like a sine wave)</p></td>
+<td><p>You’re picking up 60 Hz noise</p></td>
+<td><p>Ground everything (Faraday cage, ground recording pin, amplifier) to the ground pin on the back of the PowerLab. Averaging multiple trials can also get rid of noise.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="possible-opportunities-for-student-projects">
+<h3>Possible opportunities for student projects<a class="headerlink" href="#possible-opportunities-for-student-projects" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Application of chemicals, nerve blockers, etc. to test for effects on the nervous system</p></li>
+<li><p>Earthworm dissection &amp; recordings (as in Gunther, 1976 or 1972)</p></li>
+<li><p>Demonstrating facilitation of conduction rate (Bullock, 1951)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BIPN145/BIPN145.github.io",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./LabManual"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="StringNervousSystems.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Experiment #1: String Nervous Systems</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../FinalProjects/Introduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Final Projects</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earthworm-essentials">Earthworm essentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earthworm-nervous-system">Earthworm nervous system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-action-potentials">Properties of action potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparation">I. Preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-powerlab-26t">Setting up the PowerLab 26T</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-labchart-8">Setting up LabChart 8</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-earthworm">Setting up your earthworm</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-determining-the-threshold-of-your-fibers">II. Determining the threshold of your fibers ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-activate-the-medial-giant-fiber">Determine the threshold to activate the Medial Giant Fiber</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers">Determine the threshold to recruit the Lateral Giant Fibers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-calculate-the-rheobase">III. Calculate the rheobase ★</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-determine-the-refractory-period">IV. Determine the refractory period</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-compute-the-conduction-velocity">V. Compute the conduction velocity ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment">VI. Design your own experiment ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-opportunities-for-student-projects">Possible opportunities for student projects</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
