@@ -445,7 +445,7 @@ document.write(`
 <p>An <strong>electromyogram (EMG)</strong> measures the electrical activity produced by skeletal muscles. In this notebook, we will analyze the <strong>root mean square (RMS)</strong> of a biceps EMG signal recorded during a bicep curl. RMS processing smooths the raw EMG into a continuous envelope that reflects the overall level of muscle activation over time.</p>
 <section id="analysis-choices">
 <h2>Analysis Choices<a class="headerlink" href="#analysis-choices" title="Link to this heading">#</a></h2>
-<p>When analyzing EMG data, we can decide to measure the peak EMG, the average EMG, or the area under the EMG, often called the “integrated” EMG signal.</p>
+<p>When analyzing EMG data, we can decide to measure the peak EMG, the average EMG, or the area under the EMG, often called the “integrated” EMG signal. See Figure 54 in <a class="reference external" href="https://hermanwallace.com/download/The_ABC_of_EMG_by_Peter_Konrad.pdf">this guide</a> for an explanation of different quantification methods.</p>
 <p><img alt="Three ways to quantify an EMG contraction" src="../_images/emg_schematic.png" /></p>
 <p>If you’d prefer to run this analysis in LabChart, you can do so following <a class="reference external" href="https://cdn.adinstruments.com/adi-web/software-tips/Quantitative-EMG-analysis-in-LabChart.pdf">these instructions</a>. The code below will allow you to analyze it in Python!</p>
 </section>
@@ -465,7 +465,7 @@ document.write(`
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
 
 <span class="c1"># Change the filename to EXACTLY match your file</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;baseline.txt&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;baseline_1.txt&#39;</span>
 
 <span class="c1"># Define column names</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;recording&#39;</span><span class="p">]</span>
@@ -493,41 +493,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;recording&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Load the data (skip the 6-line LabChart header)</span>
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>                      <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">recording</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;recording&#39;</span><span class="p">]</span>  <span class="c1"># RMS voltage in mV</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="c1"># LabChart text files can contain a second header block mid-recording, which</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># injects NaN values and one very large spurious number. Mark anything outside</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># a plausible voltage range as NaN, then interpolate across all NaN values.</span>
-
-<span class="nn">File /opt/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py:1990,</span> in <span class="ni">genfromtxt</span><span class="nt">(fname, dtype, comments, delimiter, skip_header, skip_footer, converters, missing_values, filling_values, usecols, names, excludelist, deletechars, replace_space, autostrip, case_sensitive, defaultfmt, unpack, usemask, loose, invalid_raise, max_rows, encoding, ndmin, like)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1988</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1989</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1990</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1991</span>     <span class="n">fid_ctx</span> <span class="o">=</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">closing</span><span class="p">(</span><span class="n">fid</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1992</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File /opt/miniconda3/lib/python3.12/site-packages/numpy/lib/_datasource.py:192,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd"> </span>
-<span class="sd">   (...)    188 </span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">192</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-
-<span class="nn">File /opt/miniconda3/lib/python3.12/site-packages/numpy/lib/_datasource.py:529,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">527</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">529</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: baseline.txt not found.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded 15466 samples | duration: 77.33 s | interval: 0.005 s
 </pre></div>
 </div>
 </div>
@@ -622,9 +588,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peak threshold: 0.2699 mV (0.6 × max)
-Detected 5 peak(s) at times: [ 3.2  22.04 36.26 49.9  62.1 ] s
-Standardized burst duration: 4.00 s (800 samples)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peak threshold: 0.5212 mV (0.6 × max)
+Detected 7 peak(s) at times: [ 3.98 15.36 29.14 45.7  53.3  62.2  70.46] s
+Standardized burst duration: 3.61 s (722 samples)
 </pre></div>
 </div>
 </div>
@@ -652,7 +618,7 @@ Standardized burst duration: 4.00 s (800 samples)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/26b8405253994c0bf92c62ed8ce413f929fbdbd8c0d80d971f7916f9bea76a87.png" src="../_images/26b8405253994c0bf92c62ed8ce413f929fbdbd8c0d80d971f7916f9bea76a87.png" />
+<img alt="../_images/6d399c094c3089c511860b6daa127ab7533e34bce07bab53f22b7c077c32a574.png" src="../_images/6d399c094c3089c511860b6daa127ab7533e34bce07bab53f22b7c077c32a574.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -681,7 +647,7 @@ Standardized burst duration: 4.00 s (800 samples)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aef89155791df0314191c8258574288e746fa9cb1217c46ab01c07d1d7895238.png" src="../_images/aef89155791df0314191c8258574288e746fa9cb1217c46ab01c07d1d7895238.png" />
+<img alt="../_images/21aa3a7d330524d7441bfb333765758719edd71e24f3dc138f9b29d1beff6e69.png" src="../_images/21aa3a7d330524d7441bfb333765758719edd71e24f3dc138f9b29d1beff6e69.png" />
 </div>
 </div>
 </section>
@@ -702,19 +668,20 @@ Standardized burst duration: 4.00 s (800 samples)
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Curl </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">: Mean EMG = </span><span class="si">{</span><span class="n">mean_val</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> mV&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Mean across all curls: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> mV&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Standard deviation:    </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">means</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> mV&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Curl 1: Mean EMG = 0.3014 mV
+Curl 2: Mean EMG = 0.2580 mV
+Curl 3: Mean EMG = 0.2291 mV
+Curl 4: Mean EMG = 0.2547 mV
+Curl 5: Mean EMG = 0.2728 mV
+Curl 6: Mean EMG = 0.2724 mV
+Curl 7: Mean EMG = 0.2569 mV
 
-<span class="c1"># Bar chart</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">means</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">means</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
-           <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Mean = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> mV&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Curl #&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Voltage (mV)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Average EMG per Bicep Curl&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">means</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+Mean across all curls: 0.2636 mV
+Standard deviation:    0.0205 mV
 </pre></div>
 </div>
 </div>
@@ -722,7 +689,7 @@ Standardized burst duration: 4.00 s (800 samples)
 </section>
 <section id="step-4-calculate-the-area-under-each-burst">
 <h2>Step 4: Calculate the area under each burst<a class="headerlink" href="#step-4-calculate-the-area-under-each-burst" title="Link to this heading">#</a></h2>
-<p>The <strong>area under the curve (AUC)</strong> of an RMS EMG burst measures total muscle activation — it reflects both how strongly <em>and</em> how long the muscle was recruited during each curl. Sometimes this is called the “integrated EMG.” See Figure 54 in <a class="reference external" href="https://hermanwallace.com/download/The_ABC_of_EMG_by_Peter_Konrad.pdf">this guide</a> for an explanation of different quantification methods.</p>
+<p>The <strong>area under the curve (AUC)</strong> of an RMS EMG burst measures total muscle activation — it reflects both how strongly <em>and</em> how long the muscle was recruited during each curl. Sometimes this is called the “integrated EMG.”</p>
 <p>Below, we’ll calculate the area using the <strong>trapezoidal rule</strong> (<code class="docutils literal notranslate"><span class="pre">np.trapezoid</span></code>), which approximates the area by summing thin trapezoids under the signal. The result is in units of <strong>mV·s</strong> (millivolt-seconds).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -742,14 +709,16 @@ Standardized burst duration: 4.00 s (800 samples)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Curl 1: AUC = 0.5941 mV·s
-Curl 2: AUC = 0.5974 mV·s
-Curl 3: AUC = 0.7119 mV·s
-Curl 4: AUC = 0.6923 mV·s
-Curl 5: AUC = 0.6206 mV·s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Curl 1: AUC = 1.0886 mV·s
+Curl 2: AUC = 0.9315 mV·s
+Curl 3: AUC = 0.8273 mV·s
+Curl 4: AUC = 0.9197 mV·s
+Curl 5: AUC = 0.9849 mV·s
+Curl 6: AUC = 0.9837 mV·s
+Curl 7: AUC = 0.9276 mV·s
 
-Mean AUC: 0.6433 mV·s
-Standard Deviation of AUC: 0.0493 mV·s
+Mean AUC: 0.9519 mV·s
+Standard Deviation of AUC: 0.0740 mV·s
 </pre></div>
 </div>
 </div>
