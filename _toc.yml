@@ -27,3 +27,4 @@ chapters:
 - file: FinalProjects/Introduction
   sections:
   - file: FinalProjects/EMGAnalysis.ipynb
+  - file: AveragePSD.ipynb
