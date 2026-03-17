@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Modeling Neural Membranes &#8212; BIPN 145 Lab Digital Manual</title>
+    <title>Lab #0: Modeling Neural Membranes &#8212; BIPN 145 Lab Digital Manual</title>
   
   
   
@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'LabManual/ModelingNeuralMembranes';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Experiment #1: String Nervous Systems" href="StringNervousSystems.html" />
+    <link rel="next" title="Lab #1: String Nervous Systems" href="StringNervousSystems.html" />
     <link rel="prev" title="Lab Manual" href="Introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -201,9 +201,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Lab Manual</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Modeling Neural Membranes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="StringNervousSystems.html">Experiment #1: String Nervous Systems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Earthworm.html">Experiment #3: Earthworm Electrophysiology</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab #0: Modeling Neural Membranes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StringNervousSystems.html">Lab #1: String Nervous Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Earthworm.html">Lab #3: Earthworm Electrophysiology</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -349,7 +349,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modeling Neural Membranes</h1>
+    <h1>Lab #0: Modeling Neural Membranes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -359,21 +359,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromembrane">Neuromembrane</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromembrane-was-made-by-a-team-of-university-of-alberta-researchers-and-a-company-known-as-atmist-many-thanks-to-christelle-sabatier-michael-wright-and-declan-ali-for-sharing-similar-lesson-plans-their-ideas-are-integrated-here"><em>Neuromembrane was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromembrane">Neuromembrane</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-resting-membrane-potential">Part I: Resting membrane potential</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-passive-membrane-simulation">Part II: Passive membrane simulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Steps</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-circuits">RC Circuits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-an-rc-circuit">Building an RC Circuit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-and-plot-your-time-constant-with-different-resistors">Record and plot your time constant with different resistors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-time-constant-against-the-literature">Check your time constant against the literature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 </ul>
@@ -387,14 +384,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="modeling-neural-membranes">
-<h1>Modeling Neural Membranes<a class="headerlink" href="#modeling-neural-membranes" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-0-modeling-neural-membranes">
+<h1>Lab #0: Modeling Neural Membranes<a class="headerlink" href="#lab-0-modeling-neural-membranes" title="Link to this heading">#</a></h1>
 <p><strong>In this lab, we’ll use an online membrane simulator and a breadboard to model the properties of neural membranes and passive potentials.</strong></p>
 <section id="neuromembrane">
 <h2>Neuromembrane<a class="headerlink" href="#neuromembrane" title="Link to this heading">#</a></h2>
-</section>
-<section id="neuromembrane-was-made-by-a-team-of-university-of-alberta-researchers-and-a-company-known-as-atmist-many-thanks-to-christelle-sabatier-michael-wright-and-declan-ali-for-sharing-similar-lesson-plans-their-ideas-are-integrated-here">
-<h2><em>Neuromembrane was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.</em><a class="headerlink" href="#neuromembrane-was-made-by-a-team-of-university-of-alberta-researchers-and-a-company-known-as-atmist-many-thanks-to-christelle-sabatier-michael-wright-and-declan-ali-for-sharing-similar-lesson-plans-their-ideas-are-integrated-here" title="Link to this heading">#</a></h2>
+<p>Neuromembrane was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.</p>
+<hr class="docutils" />
 <section id="part-i-resting-membrane-potential">
 <h3>Part I: Resting membrane potential<a class="headerlink" href="#part-i-resting-membrane-potential" title="Link to this heading">#</a></h3>
 <p>First, we’ll explore the properties of the membrane that lead to a resting membrane potential. By the end of this part, you will be able to:</p>
@@ -419,10 +415,10 @@ document.write(`
 <li><p>First, we’ll observe what happens when we have more K+ permeability, but equal ion concentrations. Click on “CREATE SIMULATION” to open the stimulation page. <strong>Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.</strong></p></li>
 <li><p>To run Simulation #1, click the play button. You can also change the speed so that it will run faster. <strong>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.</strong></p></li>
 <li><p>Go back to the Settings page by choosing “Back to settings” in the simulation play menu.</p></li>
-<li><p>In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.<br />
+<li><p>In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.
 Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <li><p>Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. <strong>Before running Simulation #2, write your 1-2 sentence prediction in Table 1.</strong></p></li>
-<li><p>Run Simulation #2 and observe what happens to the membrane potential. <strong>Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.</strong> For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).≠</p></li>
+<li><p>Run Simulation #2 and observe what happens to the membrane potential. <strong>Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.</strong> For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).</p></li>
 <li><p>Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values to reflect more biological values across the membrane. <strong>Write your prediction for Simulation #3 in the table.</strong></p></li>
 <li><p>Run the simulation again and observe what happens to the membrane potential. <strong>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.</strong></p></li>
 </ol>
@@ -446,28 +442,28 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>2</p></td>
-<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
 <td><p>All 50 mM</p></td>
 <td><p>5 Na+; 100 K+</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>3</p></td>
-<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
 <td><p>Na+ high outside; K+ high inside</p></td>
 <td><p>5 Na+; 100 K+</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>4</p></td>
-<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
 <td><p>Na+ high outside; K+ high inside</p></td>
-<td><p>100 Na+;  5 K+</p></td>
+<td><p>100 Na+; 5 K+</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>5</p></td>
-<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
 <td><p>Na+ high outside; K+ high inside</p></td>
 <td><p>100 Na+; 100 K+</p></td>
 <td><p></p></td>
@@ -479,55 +475,38 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <ol class="arabic simple" start="12">
 <li><p>Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? <strong>Answer Q1 on the quiz. Report your answer in mV.</strong></p></li>
 </ol>
-<p><strong>Here are few hints to help you:</strong></p>
-<ul class="simple">
+<p><strong>Here are a few hints to help you:</strong></p>
+<ul>
 <li><p>P is relative permeability; other constants can be found on the lecture slides.</p></li>
 <li><p>To simplify, you may determine a constant for the first portion of the equation (RT/F) and use that for future calculations.</p></li>
 <li><p>You can use “Insert &gt; Equation” in Google Docs or Microsoft Word to show your work, or simply jot it on paper, take a picture, and paste it here.</p></li>
-<li><p>Google search has a built-in scientific calculator! You can bring it up by typing any formula into the search bar. For example:<br />
-<strong><img alt="" src="data:image/png;base64,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" /></strong></p></li>
+<li><p>Google search has a built-in scientific calculator! You can bring it up by typing any formula into the search bar. For example:</p>
+<p><img alt="" src="data:image/png;base64,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" /></p>
+</li>
 </ul>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Q1. Calculation of GHK</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p></p></td>
-</tr>
-</tbody>
-</table>
+<div class="tip admonition">
+<p class="admonition-title">Q1. Calculation of GHK</p>
+<p>Using the GHK equation for Na⁺ and K⁺ only, calculate the voltage across the membrane for simulation #3 and show your work. Does this match the voltage in the simulation? Report your answer in mV.</p>
 </div>
 <ol class="arabic simple" start="13">
 <li><p>Finally, let’s check to see how much ion permeability matters. Go back to the settings page and reverse the Na+ and K+ permeabilities.</p></li>
 <li><p>Write your prediction for Simulation #4 in Table 1.</p></li>
 <li><p>Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. <strong>Answer Q2 on the quiz. Report your answer in mV.</strong></p></li>
 </ol>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Q2. With the high permeability to Na+ and low permeability to K+, what is the resting membrane potential? Report your value in mV out to one decimal point.</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p></p></td>
-</tr>
-</tbody>
-</table>
+<div class="tip admonition">
+<p class="admonition-title">Q2.</p>
+<p>With the high permeability to Na⁺ and low permeability to K⁺, what is the resting membrane potential? Report your value in mV out to one decimal point.</p>
 </div>
 <ol class="arabic simple" start="16">
 <li><p>On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.</p></li>
 <li><p>Run the simulation to see what happens, record your observations, and respond to the question below. <strong>Answer Q3 on the quiz.</strong></p></li>
 </ol>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Q3. Which of these simulations best models a typical neural membrane?</p></th>
-<th class="head text-center"><p></p></th>
-</tr>
-</thead>
-</table>
+<div class="tip admonition">
+<p class="admonition-title">Q3.</p>
+<p>Which of these simulations best models a typical neural membrane?</p>
 </div>
 <ol class="arabic simple" start="18">
-<li><p>Next, we’ll check to see whether or not the membrane potential depends on [K+]out.  Reset the permeabilities and ion concentrations to the default values.</p></li>
+<li><p>Next, we’ll check to see whether or not the membrane potential depends on [K+]out. Reset the permeabilities and ion concentrations to the default values.</p></li>
 <li><p>Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage. <strong>Answer Q4 on the quiz.</strong></p></li>
 </ol>
 <p><strong>Table 2. Dependence of Vrest on [K+]out</strong></p>
@@ -559,38 +538,40 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <ol class="arabic simple" start="20">
 <li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. <strong>Answer Q5 on the quiz</strong>.  You can also fill out the table below for your own notes.</p></li>
 </ol>
+<div class="tip admonition">
+<p class="admonition-title">Q5.</p>
+<p>In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Q5. In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you.</p></th>
-<th class="head text-center"><p></p></th>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>What it models</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><strong>INa</strong></p></td>
-<td class="text-center"><p>sodium current across the membrane</p></td>
+<tr class="row-even"><td><p><strong>I_Na</strong></p></td>
+<td><p>sodium current across the membrane</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><strong>gNa</strong></p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-odd"><td><p><strong>g_Na</strong></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><strong>ENa</strong></p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-even"><td><p><strong>E_Na</strong></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><strong>Ik</strong></p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-odd"><td><p><strong>I_K</strong></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><strong>gK</strong></p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-even"><td><p><strong>g_K</strong></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><strong>EK</strong></p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-odd"><td><p><strong>E_K</strong></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
 </section>
-</section>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
 <section id="part-ii-passive-membrane-simulation">
 <h3>Part II: Passive membrane simulation<a class="headerlink" href="#part-ii-passive-membrane-simulation" title="Link to this heading">#</a></h3>
 <p>In this part, you’ll set up a simulation that models one portion of an axon or dendrite. By the end of this part, you will be able to:</p>
@@ -600,36 +581,22 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <li><p>Determine how the passive spread of voltage is affected by diameter and membrane capacitance</p></li>
 </ul>
 </section>
-<section id="id2">
-<h3>Steps<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3>Steps<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Go to  <a class="reference external" href="https://neuromembrane.biology.ualberta.ca/">https://neuromembrane.biology.ualberta.ca/</a> (if you’re not already there) and open up the “Passive Membrane Simulation” (or Cable Theory Simulation)  in the menu in the top left corner.</p></li>
 <li><p>Add an external recording electrode that is two length constants () away from your stimulating electrode by clicking the <strong>+</strong> button and changing the value after the second recording site. <strong>Answer Q6 on the quiz.</strong></p></li>
 </ol>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Q6. Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences.</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p></p></td>
-</tr>
-</tbody>
-</table>
+<div class="tip admonition">
+<p class="admonition-title">Q6.</p>
+<p>Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences.</p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. <strong>Answer Q7 on the quiz.</strong></p></li>
 </ol>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Q7. Describe what this circuit diagram is showing us. Be sure to define each of the different components (rm ri  cm).</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p></p></td>
-</tr>
-</tbody>
-</table>
+<div class="tip admonition">
+<p class="admonition-title">Q7.</p>
+<p>Describe what this circuit diagram is showing us. Be sure to define each of the different components (r_m, r_i, c_m).</p>
 </div>
 <ol class="arabic simple" start="4">
 <li><p>Re-set the cable settings and click on “CREATE SIMULATION” to run our first iteration of this passive current injection. The current will be injected starting at 10 ms, and will be injected for 30 ms total. Observe the top plot to fill out row one in Table 3. For your “observations,” take a close look at the Voltage vs. Time plot. <strong>Why is our current injection this shape when recorded across the membrane?</strong></p></li>
@@ -681,16 +648,9 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <ol class="arabic simple" start="5">
 <li><p>The dorsal root ganglion axon of a giant blue whale has a diameter of ~2 µm. In the CABLE SETTINGS on the left, change the diameter of the simulated axon to model this axon.</p></li>
 </ol>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>With this smaller diameter of 2 µm, do other parameters of the membrane (bottom of the CABLE SETTINGS window change? If so, why?</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p></p></td>
-</tr>
-</tbody>
-</table>
+<div class="tip admonition">
+<p class="admonition-title">Reflection</p>
+<p>With this smaller diameter of 2 µm, do other parameters of the membrane (bottom of the CABLE SETTINGS window) change? If so, why?</p>
 </div>
 <ol class="arabic simple" start="6">
 <li><p>Run the simulation with the smaller diameter and observe the Voltage vs Time plot again. Hint: you can use the Autoscale button (<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAA4klEQVR4Xu2RsQ2EMAxF2SS0tJQI6GAImIOaMENSwhKUMFxORnL0EyMB4rq74kk4334KcaKUct8kiQ/e8hcq17at2/c9oOs6n8/zLHKcvxSijImlmF0Kq6oKcmIcx2fCbdsO0ZkUZXxTnD8V8jdKqW6axtdpmh5nJMV5IeRGhqRZlvma3jTuQYTwLUKY53lQa61d3/e+XpbF1XUd9CBCSG/Iv4gLoLooCrEoWiDOnwppYJomsQACF0WyW1vmgXVdgwzhnkdCgt4s7uGb3RKWZemstQHDMPjcGCNynBfCt/yg8APkN+HF3bFkQgAAAABJRU5ErkJggg==" />) if the trace goes off the plot. Fill out Table 3 for this 2 µm cable simulation.</p></li>
@@ -699,6 +659,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <p>Optional: Later in the course, you may want to use the Neuromembrane simulator to model <a class="reference external" href="https://docs.google.com/document/d/14yS7gj4IyZvIWO3KI5tqYkXIkytr7Y8ES7v4SbK9quM/edit?tab=t.0#heading=h.z78xt7uiejq">action potential</a>.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="rc-circuits">
 <h2>RC Circuits<a class="headerlink" href="#rc-circuits" title="Link to this heading">#</a></h2>
 <p>Let’s build a circuit that models the passive membrane simulations you performed above.</p>
@@ -729,10 +690,8 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <li><p>Open Scope View and press <strong>&gt;Start</strong>. You should see a waveform on your screen.<br />
 <strong>NOTE:</strong> You may need to Autoscale the channel (right click) to be able to see the entire trace.</p></li>
 </ol>
-<p><strong>The time constant should equal 𝛕 = RC. What <em>should</em> the time constant be (in seconds), given the resistors and capacitors in the circuit.</strong> Mind your units. <strong>Answer Q8 on the quiz.</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>	𝛕 \= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-</pre></div>
-</div>
+<p><strong>The time constant should equal 𝛕 = RC. What <em>should</em> the time constant be (in seconds), given the resistors and capacitors in the circuit?</strong> Mind your units. <strong>Answer Q8 on the quiz.</strong></p>
+<p>𝛕 = _______________</p>
 <p>We can also measure the time constant by measuring how long it takes the curve to rise or decay. One time constant (𝛕) is defined by when the circuit rises to <strong>63.2%</strong> of its total charge (alternately, we could see how long it takes to decay 1/e, about 37%).</p>
 <p>To empirically measure your time constant, follow these steps.</p>
 <ol class="arabic simple">
@@ -801,33 +760,33 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <h3>Check your time constant against the literature<a class="headerlink" href="#check-your-time-constant-against-the-literature" title="Link to this heading">#</a></h3>
 <p>Let’s circle back to biology. Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: <a class="reference external" href="https://neuroelectro.org/ephys_prop/index.html">https://neuroelectro.org/ephys_prop/index.html</a></p>
 <p>Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?</p>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>Troubleshooting</p></th>
-<th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
+<tr class="row-odd"><th class="head"><p>Observation</p></th>
+<th class="head"><p>Likely Issue</p></th>
+<th class="head"><p>Possible Solution</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><strong>Observation</strong></p></td>
-<td class="text-left"><p><strong>Likely Issue</strong></p></td>
-<td class="text-left"><p><strong>Possible Solution</strong></p></td>
+<tr class="row-even"><td><p>There isn’t any voltage in your circuit</p></td>
+<td><p>The power terminals are not connected properly Your stimulator is not on</p></td>
+<td><p>Make sure everything is connected correctly on your breadboard. Consult <a class="reference external" href="https://wiring.org.co/learning/tutorials/breadboard/index.html">https://wiring.org.co/learning/tutorials/breadboard/index.html</a>  Check that the stimulator panel is switched on, and that you pressed Start</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>There isn’t any voltage in your circuit</p></td>
-<td class="text-left"><p>The power terminals are not connected properly Your stimulator is not on</p></td>
-<td class="text-left"><p>Make sure everything is connected correctly on your breadboard. Consult <a class="reference external" href="https://wiring.org.co/learning/tutorials/breadboard/index.html">https://wiring.org.co/learning/tutorials/breadboard/index.html</a>  Check that the stimulator panel is switched on, and that you pressed Start</p></td>
+<tr class="row-odd"><td><p>Your signal is really noisy</p></td>
+<td><p>You’re not grounded. Your pulse is not being properly sent.</p></td>
+<td><p>Double check your circuit is connected correctly</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Your signal is really noisy</p></td>
-<td class="text-left"><p>You’re not grounded. Your pulse is not being properly sent.</p></td>
-<td class="text-left"><p>Double check your circuit is connected correctly</p></td>
+<tr class="row-even"><td><p>You don’t see a fin-shaped waveform</p></td>
+<td><p>Your Scope/Chart View is not scaled properly.  Your capacitor is not properly connected or broken.</p></td>
+<td><p>Try autoscaling Check the capacitor placement or replace it.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>You don’t see a fin-shaped waveform</p></td>
-<td class="text-left"><p>Your Scope/Chart View is not scaled properly.  Your capacitor is not properly connected or broken.</p></td>
-<td class="text-left"><p>Try autoscaling Check the capacitor placement or replace it.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>You’ve got “rabbit ears” on your waveform</p></td>
-<td class="text-left"><p>Your voltage is reversed somewhere</p></td>
-<td class="text-left"><p>Check the power terminals are connected in the right direction</p></td>
+<tr class="row-odd"><td><p>You’ve got “rabbit ears” on your waveform</p></td>
+<td><p>Your voltage is reversed somewhere</p></td>
+<td><p>Check the power terminals are connected in the right direction</p></td>
 </tr>
 </tbody>
 </table>
@@ -880,7 +839,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Experiment #1: String Nervous Systems</p>
+        <p class="prev-next-title">Lab #1: String Nervous Systems</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -900,21 +859,18 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromembrane">Neuromembrane</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromembrane-was-made-by-a-team-of-university-of-alberta-researchers-and-a-company-known-as-atmist-many-thanks-to-christelle-sabatier-michael-wright-and-declan-ali-for-sharing-similar-lesson-plans-their-ideas-are-integrated-here"><em>Neuromembrane was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromembrane">Neuromembrane</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-resting-membrane-potential">Part I: Resting membrane potential</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-passive-membrane-simulation">Part II: Passive membrane simulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Steps</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-circuits">RC Circuits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-an-rc-circuit">Building an RC Circuit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-and-plot-your-time-constant-with-different-resistors">Record and plot your time constant with different resistors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-time-constant-against-the-literature">Check your time constant against the literature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 </ul>
