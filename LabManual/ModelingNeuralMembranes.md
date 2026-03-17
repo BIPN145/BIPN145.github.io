@@ -1,10 +1,11 @@
-# Modeling Neural Membranes
+# Lab #0: Modeling Neural Membranes
 
 **In this lab, we’ll use an online membrane simulator and a breadboard to model the properties of neural membranes and passive potentials.**
 
 ## Neuromembrane
 
-*Neuromembrane was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.*  
+Neuromembrane was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.
+
 ---
 
 ### Part I: Resting membrane potential
@@ -26,73 +27,78 @@ First, we’ll explore the properties of the membrane that lead to a resting mem
 
 3. This simulation will open by default without any leak channels or pumps. Let’s first add a couple of leak channels to the membrane and observe what happens. Click the plus sign next to “LEAK CHANNELS” to add a Na+ and K+ channel to the membrane. 
 
-These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 5:100 (Na:K). Note also that the concentration settings are also set for you — at first, there is equal \[Na+\] and \[K+\] inside and outside of the membrane.
+These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 5:100 (Na:K). Note also that the concentration settings are also set for you — at first, there is equal [Na+] and [K+] inside and outside of the membrane.
 
-4. First, we’ll observe what happens when we have more K+ permeability, but equal ion concentrations. Click on “CREATE SIMULATION” to open the stimulation page. **Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1\.**
+4. First, we’ll observe what happens when we have more K+ permeability, but equal ion concentrations. Click on “CREATE SIMULATION” to open the stimulation page. **Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.**
 
-5. To run Simulation \#1, click the play button. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1\.**
+5. To run Simulation #1, click the play button. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.**
 
 6. Go back to the Settings page by choosing “Back to settings” in the simulation play menu.
 
-7. In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.   
-   Click the plus button next to Na+/K+ pump to add one to the membrane. 
+7. In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.
+   Click the plus button next to Na+/K+ pump to add one to the membrane.
 
-8. Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. **Before running Simulation \#2, write your 1-2 sentence prediction in Table 1\.**
+8. Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. **Before running Simulation #2, write your 1-2 sentence prediction in Table 1.**
 
-9. Run Simulation \#2 and observe what happens to the membrane potential. **Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.** For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).≠
+9. Run Simulation #2 and observe what happens to the membrane potential. **Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.** For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).
 
-10. Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values to reflect more biological values across the membrane. **Write your prediction for Simulation \#3 in the table.**
+10. Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values to reflect more biological values across the membrane. **Write your prediction for Simulation #3 in the table.**
 
-11. Run the simulation again and observe what happens to the membrane potential. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1\.**
+11. Run the simulation again and observe what happens to the membrane potential. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.**
 
-**Table 1\. Simulation predictions & observations**
+**Table 1. Simulation predictions & observations**
 
-| Sim \# | Types of Channels | \[Ion\] | PNa/K | Prediction | Observation |
-| :---: | ----- | ----- | ----- | ----- | ----- |
-| 1 | Leak channels only  | All 50 mM | 5 Na+; 100 K+  |   |  |
-| 2 | Leak channels &  Na+/K+ pump  | All 50 mM | 5 Na+; 100 K+ |  |  |
-| 3 | Leak channels &  Na+/K+ pump  | Na+ high outside; K+ high inside | 5 Na+; 100 K+ |  |  |
-| 4 | Leak channels &  Na+/K+ pump  | Na+ high outside; K+ high inside | 100 Na+;  5 K+ |  |  |
-| 5 | Leak channels &  Na+/K+ pump | Na+ high outside; K+ high inside | 100 Na+; 100 K+ |  |  |
+| Sim # | Types of Channels | [Ion] | PNa/K | Prediction | Observation |
+|:---:|---|---|---|---|---|
+| 1 | Leak channels only | All 50 mM | 5 Na+; 100 K+ | | |
+| 2 | Leak channels & Na+/K+ pump | All 50 mM | 5 Na+; 100 K+ | | |
+| 3 | Leak channels & Na+/K+ pump | Na+ high outside; K+ high inside | 5 Na+; 100 K+ | | |
+| 4 | Leak channels & Na+/K+ pump | Na+ high outside; K+ high inside | 100 Na+; 5 K+ | | |
+| 5 | Leak channels & Na+/K+ pump | Na+ high outside; K+ high inside | 100 Na+; 100 K+ | | |
 
-12. Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation \#3 and show your work. Does this match the voltage in the simulation? **Answer Q1 on the quiz. Report your answer in mV.**  
+12. Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? **Answer Q1 on the quiz. Report your answer in mV.**
 
-**Here are few hints to help you:**
+**Here are a few hints to help you:**
 
-* P is relative permeability; other constants can be found on the lecture slides.   
-* To simplify, you may determine a constant for the first portion of the equation (RT/F) and use that for future calculations.  
-* You can use “Insert \> Equation” in Google Docs or Microsoft Word to show your work, or simply jot it on paper, take a picture, and paste it here.  
-* Google search has a built-in scientific calculator\! You can bring it up by typing any formula into the search bar. For example:  
-   **![][image1]**
+* P is relative permeability; other constants can be found on the lecture slides.
+* To simplify, you may determine a constant for the first portion of the equation (RT/F) and use that for future calculations.
+* You can use “Insert > Equation” in Google Docs or Microsoft Word to show your work, or simply jot it on paper, take a picture, and paste it here.
+* Google search has a built-in scientific calculator! You can bring it up by typing any formula into the search bar. For example:
 
-| Q1. Calculation of GHK |
-| ----- |
-|   |
+   ![][image1]
+
+:::{admonition} Q1. Calculation of GHK
+:class: tip
+Using the GHK equation for Na⁺ and K⁺ only, calculate the voltage across the membrane for simulation #3 and show your work. Does this match the voltage in the simulation? Report your answer in mV.
+:::
 
 13. Finally, let’s check to see how much ion permeability matters. Go back to the settings page and reverse the Na+ and K+ permeabilities.
 
-14. Write your prediction for Simulation \#4 in Table 1\.
+14. Write your prediction for Simulation #4 in Table 1.
 
-15. Run Simulation \#4 and observe what happens. Record your observations in Table 1 and respond to the question below. **Answer Q2 on the quiz. Report your answer in mV.**
+15. Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. **Answer Q2 on the quiz. Report your answer in mV.**
 
-| Q2. With the high permeability to Na+ and low permeability to K+, what is the resting membrane potential? Report your value in mV out to one decimal point. |
-| ----- |
-|   |
+:::{admonition} Q2.
+:class: tip
+With the high permeability to Na⁺ and low permeability to K⁺, what is the resting membrane potential? Report your value in mV out to one decimal point.
+:::
 
-16. On the settings page, set both the Na+ and K+ permeabilities to 100\. Write your prediction in Table 1\. 
+16. On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.
 
 17. Run the simulation to see what happens, record your observations, and respond to the question below. **Answer Q3 on the quiz.**
 
-| Q3. Which of these simulations best models a typical neural membrane? |  |
-| :---: | :---: |
+:::{admonition} Q3.
+:class: tip
+Which of these simulations best models a typical neural membrane?
+:::
 
-18. Next, we’ll check to see whether or not the membrane potential depends on \[K+\]out.  Reset the permeabilities and ion concentrations to the default values. 
+18. Next, we’ll check to see whether or not the membrane potential depends on [K+]out. Reset the permeabilities and ion concentrations to the default values.
 
-19. Systematically change \[K+\]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage. **Answer Q4 on the quiz.**
+19. Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage. **Answer Q4 on the quiz.**
 
-**Table 2\. Dependence of Vrest on \[K+\]out**
+**Table 2. Dependence of Vrest on [K+]out**
 
-| \[K+\]out (mM) | Vrest (mV) |
+| [K+]out (mM) | Vrest (mV) |
 | :---: | :---: |
 | 4 |  |
 | 10 |  |
@@ -102,16 +108,21 @@ These single channels represent many, many channels in the membrane that are all
 
 20. Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. **Answer Q5 on the quiz**.  You can also fill out the table below for your own notes.
 
-| Q5. In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you. |  |
-| :---: | :---: |
-| **INa** | sodium current across the membrane |
-| **gNa** |  |
-| **ENa** |  |
-| **Ik** |  |
-| **gK** |  |
-| **EK** |  |
+:::{admonition} Q5.
+:class: tip
+In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you.
 
-## 
+| Component | What it models |
+|---|---|
+| **I_Na** | sodium current across the membrane |
+| **g_Na** | |
+| **E_Na** | |
+| **I_K** | |
+| **g_K** | |
+| **E_K** | |
+:::
+
+---
 
 ### Part II: Passive membrane simulation
 
@@ -129,15 +140,17 @@ In this part, you’ll set up a simulation that models one portion of an axon or
 
    
 
-| Q6. Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences. |
-| ----- |
-|   |
+:::{admonition} Q6.
+:class: tip
+Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences.
+:::
 
 3. Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. **Answer Q7 on the quiz.**
 
-| Q7. Describe what this circuit diagram is showing us. Be sure to define each of the different components (rm ri  cm).  |
-| ----- |
-|   |
+:::{admonition} Q7.
+:class: tip
+Describe what this circuit diagram is showing us. Be sure to define each of the different components (r_m, r_i, c_m).
+:::
 
 4. Re-set the cable settings and click on “CREATE SIMULATION” to run our first iteration of this passive current injection. The current will be injected starting at 10 ms, and will be injected for 30 ms total. Observe the top plot to fill out row one in Table 3\. For your “observations,” take a close look at the Voltage vs. Time plot. **Why is our current injection this shape when recorded across the membrane?**
 
@@ -151,15 +164,18 @@ In this part, you’ll set up a simulation that models one portion of an axon or
 
 5. The dorsal root ganglion axon of a giant blue whale has a diameter of \~2 µm. In the CABLE SETTINGS on the left, change the diameter of the simulated axon to model this axon. 
 
-| With this smaller diameter of 2 µm, do other parameters of the membrane (bottom of the CABLE SETTINGS window change? If so, why? |
-| ----- |
-|   |
+:::{admonition} Reflection
+:class: tip
+With this smaller diameter of 2 µm, do other parameters of the membrane (bottom of the CABLE SETTINGS window) change? If so, why?
+:::
 
 6. Run the simulation with the smaller diameter and observe the Voltage vs Time plot again. Hint: you can use the Autoscale button (![][image2]) if the trace goes off the plot. Fill out Table 3 for this 2 µm cable simulation.
 
 7. Double the capacitance of the membrane, from 1 to 2 μF/cm2. Describe what happens to the time constant and the resulting voltage over time plot with more capacitance in Table 3\.
 
 Optional: Later in the course, you may want to use the Neuromembrane simulator to model [action potential](https://docs.google.com/document/d/14yS7gj4IyZvIWO3KI5tqYkXIkytr7Y8ES7v4SbK9quM/edit?tab=t.0#heading=h.z78xt7uiejq). 
+
+---
 
 ## RC Circuits
 
@@ -193,9 +209,9 @@ Read pages 4-7 of the RC circuit lab exercise in your lab manual. Then, build th
 11. Open Scope View and press **\>Start**. You should see a waveform on your screen.   
     **NOTE:** You may need to Autoscale the channel (right click) to be able to see the entire trace.
 
-**The time constant should equal 𝛕 \= RC. What *should* the time constant be (in seconds), given the resistors and capacitors in the circuit.** Mind your units. **Answer Q8 on the quiz.**
+**The time constant should equal 𝛕 = RC. What *should* the time constant be (in seconds), given the resistors and capacitors in the circuit?** Mind your units. **Answer Q8 on the quiz.**
 
-		𝛕 \= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+𝛕 = \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 We can also measure the time constant by measuring how long it takes the curve to rise or decay. One time constant (𝛕) is defined by when the circuit rises to **63.2%** of its total charge (alternately, we could see how long it takes to decay 1/e, about 37%). 
 
@@ -209,9 +225,9 @@ To empirically measure your time constant, follow these steps.
 
 **What is your recorded time constant with 1 V stimulation, a 100 kΩ resistor, and a 1 uF capacitor?** 
 
-𝛕 \= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+𝛕 = \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**How close is the recorded time constant to the value you calculated with 𝛕 \= RC?**
+**How close is the recorded time constant to the value you calculated with 𝛕 = RC?**
 
 In engineering, 5𝛕 is consisted the time it takes for a capacitor to fully charge (technically, its at 99% of full charge). The time constant is symmetrical for charging as well as losing charge. **How long would it take this patch of membrane to return to baseline, then? What does that mean for *computation* happening in this membrane?** 
 
@@ -250,9 +266,12 @@ Let’s circle back to biology. Are the time constants you measured similar to w
 
 Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?
 
-| Troubleshooting |  |  |
-| :---- | :---- | :---- |
-| **Observation** | **Likely Issue** | **Possible Solution** |
+---
+
+### Troubleshooting
+
+| Observation | Likely Issue | Possible Solution |
+|---|---|---|
 | There isn’t any voltage in your circuit | The power terminals are not connected properly Your stimulator is not on  | Make sure everything is connected correctly on your breadboard. Consult [https://wiring.org.co/learning/tutorials/breadboard/index.html](https://wiring.org.co/learning/tutorials/breadboard/index.html)  Check that the stimulator panel is switched on, and that you pressed Start |
 | Your signal is really noisy | You’re not grounded. Your pulse is not being properly sent. | Double check your circuit is connected correctly |
 | You don’t see a fin-shaped waveform | Your Scope/Chart View is not scaled properly.  Your capacitor is not properly connected or broken. | Try autoscaling Check the capacitor placement or replace it. |

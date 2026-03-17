@@ -1,4 +1,4 @@
-# Experiment #3: Earthworm Electrophysiology
+# Lab #3: Earthworm Electrophysiology
 
 ## Background & Goals
 

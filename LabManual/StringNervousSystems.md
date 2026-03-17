@@ -1,4 +1,4 @@
-# Experiment #1: String Nervous Systems
+# Lab #1: String Nervous Systems
 
 ## Background & Goals
 
