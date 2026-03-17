@@ -1,0 +1,1820 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BIPN 145 Lab Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=66b0c8fd" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=60c0e2ec"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ModelingNeuralMembranes';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">None</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Modeling Neural Membranes
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modeling Neural Membranes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-StringNervousSystems">Experiment #1: String Nervous Systems</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Earthworm">Experiment #3: Earthworm Electrophysiology</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modeling-neural-membranes">
+<h1>Modeling Neural Membranes<a class="headerlink" href="#modeling-neural-membranes" title="Link to this heading">#</a></h1>
+<p><strong>In this lab, we’ll use an online membrane simulator and a breadboard to model the properties of neural membranes and passive potentials.</strong></p>
+<section id="neuromembrane">
+<h2>Neuromembrane<a class="headerlink" href="#neuromembrane" title="Link to this heading">#</a></h2>
+</section>
+<section id="neuromembrane-was-made-by-a-team-of-university-of-alberta-researchers-and-a-company-known-as-atmist-many-thanks-to-christelle-sabatier-michael-wright-and-declan-ali-for-sharing-similar-lesson-plans-their-ideas-are-integrated-here">
+<h2><em>Neuromembrane was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.</em><a class="headerlink" href="#neuromembrane-was-made-by-a-team-of-university-of-alberta-researchers-and-a-company-known-as-atmist-many-thanks-to-christelle-sabatier-michael-wright-and-declan-ali-for-sharing-similar-lesson-plans-their-ideas-are-integrated-here" title="Link to this heading">#</a></h2>
+<section id="part-i-resting-membrane-potential">
+<h3>Part I: Resting membrane potential<a class="headerlink" href="#part-i-resting-membrane-potential" title="Link to this heading">#</a></h3>
+<p>First, we’ll explore the properties of the membrane that lead to a resting membrane potential. By the end of this part, you will be able to:</p>
+<ul class="simple">
+<li><p>Explain how a negative resting membrane potential is maintained</p></li>
+<li><p>Identify the factors that determine and maintain resting membrane potential</p></li>
+<li><p>Use the Goldman-Hodgkin-Katz to calculate the membrane potential given the concentrations and permeabilities of K+ and Na+</p></li>
+<li><p>Generate simulation data to illustrate the dependence of the resting membrane potential on K+</p></li>
+</ul>
+</section>
+<section id="steps">
+<h3>Steps<a class="headerlink" href="#steps" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Go to <a class="reference external" href="https://neuromembrane.biology.ualberta.ca/">https://neuromembrane.biology.ualberta.ca/</a> and log in as a guest.</p></li>
+<li><p>To open the resting membrane potential simulation, click on the top left to open a menu of stimulations. Choose “Resting Potential Simulation.”</p>
+<p>On the right hand side, you’ll see a membrane. The area below the membrane is the inside of the cell. The area above the membrane is the outside of the cell.</p>
+</li>
+<li><p>This simulation will open by default without any leak channels or pumps. Let’s first add a couple of leak channels to the membrane and observe what happens. Click the plus sign next to “LEAK CHANNELS” to add a Na+ and K+ channel to the membrane.</p></li>
+</ol>
+<p>These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 5:100 (Na:K). Note also that the concentration settings are also set for you — at first, there is equal [Na+] and [K+] inside and outside of the membrane.</p>
+<ol class="arabic simple" start="4">
+<li><p>First, we’ll observe what happens when we have more K+ permeability, but equal ion concentrations. Click on “CREATE SIMULATION” to open the stimulation page. <strong>Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.</strong></p></li>
+<li><p>To run Simulation #1, click the play button. You can also change the speed so that it will run faster. <strong>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.</strong></p></li>
+<li><p>Go back to the Settings page by choosing “Back to settings” in the simulation play menu.</p></li>
+<li><p>In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.<br />
+Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
+<li><p>Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. <strong>Before running Simulation #2, write your 1-2 sentence prediction in Table 1.</strong></p></li>
+<li><p>Run Simulation #2 and observe what happens to the membrane potential. <strong>Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.</strong> For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).≠</p></li>
+<li><p>Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values to reflect more biological values across the membrane. <strong>Write your prediction for Simulation #3 in the table.</strong></p></li>
+<li><p>Run the simulation again and observe what happens to the membrane potential. <strong>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.</strong></p></li>
+</ol>
+<p><strong>Table 1. Simulation predictions &amp; observations</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sim #</p></th>
+<th class="head"><p>Types of Channels</p></th>
+<th class="head"><p>[Ion]</p></th>
+<th class="head"><p>PNa/K</p></th>
+<th class="head"><p>Prediction</p></th>
+<th class="head"><p>Observation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td><p>Leak channels only</p></td>
+<td><p>All 50 mM</p></td>
+<td><p>5 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>All 50 mM</p></td>
+<td><p>5 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>Na+ high outside; K+ high inside</p></td>
+<td><p>5 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>Na+ high outside; K+ high inside</p></td>
+<td><p>100 Na+;  5 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td><p>Leak channels &amp;  Na+/K+ pump</p></td>
+<td><p>Na+ high outside; K+ high inside</p></td>
+<td><p>100 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? <strong>Answer Q1 on the quiz. Report your answer in mV.</strong></p></li>
+</ol>
+<p><strong>Here are few hints to help you:</strong></p>
+<ul class="simple">
+<li><p>P is relative permeability; other constants can be found on the lecture slides.</p></li>
+<li><p>To simplify, you may determine a constant for the first portion of the equation (RT/F) and use that for future calculations.</p></li>
+<li><p>You can use “Insert &gt; Equation” in Google Docs or Microsoft Word to show your work, or simply jot it on paper, take a picture, and paste it here.</p></li>
+<li><p>Google search has a built-in scientific calculator! You can bring it up by typing any formula into the search bar. For example:<br />
+<strong><img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAAAqCAYAAADs6PSZAAAJxklEQVR4Xu2d+XMTRxbH86/wO3/C3pvdze5yhUCOTZZsdtklWQxOCFA5KhAgIAwY2xiKOOZYhwAxBjbhCKYMwsYEV+IDgsH4vm2NLWmk0TE6R9/t1+ORRmPZhMUScqU/Va806m5N21XvO++97rb8DAQCQZJnrA0CwU8ZIQiBwIQQhEBgQghCIDAhBJFjEolE0jRNE5ZnJgSRI8wCiMfjiMViiEajSYtEhOWDCUFkGSMaGCKIRCIIhUJQVZULgfoE+YMQRBYxogE5vqqGuCAE+Y0QRBYw0iMSQDgcQTAYtA4R5ClCEHOMWQyUGoVCYesQQR4jBDHHkBiiUV0MgvnH3AuCikSr/USg6GBEhkBApEnzkawIIsEcIu52IdpxH3HnBHuvziiMRMwPzd85Y/9MtDna0Sq1W5ufGkaqRDWD3x+wdgvmCXMiCI0HgimHjscQGxmG/MG7kG0fQ9m9HfGx0aTDxzVynJTzR/v2INq/H9GhI8k2g1CE3SuuWZvRIv2A1y4V4o3ajRjxOZLtDofXNCq3GKlSICDEMJ/50YJQI4DLp8Hj1xCJpT/Nb7WN4fjlDpYqxJjHxxFzjMNTbINy7DB8FeXQXE4uCElWse3T73D06/vwq1H+2ajzEmKT/4Xm+yrtnp2DMtYW2bGlogmBqbEGLtWNj1pLsK6jCNF4BB5vELajTejrGOTz5xpjnyEcDsPn81u7BfOIRwrCIcex/bSCZTaXbrvc7NWJ252RVJbDLh70uvD6zgbY67swMuyCZ1SC/dBJyCPjGByQUPp5C7aWN8PpUdHe48KmspvYeaQFp+3duN3cyZ1acvrR2uXGtmMtOHCmjUWeBFxs/LulDXB7wrDZi3Ci9SQkdwj9Iz7YDt/Dmr2NeL+sHm2VX0CtuwLNIz92+vWkGKtKtNkmmN/MKoiz36pcBCv2uPDlTRVjrjgeDkdRcsHP2zf/R09RdlQ78Mk5GRe+9yMWiUKWgxgd92JsUMKIpEBWQigdO4UD0inUDzUl768lNPj8IUyMSLhWcQYT4y4EAyEktOlpEvHW+QLsbSiGyiKRLxhBnKUoGqtXfGdOwXu4DO6t7yFYe0mPEjkURZyldbQD7ffPbXRYsGBB0i5evJhKSxkulyt5XV1dzccYbNiwIe2zBsb7xYsXJ9sE6cwoiJbeMJbvdmHNIRmB0HTnauujYwdUEwCr9vdhS7UTW78YTw2gTpNtvrMXm+/uwcGHn6eGMIt7PVCOfwZ/zSl4yvchxtMrLaNDkyD21O9La9PUICIP7kH+aBM8O7ciNtBLj+y0MdnESJdoZUlRFGv3E7Fw4cK09+3t7UmnrqmpSY7J5PhWqE2SpOS1IDMzCqKw0sOjgLVeyMTpmwo2HhlFv2PmowlfjdhRNXAeYS29HqDVKHdJEeSi7XCwQjzuMInKQiZBkHASLF2JOycRGxpEQg1kFFO2MJZaKV3yeDzW7kdy7ty5tKc5mSzLvK+2thaVlZUYGhpKjrc6f1FREbxe7zRB2O121NXVpbUZ2Gw2FBQUJN8LUmQUBKVFJIYPT0x/4vHDavRqmMn5vPVX0b3yWXQt+xW3kY+Zg3vcyX4tOIRg81r4rv8GfrJbi1hEaIbGHCDc1szFUXZWwqIiBYt2efCPgzL2nPfhpb1uhKMJJoi1SUFoAT8G1v8NnUt+jofMel/+I0I9D5Nz5Qr6/emsEu07uN26I88FJSUlqKio4NfFxcUoLCy0jEiRSRAE/VzGtbmfxGKNPgKdjIKw34twQRz6Jn0JsYWlSa/td0+zYacGz/VvuAgGCt+A+0INJqs+5e/7/v4C4n6F5foSlBvPQbE/i1BfFcKDZ+BrfAmBxj8wIfzA05yCY34stbnxXpUXl5pD2MRqFKOQZ6VJShDMCYe3vMPv7zi0D96rFzH04Xr0vPpnxEwCzAUpQQSYIB5/7tkihBmzQ1uxCsJMJkFUVVVhxYoVyfeCFBkF0dyjC2JXTXqReH8wirePePDOUS+3ggo9rRqY0ND/zxe5g5oZL7PxNvnraoS7SqGwqBDqP5EaEFd5W6DlLQRZoUxi2Hjci9jUymk0ntBTN4sg1I576Fn2Syj11/i4SH83pMPFfK7x8t2p++eAJxXETFif4DM5PGEWBNUzmaKFta2pKbW4IUiRURDE62Uyd/bZONUQ5E4cDCfQv/RnGN66Ia0/EQmj64XfYuiDQiitK+FrWJrWTwRuv4JAwyL0Shqfb8SZvo/Q1BVJE0Tp7QMsytSy+VhKNhUlev7yJ4zufJ9vCuaabKVMhDlqzIY1QtAqkvG58vJy3kY/p9FmFZsgxYyCqG7Ul1wrrmTeeSXHpf6Xi/V1/+4Xf4/+1SvTxqgP7nKHHSvegWDbGp4uJcLphadi/x38jStY2pXg97O3p58OPXNLTRNEcUMJE1E9Opf+Ar2rlsBz+TwSmi6ixFMTRIwf8Zblxy+qBfnFjIIgdlTrG3Ibj3khyRqPBEpQY6lTjLc/v9uNK626A1MBTc4fvH8XiWiEFdABVj8sn2q7g6ijjqdH/tuvMsdVmROHEZVu8Da1fTs//kH7HXTffomObADdo/o8hiDePP9vFN3Yh0TAh+7FrF5Zt4ov29IqU0xmn/vXK2yeMctvkV1Sq0wheDxP7+iIYG6YVRDE1Tth3SktVljphTdgWu9njjFRWZZcYTIs1N2RHBJzt3IBmC08eDLZT2L7aynthDOxTc3z9hEvluz0cEGsrnkTn1yz8bG0etX1/K/1eaZeqbAmIeaa1LENH1yuuasjBLnnkYIgQtEExt1xXL8Xxs2OCL+mvS86WmFd84+Mj0C5UYtA63d8F9kKnW6NTjSy6HANmjp9zyEaS2BoIo5GNo/s01DzbYgLg9rdQTe8odRTmJw/1P0Q3rrLCA/05HRDzox+sE+vI5zO2esuQX7zowSRC0hWtrMKdnyZ2vsgra0+KGP9Z/mdmxtpE+1WUx0hSRPWIYJ5Qt4Igjh2LcBTpeVFLqyf2imna9qUy2dIEEaUoPNMtPxqPmskmD/klSCI73si2MaixDoWFXaf8+HBUO5Xjv4fjDNNVFx7vQpLnZzWIYJ5QN4JYr5iRAk69UpLsLTiJFKn+YcQxByiRwk9dQoG9cN+k5NOjI+n/qpPkN8IQcwxRupEkYKOc1CkoJUnh8PBRSLIb4QgsoBZFJQ+KYq+PzExMcmFIQru/EUIIksYNYX52/to447SKBIEpVIkEKozdJOE5YEJQWQRQxTG97vSbjb9IREtzVLUoEN5JBAy2r8Q9vRNCCIHpAtD/wZwEofxLeDC8seEIHIICcMQh/l/RQjLHxOCeEoY4hCWXyYEIRCYEIIQCEz8D97RvspnZhwjAAAAAElFTkSuQmCC" /></strong></p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Q1. Calculation of GHK</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Finally, let’s check to see how much ion permeability matters. Go back to the settings page and reverse the Na+ and K+ permeabilities.</p></li>
+<li><p>Write your prediction for Simulation #4 in Table 1.</p></li>
+<li><p>Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. <strong>Answer Q2 on the quiz. Report your answer in mV.</strong></p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Q2. With the high permeability to Na+ and low permeability to K+, what is the resting membrane potential? Report your value in mV out to one decimal point.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="16">
+<li><p>On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.</p></li>
+<li><p>Run the simulation to see what happens, record your observations, and respond to the question below. <strong>Answer Q3 on the quiz.</strong></p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Q3. Which of these simulations best models a typical neural membrane?</p></th>
+<th class="head text-center"><p></p></th>
+</tr>
+</thead>
+</table>
+</div>
+<ol class="arabic simple" start="18">
+<li><p>Next, we’ll check to see whether or not the membrane potential depends on [K+]out.  Reset the permeabilities and ion concentrations to the default values.</p></li>
+<li><p>Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage. <strong>Answer Q4 on the quiz.</strong></p></li>
+</ol>
+<p><strong>Table 2. Dependence of Vrest on [K+]out</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>[K+]out (mM)</p></th>
+<th class="head text-center"><p>Vrest (mV)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>10</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>20</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>50</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>200</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="20">
+<li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. <strong>Answer Q5 on the quiz</strong>.  You can also fill out the table below for your own notes.</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Q5. In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you.</p></th>
+<th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>INa</strong></p></td>
+<td class="text-center"><p>sodium current across the membrane</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>gNa</strong></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>ENa</strong></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Ik</strong></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>gK</strong></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>EK</strong></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="part-ii-passive-membrane-simulation">
+<h3>Part II: Passive membrane simulation<a class="headerlink" href="#part-ii-passive-membrane-simulation" title="Link to this heading">#</a></h3>
+<p>In this part, you’ll set up a simulation that models one portion of an axon or dendrite. By the end of this part, you will be able to:</p>
+<ul class="simple">
+<li><p>Describe how voltage passively spreads through an axon or dendrite</p></li>
+<li><p>Understand length and time constants</p></li>
+<li><p>Determine how the passive spread of voltage is affected by diameter and membrane capacitance</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Steps<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Go to  <a class="reference external" href="https://neuromembrane.biology.ualberta.ca/">https://neuromembrane.biology.ualberta.ca/</a> (if you’re not already there) and open up the “Passive Membrane Simulation” (or Cable Theory Simulation)  in the menu in the top left corner.</p></li>
+<li><p>Add an external recording electrode that is two length constants () away from your stimulating electrode by clicking the <strong>+</strong> button and changing the value after the second recording site. <strong>Answer Q6 on the quiz.</strong></p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Q6. Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. <strong>Answer Q7 on the quiz.</strong></p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Q7. Describe what this circuit diagram is showing us. Be sure to define each of the different components (rm ri  cm).</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Re-set the cable settings and click on “CREATE SIMULATION” to run our first iteration of this passive current injection. The current will be injected starting at 10 ms, and will be injected for 30 ms total. Observe the top plot to fill out row one in Table 3. For your “observations,” take a close look at the Voltage vs. Time plot. <strong>Why is our current injection this shape when recorded across the membrane?</strong></p></li>
+</ol>
+<p><strong>Table 3. Current injection results</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sim #</p></th>
+<th class="head text-center"><p>Diameter</p></th>
+<th class="head text-center"><p>Cm</p></th>
+<th class="head"><p>Peak voltage at 2</p></th>
+<th class="head"><p>Distance to 2 electrode</p></th>
+<th class="head"><p>Voltage at 0 electrode &#64; 28 ms</p></th>
+<th class="head"><p>Voltage at 2 electrode &#64; 28 ms</p></th>
+<th class="head"><p>Observations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>5 µm</p></td>
+<td class="text-center"><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>2 µm</p></td>
+<td class="text-center"><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>2 µm</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The dorsal root ganglion axon of a giant blue whale has a diameter of ~2 µm. In the CABLE SETTINGS on the left, change the diameter of the simulated axon to model this axon.</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>With this smaller diameter of 2 µm, do other parameters of the membrane (bottom of the CABLE SETTINGS window change? If so, why?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Run the simulation with the smaller diameter and observe the Voltage vs Time plot again. Hint: you can use the Autoscale button (<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAA4klEQVR4Xu2RsQ2EMAxF2SS0tJQI6GAImIOaMENSwhKUMFxORnL0EyMB4rq74kk4334KcaKUct8kiQ/e8hcq17at2/c9oOs6n8/zLHKcvxSijImlmF0Kq6oKcmIcx2fCbdsO0ZkUZXxTnD8V8jdKqW6axtdpmh5nJMV5IeRGhqRZlvma3jTuQYTwLUKY53lQa61d3/e+XpbF1XUd9CBCSG/Iv4gLoLooCrEoWiDOnwppYJomsQACF0WyW1vmgXVdgwzhnkdCgt4s7uGb3RKWZemstQHDMPjcGCNynBfCt/yg8APkN+HF3bFkQgAAAABJRU5ErkJggg==" />) if the trace goes off the plot. Fill out Table 3 for this 2 µm cable simulation.</p></li>
+<li><p>Double the capacitance of the membrane, from 1 to 2 μF/cm2. Describe what happens to the time constant and the resulting voltage over time plot with more capacitance in Table 3.</p></li>
+</ol>
+<p>Optional: Later in the course, you may want to use the Neuromembrane simulator to model <a class="reference external" href="https://docs.google.com/document/d/14yS7gj4IyZvIWO3KI5tqYkXIkytr7Y8ES7v4SbK9quM/edit?tab=t.0#heading=h.z78xt7uiejq">action potential</a>.</p>
+</section>
+</section>
+<section id="rc-circuits">
+<h2>RC Circuits<a class="headerlink" href="#rc-circuits" title="Link to this heading">#</a></h2>
+<p>Let’s build a circuit that models the passive membrane simulations you performed above.</p>
+<section id="building-an-rc-circuit">
+<h3>Building an RC Circuit<a class="headerlink" href="#building-an-rc-circuit" title="Link to this heading">#</a></h3>
+<p>Read pages 4-7 of the RC circuit lab exercise in your lab manual. Then, build the circuit below. We’ll use the OUTPUT of your Powerlab to send a pulse of current through the circuit.</p>
+<ol class="arabic">
+<li><p>It helps to start with the output ends in the power rails and work your way around. The <strong>red</strong> wire from the PowerLab is the positive terminal.</p>
+<p><strong>CAUTION</strong>: Do not connect the + and - terminals. This will short the circuit, heat, and melt the plastic. Check that your circuit is set up properly before turning on the pulse from your computer.</p>
+</li>
+<li><p>Attach single BNC adapters to the + and - outputs of the PowerLab.</p>
+<ol class="arabic simple">
+<li><p>Alternatively, connect a <strong>BNC to double banana cable adapter</strong> to the + output of your PowerLab.</p></li>
+</ol>
+</li>
+<li><p>Attach a red banana cable to the + terminal and a black banana cable to the - terminal of your PowerLab.</p></li>
+<li><p>Attach the banana cables to red and black jumper wires using alligator clips, and insert the black and red jumper wires to the power rails, as shown in the circuit.</p>
+<p><strong>NOTE:</strong> Ensure that all circuit components are properly inserted into the breadboard. The wires should make contact with the metal strips inside the breadboard.</p>
+</li>
+<li><p>Add additional jumper wires, a resistor, and a capacitor, as shown in the circuit.</p></li>
+<li><p>We’ll use the PowerLab as our voltmeter, to record voltage in our circuit. Plug a <strong>BNC to DIN8 adapter</strong> and <strong>double banana adapter</strong> into Input 1 of the PowerLab.</p></li>
+<li><p>Connect the ground/reference (<strong>black</strong>, -) side of the double banana adapter to the circuit ground with alligator clips.</p>
+<p><strong>NOTE:</strong> The “ground” in this circuit is really going to be our reference electrode. It should be connected to the black side of Input 1.</p>
+</li>
+<li><p>Connect the “hot” pin (<strong>red,</strong> +) of the double banana adaptor to the “record here” point on the circuit diagram.</p></li>
+<li><p>Open LabChart with the <strong>Circuit Lab</strong> settings (<a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>)</p></li>
+<li><p>Set up the Stimulator to stimulate with 1 V for <strong>1 second</strong>. Make sure the range of your recording channel is 1 V.  Switch the stimulator to “on”.</p></li>
+<li><p>Open Scope View and press <strong>&gt;Start</strong>. You should see a waveform on your screen.<br />
+<strong>NOTE:</strong> You may need to Autoscale the channel (right click) to be able to see the entire trace.</p></li>
+</ol>
+<p><strong>The time constant should equal 𝛕 = RC. What <em>should</em> the time constant be (in seconds), given the resistors and capacitors in the circuit.</strong> Mind your units. <strong>Answer Q8 on the quiz.</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>	𝛕 \= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+</pre></div>
+</div>
+<p>We can also measure the time constant by measuring how long it takes the curve to rise or decay. One time constant (𝛕) is defined by when the circuit rises to <strong>63.2%</strong> of its total charge (alternately, we could see how long it takes to decay 1/e, about 37%).</p>
+<p>To empirically measure your time constant, follow these steps.</p>
+<ol class="arabic simple">
+<li><p>Make sure your voltage is very close to zero at baseline.</p></li>
+<li><p>Find the maximum voltage (Vmax) that your circuit reaches.</p></li>
+<li><p>Calculate 0.632 * Vmax</p></li>
+<li><p>Using the marker tool (right click anywhere in the window and choose “Clamp to trace”) find the point in your trace that is equal to the value calculated in Step 3.</p></li>
+<li><p>Move your cursor to the start of the stimulus. In the upper right corner of the window, you’ll see something that says Δt. This is the change in time since the mark on the curve and your time constant.</p></li>
+</ol>
+<p><strong>What is your recorded time constant with 1 V stimulation, a 100 kΩ resistor, and a 1 uF capacitor?</strong></p>
+<p>𝛕 = _______________</p>
+<p><strong>How close is the recorded time constant to the value you calculated with 𝛕 = RC?</strong></p>
+<p>In engineering, 5𝛕 is consisted the time it takes for a capacitor to fully charge (technically, its at 99% of full charge). The time constant is symmetrical for charging as well as losing charge. <strong>How long would it take this patch of membrane to return to baseline, then? What does that mean for <em>computation</em> happening in this membrane?</strong></p>
+</section>
+<section id="record-and-plot-your-time-constant-with-different-resistors">
+<h3>Record and plot your time constant with different resistors<a class="headerlink" href="#record-and-plot-your-time-constant-with-different-resistors" title="Link to this heading">#</a></h3>
+<p>Next, we’ll see how the time constant of the circuit changes in response to the resistance strength. Use the following resistors in your circuit, and use the steps above to determine the time constant for each.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Resistance</p></th>
+<th class="head text-left"><p>Time Constant</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>3 kΩ</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>15 kΩ</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>33 kΩ</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>100  kΩ</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>220 kΩ</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>330 kΩ</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Plot the time constant against the resistance.  Answer Q9a and Q9b on the quiz.</strong></p>
+<p>The plot should have:</p>
+<ul class="simple">
+<li><p>A line fit to it, with a description of what the trendline is (you can either show the equation or say in the figure caption what kind of trendline is plotted with the R2 value.</p></li>
+<li><p>Labeled axes &amp; units</p></li>
+<li><p>At least six data points</p></li>
+</ul>
+<p>Plotting Tips:</p>
+<ul class="simple">
+<li><p>Python: Use the <a class="reference external" href="https://bipn145.github.io/Python/PlotScatter.html">Plot Scatter</a> notebook</p></li>
+<li><p>Excel:</p>
+<ul>
+<li><p>Insert your plot as a scatter plot (this will tell Excel to treat your x-axis values (resistance) as actual values, not categories.</p></li>
+<li><p>Add a trendline by right clicking on the data, and choosing “Add Trendline”. You should add a trendline for the trend you’re expecting (we talked about this in lecture).</p></li>
+<li><p>Make sure that none of the markers for your points are cut off. If they are, change your axes so that they fit.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="check-your-time-constant-against-the-literature">
+<h3>Check your time constant against the literature<a class="headerlink" href="#check-your-time-constant-against-the-literature" title="Link to this heading">#</a></h3>
+<p>Let’s circle back to biology. Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: <a class="reference external" href="https://neuroelectro.org/ephys_prop/index.html">https://neuroelectro.org/ephys_prop/index.html</a></p>
+<p>Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Troubleshooting</p></th>
+<th class="head text-left"><p></p></th>
+<th class="head text-left"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Observation</strong></p></td>
+<td class="text-left"><p><strong>Likely Issue</strong></p></td>
+<td class="text-left"><p><strong>Possible Solution</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>There isn’t any voltage in your circuit</p></td>
+<td class="text-left"><p>The power terminals are not connected properly Your stimulator is not on</p></td>
+<td class="text-left"><p>Make sure everything is connected correctly on your breadboard. Consult <a class="reference external" href="https://wiring.org.co/learning/tutorials/breadboard/index.html">https://wiring.org.co/learning/tutorials/breadboard/index.html</a>  Check that the stimulator panel is switched on, and that you pressed Start</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Your signal is really noisy</p></td>
+<td class="text-left"><p>You’re not grounded. Your pulse is not being properly sent.</p></td>
+<td class="text-left"><p>Double check your circuit is connected correctly</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>You don’t see a fin-shaped waveform</p></td>
+<td class="text-left"><p>Your Scope/Chart View is not scaled properly.  Your capacitor is not properly connected or broken.</p></td>
+<td class="text-left"><p>Try autoscaling Check the capacitor placement or replace it.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>You’ve got “rabbit ears” on your waveform</p></td>
+<td class="text-left"><p>Your voltage is reversed somewhere</p></td>
+<td class="text-left"><p>Check the power terminals are connected in the right direction</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+<span id="document-StringNervousSystems"></span><section class="tex2jax_ignore mathjax_ignore" id="experiment-1-string-nervous-systems">
+<h2>Experiment #1: String Nervous Systems<a class="headerlink" href="#experiment-1-string-nervous-systems" title="Link to this heading">#</a></h2>
+<section id="background-goals">
+<h3>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h3>
+<section id="why-are-we-recording-from-a-string">
+<h4>Why are we recording from a string?<a class="headerlink" href="#why-are-we-recording-from-a-string" title="Link to this heading">#</a></h4>
+<p>The purpose of this lab is to get familiar with the recording equipment and software that we’ll be using in this course.</p>
+<p>First, we’ll learn how you can configure LabChart 8 to acquire data and send out pulses of electricity. Then, you’ll record the <strong>stimulus artifact</strong> (the passively conducted signal from the stimulus) from a saline-soaked piece of string. The string mimics some of the properties of the earthworm that you’ll observe in a future experiment. This will give you the opportunity to learn how to use the stimulating and recording devices on the PowerLab, as well as reduce noise and stimulus artifacts from your recordings, before you actually have to do all of this in an experiment.</p>
+<p>Asking questions during this lab is a great idea, and will help you succeed in future experiments.</p>
+<p><strong>Today you will:</strong></p>
+<ul class="simple">
+<li><p>Configure a recording experiment in LabChart 8.</p></li>
+<li><p>Determine how to record signals from a string.</p></li>
+<li><p>Identify sources of electrical noise in your rig.</p></li>
+</ul>
+<p><em>This lab was adapted from Experiment #1 from the BIPN 105 &amp; BIPN 145 Lab Manuals, as well as AD Instruments.</em></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lab-protocol">
+<h3>Lab Protocol<a class="headerlink" href="#lab-protocol" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Supplies</strong></p></th>
+<th class="head"><p><strong>Cables &amp; connectors</strong></p></th>
+<th class="head"><p><strong>Solutions</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>String</p></td>
+<td><p>BNC to single banana adapter (2)</p></td>
+<td><p>Saline</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dissection tray</p></td>
+<td><p>BNC to double banana adapter</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>PowerLab 26T, connected to computer</p></td>
+<td><p>BNC to DIN8 cord</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bio Amp</p></td>
+<td><p>BNC to DIN8 adapter</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Sewing pins (2)</p></td>
+<td><p>Banana plug cords (2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Faraday Cage</p></td>
+<td><p>Alligator clip adapters (2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Large Petri Dish</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Eyedropper</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="i-preparation">
+<h4>I. Preparation<a class="headerlink" href="#i-preparation" title="Link to this heading">#</a></h4>
+<section id="meet-your-powerlab">
+<h5>Meet your PowerLab<a class="headerlink" href="#meet-your-powerlab" title="Link to this heading">#</a></h5>
+<p>First, it helps to get familiar with our equipment. Look for the following on your PowerLab. Items that are particularly important for our experiments are described below — make sure you know where these are, and what they do/indicate.</p>
+<p><img alt="PowerLab front panel diagram" src="images/powerlab_front.png" />
+<em>Image courtesy of ADInstruments ©</em></p>
+<ol class="arabic simple">
+<li><p><strong>Power indicator light</strong> — illuminates when the PowerLab is turned on</p></li>
+<li><p><strong>Analog output connections</strong> — provide a voltage output in the 10 V range. Note: This is NOT safe for direct connection to humans.</p></li>
+<li><p><strong>Isolated Stimulator status light</strong> — indicates if the Isolated Stimulator is working properly (green) or out of compliance (yellow)</p></li>
+<li><p><strong>Bio Amp input</strong> — connects a Bio Amp Cable to the PowerLab; reads as inputs 3 and 4 in LabChart 8</p></li>
+<li><p><strong>Isolated Stimulator outputs</strong> — for connecting stimulating electrodes to the Isolated Stimulator</p></li>
+<li><p><strong>Isolated Stimulator switch</strong> — turns on/off the Isolated Stimulator</p></li>
+<li><p><strong>Inputs</strong> — 8-pin DIN connectors for attaching electrodes and any input you’d like to measure</p></li>
+<li><p><strong>Trigger input</strong> — can be used to start or stop a recording event</p></li>
+</ol>
+<p><img alt="PowerLab rear panel diagram" src="images/powerlab_rear.png" />
+<em>Image courtesy of ADInstruments ©</em></p>
+<ol class="arabic simple" start="9">
+<li><p><strong>Audio output connector</strong> — standard phono jack for sound output</p></li>
+<li><p><strong>Digital Output Connector</strong></p></li>
+<li><p><strong>Earthing post</strong> — used to ground the PowerLab, if grounded power supply is unavailable</p></li>
+<li><p><strong>Power switch</strong></p></li>
+<li><p><strong>Power cord connector</strong></p></li>
+<li><p><strong>Digital Input Connector</strong></p></li>
+<li><p><strong>USB connector</strong> — connects computer to the PowerLab</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="setting-up-labchart-8">
+<h5>Setting up LabChart 8<a class="headerlink" href="#setting-up-labchart-8" title="Link to this heading">#</a></h5>
+<p>LabChart 8 is the software we’ll be using to record electrophysiology data. It has already been downloaded on your lab computer. Before performing our experiment, we need to set up LabChart to acquire and display the data as we want.</p>
+<ol class="arabic">
+<li><p>Turn on the PowerLab 26T.</p></li>
+<li><p>Open LabChart 8. You should see that the PowerLab is connected (don’t worry if it tells you other devices are not connected).</p></li>
+<li><p>Open a new experiment by choosing the <strong>New</strong> button (bottom left-hand corner).</p></li>
+<li><p>First, we need to decide how many channels to record. Go to <strong>Setup &gt; Channel Settings</strong>.</p></li>
+<li><p>At the bottom of the window, change the number of channels to <strong>3</strong>, and make sure that they are all on (box on the left is checked).</p></li>
+<li><p>Rename the first channel <strong>“Stimulus”</strong> and the second channel <strong>“Raw Recording.”</strong></p></li>
+<li><p>Set the range for Channel 1 (your “Stimulus” channel) to <strong>5 V</strong>.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The range determines the range of values the PowerLab will record, and when using the BioAmp (later in this lab), it will actually change the amplification.</p>
+</div></blockquote>
+</li>
+<li><p>Set the range for Channel 2 (your “Raw Recording” channel) to <strong>100 mV</strong>.</p></li>
+<li><p>Make the sampling rate for Channel 1 <strong>“40 k/s”</strong> and ensure that <em>“Same sampling rate for all channels”</em> is checked.</p></li>
+<li><p>Make sure that the far-right column says <strong>“No calculation”</strong> for all three channels.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="finding-sources-of-electrical-noise">
+<h5>Finding sources of electrical noise<a class="headerlink" href="#finding-sources-of-electrical-noise" title="Link to this heading">#</a></h5>
+<p>One of the biggest issues in electrophysiology is noise from overhead lights and other electronics in the room. It’ll help to get an understanding of where noise in your rig is coming from.</p>
+<ol class="arabic">
+<li><p>Connect a DIN8-BNC adapter and a double 3-way BNC adapter to <strong>Input 2</strong> of the PowerLab. Plug in a red banana cable to the positive (red) side of the connector.</p></li>
+<li><p>Hold the lead (the end of the banana cable) in your hand.</p></li>
+<li><p>In the Channel Settings window, click on <strong>Input Amplifier</strong> for Channel 2. The Input Amplifier window will show the voltage that you’re recording. This allows for precise setting of the input range for a recording channel and provides filtering options.</p></li>
+<li><p>The signal at your rig may be variable. To adjust the sensitivity of the channel, choose an appropriate range setting from the <strong>Range</strong> drop-down list in the Input Amplifier dialog.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The number displayed in the range menu indicates the maximum input voltage currently selected. Notice how as you decrease the range the vertical scale changes and the small rhythmic deflections that appear on the signal trace increase in amplitude.</p>
+</div></blockquote>
+</li>
+<li><p>Choose a range such that your signal fills about ⅔ of the window.</p></li>
+<li><p>Observe the change in the recorded voltage with the electrode lead held overhead (near the lights) and then near the ground (away from the lights).</p></li>
+<li><p>Try the lead inside of your Faraday cage. Is the signal more or less noisy?</p>
+<blockquote>
+<div><p><strong>Tip:</strong> Is your Faraday cage actually grounded? How could you ground it?</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>How does the signal change as you move the electrode lead around?</p></li>
+<li><p>What do these sources of noise mean for our recording configuration, and our attempts to record electrical activity?</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="recording-stimulator-outputs">
+<h5>Recording stimulator outputs<a class="headerlink" href="#recording-stimulator-outputs" title="Link to this heading">#</a></h5>
+<p>We’ll use our PowerLab as a stimulator that can send voltage pulses into our specimen. We can change the timing, shape, amplitude, and repetition of these stimuli via the Stimulator window in LabChart. We’ll directly record these stimuli by sending the output of the PowerLab into an input.</p>
+<ol class="arabic">
+<li><p>Change your view to <strong>Scope view</strong>, which looks like the sweeps of an oscilloscope. The advantage of Scope View is that it allows the overlay and averaging of your data.</p></li>
+<li><p>In Scope view, set the <strong>Duration</strong> to <strong>20 ms</strong>. This changes how long each sweep of data is.</p></li>
+<li><p>Remove the DIN8-BNC adapter &amp; cable from Input 2.</p></li>
+<li><p>On the PowerLab, connect the <strong>(+) Output</strong> to <strong>Input 1</strong> using the BNC to DIN8 cable.</p></li>
+<li><p>Go to <strong>Setup &gt; Stimulator</strong> to open the Stimulator window. This is the window where you can modify the shape, timing, and amplitude of the stimulus output.</p></li>
+<li><p>Make sure that the <strong>Waveform Name</strong> is set to <strong>Pulse</strong>.</p></li>
+<li><p>Change the range of the Pulse Height to <strong>-5 to 5 V</strong> by clicking the ruler button next to the Pulse Height option.</p></li>
+<li><p>Configure the following by clicking and then editing the values in the window:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Start Delay</p></td>
+<td><p>1 ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pulse Width</p></td>
+<td><p>0.1 ms</p></td>
+</tr>
+<tr class="row-even"><td><p>Pulse Height</p></td>
+<td><p>0.150 V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p>Close the Stimulator window.</p></li>
+<li><p>Go to <strong>Setup &gt; Stimulator Panel</strong> to open a smaller window where you can directly modify the stimulus. This window can stay open while you’re recording.</p></li>
+<li><p>Press <strong>&gt; Start</strong> in the main LabChart GUI.</p></li>
+<li><p>Increase the stimulator voltage (Pulse Height) and watch the level change in the window.</p></li>
+<li><p>Try a negative stimulus voltage.</p></li>
+<li><p>Open the Stimulator window again and vary the delay, duration, and waveform shape, and see what happens. If your recording is cut off, how can you fix it? <em>(Hint: see Visualization tips below.)</em></p></li>
+</ol>
+<hr class="docutils" />
+<div class="note admonition">
+<p class="admonition-title">LabChart Visualization Tips</p>
+<p><strong>Vertical scaling</strong></p>
+<p>The Scaling buttons are on the left side of each channel’s Amplitude axis. The up button will double the vertical scale shown, and the down button will halve the vertical scale shown.</p>
+<p>Right-clicking in the channel will show several options for displaying data:</p>
+<ul class="simple">
+<li><p><strong>Auto Scale Channel</strong> — automatically adjusts the amplitude axis so the maximum value is just larger than the maximum value of visible data in this channel.</p></li>
+<li><p><strong>Show Points as Dots</strong> — shows the individual points the PowerLab is sampling.</p></li>
+<li><p><strong>Equalize Channel Heights</strong> — makes all data channels the same size.</p></li>
+<li><p><strong>Split View</strong> — inserts a divider vertically in the data creating two separate scrollable regions (Chart View only).</p></li>
+</ul>
+<p><strong>Horizontal Scaling</strong></p>
+<p>The horizontal scroll bar provides the simplest way of moving backwards and forwards through your file. By using the <strong>View Buttons</strong> at the bottom right corner, you can compress or expand the Time axis to see more or less of a waveform. The left button will compress your data; the right button will expand it. If you select the ratio button, a pop-up menu appears in which you can choose the new compression directly.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>Why would you want to record the stimulus output?</p></li>
+<li><p>Why would you want to delay the stimulus output?</p></li>
+<li><p>Why would you want to send different shapes of waveforms?</p></li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ii-recording-the-stimulus-artifact">
+<h4>II. Recording the stimulus artifact<a class="headerlink" href="#ii-recording-the-stimulus-artifact" title="Link to this heading">#</a></h4>
+<p>Lastly, we’ll add an amplifier (the BioAmp) to our circuit, and use this to record from a string soaked in saline. The string doesn’t have a nervous system, but we’ll add some voltage with our stimulator and observe the change in voltage from another point on the string.</p>
+<section id="set-up-your-string-stimulation-experiment">
+<h5>Set up your string stimulation experiment<a class="headerlink" href="#set-up-your-string-stimulation-experiment" title="Link to this heading">#</a></h5>
+<p>Your setup for the string stimulation will look like this:</p>
+<p><img alt="String stimulation setup diagram" src="images/string_setup.png" />
+<em>Image courtesy of ADInstruments ©</em></p>
+<ol class="arabic">
+<li><p>Remove all of the cords from the PowerLab.</p></li>
+<li><p>Connect your two single BNC to banana cable adapters into the <strong>(+)</strong> and <strong>(-)</strong> Outputs of the PowerLab.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The color of these does not matter, but it can help to be consistent — red for the anode (+ Output) and black for the cathode (- Output).</p>
+</div></blockquote>
+</li>
+<li><p>Using banana cables, connect the <strong>(+) Output</strong> to your <strong>anode</strong> stimulating electrode (the sewing pin) and the <strong>(-)  Output</strong> to the <strong>cathode</strong> stimulating electrode.</p></li>
+<li><p>Connect the BioAmp to the PowerLab.</p></li>
+<li><p>Connect the (+) recording, (-) recording, and ground needle electrodes to your string and into the corresponding spots on the BioAmp.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The colors on the BioAmp defy convention — consult the diagram above for clarity.</p>
+</div></blockquote>
+</li>
+<li><p>Change the configuration of your recording so that you are now using the BioAmp:</p>
+<ul class="simple">
+<li><p>Go into <strong>Setup &gt; Channel Settings</strong>.</p></li>
+<li><p>Make sure that <strong>BioAmp</strong> is listed under the Input Amplifier column for Channel 3.</p></li>
+<li><p><strong>Uncheck</strong> Channel 2 — we don’t need to record from it anymore.</p></li>
+<li><p>Change the name of Channel 3 to <strong>“BioAmp Recording.”</strong></p></li>
+</ul>
+</li>
+<li><p>We’ve removed our ability to directly record the stimulus output, so we need another way to know when the stimulator sends outputs. Open the Stimulator Settings and set the <strong>“Marker Channel”</strong> to Ch1 (your “Stimulus” channel). With this setting, LabChart will put a small tick on Channel 1 to show you when the stimulus was sent.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="stimulate-your-string">
+<h5>Stimulate your string!<a class="headerlink" href="#stimulate-your-string" title="Link to this heading">#</a></h5>
+<ol class="arabic">
+<li><p>Place your string in saline in the small petri dish, and give it a few minutes to soak. If it’s not completely soaked, you will not get a stimulus artifact.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If your string dries out during the experiment, you can use an eyedropper to add saline to it.</p>
+</div></blockquote>
+</li>
+<li><p>Set the stimulator voltage to <strong>1 V</strong>, and press <strong>&gt; Start</strong>. You should see your stimulus recording on Channel 1, as you did before, but you should also now have a recording on Channel 3 (BioAmp Recording).</p></li>
+<li><p>Change the scaling if you cannot see the entire deflection.</p></li>
+<li><p>If you do not see anything, increase the voltage (no more than 5 V).</p>
+<blockquote>
+<div><p><strong>Note:</strong> This recorded deflection is called the <strong>stimulus artifact</strong>. This artifact can exceed the range of our amplifier. Recovery from the artifact should be rapid, however, so that the baseline is reached within one millisecond or so after the stimulus pulse.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Question for reflection</p>
+<p>Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?</p>
+</div>
+<ol class="arabic" start="5">
+<li><p>Increase the stimulator voltage, and stimulate again. What happens?</p>
+<blockquote>
+<div><p><strong>Note:</strong> Change the name of Scope pages, or make comments on the recording, to indicate what you’ve done during that run of the stimulus. You need to know the metadata for the experiment once you’re ready to export.</p>
+</div></blockquote>
+</li>
+<li><p>Change the stimulus to a <strong>negative voltage</strong>, and stimulate again. Does the stimulus artifact change?</p></li>
+<li><p>Choose one of your pages where you have a stimulus artifact with a clear peak. Using the <strong>Marker tool</strong> (see box below), measure the latency from the stimulus to the beginning of your artifact. How much of a delay is there? How much of a delay <em>should</em> there be? (How fast does an electrical current flow?)</p></li>
+<li><p>Change the location of the stimulating electrodes. How does this change the shape of the artifact?</p></li>
+<li><p>Remove the ground electrode. How does this change your recording?</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Using the Marker Tool</p>
+<p>The <strong>Marker</strong> is located at the bottom left of the Chart View and can be dropped on any part of the waveform to allow relative measurements to be made. If you move the Marker to the data trace in Chart View, it will be placed on the same spot in the Scope View, and vice versa.</p>
+<p>Drag the Marker from the Marker Box to a location on the trace and release. The Marker does not have to be placed exactly on the waveform; it will attach itself to the waveform at the time position you dropped it.</p>
+<p>When the Marker is in use, the amplitude and time values displayed are <strong>relative to the marked reference point</strong>. This means the time and amplitude values are now displayed as differences (Δ) between the Waveform Cursor and the Marker. This is very useful for measuring the time between events or measuring the relative amplitudes of parts of a waveform.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="iii-save-your-file-export-your-data">
+<h4>III. Save your file &amp; export your data<a class="headerlink" href="#iii-save-your-file-export-your-data" title="Link to this heading">#</a></h4>
+<p>LabChart buffers files to disk in case of a power failure or computer crash, but it’s wise to save work frequently. Saving files in LabChart is the same as saving any file on your personal computer.</p>
+<p>We recommend keeping your LabChart files in your Google Drive folder or another cloud source that you can easily access.</p>
+<ol class="arabic simple">
+<li><p>Save the <strong>settings file</strong> for your experiment by going to <strong>File &gt; Save As Settings File</strong> in LabChart. Save it in a safe place (not locally on the computer). You will need this settings file for the earthworm experiment.</p></li>
+<li><p>Save the <strong>data file</strong> for your experiment by going to <strong>File &gt; Save As</strong> and save as a LabChart Data File (<em>.adicht</em>).</p></li>
+<li><p>Go to the Scope page for <strong>two of your favorite string stimulation experiments</strong> that you can compare and contrast — for example, two different voltages, or with two different distances between the stimulator and recording electrodes.</p></li>
+<li><p>Follow these instructions for exporting your data into Excel: <a class="reference external" href="http://bit.ly/BIPN145_export">http://bit.ly/BIPN145_export</a></p></li>
+<li><p>Plot your recordings (separately or on the same axes — be sure to label two different recordings if overlaid). Make sure your axes are labeled with units.</p></li>
+<li><p>Copy your plots into a Word or Google document.</p></li>
+<li><p>In 1–2 sentences, write a <strong>figure caption</strong> that describes your plot and the comparison you’re making.</p></li>
+<li><p>Upload your document to the assignment on Canvas (one plot per lab group). Include:</p>
+<ul class="simple">
+<li><p>Group member names</p></li>
+<li><p>Labeled axes</p></li>
+<li><p>Figure caption</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h4>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Observation</p></th>
+<th class="head"><p>Likely issue</p></th>
+<th class="head"><p>Possible solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>You can see the stimulus marker on Channel 1, but no stimulus artifact on Channel 3</p></td>
+<td><p>Your string may not be soaked in saline well enough</p></td>
+<td><p>Add saline to the string</p></td>
+</tr>
+<tr class="row-odd"><td><p>The recording trace is cut off</p></td>
+<td><p>Your visualization needs to be re-scaled, or your range is too small</p></td>
+<td><p>Right-click on channel and choose Auto Scale (see Visualization tips above); change the range on your recording channel</p></td>
+</tr>
+<tr class="row-even"><td><p>Your string recording trace has clear 60 Hz noise</p></td>
+<td><p>You’re not grounded, or there are ground loops</p></td>
+<td><p>Make sure your Faraday cage and ground electrode are both grounded to the back of the PowerLab. If this doesn’t help, consult an instructor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<span id="document-Earthworm"></span><section class="tex2jax_ignore mathjax_ignore" id="experiment-3-earthworm-electrophysiology">
+<h2>Experiment #3: Earthworm Electrophysiology<a class="headerlink" href="#experiment-3-earthworm-electrophysiology" title="Link to this heading">#</a></h2>
+<section id="background-goals">
+<h3>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h3>
+<section id="earthworm-essentials">
+<h4>Earthworm essentials<a class="headerlink" href="#earthworm-essentials" title="Link to this heading">#</a></h4>
+<p>Earthworms are a member of the Annelida phylum, which includes segmented worms such as the ragworm and our soon-to-be-friend, the leech. We’ll be working with earthworms in the Lumbricidae family.</p>
+<p>Earthworms are laid out with a mouth at one end, and an anus at the other. In the middle is the clitellum, a reproductive gland that can secrete a material that helps them form a cocoon. The clitellum is only visible in older worms that are ready to reproduce.</p>
+<p>Earthworms have a closed nervous system, with one main blood vessel running down the length of their body. They breathe through their skin, so it is important to keep it moist. They crawl using muscles that are located just underneath the epidermis.</p>
+</section>
+<section id="earthworm-nervous-system">
+<h4>Earthworm nervous system<a class="headerlink" href="#earthworm-nervous-system" title="Link to this heading">#</a></h4>
+<p>Earthworms have a pretty simple brain: it’s actually a fused pair of nerve ganglia, mostly located in their third segment. The earthworm has one main nerve cord on its ventral (bottom) side with three fibers running through it: one medial giant fiber, and two lateral giant fibers.</p>
+<p>These fibers are big bundles of axons. They serve as high-speed motor pathways that enable the worm to send movement signals throughout its body for quick, stereotyped reflexes.</p>
+<p>Each giant fiber is made up of large individual cells (one per segment) that are electrically coupled to each other through gap junctions. This results in the rapid conduction of action potentials from cell to cell so that each giant fiber behaves as though it were a single axon. There are cross-connections between the medial and lateral fibers, so they often function as one unit.</p>
+<p><strong>These fibers differ in important ways.</strong> The medial giant fiber transmits information from skin cells in the anterior (mouth) end of the worm, and the lateral giant fibers transmit information from the skin cells of the posterior end of the worm.</p>
+<p><strong>It’s quite easy to listen in to the activity of these large fibers, even from the skin of the earthworm.</strong> Importantly, these fibers fire action potentials very rarely. This type of nervous system activity is often called sparse coding. That means that we should be able to elicit one action potential and cleanly record it.</p>
+<p><em>Images from <a class="reference external" href="https://backyardbrains.com/experiments/speed">Backyard Brains</a>, © 2009–2017, used under a Creative Commons Attribution-ShareAlike license.</em></p>
+</section>
+<section id="properties-of-action-potentials">
+<h4>Properties of action potentials<a class="headerlink" href="#properties-of-action-potentials" title="Link to this heading">#</a></h4>
+<p>In this lab, we’ll determine the <strong>threshold</strong>, <strong>rheobase &amp; chronaxie</strong>, <strong>refractory period</strong>, and <strong>conduction velocity</strong> for the earthworm giant fiber system. We’re recording compound action potentials (CAPs) from many axons in these fiber bundles, but the underlying principles are the same.</p>
+<p>The <strong>threshold</strong> is defined as the minimum stimulus voltage that elicits an action potential 50% of the time. We’ll determine this with short stimuli. Stimulus voltages that don’t elicit an action potential are called subthreshold; stimulus voltages that do elicit an action potential are called suprathreshold.</p>
+<p>In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The <strong>rheobase</strong> is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the <strong>chronaxie</strong>. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie.</p>
+<p>The <strong>absolute refractory period</strong> is the minimum amount of time needed for a neuron to fire a second action potential. This is caused by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. Since we’re recording from many axons, your measured refractory period will be more variable than for a single axon. We’ll define the absolute refractory period as the time when the amplitude of the second CAP is 30% of the first.</p>
+<p>After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K⁺ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the <strong>relative refractory period</strong>. In this lab, we’ll identify it as the period where the amplitude of the second CAP is 30–90% of the first.</p>
+<p><strong>In these experiments you will:</strong></p>
+<ul class="simple">
+<li><p>Stimulate the ventral nerve cord of the earthworm to elicit an action potential</p></li>
+<li><p>Determine the voltage that is needed to recruit the lateral giant fibers</p></li>
+<li><p>Estimate the absolute and relative refractory period between action potentials</p></li>
+<li><p>Calculate the speed of an action potential</p></li>
+<li><p>Propose your own hypothesis about conduction velocity</p></li>
+<li><p>Conduct your experiment to test your hypothesis</p></li>
+</ul>
+</section>
+<section id="references">
+<h4>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Bähring, R. &amp; Bauer C.K. (2014) Easy method to examine single nerve fiber excitability and conduction parameters using intact nonanesthetized earthworms. <em>Advances in Physiology Education</em> 38(3): 253–264.</p></li>
+<li><p>Bullock, T.H. (1945) Functional organization of the giant fibre system of Lumbricus. <em>J Neurophysiol</em> 8:54–71.</p></li>
+<li><p>Drewes CD, Landa KB, McFall JL (1978) Giant nerve fibre activity in intact, freely moving earthworms. <em>J Exp Biol</em> 72:217-227.</p></li>
+<li><p>Kladt et al. (2010) Teaching basic neurophysiology in intact earthworms. <em>JUNE</em> 9(1):20-35.</p></li>
+<li><p>Rudell &amp; Fox (1991) The Propagation potential: An Axonal response with implications for scalp-recorded EEG. <em>Biophysical Journal</em> 60: 556-567.</p></li>
+<li><p>Shannon et al. (2014) Portable conduction velocity experiments using earthworms for the college and high school neuroscience teaching laboratory. <em>Advances in Physiology Education</em> 38(1): 62-70.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lab-protocol">
+<h3>Lab Protocol<a class="headerlink" href="#lab-protocol" title="Link to this heading">#</a></h3>
+<p>There are multiple days dedicated to these earthworm experiments. You are encouraged to complete as many of the experiments below while you have a functioning earthworm.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Supplies</strong></p></th>
+<th class="head"><p><strong>Cables &amp; connectors</strong></p></th>
+<th class="head"><p><strong>Solutions</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Worm (&gt;3.5 g or &gt;60 mm)</p></td>
+<td><p>BNC to single banana adapter (2)</p></td>
+<td><p>Earthworm saline</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dissection tray</p></td>
+<td><p>Banana plug cords (2)</p></td>
+<td><p>Earthworm anesthetic (10% ethanol in Ringers)</p></td>
+</tr>
+<tr class="row-even"><td><p>PowerLab 26T, connected to computer</p></td>
+<td><p>Alligator clip adapters (2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>BioAmp</p></td>
+<td><p>Needle electrodes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Sewing pins (3)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Timer</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Ruler</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Thermometer</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Faraday Cage</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Large Petri Dish</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Eyedropper</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="i-preparation">
+<h4>I. Preparation<a class="headerlink" href="#i-preparation" title="Link to this heading">#</a></h4>
+<section id="setting-up-the-powerlab-26t">
+<h5>Setting up the PowerLab 26T<a class="headerlink" href="#setting-up-the-powerlab-26t" title="Link to this heading">#</a></h5>
+<p>Our first step is making sure our PowerLab &amp; Amplifier are wired up correctly.</p>
+<p>Make sure the PowerLab is turned off.</p>
+<ol class="arabic simple">
+<li><p><strong>Connect a single BNC adapter to the (+) Output</strong> of the PowerLab. Plug a red banana plug cable into the adapter.</p></li>
+<li><p><strong>Connect a single BNC to banana adapter to the (−) Output.</strong> Plug a black banana plug cable into the adapter.</p></li>
+<li><p>Make sure that the BioAmp is connected to the PowerLab, with three different needle electrodes plugged into it.</p></li>
+<li><p>Once you’re confident everything is connected correctly, turn on the PowerLab.</p></li>
+</ol>
+<p><em>Image courtesy of ADInstruments ©</em></p>
+</section>
+<section id="setting-up-labchart-8">
+<h5>Setting up LabChart 8<a class="headerlink" href="#setting-up-labchart-8" title="Link to this heading">#</a></h5>
+<ol class="arabic">
+<li><p><strong>Open LabChart 8 with the settings file you saved during the string experiment.</strong> Most settings are saved within this settings file. However, it’s always good to ensure that you have the correct settings before beginning.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If for some reason you cannot access your settings file, you can find an appropriate settings file at <a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>. Use the “Earthworm bioAmp Settings.”</p>
+</div></blockquote>
+</li>
+<li><p><strong>Go to Setup &gt; Channel Settings</strong> and confirm that you have three recording channels, and that the third (“BioAmp Recording”) is connected to the BioAmp.</p></li>
+<li><p><strong>Go to Setup &gt; Stimulator</strong> and change the Stimulator settings as follows. Make sure your Marker Channel is Channel 1.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Start Delay</p></td>
+<td><p>0.1 ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Repeats</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Max Repeat Rate</p></td>
+<td><p>1 Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pulse Height</p></td>
+<td><p>0.2 V</p></td>
+</tr>
+<tr class="row-even"><td><p>Pulse Width</p></td>
+<td><p>0.2 ms</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ol>
+</section>
+<section id="setting-up-your-earthworm">
+<h5>Setting up your earthworm<a class="headerlink" href="#setting-up-your-earthworm" title="Link to this heading">#</a></h5>
+<blockquote>
+<div><p><strong>Note:</strong> Throughout every step of this procedure, be careful not to stretch the earthworm. This will damage the nerve and your experiment will not work.</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Obtain a large, lively earthworm, &gt;3.5 g, 60 mm long. Rinse it with saline if it is dirty.</p></li>
+<li><p><strong>Anesthetize the earthworm</strong> by placing it in the petri dish with 10% ethanol (in Earthworm Ringer’s solution) for 5 minutes.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Do not leave your earthworm unattended in anesthesia. With too little anesthesia, the earthworm will move around during the experiment, and the resulting muscle electrical activity (electromyogram) will drown out the small neural electrical signals you are interested in. Too much anesthesia and the nerves will not fire.</p>
+<p><strong>Note #2:</strong> Your earthworm may still react to pressure after 5 minutes — you can proceed with the experiment as long as you are able to handle the worm and pin it down.</p>
+</div></blockquote>
+</li>
+<li><p><strong>When your earthworm is anesthetized enough to pin it down,</strong> remove the earthworm from the ethanol and place it on the dissection tray with the dorsal (darker side) up.</p></li>
+<li><p>Pin the earthworm to the tray using one sewing pin on each end of the worm.</p></li>
+<li><p>Place the ruler down next to your worm.</p></li>
+<li><p><strong>Insert a third sewing pin into the anterior end of the earthworm,</strong> ~1 cm from the first pin. Connect the anode &amp; cathode stimulating electrodes to the first two pins.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The anterior end is the end nearest the clitellum, a smooth, non-segmented band.</p>
+</div></blockquote>
+</li>
+<li><p>To keep the worm anesthetized, apply a few drops of the earthworm anesthetic along the length of the earthworm with the eyedropper. Soak up any excess fluid.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Make sure there isn’t a large puddle of solution — too much may interfere with your recording.</p>
+</div></blockquote>
+</li>
+<li><p>Insert the three recording needle electrodes into the worm (same configuration as the string experiment!).</p>
+<blockquote>
+<div><p><strong>Note:</strong> Make sure no wire is touching any other wire. Be careful when positioning the wires to avoid damaging the worm.</p>
+<p><strong>Note #2:</strong> It helps to place your recording electrodes as lateral as possible, while still holding down the worm.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ii-determining-the-threshold-of-your-fibers">
+<h4>II. Determining the threshold of your fibers ★<a class="headerlink" href="#ii-determining-the-threshold-of-your-fibers" title="Link to this heading">#</a></h4>
+<p>In this experiment, you will send a stimulus into the earthworm while recording from it to determine the threshold voltage of the medial and lateral giant fibers.</p>
+<section id="determine-the-threshold-to-activate-the-medial-giant-fiber">
+<h5>Determine the threshold to activate the Medial Giant Fiber<a class="headerlink" href="#determine-the-threshold-to-activate-the-medial-giant-fiber" title="Link to this heading">#</a></h5>
+<ol class="arabic">
+<li><p><strong>Open your Input Amplifier (BioAmp)</strong> for your Action Potential channel to make sure that your signal looks reasonable. You shouldn’t see 60 Hz noise, but it should look like a physiological signal. (If you have noise, see Troubleshooting.)</p></li>
+<li><p><strong>Open the Stimulator Panel</strong> by going to the Setup menu. Your stimulator should start with:</p>
+<ul class="simple">
+<li><p>Max Repeat Rate: 1 Hz</p></li>
+<li><p>Pulse Height: 0.2 V</p></li>
+<li><p>Pulse Width: 0.2 ms</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Note:</strong> Leave the Stimulator Panel open — we’ll need it throughout the experiment.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Press &gt; Start.</strong> LabChart should be in Scope View and display one 20 ms sweep every time you click Start. For each 20 ms sweep, a stimulus pulse is generated through the PowerLab Stimulator outputs.</p></li>
+<li><p><strong>Examine the recording</strong> — you should see a quick deflection very shortly after your stimulus pulse. The deflection just after the start of the sweep is your stimulus artifact, caused by spread of the stimulus voltage to the recording electrodes.</p>
+<blockquote>
+<div><p><strong>Note:</strong> The stimulus artifact can be very large in amplitude, and can exceed the range of the recording amplifier. It is okay if it is cut off.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Change the Pulse Height to 1 V.</strong></p></li>
+<li><p>Each time you change the stimulus, click Start and a new page will appear to the left of the Scope View Window. This is the Page Explorer. <strong>Label the individual pages</strong> of your recording as you go along.</p></li>
+<li><p><strong>Increase the Pulse Height in 0.1 V steps</strong> until you see an inflection after the stimulus artifact. This means you’ve successfully elicited a response from the medial giant fiber! Note the stimulus voltage as an estimate of the threshold stimulus strength.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If you can’t see anything, right-click on the channel to change the scaling (or use the − and + buttons on the bottom left of the channel).</p>
+<p><strong>Note #2:</strong> If no response is seen with a stimulus of 3.5 V or greater, contact your instructor for assistance.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Find a more accurate threshold</strong> by first reducing the stimulus by 0.2 V (or more) to diminish your response. Then, increase the stimulus by 0.05 V between each sweep. You should report a threshold (Table 1) to the hundredth decimal point (e.g. 1.25 V).</p></li>
+<li><p>Save your data, but do not close the file.</p></li>
+</ol>
+</section>
+<section id="determine-the-threshold-to-recruit-the-lateral-giant-fibers">
+<h5>Determine the threshold to recruit the Lateral Giant Fibers<a class="headerlink" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers" title="Link to this heading">#</a></h5>
+<p>In the next stage, you will attempt to elicit an action potential in the lateral giant fibers.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Remember to keep the earthworm anesthetized!</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Set the Pulse Height to your threshold for the MGF.</p></li>
+<li><p>Keep increasing the stimulus in 0.1 V steps until you see a second inflection in your recorded trace.</p></li>
+<li><p>Once you see a second inflection, follow the same procedure as above to determine the threshold where you can elicit an action potential from the lateral giant fiber about 50% of the time. Record the stimulus threshold in Table 1 below.</p></li>
+<li><p>Save your data, but do not close the file.</p>
+<blockquote>
+<div><p><strong>Note:</strong> In some worms, the median and lateral fiber responses may not be separated — they will appear to have the same threshold. Other worms may not show the second response, possibly because the lateral giant fibers are damaged.</p>
+</div></blockquote>
+</li>
+<li><p>Save your LabChart file.</p></li>
+</ol>
+<p><strong>Table 1.</strong> MGF and LGF compound action potential (CAP) properties.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Threshold</p></th>
+<th class="head"><p>Amplitude</p></th>
+<th class="head"><p>Latency</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>MGF</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LGF</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>Did the shape or amplitude of the CAPs change with more stimulation voltage? What does this tell us about the action potential that is firing?</p></li>
+<li><p>Which fiber fires an action potential sooner (with a shorter latency)?</p></li>
+<li><p>Why would the MGF and LGF latencies differ?</p></li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="iii-calculate-the-rheobase">
+<h4>III. Calculate the rheobase ★<a class="headerlink" href="#iii-calculate-the-rheobase" title="Link to this heading">#</a></h4>
+<p>In Part III, we’ll change the stimulus amplitude and duration to calculate the rheobase and chronaxie of the earthworm medial giant fiber (read the Background if you forget what these are).</p>
+<p>In the previous experiment, we gave a stimulus for 0.2 ms. Now, we’ll modify the stimulus duration and amplitude to determine the minimum stimulus requirement, regardless of duration.</p>
+<ol class="arabic">
+<li><p>Write your MGF threshold in the column for 0.20 ms stimulus duration in Table 2.</p></li>
+<li><p>Change your Pulse Height to the threshold for your MGF.</p></li>
+<li><p>Systematically change the duration of your stimulus (Pulse Width) to the values in the table below. As necessary, change the stimulus voltage to successfully get a CAP from your MGF.</p></li>
+<li><p>For each duration, record the stimulus voltage (Pulse Height) values that successfully elicit a CAP in Table 2.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Be sure to label your pages in Scope view accordingly. You don’t need to save the pages that do not elicit an action potential.</p>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Table 2.</strong> Data for strength-duration curve.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Duration (ms)</p></th>
+<th class="head"><p>0.06</p></th>
+<th class="head"><p>0.08</p></th>
+<th class="head"><p>0.10</p></th>
+<th class="head"><p>0.20</p></th>
+<th class="head"><p>0.40</p></th>
+<th class="head"><p>0.60</p></th>
+<th class="head"><p>1.00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stimulus Amplitude (V)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="iv-determine-the-refractory-period">
+<h4>IV. Determine the refractory period<a class="headerlink" href="#iv-determine-the-refractory-period" title="Link to this heading">#</a></h4>
+<p>In the next step, you’ll determine the shortest time between stimuli where you can elicit two different CAPs from the MGF. In other words, we’ll determine the relative and absolute refractory period of these fibers.</p>
+<ol class="arabic">
+<li><p>Set your pulse height so that you can comfortably elicit a response from the MGF.</p></li>
+<li><p><strong>In Setup &gt; Stimulator, change Repeats to 2</strong> in order to play multiple pulses.</p></li>
+<li><p>We also need to change the time between each stimulus. PowerLab thinks of this interval as Hz. To start, we want 15 ms between each stimulus.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Remember that Hertz (Hz) means events per second. So, 1 Hz = 1 event per second, and 10 Hz = 10 events per second. 1 ÷ frequency (in Hz) = time between stimuli (in seconds).</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>How many milliseconds would there be between each stimulus at 10 Hz stimulation?</p></li>
+<li><p>For 15 ms between each stimulus, what should the frequency of stimulation (in Hz) be?</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Fill out this chart with the corresponding Hz values for each interval length:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Interval (ms)</p></th>
+<th class="head"><p>15</p></th>
+<th class="head"><p>14</p></th>
+<th class="head"><p>13</p></th>
+<th class="head"><p>12</p></th>
+<th class="head"><p>11</p></th>
+<th class="head"><p>10</p></th>
+<th class="head"><p>9</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Freq. (Hz)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic" start="5">
+<li><p><strong>Change your Max Repeat Rate</strong> to the equivalent frequency for 15 ms intervals.</p></li>
+<li><p>Change your Pulse Width to 0.2 ms and your Pulse Height to the threshold for your MGF.</p></li>
+<li><p><strong>Press &gt; Start</strong> to record a trial with two stimuli, separated by 15 ms.</p></li>
+<li><p>Right-click and choose <strong>Add Marker &gt; Clamp to Trace</strong> to place a marker at the moment the stimulus occurs. Move your cursor to the peak of the action potential. Look at the ΔV on the right-hand side to see the change in voltage from that point.</p></li>
+<li><p><strong>Measure the amplitude of your first and second action potentials.</strong> Determine how strong the second was relative to the first (e.g. if AP #2 amplitude was half as high as #1, it would be 50%). Record your response in row one of Table 3.</p></li>
+<li><p>Decrease the duration between stimuli by 1 ms by changing the Repeat Rate to the Hz for a 14 ms interval.</p></li>
+<li><p><strong>Record the amplitudes and corresponding percentages for each stimulus interval in Table 3.</strong></p></li>
+<li><p>At some point, AP #2 will diminish below 30% of AP #1. We can consider this our absolute refractory period.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Depending on the latency of your MGF CAP, it may be difficult to see a CAP with a stimulus interval of 1 or 2 ms. Reduce the stimulus interval to as short as you can before the MGF CAP is cut off by the second stimulus. If the shortest stimulus interval is &gt;3 ms, you should move your pins closer together.</p>
+</div></blockquote>
+</li>
+<li><p>Save your LabChart file.</p>
+<blockquote>
+<div><p><strong>Note:</strong> If you have data that doesn’t seem quite right, you should repeat your experiment. You must be upfront about your number of repeats in your lab report, comprehensively reporting all of the data that you collected.</p>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Table 3.</strong> Amplitudes of CAPs elicited by stimuli with decreasing stimulus intervals.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Stimulus Interval (ms)</p></th>
+<th class="head"><p>#1 CAP Amplitude</p></th>
+<th class="head"><p>#2 CAP Amplitude</p></th>
+<th class="head"><p>% #2/#1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>15</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>What was the shortest duration between stimuli where the second action potential was less than 90% but more than 30% of the original CAP amplitude?</p></li>
+<li><p>What was the shortest duration between stimuli where the second CAP was diminished below 30%?</p></li>
+<li><p>Which of these values is your absolute refractory period, and which is the relative refractory period?</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="v-compute-the-conduction-velocity">
+<h4>V. Compute the conduction velocity ★<a class="headerlink" href="#v-compute-the-conduction-velocity" title="Link to this heading">#</a></h4>
+<p><em>(If you’re doing this on a different day, follow the same steps for preparing LabChart &amp; your earthworm as you did in the previous earthworm experiment.)</em></p>
+<p><strong>How far is your first recording pin (−) from your cathode (−) stimulation pin? Be sure to include units:</strong> ______________________</p>
+<ol class="arabic simple">
+<li><p><strong>In PowerLab, press Start.</strong> Confirm that you have two recording channels.</p></li>
+<li><p>Follow the same protocol as in the previous experiments to determine the threshold required to elicit an action potential from your medial giant fiber.</p></li>
+</ol>
+<p><strong>What is the stimulus voltage needed to elicit an MGF action potential from this worm?</strong> ______________________</p>
+<section id="determine-the-mgf-latency-to-spike">
+<h5>Determine the MGF latency to spike<a class="headerlink" href="#determine-the-mgf-latency-to-spike" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to your elicited action potential.</p></li>
+<li><p>Repeat this 5 times and record your data in Table 4.</p></li>
+</ol>
+<p><strong>Table 4.</strong> MGF conduction velocity data.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Trial</p></th>
+<th class="head"><p>MGF Baseline Latency (s)</p></th>
+<th class="head"><p>Speed (m/s)</p></th>
+<th class="head"><p>MGF Experimental Latency (s)</p></th>
+<th class="head"><p>Speed (m/s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Since we know when the AP occurred and the distance between your electrodes, we can calculate the speed of the action potential. Record these values in the “Speed” column of the table above. <em>(Reminder: speed = distance/time.)</em></p></li>
+</ol>
+<p><strong>How fast, on average, is your action potential traveling down the MGF?</strong> ______________________</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vi-design-your-own-experiment">
+<h4>VI. Design your own experiment ★<a class="headerlink" href="#vi-design-your-own-experiment" title="Link to this heading">#</a></h4>
+<p>What do you want to know about conduction velocity? You have the following options for your experiment:</p>
+<ul class="simple">
+<li><p>Does conduction velocity depend on temperature?</p></li>
+<li><p>What if you (gently) stretch the worm?</p></li>
+</ul>
+<p><strong>Propose your experiment here, and call over an instructor when you’re ready.</strong></p>
+<p>We will test the effect of ______________________________ on ______________________________.</p>
+<p>We will do this by:</p>
+<section id="conduct-your-experiment">
+<h5>Conduct your experiment<a class="headerlink" href="#conduct-your-experiment" title="Link to this heading">#</a></h5>
+<p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report.</p>
+<p>Record your results in the MGF Experimental AP Latency column of Table 4. You’ll need these later for the Results section of your lab report.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h4>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Observation</p></th>
+<th class="head"><p>Likely issue</p></th>
+<th class="head"><p>Possible solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The recording trace is flat</p></td>
+<td><p>Something is disconnected</p></td>
+<td><p>Check all of your connections</p></td>
+</tr>
+<tr class="row-odd"><td><p>I can’t see a stimulus trace in the Stimulus channel</p></td>
+<td><p>You don’t have a marker channel set up</p></td>
+<td><p>Go to Setup &gt; Stimulator to set up the Marker Channel</p></td>
+</tr>
+<tr class="row-even"><td><p>I can’t see a stimulus artifact in my action potential channel</p></td>
+<td><p>Your electrodes may not be in the worm, or stimulus amplitude is too weak</p></td>
+<td><p>Ensure all electrodes are in the worm (but not too medial), and try stimulating at 0.5 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>My worm is bleeding</p></td>
+<td><p>The electrode is through the blood vessel</p></td>
+<td><p>Move the electrode more lateral; if you don’t get an AP after this, get a new worm</p></td>
+</tr>
+<tr class="row-even"><td><p>There is a stimulus artifact, but no visible response to stimuli between 1–3 V</p></td>
+<td><p>Your electrodes may not be placed well, or your worm may be damaged</p></td>
+<td><p>Try to reposition the electrodes on a different place in the worm. If this doesn’t work, get a new worm.</p></td>
+</tr>
+<tr class="row-odd"><td><p>My recording just looks like a big up and down squiggle (like a sine wave)</p></td>
+<td><p>You’re picking up 60 Hz noise</p></td>
+<td><p>Ground everything (Faraday cage, ground recording pin, amplifier) to the ground pin on the back of the PowerLab. Averaging multiple trials can also get rid of noise.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="possible-opportunities-for-student-projects">
+<h4>Possible opportunities for student projects<a class="headerlink" href="#possible-opportunities-for-student-projects" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Application of chemicals, nerve blockers, etc. to test for effects on the nervous system</p></li>
+<li><p>Earthworm dissection &amp; recordings (as in Gunther, 1976 or 1972)</p></li>
+<li><p>Demonstrating facilitation of conduction rate (Bullock, 1951)</p></li>
+</ul>
+</section>
+</section>
+</section>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-StringNervousSystems">Experiment #1: String Nervous Systems</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Earthworm">Experiment #3: Earthworm Electrophysiology</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

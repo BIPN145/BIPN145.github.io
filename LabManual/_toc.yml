@@ -1,4 +1,5 @@
 format: jb-book
-root: StringNervousSystems
+root: ModelingNeuralMembranes
 chapters:
+- file: StringNervousSystems
 - file: Earthworm

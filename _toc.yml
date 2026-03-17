@@ -22,6 +22,7 @@ chapters:
   - file: FlyTracking/ColabNotebook.ipynb
 - file: LabManual/Introduction.md
   sections:
+  - file: LabManual/ModelingNeuralMembranes.md
   - file: LabManual/StringNervousSystems.md
   - file: LabManual/Earthworm.md
 - file: FinalProjects/Introduction
