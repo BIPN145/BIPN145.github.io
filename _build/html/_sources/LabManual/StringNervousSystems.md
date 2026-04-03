@@ -25,65 +25,32 @@ Asking questions during this lab is a great idea, and will help you succeed in f
 |---|---|---|
 | String | BNC to single banana adapter (2) | Saline |
 | Dissection tray | BNC to double banana adapter | |
-| PowerLab 26T, connected to computer | BNC to DIN8 cord | |
-| Bio Amp | BNC to DIN8 adapter | |
+| PowerLab 26T, connected to computer | BNC to DIN8 adapter | |
+| BioAmp | Alligator clip adapters (2) | |
 | Sewing pins (2) | Banana plug cords (2) | |
-| Faraday Cage | Alligator clip adapters (2) | |
+| Faraday Cage |  | |
 | Large Petri Dish | | |
 | Eyedropper | | |
 
 ---
 
-### I. Preparation
+## I. Setting up LabChart 8
 
-#### Meet your PowerLab
-
-First, it helps to get familiar with our equipment. Look for the following on your PowerLab. Items that are particularly important for our experiments are described below — make sure you know where these are, and what they do/indicate.
-
-![PowerLab front panel diagram](images/powerlab_front.png)
-*Image courtesy of ADInstruments ©*
-
-1. **Power indicator light** — illuminates when the PowerLab is turned on
-2. **Analog output connections** — provide a voltage output in the 10 V range. Note: This is NOT safe for direct connection to humans.
-3. **Isolated Stimulator status light** — indicates if the Isolated Stimulator is working properly (green) or out of compliance (yellow)
-4. **Bio Amp input** — connects a Bio Amp Cable to the PowerLab; reads as inputs 3 and 4 in LabChart 8
-5. **Isolated Stimulator outputs** — for connecting stimulating electrodes to the Isolated Stimulator
-6. **Isolated Stimulator switch** — turns on/off the Isolated Stimulator
-7. **Inputs** — 8-pin DIN connectors for attaching electrodes and any input you'd like to measure
-8. **Trigger input** — can be used to start or stop a recording event
-
-![PowerLab rear panel diagram](images/powerlab_rear.png)
-*Image courtesy of ADInstruments ©*
-
-9. **Audio output connector** — standard phono jack for sound output
-10. **Digital Output Connector**
-11. **Earthing post** — used to ground the PowerLab, if grounded power supply is unavailable
-12. **Power switch**
-13. **Power cord connector**
-14. **Digital Input Connector**
-15. **USB connector** — connects computer to the PowerLab
-
----
-
-#### Setting up LabChart 8
-
-LabChart 8 is the software we'll be using to record electrophysiology data. It has already been downloaded on your lab computer. Before performing our experiment, we need to set up LabChart to acquire and display the data as we want.
+LabChart 8 is the software we'll be using to record electrophysiology data. Before performing our experiment, we need to set up LabChart to **acquire** and **display** the data as we want.
 
 1. Turn on the PowerLab 26T.
-2. Open LabChart 8. You should see that the PowerLab is connected (don't worry if it tells you other devices are not connected).
+2. Open LabChart 8. You should see that the PowerLab is connected with a green check mark.
 3. Open a new experiment by choosing the **New** button (bottom left-hand corner).
 4. First, we need to decide how many channels to record. Go to **Setup > Channel Settings**.
-5. At the bottom of the window, change the number of channels to **3**, and make sure that they are all on (box on the left is checked).
-6. Rename the first channel **"Stimulus"** and the second channel **"Raw Recording."**
-7. Set the range for Channel 1 (your "Stimulus" channel) to **5 V**.
+   * At the bottom of the window, change the number of channels to **3**, and make sure that they are all on (box on the left is checked).
+   * Rename the first channel **"Stimulus"** and the second channel **"Raw Recording"**.
+   * Set the range for Channel 1 (your "Stimulus" channel) to **5 V**.
    > **Note:** The range determines the range of values the PowerLab will record, and when using the BioAmp (later in this lab), it will actually change the amplification.
-8. Set the range for Channel 2 (your "Raw Recording" channel) to **100 mV**.
-9. Make the sampling rate for Channel 1 **"40 k/s"** and ensure that *"Same sampling rate for all channels"* is checked.
-10. Make sure that the far-right column says **"No calculation"** for all three channels.
+   * Set the range for Channel 2 (your "Raw Recording" channel) to **100 mV**.
+   * Make the sampling rate for Channel 1 **"40k/s"** and ensure that *"Same sampling rate for all channels"* is checked.
+   * Make sure that the far-right column says **"No calculation"** for all three channels.
 
----
-
-#### Finding sources of electrical noise
+## II. Finding sources of electrical noise
 
 One of the biggest issues in electrophysiology is noise from overhead lights and other electronics in the room. It'll help to get an understanding of where noise in your rig is coming from.
 
@@ -103,9 +70,8 @@ One of the biggest issues in electrophysiology is noise from overhead lights and
 - What do these sources of noise mean for our recording configuration, and our attempts to record electrical activity?
 :::
 
----
 
-#### Recording stimulator outputs
+## III. Recording stimulator outputs
 
 We'll use our PowerLab as a stimulator that can send voltage pulses into our specimen. We can change the timing, shape, amplitude, and repetition of these stimuli via the Stimulator window in LabChart. We'll directly record these stimuli by sending the output of the PowerLab into an input.
 
@@ -129,27 +95,7 @@ We'll use our PowerLab as a stimulator that can send voltage pulses into our spe
 11. Press **> Start** in the main LabChart GUI.
 12. Increase the stimulator voltage (Pulse Height) and watch the level change in the window.
 13. Try a negative stimulus voltage.
-14. Open the Stimulator window again and vary the delay, duration, and waveform shape, and see what happens. If your recording is cut off, how can you fix it? *(Hint: see Visualization tips below.)*
-
----
-
-:::{admonition} LabChart Visualization Tips
-:class: note
-
-**Vertical scaling**
-
-The Scaling buttons are on the left side of each channel's Amplitude axis. The up button will double the vertical scale shown, and the down button will halve the vertical scale shown.
-
-Right-clicking in the channel will show several options for displaying data:
-- **Auto Scale Channel** — automatically adjusts the amplitude axis so the maximum value is just larger than the maximum value of visible data in this channel.
-- **Show Points as Dots** — shows the individual points the PowerLab is sampling.
-- **Equalize Channel Heights** — makes all data channels the same size.
-- **Split View** — inserts a divider vertically in the data creating two separate scrollable regions (Chart View only).
-
-**Horizontal Scaling**
-
-The horizontal scroll bar provides the simplest way of moving backwards and forwards through your file. By using the **View Buttons** at the bottom right corner, you can compress or expand the Time axis to see more or less of a waveform. The left button will compress your data; the right button will expand it. If you select the ratio button, a pop-up menu appears in which you can choose the new compression directly.
-:::
+14. Open the Stimulator window again and vary the delay, duration, and waveform shape, and see what happens. If your recording is cut off, how can you fix it? *(Hint: see Visualization tips in Meet Your PowerLab.)*
 
 :::{admonition} Questions for reflection
 :class: tip
@@ -160,16 +106,15 @@ The horizontal scroll bar provides the simplest way of moving backwards and forw
 
 ---
 
-### II. Recording the stimulus artifact
+## IV. Recording the stimulus artifact
 
 Lastly, we'll add an amplifier (the BioAmp) to our circuit, and use this to record from a string soaked in saline. The string doesn't have a nervous system, but we'll add some voltage with our stimulator and observe the change in voltage from another point on the string.
 
-#### Set up your string stimulation experiment
+### Set up your string stimulation experiment
 
 Your setup for the string stimulation will look like this:
 
-![String stimulation setup diagram](images/string_setup.png)
-*Image courtesy of ADInstruments ©*
+![String stimulation setup diagram](images/powerlab_front.png)
 
 1. Remove all of the cords from the PowerLab.
 2. Connect your two single BNC to banana cable adapters into the **(+)** and **(-)** Outputs of the PowerLab.
@@ -185,15 +130,18 @@ Your setup for the string stimulation will look like this:
    - Change the name of Channel 3 to **"BioAmp Recording."**
 7. We've removed our ability to directly record the stimulus output, so we need another way to know when the stimulator sends outputs. Open the Stimulator Settings and set the **"Marker Channel"** to Ch1 (your "Stimulus" channel). With this setting, LabChart will put a small tick on Channel 1 to show you when the stimulus was sent.
 
----
 
-#### Stimulate your string!
+### Stimulate your string!
 
 1. Place your string in saline in the small petri dish, and give it a few minutes to soak. If it's not completely soaked, you will not get a stimulus artifact.
    > **Note:** If your string dries out during the experiment, you can use an eyedropper to add saline to it.
-2. Set the stimulator voltage to **1 V**, and press **> Start**. You should see your stimulus recording on Channel 1, as you did before, but you should also now have a recording on Channel 3 (BioAmp Recording).
-3. Change the scaling if you cannot see the entire deflection.
-4. If you do not see anything, increase the voltage (no more than 5 V).
+2. Lay the string out on the dissection tray, with the stimulating and recording electrodes laid out as follows:
+
+<img src="images/string_electrodes.png" width="150" align="right" />
+
+3. Set the stimulator voltage to **1 V**, and press **> Start**. You should see your stimulus recording on Channel 1, as you did before, but you should also now have a recording on Channel 3 (BioAmp Recording).
+4. Change the scaling if you cannot see the entire deflection.
+5. If you do not see anything, increase the voltage (no more than 5 V).
    > **Note:** This recorded deflection is called the **stimulus artifact**. This artifact can exceed the range of our amplifier. Recovery from the artifact should be rapid, however, so that the baseline is reached within one millisecond or so after the stimulus pulse.
 
 :::{admonition} Question for reflection
@@ -201,41 +149,26 @@ Your setup for the string stimulation will look like this:
 Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?
 :::
 
-5. Increase the stimulator voltage, and stimulate again. What happens?
+6. Increase the stimulator voltage, and stimulate again. What happens?
    > **Note:** Change the name of Scope pages, or make comments on the recording, to indicate what you've done during that run of the stimulus. You need to know the metadata for the experiment once you're ready to export.
-6. Change the stimulus to a **negative voltage**, and stimulate again. Does the stimulus artifact change?
-7. Choose one of your pages where you have a stimulus artifact with a clear peak. Using the **Marker tool** (see box below), measure the latency from the stimulus to the beginning of your artifact. How much of a delay is there? How much of a delay *should* there be? (How fast does an electrical current flow?)
-8. Change the location of the stimulating electrodes. How does this change the shape of the artifact?
-9. Remove the ground electrode. How does this change your recording?
+7. Change the stimulus to a **negative voltage**, and stimulate again. Does the stimulus artifact change?
+8. Choose one of your pages where you have a stimulus artifact with a clear peak. Using the **Marker tool**, measure the latency from the stimulus to the beginning of your artifact. How much of a delay is there? How much of a delay *should* there be? (How fast does an electrical current flow?)
+9. Change the location of the stimulating electrodes. How does this change the shape of the artifact?
+10. Remove the ground electrode. How does this change your recording?
 
-:::{admonition} Using the Marker Tool
-:class: note
-The **Marker** is located at the bottom left of the Chart View and can be dropped on any part of the waveform to allow relative measurements to be made. If you move the Marker to the data trace in Chart View, it will be placed on the same spot in the Scope View, and vice versa.
-
-Drag the Marker from the Marker Box to a location on the trace and release. The Marker does not have to be placed exactly on the waveform; it will attach itself to the waveform at the time position you dropped it.
-
-When the Marker is in use, the amplitude and time values displayed are **relative to the marked reference point**. This means the time and amplitude values are now displayed as differences (Δ) between the Waveform Cursor and the Marker. This is very useful for measuring the time between events or measuring the relative amplitudes of parts of a waveform.
-:::
-
----
-
-### III. Save your file & export your data
+### Save your file & export your data
 
 LabChart buffers files to disk in case of a power failure or computer crash, but it's wise to save work frequently. Saving files in LabChart is the same as saving any file on your personal computer.
 
-We recommend keeping your LabChart files in your Google Drive folder or another cloud source that you can easily access.
+Please backup your LabChart data files to the Google Drive you set up at the start of the quarter.
 
 1. Save the **settings file** for your experiment by going to **File > Save As Settings File** in LabChart. Save it in a safe place (not locally on the computer). You will need this settings file for the earthworm experiment.
 2. Save the **data file** for your experiment by going to **File > Save As** and save as a LabChart Data File (*.adicht*).
 3. Go to the Scope page for **two of your favorite string stimulation experiments** that you can compare and contrast — for example, two different voltages, or with two different distances between the stimulator and recording electrodes.
-4. Follow these instructions for exporting your data into Excel: [http://bit.ly/BIPN145_export](http://bit.ly/BIPN145_export)
-5. Plot your recordings (separately or on the same axes — be sure to label two different recordings if overlaid). Make sure your axes are labeled with units.
+4. Follow [these instructions for exporting your data](https://bipn145.github.io/LabChart/ExportingLabChart.html).
+5. Plot your recordings (separately or on the same axes — be sure to label two different recordings if overlaid). Make sure your axes are labeled with units. You can create these plots in [Python](https://bipn145.github.io/LabChart/ImportingPython.html) or [Excel](https://bipn145.github.io/LabChart/ImportingExcel.html).
 6. Copy your plots into a Word or Google document.
-7. In 1–2 sentences, write a **figure caption** that describes your plot and the comparison you're making.
-8. Upload your document to the assignment on Canvas (one plot per lab group). Include:
-   - Group member names
-   - Labeled axes
-   - Figure caption
+7. See your instructor's Canvas assignment for detailed directions about what else you need to submit.
 
 ---
 
