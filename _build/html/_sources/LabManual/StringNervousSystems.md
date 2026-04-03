@@ -156,6 +156,8 @@ Your setup for the string stimulation will look like this:
 5. If you do not see anything, increase the voltage (no more than 5 V).
    > **Note:** This recorded deflection is called the **stimulus artifact**. This artifact can exceed the range of our amplifier. Recovery from the artifact should be rapid, however, so that the baseline is reached within one millisecond or so after the stimulus pulse.
 
+<div style="clear:both"></div>
+
 :::{admonition} Question for reflection
 :class: tip
 Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?
