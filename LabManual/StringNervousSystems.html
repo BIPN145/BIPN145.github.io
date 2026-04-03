@@ -363,20 +363,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-recording-from-a-string">Why are we recording from a string?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparation">I. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-your-powerlab">Meet your PowerLab</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-labchart-8">Setting up LabChart 8</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sources-of-electrical-noise">Finding sources of electrical noise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-stimulator-outputs">Recording stimulator outputs</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recording-the-stimulus-artifact">II. Recording the stimulus artifact</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-string-stimulation-experiment">Set up your string stimulation experiment</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulate-your-string">Stimulate your string!</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-save-your-file-export-your-data">III. Save your file &amp; export your data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-setting-up-labchart-8">I. Setting up LabChart 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-finding-sources-of-electrical-noise">II. Finding sources of electrical noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-recording-stimulator-outputs">III. Recording stimulator outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-recording-the-stimulus-artifact">IV. Recording the stimulus artifact</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-string-stimulation-experiment">Set up your string stimulation experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulate-your-string">Stimulate your string!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-your-file-export-your-data">Save your file &amp; export your data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
@@ -429,11 +423,11 @@ document.write(`
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>PowerLab 26T, connected to computer</p></td>
-<td><p>BNC to DIN8 cord</p></td>
+<td><p>BNC to DIN8 adapter</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>Bio Amp</p></td>
-<td><p>BNC to DIN8 adapter</p></td>
+<tr class="row-odd"><td><p>BioAmp</p></td>
+<td><p>Alligator clip adapters (2)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>Sewing pins (2)</p></td>
@@ -441,7 +435,7 @@ document.write(`
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Faraday Cage</p></td>
-<td><p>Alligator clip adapters (2)</p></td>
+<td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>Large Petri Dish</p></td>
@@ -455,60 +449,34 @@ document.write(`
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
-<section id="i-preparation">
-<h3>I. Preparation<a class="headerlink" href="#i-preparation" title="Link to this heading">#</a></h3>
-<section id="meet-your-powerlab">
-<h4>Meet your PowerLab<a class="headerlink" href="#meet-your-powerlab" title="Link to this heading">#</a></h4>
-<p>First, it helps to get familiar with our equipment. Look for the following on your PowerLab. Items that are particularly important for our experiments are described below — make sure you know where these are, and what they do/indicate.</p>
-<p><img alt="PowerLab front panel diagram" src="LabManual/images/powerlab_front.png" />
-<em>Image courtesy of ADInstruments ©</em></p>
-<ol class="arabic simple">
-<li><p><strong>Power indicator light</strong> — illuminates when the PowerLab is turned on</p></li>
-<li><p><strong>Analog output connections</strong> — provide a voltage output in the 10 V range. Note: This is NOT safe for direct connection to humans.</p></li>
-<li><p><strong>Isolated Stimulator status light</strong> — indicates if the Isolated Stimulator is working properly (green) or out of compliance (yellow)</p></li>
-<li><p><strong>Bio Amp input</strong> — connects a Bio Amp Cable to the PowerLab; reads as inputs 3 and 4 in LabChart 8</p></li>
-<li><p><strong>Isolated Stimulator outputs</strong> — for connecting stimulating electrodes to the Isolated Stimulator</p></li>
-<li><p><strong>Isolated Stimulator switch</strong> — turns on/off the Isolated Stimulator</p></li>
-<li><p><strong>Inputs</strong> — 8-pin DIN connectors for attaching electrodes and any input you’d like to measure</p></li>
-<li><p><strong>Trigger input</strong> — can be used to start or stop a recording event</p></li>
-</ol>
-<p><img alt="PowerLab rear panel diagram" src="LabManual/images/powerlab_rear.png" />
-<em>Image courtesy of ADInstruments ©</em></p>
-<ol class="arabic simple" start="9">
-<li><p><strong>Audio output connector</strong> — standard phono jack for sound output</p></li>
-<li><p><strong>Digital Output Connector</strong></p></li>
-<li><p><strong>Earthing post</strong> — used to ground the PowerLab, if grounded power supply is unavailable</p></li>
-<li><p><strong>Power switch</strong></p></li>
-<li><p><strong>Power cord connector</strong></p></li>
-<li><p><strong>Digital Input Connector</strong></p></li>
-<li><p><strong>USB connector</strong> — connects computer to the PowerLab</p></li>
-</ol>
 </section>
 <hr class="docutils" />
-<section id="setting-up-labchart-8">
-<h4>Setting up LabChart 8<a class="headerlink" href="#setting-up-labchart-8" title="Link to this heading">#</a></h4>
-<p>LabChart 8 is the software we’ll be using to record electrophysiology data. It has already been downloaded on your lab computer. Before performing our experiment, we need to set up LabChart to acquire and display the data as we want.</p>
+<section id="i-setting-up-labchart-8">
+<h2>I. Setting up LabChart 8<a class="headerlink" href="#i-setting-up-labchart-8" title="Link to this heading">#</a></h2>
+<p>LabChart 8 is the software we’ll be using to record electrophysiology data. Before performing our experiment, we need to set up LabChart to <strong>acquire</strong> and <strong>display</strong> the data as we want.</p>
 <ol class="arabic">
 <li><p>Turn on the PowerLab 26T.</p></li>
-<li><p>Open LabChart 8. You should see that the PowerLab is connected (don’t worry if it tells you other devices are not connected).</p></li>
+<li><p>Open LabChart 8. You should see that the PowerLab is connected with a green check mark.</p></li>
 <li><p>Open a new experiment by choosing the <strong>New</strong> button (bottom left-hand corner).</p></li>
-<li><p>First, we need to decide how many channels to record. Go to <strong>Setup &gt; Channel Settings</strong>.</p></li>
+<li><p>First, we need to decide how many channels to record. Go to <strong>Setup &gt; Channel Settings</strong>.</p>
+<ul class="simple">
 <li><p>At the bottom of the window, change the number of channels to <strong>3</strong>, and make sure that they are all on (box on the left is checked).</p></li>
-<li><p>Rename the first channel <strong>“Stimulus”</strong> and the second channel <strong>“Raw Recording.”</strong></p></li>
-<li><p>Set the range for Channel 1 (your “Stimulus” channel) to <strong>5 V</strong>.</p>
+<li><p>Rename the first channel <strong>“Stimulus”</strong> and the second channel <strong>“Raw Recording”</strong>.</p></li>
+<li><p>Set the range for Channel 1 (your “Stimulus” channel) to <strong>5 V</strong>.</p></li>
+</ul>
 <blockquote>
 <div><p><strong>Note:</strong> The range determines the range of values the PowerLab will record, and when using the BioAmp (later in this lab), it will actually change the amplification.</p>
 </div></blockquote>
-</li>
+<ul class="simple">
 <li><p>Set the range for Channel 2 (your “Raw Recording” channel) to <strong>100 mV</strong>.</p></li>
-<li><p>Make the sampling rate for Channel 1 <strong>“40 k/s”</strong> and ensure that <em>“Same sampling rate for all channels”</em> is checked.</p></li>
+<li><p>Make the sampling rate for Channel 1 <strong>“40k/s”</strong> and ensure that <em>“Same sampling rate for all channels”</em> is checked.</p></li>
 <li><p>Make sure that the far-right column says <strong>“No calculation”</strong> for all three channels.</p></li>
+</ul>
+</li>
 </ol>
 </section>
-<hr class="docutils" />
-<section id="finding-sources-of-electrical-noise">
-<h4>Finding sources of electrical noise<a class="headerlink" href="#finding-sources-of-electrical-noise" title="Link to this heading">#</a></h4>
+<section id="ii-finding-sources-of-electrical-noise">
+<h2>II. Finding sources of electrical noise<a class="headerlink" href="#ii-finding-sources-of-electrical-noise" title="Link to this heading">#</a></h2>
 <p>One of the biggest issues in electrophysiology is noise from overhead lights and other electronics in the room. It’ll help to get an understanding of where noise in your rig is coming from.</p>
 <ol class="arabic">
 <li><p>Connect a DIN8-BNC adapter and a double 3-way BNC adapter to <strong>Input 2</strong> of the PowerLab. Plug in a red banana cable to the positive (red) side of the connector.</p></li>
@@ -535,9 +503,8 @@ document.write(`
 </ul>
 </div>
 </section>
-<hr class="docutils" />
-<section id="recording-stimulator-outputs">
-<h4>Recording stimulator outputs<a class="headerlink" href="#recording-stimulator-outputs" title="Link to this heading">#</a></h4>
+<section id="iii-recording-stimulator-outputs">
+<h2>III. Recording stimulator outputs<a class="headerlink" href="#iii-recording-stimulator-outputs" title="Link to this heading">#</a></h2>
 <p>We’ll use our PowerLab as a stimulator that can send voltage pulses into our specimen. We can change the timing, shape, amplitude, and repetition of these stimuli via the Stimulator window in LabChart. We’ll directly record these stimuli by sending the output of the PowerLab into an input.</p>
 <ol class="arabic">
 <li><p>Change your view to <strong>Scope view</strong>, which looks like the sweeps of an oscilloscope. The advantage of Scope View is that it allows the overlay and averaging of your data.</p></li>
@@ -573,23 +540,8 @@ document.write(`
 <li><p>Press <strong>&gt; Start</strong> in the main LabChart GUI.</p></li>
 <li><p>Increase the stimulator voltage (Pulse Height) and watch the level change in the window.</p></li>
 <li><p>Try a negative stimulus voltage.</p></li>
-<li><p>Open the Stimulator window again and vary the delay, duration, and waveform shape, and see what happens. If your recording is cut off, how can you fix it? <em>(Hint: see Visualization tips below.)</em></p></li>
+<li><p>Open the Stimulator window again and vary the delay, duration, and waveform shape, and see what happens. If your recording is cut off, how can you fix it? <em>(Hint: see Visualization tips in Meet Your PowerLab.)</em></p></li>
 </ol>
-<hr class="docutils" />
-<div class="note admonition">
-<p class="admonition-title">LabChart Visualization Tips</p>
-<p><strong>Vertical scaling</strong></p>
-<p>The Scaling buttons are on the left side of each channel’s Amplitude axis. The up button will double the vertical scale shown, and the down button will halve the vertical scale shown.</p>
-<p>Right-clicking in the channel will show several options for displaying data:</p>
-<ul class="simple">
-<li><p><strong>Auto Scale Channel</strong> — automatically adjusts the amplitude axis so the maximum value is just larger than the maximum value of visible data in this channel.</p></li>
-<li><p><strong>Show Points as Dots</strong> — shows the individual points the PowerLab is sampling.</p></li>
-<li><p><strong>Equalize Channel Heights</strong> — makes all data channels the same size.</p></li>
-<li><p><strong>Split View</strong> — inserts a divider vertically in the data creating two separate scrollable regions (Chart View only).</p></li>
-</ul>
-<p><strong>Horizontal Scaling</strong></p>
-<p>The horizontal scroll bar provides the simplest way of moving backwards and forwards through your file. By using the <strong>View Buttons</strong> at the bottom right corner, you can compress or expand the Time axis to see more or less of a waveform. The left button will compress your data; the right button will expand it. If you select the ratio button, a pop-up menu appears in which you can choose the new compression directly.</p>
-</div>
 <div class="tip admonition">
 <p class="admonition-title">Questions for reflection</p>
 <ul class="simple">
@@ -599,16 +551,14 @@ document.write(`
 </ul>
 </div>
 </section>
-</section>
 <hr class="docutils" />
-<section id="ii-recording-the-stimulus-artifact">
-<h3>II. Recording the stimulus artifact<a class="headerlink" href="#ii-recording-the-stimulus-artifact" title="Link to this heading">#</a></h3>
+<section id="iv-recording-the-stimulus-artifact">
+<h2>IV. Recording the stimulus artifact<a class="headerlink" href="#iv-recording-the-stimulus-artifact" title="Link to this heading">#</a></h2>
 <p>Lastly, we’ll add an amplifier (the BioAmp) to our circuit, and use this to record from a string soaked in saline. The string doesn’t have a nervous system, but we’ll add some voltage with our stimulator and observe the change in voltage from another point on the string.</p>
 <section id="set-up-your-string-stimulation-experiment">
-<h4>Set up your string stimulation experiment<a class="headerlink" href="#set-up-your-string-stimulation-experiment" title="Link to this heading">#</a></h4>
+<h3>Set up your string stimulation experiment<a class="headerlink" href="#set-up-your-string-stimulation-experiment" title="Link to this heading">#</a></h3>
 <p>Your setup for the string stimulation will look like this:</p>
-<p><img alt="String stimulation setup diagram" src="LabManual/images/string_setup.png" />
-<em>Image courtesy of ADInstruments ©</em></p>
+<p><img alt="String stimulation setup diagram" src="../_images/powerlab_front.png" /></p>
 <ol class="arabic">
 <li><p>Remove all of the cords from the PowerLab.</p></li>
 <li><p>Connect your two single BNC to banana cable adapters into the <strong>(+)</strong> and <strong>(-)</strong> Outputs of the PowerLab.</p>
@@ -634,15 +584,18 @@ document.write(`
 <li><p>We’ve removed our ability to directly record the stimulus output, so we need another way to know when the stimulator sends outputs. Open the Stimulator Settings and set the <strong>“Marker Channel”</strong> to Ch1 (your “Stimulus” channel). With this setting, LabChart will put a small tick on Channel 1 to show you when the stimulus was sent.</p></li>
 </ol>
 </section>
-<hr class="docutils" />
 <section id="stimulate-your-string">
-<h4>Stimulate your string!<a class="headerlink" href="#stimulate-your-string" title="Link to this heading">#</a></h4>
+<h3>Stimulate your string!<a class="headerlink" href="#stimulate-your-string" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><p>Place your string in saline in the small petri dish, and give it a few minutes to soak. If it’s not completely soaked, you will not get a stimulus artifact.</p>
 <blockquote>
 <div><p><strong>Note:</strong> If your string dries out during the experiment, you can use an eyedropper to add saline to it.</p>
 </div></blockquote>
 </li>
+<li><p>Lay the string out on the dissection tray, with the stimulating and recording electrodes laid out as follows:</p></li>
+</ol>
+<img src="images/string_electrodes.png" width="150" align="right" />
+<ol class="arabic" start="3">
 <li><p>Set the stimulator voltage to <strong>1 V</strong>, and press <strong>&gt; Start</strong>. You should see your stimulus recording on Channel 1, as you did before, but you should also now have a recording on Channel 3 (BioAmp Recording).</p></li>
 <li><p>Change the scaling if you cannot see the entire deflection.</p></li>
 <li><p>If you do not see anything, increase the voltage (no more than 5 V).</p>
@@ -655,45 +608,30 @@ document.write(`
 <p class="admonition-title">Question for reflection</p>
 <p>Is the amplitude of the stimulus artifact the same as the amplitude of the stimulus? Why or why not?</p>
 </div>
-<ol class="arabic" start="5">
+<ol class="arabic" start="6">
 <li><p>Increase the stimulator voltage, and stimulate again. What happens?</p>
 <blockquote>
 <div><p><strong>Note:</strong> Change the name of Scope pages, or make comments on the recording, to indicate what you’ve done during that run of the stimulus. You need to know the metadata for the experiment once you’re ready to export.</p>
 </div></blockquote>
 </li>
 <li><p>Change the stimulus to a <strong>negative voltage</strong>, and stimulate again. Does the stimulus artifact change?</p></li>
-<li><p>Choose one of your pages where you have a stimulus artifact with a clear peak. Using the <strong>Marker tool</strong> (see box below), measure the latency from the stimulus to the beginning of your artifact. How much of a delay is there? How much of a delay <em>should</em> there be? (How fast does an electrical current flow?)</p></li>
+<li><p>Choose one of your pages where you have a stimulus artifact with a clear peak. Using the <strong>Marker tool</strong>, measure the latency from the stimulus to the beginning of your artifact. How much of a delay is there? How much of a delay <em>should</em> there be? (How fast does an electrical current flow?)</p></li>
 <li><p>Change the location of the stimulating electrodes. How does this change the shape of the artifact?</p></li>
 <li><p>Remove the ground electrode. How does this change your recording?</p></li>
 </ol>
-<div class="note admonition">
-<p class="admonition-title">Using the Marker Tool</p>
-<p>The <strong>Marker</strong> is located at the bottom left of the Chart View and can be dropped on any part of the waveform to allow relative measurements to be made. If you move the Marker to the data trace in Chart View, it will be placed on the same spot in the Scope View, and vice versa.</p>
-<p>Drag the Marker from the Marker Box to a location on the trace and release. The Marker does not have to be placed exactly on the waveform; it will attach itself to the waveform at the time position you dropped it.</p>
-<p>When the Marker is in use, the amplitude and time values displayed are <strong>relative to the marked reference point</strong>. This means the time and amplitude values are now displayed as differences (Δ) between the Waveform Cursor and the Marker. This is very useful for measuring the time between events or measuring the relative amplitudes of parts of a waveform.</p>
-</div>
 </section>
-</section>
-<hr class="docutils" />
-<section id="iii-save-your-file-export-your-data">
-<h3>III. Save your file &amp; export your data<a class="headerlink" href="#iii-save-your-file-export-your-data" title="Link to this heading">#</a></h3>
+<section id="save-your-file-export-your-data">
+<h3>Save your file &amp; export your data<a class="headerlink" href="#save-your-file-export-your-data" title="Link to this heading">#</a></h3>
 <p>LabChart buffers files to disk in case of a power failure or computer crash, but it’s wise to save work frequently. Saving files in LabChart is the same as saving any file on your personal computer.</p>
-<p>We recommend keeping your LabChart files in your Google Drive folder or another cloud source that you can easily access.</p>
+<p>Please backup your LabChart data files to the Google Drive you set up at the start of the quarter.</p>
 <ol class="arabic simple">
 <li><p>Save the <strong>settings file</strong> for your experiment by going to <strong>File &gt; Save As Settings File</strong> in LabChart. Save it in a safe place (not locally on the computer). You will need this settings file for the earthworm experiment.</p></li>
 <li><p>Save the <strong>data file</strong> for your experiment by going to <strong>File &gt; Save As</strong> and save as a LabChart Data File (<em>.adicht</em>).</p></li>
 <li><p>Go to the Scope page for <strong>two of your favorite string stimulation experiments</strong> that you can compare and contrast — for example, two different voltages, or with two different distances between the stimulator and recording electrodes.</p></li>
-<li><p>Follow these instructions for exporting your data into Excel: <a class="reference external" href="http://bit.ly/BIPN145_export">http://bit.ly/BIPN145_export</a></p></li>
-<li><p>Plot your recordings (separately or on the same axes — be sure to label two different recordings if overlaid). Make sure your axes are labeled with units.</p></li>
+<li><p>Follow <a class="reference external" href="https://bipn145.github.io/LabChart/ExportingLabChart.html">these instructions for exporting your data</a>.</p></li>
+<li><p>Plot your recordings (separately or on the same axes — be sure to label two different recordings if overlaid). Make sure your axes are labeled with units. You can create these plots in <a class="reference external" href="https://bipn145.github.io/LabChart/ImportingPython.html">Python</a> or <a class="reference external" href="https://bipn145.github.io/LabChart/ImportingExcel.html">Excel</a>.</p></li>
 <li><p>Copy your plots into a Word or Google document.</p></li>
-<li><p>In 1–2 sentences, write a <strong>figure caption</strong> that describes your plot and the comparison you’re making.</p></li>
-<li><p>Upload your document to the assignment on Canvas (one plot per lab group). Include:</p>
-<ul class="simple">
-<li><p>Group member names</p></li>
-<li><p>Labeled axes</p></li>
-<li><p>Figure caption</p></li>
-</ul>
-</li>
+<li><p>See your instructor’s Canvas assignment for detailed directions about what else you need to submit.</p></li>
 </ol>
 </section>
 <hr class="docutils" />
@@ -794,20 +732,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-recording-from-a-string">Why are we recording from a string?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparation">I. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meet-your-powerlab">Meet your PowerLab</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-labchart-8">Setting up LabChart 8</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-sources-of-electrical-noise">Finding sources of electrical noise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-stimulator-outputs">Recording stimulator outputs</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recording-the-stimulus-artifact">II. Recording the stimulus artifact</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-string-stimulation-experiment">Set up your string stimulation experiment</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulate-your-string">Stimulate your string!</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-save-your-file-export-your-data">III. Save your file &amp; export your data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-setting-up-labchart-8">I. Setting up LabChart 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-finding-sources-of-electrical-noise">II. Finding sources of electrical noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-recording-stimulator-outputs">III. Recording stimulator outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-recording-the-stimulus-artifact">IV. Recording the stimulus artifact</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-string-stimulation-experiment">Set up your string stimulation experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulate-your-string">Stimulate your string!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-your-file-export-your-data">Save your file &amp; export your data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
