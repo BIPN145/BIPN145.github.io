@@ -138,23 +138,23 @@ Your setup for the string stimulation will look like this:
    - **Uncheck** Channel 2 — we don't need to record from it anymore.
    - Change the name of Channel 3 to **"BioAmp Recording."**
 7. We've removed our ability to directly record the stimulus output, so we need another way to know when the stimulator sends outputs. Open the Stimulator Settings and set the **"Marker Channel"** to Ch1 (your "Stimulus" channel). With this setting, LabChart will put a small tick on Channel 1 to show you when the stimulus was sent.
+   > **Note:** This marker tells you *when* the stimulus was sent, but does not indicate the height or length of the stimulus. This means you need to label your pages with your stimulation parameters.
 
 
 ### Stimulate your string!
-
-1. Place your string in saline in the small petri dish, and give it a few minutes to soak. If it's not completely soaked, you will not get a stimulus artifact.
-   > **Note:** If your string dries out during the experiment, you can use an eyedropper to add saline to it.
-2. Lay the string out on the dissection tray, with the stimulating and recording electrodes laid out as follows:
-
-3. Set the stimulator voltage to **1 V**, and press **> Start**. You should see your stimulus recording on Channel 1, as you did before, but you should also now have a recording on Channel 3 (BioAmp Recording).
-4. Change the scaling if you cannot see the entire deflection.
-5. If you do not see anything, increase the voltage (no more than 5 V).
-   > **Note:** This recorded deflection is called the **stimulus artifact**. This artifact can exceed the range of our amplifier. Recovery from the artifact should be rapid, however, so that the baseline is reached within one millisecond or so after the stimulus pulse.
 
 :::{image} images/string_electrodes.png
 :width: 150px
 :align: center
 :::
+
+1. Place your string in saline in the small petri dish, and give it a few minutes to soak. If it's not completely soaked, you will not get a stimulus artifact.
+   > **Note:** If your string dries out during the experiment, you can use an eyedropper to add saline to it.
+2. Lay the string out on the dissection tray, with the stimulating and recording electrodes laid out as in the diagram above.
+3. Set the stimulator voltage to **1 V**, and press **> Start**. You should see your stimulus recording on Channel 1, as you did before, but you should also now have a recording on Channel 3 (BioAmp Recording).
+4. Change the scaling if you cannot see the entire deflection.
+5. If you do not see anything, increase the voltage (no more than 5 V).
+   > **Note:** This recorded deflection is called the **stimulus artifact**. This artifact can exceed the range of our amplifier. Recovery from the artifact should be rapid, however, so that the baseline is reached within one millisecond or so after the stimulus pulse.
 
 :::{admonition} Question for reflection
 :class: tip
