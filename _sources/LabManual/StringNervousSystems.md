@@ -11,11 +11,11 @@ First, we'll learn how you can configure LabChart 8 to acquire data and send out
 Asking questions during this lab is a great idea, and will help you succeed in future experiments.
 
 ### Pre-Lab
-Before the lab, watch this video:
+Before the lab, watch this video and read the protocol below:
 
-<a href="https://youtu.be/zjLx6uhlYSM" target="_blank">
- <img src="images/extracellular_tutorial_cover.png" alt="Watch the video" border="10" />
-</a>
+```{raw} html
+<iframe width="600" height="338" src="https://www.youtube.com/embed/zjLx6uhlYSM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ---
 
