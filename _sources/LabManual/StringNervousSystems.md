@@ -10,6 +10,15 @@ First, we'll learn how you can configure LabChart 8 to acquire data and send out
 
 Asking questions during this lab is a great idea, and will help you succeed in future experiments.
 
+### Pre-Lab
+Before the lab, watch this video:
+
+<a href="https://youtu.be/zjLx6uhlYSM" target="_blank">
+ <img src="images/extracellular_tutorial_cover.png" alt="Watch the video" border="10" />
+</a>
+
+---
+
 **Today you will:**
 - Configure a recording experiment in LabChart 8.
 - Determine how to record signals from a string.
