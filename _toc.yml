@@ -25,6 +25,7 @@ chapters:
   - file: LabManual/ModelingNeuralMembranes.md
   - file: LabManual/StringNervousSystems.md
   - file: LabManual/Earthworm.md
+  - file: LabManual/Drosophila.md
 - file: FinalProjects/Introduction
   sections:
   - file: FinalProjects/EMGAnalysis.ipynb

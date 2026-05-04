@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'LabManual/Earthworm';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Final Projects" href="../FinalProjects/Introduction.html" />
+    <link rel="next" title="Lab #4: Drosophila Behavior &amp; Optogenetics" href="Drosophila.html" />
     <link rel="prev" title="Lab #1: String Nervous Systems" href="StringNervousSystems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -204,6 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ModelingNeuralMembranes.html">Lab #0: Modeling Neural Membranes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="StringNervousSystems.html">Lab #1: String Nervous Systems</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab #3: Earthworm Electrophysiology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Drosophila.html">Lab #4: <em>Drosophila</em> Behavior &amp; Optogenetics</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -384,7 +385,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment">VI. Design your own experiment ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">VI. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
 </ul>
 </li>
@@ -412,6 +413,7 @@ document.write(`
 <p>Earthworms are a member of the Annelida phylum, which includes segmented worms such as the ragworm and our soon-to-be-friend, the leech. We’ll be working with earthworms in the Lumbricidae family.</p>
 <p>Earthworms are laid out with a mouth at one end, and an anus at the other. In the middle is the clitellum, a reproductive gland that can secrete a material that helps them form a cocoon. The clitellum is only visible in older worms that are ready to reproduce.</p>
 <p>Earthworms have a closed nervous system, with one main blood vessel running down the length of their body. They breathe through their skin, so it is important to keep it moist. They crawl using muscles that are located just underneath the epidermis.</p>
+<p><img alt="" src="https://docs.backyardbrains.com/assets/images/Exp11gif7_earthworm-d4ddccbc4d2401ce6edfa5fa33784010.jpeg" /></p>
 </section>
 <section id="earthworm-nervous-system">
 <h3>Earthworm nervous system<a class="headerlink" href="#earthworm-nervous-system" title="Link to this heading">#</a></h3>
@@ -420,13 +422,15 @@ document.write(`
 <p>Each giant fiber is made up of large individual cells (one per segment) that are electrically coupled to each other through gap junctions. This results in the rapid conduction of action potentials from cell to cell so that each giant fiber behaves as though it were a single axon. There are cross-connections between the medial and lateral fibers, so they often function as one unit.</p>
 <p><strong>These fibers differ in important ways.</strong> The medial giant fiber transmits information from skin cells in the anterior (mouth) end of the worm, and the lateral giant fibers transmit information from the skin cells of the posterior end of the worm.</p>
 <p><strong>It’s quite easy to listen in to the activity of these large fibers, even from the skin of the earthworm.</strong> Importantly, these fibers fire action potentials very rarely. This type of nervous system activity is often called sparse coding. That means that we should be able to elicit one action potential and cleanly record it.</p>
-<p><em>Images from <a class="reference external" href="https://backyardbrains.com/experiments/speed">Backyard Brains</a>, © 2009–2017, used under a Creative Commons Attribution-ShareAlike license.</em></p>
+<p><img alt="" src="https://docs.backyardbrains.com/assets/images/Exp11fig8_cross-6a8733728b4637790ac8fab19f9ea85f.jpeg" />
+<em>Images from <a class="reference external" href="https://docs.backyardbrains.com/retired/experiments/speed">Backyard Brains</a>, © 2009–2026, used under a Creative Commons Attribution-ShareAlike license.</em></p>
 </section>
 <section id="properties-of-action-potentials">
 <h3>Properties of action potentials<a class="headerlink" href="#properties-of-action-potentials" title="Link to this heading">#</a></h3>
 <p>In this lab, we’ll determine the <strong>threshold</strong>, <strong>rheobase &amp; chronaxie</strong>, <strong>refractory period</strong>, and <strong>conduction velocity</strong> for the earthworm giant fiber system. We’re recording compound action potentials (CAPs) from many axons in these fiber bundles, but the underlying principles are the same.</p>
 <p>The <strong>threshold</strong> is defined as the minimum stimulus voltage that elicits an action potential 50% of the time. We’ll determine this with short stimuli. Stimulus voltages that don’t elicit an action potential are called subthreshold; stimulus voltages that do elicit an action potential are called suprathreshold.</p>
-<p>In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The <strong>rheobase</strong> is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the <strong>chronaxie</strong>. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie.</p>
+<p>In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The <strong>rheobase</strong> is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the <strong>chronaxie</strong>. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. We can plot this data in a strength duration curve:</p>
+<p><img alt="" src="../_images/bahringbauer2014.png" /></p>
 <p>The <strong>absolute refractory period</strong> is the minimum amount of time needed for a neuron to fire a second action potential. This is caused by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. Since we’re recording from many axons, your measured refractory period will be more variable than for a single axon. We’ll define the absolute refractory period as the time when the amplitude of the second CAP is 30% of the first.</p>
 <p>After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K⁺ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the <strong>relative refractory period</strong>. In this lab, we’ll identify it as the period where the amplitude of the second CAP is 30–90% of the first.</p>
 <p><strong>In these experiments you will:</strong></p>
@@ -463,7 +467,7 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Worm (&gt;3.5 g or &gt;60 mm)</p></td>
+<tr class="row-even"><td><p>Earthworm</p></td>
 <td><p>BNC to single banana adapter (2)</p></td>
 <td><p>Earthworm saline</p></td>
 </tr>
@@ -483,27 +487,23 @@ document.write(`
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>Timer</p></td>
+<tr class="row-odd"><td><p>Ruler</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>Ruler</p></td>
+<tr class="row-even"><td><p>Thermometer</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>Thermometer</p></td>
+<tr class="row-odd"><td><p>Faraday Cage</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>Faraday Cage</p></td>
+<tr class="row-even"><td><p>Large Petri Dish</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>Large Petri Dish</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Eyedropper</p></td>
+<tr class="row-odd"><td><p>Eyedropper</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
@@ -523,14 +523,15 @@ document.write(`
 <li><p>Make sure that the BioAmp is connected to the PowerLab, with three different needle electrodes plugged into it.</p></li>
 <li><p>Once you’re confident everything is connected correctly, turn on the PowerLab.</p></li>
 </ol>
-<p><em>Image courtesy of ADInstruments ©</em></p>
+<p><img alt="" src="../_images/powerlab_front.png" />
+<em>Image courtesy of ADInstruments ©</em></p>
 </section>
 <section id="setting-up-labchart-8">
 <h4>Setting up LabChart 8<a class="headerlink" href="#setting-up-labchart-8" title="Link to this heading">#</a></h4>
 <ol class="arabic">
 <li><p><strong>Open LabChart 8 with the settings file you saved during the string experiment.</strong> Most settings are saved within this settings file. However, it’s always good to ensure that you have the correct settings before beginning.</p>
 <blockquote>
-<div><p><strong>Note:</strong> If for some reason you cannot access your settings file, you can find an appropriate settings file at <a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>. Use the “Earthworm bioAmp Settings.”</p>
+<div><p><strong>Note:</strong> If for some reason you cannot access your settings file, you can find one at <a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>. Use the “Earthworm bioAmp Settings.”</p>
 </div></blockquote>
 </li>
 <li><p><strong>Go to Setup &gt; Channel Settings</strong> and confirm that you have three recording channels, and that the third (“BioAmp Recording”) is connected to the BioAmp.</p></li>
@@ -565,11 +566,12 @@ document.write(`
 </section>
 <section id="setting-up-your-earthworm">
 <h4>Setting up your earthworm<a class="headerlink" href="#setting-up-your-earthworm" title="Link to this heading">#</a></h4>
+<p><img alt="" src="../_images/string_electrodes.png" /></p>
 <blockquote>
 <div><p><strong>Note:</strong> Throughout every step of this procedure, be careful not to stretch the earthworm. This will damage the nerve and your experiment will not work.</p>
 </div></blockquote>
 <ol class="arabic">
-<li><p>Obtain a large, lively earthworm, &gt;3.5 g, 60 mm long. Rinse it with saline if it is dirty.</p></li>
+<li><p>Obtain a large, lively earthworm. Rinse it with saline if it is dirty.</p></li>
 <li><p><strong>Anesthetize the earthworm</strong> by placing it in the petri dish with 10% ethanol (in Earthworm Ringer’s solution) for 5 minutes.</p>
 <blockquote>
 <div><p><strong>Note:</strong> Do not leave your earthworm unattended in anesthesia. With too little anesthesia, the earthworm will move around during the experiment, and the resulting muscle electrical activity (electromyogram) will drown out the small neural electrical signals you are interested in. Too much anesthesia and the nerves will not fire.</p>
@@ -973,16 +975,12 @@ document.write(`
 </section>
 </section>
 <hr class="docutils" />
-<section id="vi-design-your-own-experiment">
-<h3>VI. Design your own experiment ★<a class="headerlink" href="#vi-design-your-own-experiment" title="Link to this heading">#</a></h3>
-<p>What do you want to know about conduction velocity? You have the following options for your experiment:</p>
-<ul class="simple">
-<li><p>Does conduction velocity depend on temperature?</p></li>
-<li><p>What if you (gently) stretch the worm?</p></li>
-</ul>
-<p><strong>Propose your experiment here, and call over an instructor when you’re ready.</strong></p>
+<section id="vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">
+<h3>VI. Design your own experiment to test the impact of temperature on MGF conduction velocity<a class="headerlink" href="#vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity" title="Link to this heading">#</a></h3>
+<p>For this final part, you will design your own experiment to test the impact of temperature on conduction velocity. We will provide ice and a thermometer, but the rest is up to you! If you are performing this experiment on a separate worm, be sure to measure the threshold for the MGF as described above.</p>
+<p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report. Think about what someone needs to know in order to replicate this experiment exactly as you did.</p>
 <p>We will test the effect of ______________________________ on ______________________________.</p>
-<p>We will do this by:</p>
+<p>We will do this by…</p>
 <section id="conduct-your-experiment">
 <h4>Conduct your experiment<a class="headerlink" href="#conduct-your-experiment" title="Link to this heading">#</a></h4>
 <p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report.</p>
@@ -1080,11 +1078,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../FinalProjects/Introduction.html"
+       href="Drosophila.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Final Projects</p>
+        <p class="prev-next-title">Lab #4: <em>Drosophila</em> Behavior &amp; Optogenetics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1129,7 +1127,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment">VI. Design your own experiment ★</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">VI. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
 </ul>
 </li>

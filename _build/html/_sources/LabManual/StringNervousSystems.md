@@ -41,7 +41,6 @@ Before the lab, watch this video and read the protocol below:
 | Large Petri Dish | | |
 | Eyedropper | | |
 
----
 
 ## I. Setting up LabChart 8
 
