@@ -10,6 +10,8 @@ Earthworms are laid out with a mouth at one end, and an anus at the other. In th
 
 Earthworms have a closed nervous system, with one main blood vessel running down the length of their body. They breathe through their skin, so it is important to keep it moist. They crawl using muscles that are located just underneath the epidermis.
 
+![](https://docs.backyardbrains.com/assets/images/Exp11gif7_earthworm-d4ddccbc4d2401ce6edfa5fa33784010.jpeg)
+
 ### Earthworm nervous system
 
 Earthworms have a pretty simple brain: it's actually a fused pair of nerve ganglia, mostly located in their third segment. The earthworm has one main nerve cord on its ventral (bottom) side with three fibers running through it: one medial giant fiber, and two lateral giant fibers.
@@ -22,7 +24,8 @@ Each giant fiber is made up of large individual cells (one per segment) that are
 
 **It's quite easy to listen in to the activity of these large fibers, even from the skin of the earthworm.** Importantly, these fibers fire action potentials very rarely. This type of nervous system activity is often called sparse coding. That means that we should be able to elicit one action potential and cleanly record it.
 
-*Images from [Backyard Brains](https://backyardbrains.com/experiments/speed), © 2009–2017, used under a Creative Commons Attribution-ShareAlike license.*
+![](https://docs.backyardbrains.com/assets/images/Exp11fig8_cross-6a8733728b4637790ac8fab19f9ea85f.jpeg)
+*Images from [Backyard Brains](https://docs.backyardbrains.com/retired/experiments/speed), © 2009–2026, used under a Creative Commons Attribution-ShareAlike license.*
 
 ### Properties of action potentials
 
@@ -30,9 +33,11 @@ In this lab, we'll determine the **threshold**, **rheobase & chronaxie**, **refr
 
 The **threshold** is defined as the minimum stimulus voltage that elicits an action potential 50% of the time. We'll determine this with short stimuli. Stimulus voltages that don't elicit an action potential are called subthreshold; stimulus voltages that do elicit an action potential are called suprathreshold.
 
-In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The **rheobase** is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the **chronaxie**. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie.
+In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The **rheobase** is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the **chronaxie**. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. We can plot this data in a strength duration curve: 
 
-The **absolute refractory period** is the minimum amount of time needed for a neuron to fire a second action potential. This is caused by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. Since we're recording from many axons, your measured refractory period will be more variable than for a single axon. We'll define the absolute refractory period as the time when the amplitude of the second CAP is 30% of the first.
+![](images/bahringbauer2014.png)
+
+The **absolute refractory period** is the minimum amount of time needed for a neuron to fire a second action potential. This is caused by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. Since we're recording from many axons, your measured refractory period will be more variable than for a single axon. We'll define the absolute refractory period as the time when the amplitude of the second CAP is 30% of the first. 
 
 After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K⁺ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the **relative refractory period**. In this lab, we'll identify it as the period where the amplitude of the second CAP is 30–90% of the first.
 
@@ -61,12 +66,11 @@ There are multiple days dedicated to these earthworm experiments. You are encour
 
 | **Supplies** | **Cables & connectors** | **Solutions** |
 |---|---|---|
-| Worm (>3.5 g or >60 mm) | BNC to single banana adapter (2) | Earthworm saline |
+| Earthworm| BNC to single banana adapter (2) | Earthworm saline |
 | Dissection tray | Banana plug cords (2) | Earthworm anesthetic (10% ethanol in Ringers) |
 | PowerLab 26T, connected to computer | Alligator clip adapters (2) | |
 | BioAmp | Needle electrodes | |
 | Sewing pins (3) | | |
-| Timer | | |
 | Ruler | | |
 | Thermometer | | |
 | Faraday Cage | | |
@@ -88,12 +92,13 @@ Make sure the PowerLab is turned off.
 3. Make sure that the BioAmp is connected to the PowerLab, with three different needle electrodes plugged into it.
 4. Once you're confident everything is connected correctly, turn on the PowerLab.
 
+![](images/powerlab_front.png)
 *Image courtesy of ADInstruments ©*
 
 #### Setting up LabChart 8
 
 1. **Open LabChart 8 with the settings file you saved during the string experiment.** Most settings are saved within this settings file. However, it's always good to ensure that you have the correct settings before beginning.
-   > **Note:** If for some reason you cannot access your settings file, you can find an appropriate settings file at http://bit.ly/labchart. Use the "Earthworm bioAmp Settings."
+   > **Note:** If for some reason you cannot access your settings file, you can find one at http://bit.ly/labchart. Use the "Earthworm bioAmp Settings."
 2. **Go to Setup > Channel Settings** and confirm that you have three recording channels, and that the third ("BioAmp Recording") is connected to the BioAmp.
 3. **Go to Setup > Stimulator** and change the Stimulator settings as follows. Make sure your Marker Channel is Channel 1.
 
@@ -107,9 +112,11 @@ Make sure the PowerLab is turned off.
 
 #### Setting up your earthworm
 
+![](images/string_electrodes.png)
+
 > **Note:** Throughout every step of this procedure, be careful not to stretch the earthworm. This will damage the nerve and your experiment will not work.
 
-1. Obtain a large, lively earthworm, >3.5 g, 60 mm long. Rinse it with saline if it is dirty.
+1. Obtain a large, lively earthworm. Rinse it with saline if it is dirty.
 2. **Anesthetize the earthworm** by placing it in the petri dish with 10% ethanol (in Earthworm Ringer's solution) for 5 minutes.
    > **Note:** Do not leave your earthworm unattended in anesthesia. With too little anesthesia, the earthworm will move around during the experiment, and the resulting muscle electrical activity (electromyogram) will drown out the small neural electrical signals you are interested in. Too much anesthesia and the nerves will not fire.
    >
@@ -295,17 +302,15 @@ In the next step, you'll determine the shortest time between stimuli where you c
 
 ---
 
-### VI. Design your own experiment ★
+### VI. Design your own experiment to test the impact of temperature on MGF conduction velocity 
+For this final part, you will design your own experiment to test the impact of temperature on conduction velocity. We will provide ice and a thermometer, but the rest is up to you! If you are performing this experiment on a separate worm, be sure to measure the threshold for the MGF as described above.
 
-What do you want to know about conduction velocity? You have the following options for your experiment:
-- Does conduction velocity depend on temperature?
-- What if you (gently) stretch the worm?
+Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report. Think about what someone needs to know in order to replicate this experiment exactly as you did.
 
-**Propose your experiment here, and call over an instructor when you're ready.**
 
 We will test the effect of ______________________________ on ______________________________.
 
-We will do this by:
+We will do this by...
 
 #### Conduct your experiment
 

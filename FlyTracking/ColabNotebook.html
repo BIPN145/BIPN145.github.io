@@ -204,6 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/ModelingNeuralMembranes.html">Lab #0: Modeling Neural Membranes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/StringNervousSystems.html">Lab #1: String Nervous Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/Earthworm.html">Lab #3: Earthworm Electrophysiology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabManual/Drosophila.html">Lab #4: <em>Drosophila</em> Behavior &amp; Optogenetics</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -943,6 +944,10 @@ document.write(`
 
     <span class="n">background</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bg_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 
+    <span class="c1"># Pre-compute the per-pixel scale factor for background subtraction once,</span>
+    <span class="c1"># avoiding redundant division of the full background image on every frame.</span>
+    <span class="n">bg_scale</span> <span class="o">=</span> <span class="mf">256.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
     <span class="c1"># --- Process each frame ---</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Tracking fly positions...&quot;</span><span class="p">)</span>
     <span class="n">threshold</span> <span class="o">=</span> <span class="p">(</span><span class="n">search_size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">per_pixel_threshold</span>
@@ -960,9 +965,7 @@ document.write(`
         <span class="n">frame_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 
         <span class="c1"># Background subtraction using GIMP division formula</span>
-        <span class="n">frame_div</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
-            <span class="p">(</span><span class="mf">256.0</span> <span class="o">*</span> <span class="n">frame_gray</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span>
-        <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">frame_div</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">frame_gray</span> <span class="o">*</span> <span class="n">bg_scale</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 
         <span class="c1"># Crop to ROI</span>
         <span class="n">frame_crop</span> <span class="o">=</span> <span class="n">frame_div</span><span class="p">[</span><span class="n">roi_y</span><span class="p">:</span><span class="n">roi_y</span> <span class="o">+</span> <span class="n">roi_h</span><span class="p">,</span> <span class="n">roi_x</span><span class="p">:</span><span class="n">roi_x</span> <span class="o">+</span> <span class="n">roi_w</span><span class="p">]</span>
