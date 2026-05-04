@@ -3,4 +3,7 @@ root: ModelingNeuralMembranes
 chapters:
 - file: StringNervousSystems
 - file: Earthworm
-- file: Drosophila
+- file: Drosophila/Introduction
+  sections:
+  - file: Drosophila/Day1
+  - file: Drosophila/Day2

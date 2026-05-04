@@ -30,9 +30,9 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=66b0c8fd" />
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=60c0e2ec"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -282,7 +282,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-StringNervousSystems">Lab #1: String Nervous Systems</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Earthworm">Lab #3: Earthworm Electrophysiology</a></li>
-<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila">Lab #4: <em>Drosophila</em> Behavior &amp; Optogenetics</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="visible nav section-nav flex-column">
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day1">Day 1: The Case of the Mislabeled Fly Vials</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day2">Day 2: The Case of the Missing Methods</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -1623,19 +1627,30 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </section>
 </section>
 </section>
-<span id="document-Drosophila"></span><section class="tex2jax_ignore mathjax_ignore" id="lab-4-drosophila-behavior-optogenetics">
-<h2>Lab #4: <em>Drosophila</em> Behavior &amp; Optogenetics<a class="headerlink" href="#lab-4-drosophila-behavior-optogenetics" title="Link to this heading">#</a></h2>
+<span id="document-Drosophila/Introduction"></span><section class="tex2jax_ignore mathjax_ignore" id="drosophila-behavior-optogenetics">
+<h2><em>Drosophila</em> Behavior &amp; Optogenetics<a class="headerlink" href="#drosophila-behavior-optogenetics" title="Link to this heading">#</a></h2>
 <section id="background-goals">
 <h3>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h3>
 <section id="drosophila-as-a-model-in-neuroscience">
 <h4><em>Drosophila</em> as a model in neuroscience<a class="headerlink" href="#drosophila-as-a-model-in-neuroscience" title="Link to this heading">#</a></h4>
 <p>With just over 100,000 neurons but incredible genetic tractability, the fruit fly is an important model organism in neuroscience. About 65% of human disease-associated genes have a homolog in <em>Drosophila melanogaster</em> (Ugur et al., 2016). Like many model organisms, fruit flies are easy to reproduce, cheap, and easy to take care of in a lab. On top of that, they’ve been studied for more than a century. <em>Drosophila</em> have been used to study learning, memory, vision, sleep, addiction, courtship, and aggression, among many other behaviors.</p>
 <p>In these labs, we’ll aim to characterize the gustatory, ethological, and locomotor behavior of transgenic fruit flies, solving a few mysteries along the way.</p>
-<p><strong>In these labs you will:</strong></p>
+</section>
+<section id="what-s-coming-up">
+<h4>What’s coming up<a class="headerlink" href="#what-s-coming-up" title="Link to this heading">#</a></h4>
+<p>This module spans <strong>two days</strong> of lab:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="#document-Drosophila/Day1"><span class="std std-doc">Day 1: The Case of the Mislabeled Fly Vials</span></a></strong> — three behavioral assays (proboscis extension reflex, ethological observation, and locomotor tracking) to characterize an unknown transgenic line.</p></li>
+<li><p><strong><a class="reference internal" href="#document-Drosophila/Day2"><span class="std std-doc">Day 2: The Case of the Missing Methods</span></a></strong> — design your own optogenetic experiment to figure out what the genetically modified neurons control.</p></li>
+</ul>
+</section>
+<section id="in-these-labs-you-will">
+<h4>In these labs you will:<a class="headerlink" href="#in-these-labs-you-will" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Operationalize and quantify the behavior of a fruit fly</p></li>
 <li><p>Use a computer vision program to track locomotor behaviors</p></li>
 <li><p>Identify different types of transgenic flies used for neuroscience research</p></li>
+<li><p>Design an optogenetic experiment to interrogate neural circuit function</p></li>
 </ul>
 </section>
 <section id="references">
@@ -1651,8 +1666,8 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </ul>
 </section>
 </section>
-<hr class="docutils" />
-<section id="day-1-the-case-of-the-mislabeled-fly-vials">
+<div class="toctree-wrapper compound">
+<span id="document-Drosophila/Day1"></span><section class="tex2jax_ignore mathjax_ignore" id="day-1-the-case-of-the-mislabeled-fly-vials">
 <h3>Day 1: The Case of the Mislabeled Fly Vials<a class="headerlink" href="#day-1-the-case-of-the-mislabeled-fly-vials" title="Link to this heading">#</a></h3>
 <p>Something terrible has happened in the lab. The flies you once knew, that were once perfectly organized and labeled, are now completely jumbled. You’re pretty sure the flies are transgenic, of some sort or another. It’s up to you to figure out what type of flies these are, based on three behavioral assays: a <strong>proboscis extension reflex (PER) assay, an ethological survey, and a locomotion test</strong>.</p>
 <p><img alt="" src="_images/drosophila_intro.png" /></p>
@@ -2089,8 +2104,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </div>
 </section>
 </section>
-<hr class="docutils" />
-<section id="day-2-the-case-of-the-missing-methods">
+<span id="document-Drosophila/Day2"></span><section class="tex2jax_ignore mathjax_ignore" id="day-2-the-case-of-the-missing-methods">
 <h3>Day 2: The Case of the Missing Methods<a class="headerlink" href="#day-2-the-case-of-the-missing-methods" title="Link to this heading">#</a></h3>
 <p>Just when you thought everything was back to normal in the lab, a remarkably inconveniently placed coffee spill completely drenches several pages of the notes given to you from your mentor.</p>
 <p>Unfortunately, those pages detailed all of the methods that you needed in order to perform your experiment. You’ve managed to save the supplies list, at least:</p>
@@ -2112,6 +2126,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <p>You will need to put the red light <strong>within several inches</strong> of your flies in order to see an effect of the stimulation.</p>
 </section>
 </section>
+</div>
 </section>
 </div>
 </section>
@@ -2164,7 +2179,11 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-StringNervousSystems">Lab #1: String Nervous Systems</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Earthworm">Lab #3: Earthworm Electrophysiology</a></li>
-<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila">Lab #4: <em>Drosophila</em> Behavior &amp; Optogenetics</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="visible nav section-nav flex-column">
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day1">Day 1: The Case of the Mislabeled Fly Vials</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day2">Day 2: The Case of the Missing Methods</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

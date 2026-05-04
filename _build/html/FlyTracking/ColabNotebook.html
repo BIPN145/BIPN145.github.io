@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=66b0c8fd" />
@@ -53,7 +53,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -204,7 +204,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/ModelingNeuralMembranes.html">Lab #0: Modeling Neural Membranes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/StringNervousSystems.html">Lab #1: String Nervous Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/Earthworm.html">Lab #3: Earthworm Electrophysiology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../LabManual/Drosophila.html">Lab #4: <em>Drosophila</em> Behavior &amp; Optogenetics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Drosophila/Introduction.html"><em>Drosophila</em> Behavior &amp; Optogenetics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day1.html">Day 1: The Case of the Mislabeled Fly Vials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day2.html">Day 2: The Case of the Missing Methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -432,8 +436,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-roi-region-of-interest">Select ROI (Region of Interest)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>
@@ -559,10 +561,14 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="helper-functions">
-<h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading">#</a></h2>
-<p>Just run the cell below to define a set of functions to run our analysis.</p>
+<p>frame_rate = None  # auto-detect from video (override with e.g. frame_rate = 30 if needed)</p>
+<p>diameter = 4  # Diameter of the dish in centimeters
+search_size = 20 # Search size for fly detection (in pixels)
+per_pixel_threshold = 1.5
+bin_size = 1 # Bin size for velocity calculation (in seconds)</p>
+<p>height = diameter
+width = diameter</p>
+<p>print(‘Frame rate will be auto-detected from each video.’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Define helper functions (fly_finder, dist_filter, interpolate_pos) { display-mode: &quot;form&quot; }</span>
@@ -726,10 +732,175 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="select-roi-region-of-interest">
-<h2>Select ROI (Region of Interest)<a class="headerlink" href="#select-roi-region-of-interest" title="Link to this heading">#</a></h2>
-<p>Run the cell below to display the first frame of your video. <strong>Click and drag</strong> directly on the image to draw a red rectangle around the dish. You can redraw as many times as you like. When you’re happy with the ROI, click <strong>Confirm ROI</strong>.</p>
+<p>#&#64;title Define helper functions (fly_finder, dist_filter, interpolate_pos) { display-mode: “form” }</p>
+<p>def fly_finder(roi_image, half_search, threshold, flip=True):
+“””
+Find a fly (dark region) in a grayscale image.
+Locates the darkest pixel, retrieves a search area around it,
+and finds the center of pixel intensity.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Returns (x, y) position or (NaN, NaN) if not found.
+&quot;&quot;&quot;
+if flip:
+    val = np.nanmin(roi_image)
+else:
+    val = np.nanmax(roi_image)
+
+ys, xs = np.where(roi_image == val)
+xpos = np.mean(xs)
+ypos = np.mean(ys)
+
+h, w = roi_image.shape
+left = max(int(round(xpos) - half_search), 0)
+right = min(int(round(xpos) + half_search), w - 1)
+top = max(int(round(ypos) - half_search), 0)
+bottom = min(int(round(ypos) + half_search), h - 1)
+
+search_area = roi_image[top:bottom+1, left:right+1].astype(np.float64)
+
+if flip:
+    search_area = 255.0 - search_area
+
+total = np.sum(search_area)
+
+if total &gt;= threshold:
+    # Center of mass
+    x_indices = np.arange(search_area.shape[1])
+    y_indices = np.arange(search_area.shape[0])
+    x = np.sum(search_area @ x_indices) / total + left
+    y = np.sum(search_area.T @ y_indices) / total + top
+    return x, y
+else:
+    return np.nan, np.nan
+</pre></div>
+</div>
+<p>def dist_filter(array, tele_dist_threshold, num_avg=5):
+“””
+Teleport filter: removes spurious points where fly position
+jumps far from the mean of surrounding frames.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array: Nx3 array [time, x, y]
+&quot;&quot;&quot;
+filtered = array.copy()
+n = len(filtered)
+x = filtered[:, 1]
+y = filtered[:, 2]
+
+def rolling_nanmean(arr, window, forward=False):
+    &quot;&quot;&quot;Rolling mean over &#39;window&#39; preceding (or following) valid elements.&quot;&quot;&quot;
+    valid = (~np.isnan(arr)).astype(np.float64)
+    filled = np.where(np.isnan(arr), 0.0, arr)
+    cs_val = np.concatenate([[0.0], np.cumsum(filled)])
+    cs_cnt = np.concatenate([[0.0], np.cumsum(valid)])
+    idx = np.arange(n)
+    if forward:
+        starts = idx + 1
+        ends = np.minimum(n, idx + 1 + window)
+    else:
+        starts = np.maximum(0, idx - window)
+        ends = idx
+    sum_v = cs_val[ends] - cs_val[starts]
+    cnt_v = cs_cnt[ends] - cs_cnt[starts]
+    with np.errstate(invalid=&#39;ignore&#39;, divide=&#39;ignore&#39;):
+        return np.where(cnt_v &gt; 0, sum_v / cnt_v, np.nan)
+
+last_x = rolling_nanmean(x, num_avg)
+last_y = rolling_nanmean(y, num_avg)
+next_x = rolling_nanmean(x, num_avg, forward=True)
+next_y = rolling_nanmean(y, num_avg, forward=True)
+
+dist_last = np.sqrt((x - last_x) ** 2 + (y - last_y) ** 2)
+dist_next = np.sqrt((x - next_x) ** 2 + (y - next_y) ** 2)
+
+valid_pts = ~np.isnan(x)
+tele_mask = valid_pts &amp; (
+    (dist_last &gt; tele_dist_threshold) | (dist_next &gt; tele_dist_threshold)
+)
+tele_mask[:num_avg] = False
+tele_mask[n - num_avg:] = False
+
+filtered[tele_mask, 1:3] = np.nan
+tele_count = int(tele_mask.sum())
+
+# Edge check at start and end (~10 iterations)
+edge_indices = list(range(0, min(5, n - 1))) + list(range(max(0, n - 6), n - 1))
+for idx in edge_indices:
+    if np.any(np.isnan(filtered[idx, 1:3])) or np.any(np.isnan(filtered[idx + 1, 1:3])):
+        continue
+    if euclidean(filtered[idx, 1:3], filtered[idx + 1, 1:3]) &gt; tele_dist_threshold / 2:
+        filtered[idx, 1:3] = np.nan
+        tele_count += 1
+
+print(f&#39;{tele_count} points removed by the teleportation filter.&#39;)
+return filtered
+</pre></div>
+</div>
+<p>def interpolate_pos(array, inter_dist_threshold):
+“””
+Linearly interpolate fly position between NaN gaps,
+as long as the gap endpoints are within inter_dist_threshold.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array: Nx3 array [time, x, y]
+&quot;&quot;&quot;
+result = array.copy()
+interp_count = 0
+
+x = result[:, 1]
+y = result[:, 2]
+nan_mask = np.isnan(x)
+
+if not nan_mask.any():
+    print(f&#39;0 points recovered through interpolation.&#39;)
+    return result
+
+# Find start and end of each NaN run in one vectorized pass
+padded = np.concatenate([[False], nan_mask, [False]])
+diff = np.diff(padded.astype(np.int8))
+starts = np.where(diff == 1)[0]      # first NaN index of each run
+ends = np.where(diff == -1)[0] - 1   # last NaN index of each run
+
+for s, e in zip(starts, ends):
+    last_idx = s - 1
+    next_idx = e + 1
+    if last_idx &lt; 0 or next_idx &gt;= len(result):
+        continue
+    last_pt = result[last_idx, 1:3]
+    next_pt = result[next_idx, 1:3]
+    if np.any(np.isnan(last_pt)) or np.any(np.isnan(next_pt)):
+        continue
+    if euclidean(last_pt, next_pt) &lt;= inter_dist_threshold:
+        gap = next_idx - last_idx
+        fracs = np.arange(1, gap) / gap
+        result[s:e + 1, 1] = last_pt[0] + fracs * (next_pt[0] - last_pt[0])
+        result[s:e + 1, 2] = last_pt[1] + fracs * (next_pt[1] - last_pt[1])
+        interp_count += e - s + 1
+
+print(f&#39;{interp_count} points recovered through interpolation.&#39;)
+return result
+</pre></div>
+</div>
+<p>def boundary_filter(array, diameter):
+“””
+Remove points that fall outside the circular dish.
+The dish is assumed to be a circle of the given diameter,
+centered at (diameter/2, diameter/2).
+“””
+filtered = array.copy()
+cx, cy = diameter / 2, diameter / 2
+radius = diameter / 2</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = filtered[:, 1]
+y = filtered[:, 2]
+dist_from_center = np.sqrt((x - cx) ** 2 + (y - cy) ** 2)
+
+outside = dist_from_center &gt; radius
+# Don&#39;t count points that are already NaN
+outside = outside &amp; ~np.isnan(x)
+filtered[outside, 1:3] = np.nan
+
+count = np.sum(outside)
+if count &gt; 0:
+    print(f&quot;  {count} points removed by the boundary filter (outside dish).&quot;)
+return filtered
+</pre></div>
+</div>
+<p>print(‘Helper functions defined.’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Interactive ROI selector — click and drag on the image { display-mode: &quot;form&quot; }</span>
@@ -1275,8 +1446,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-roi-region-of-interest">Select ROI (Region of Interest)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>

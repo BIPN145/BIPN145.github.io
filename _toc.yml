@@ -25,7 +25,10 @@ chapters:
   - file: LabManual/ModelingNeuralMembranes.md
   - file: LabManual/StringNervousSystems.md
   - file: LabManual/Earthworm.md
-  - file: LabManual/Drosophila.md
+- file: Drosophila/Introduction.md
+  sections:
+  - file: Drosophila/Day1.md
+  - file: Drosophila/Day2.md
 - file: FinalProjects/Introduction
   sections:
   - file: FinalProjects/EMGAnalysis.ipynb
