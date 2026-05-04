@@ -7,3 +7,5 @@ chapters:
   sections:
   - file: Drosophila/Day1
   - file: Drosophila/Day2
+  - file: FlyTracking/Script
+  - file: FlyTracking/ColabNotebook

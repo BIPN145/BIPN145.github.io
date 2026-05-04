@@ -1,0 +1,1386 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fly Tracker (Colab) &#8212; BIPN 145 Lab Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=66b0c8fd" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FlyTracking/ColabNotebook';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Fly Tracker (Local)" href="Script.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../ModelingNeuralMembranes.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">BIPN 145 Lab Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../ModelingNeuralMembranes.html">
+                    Lab #0: Modeling Neural Membranes
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../StringNervousSystems.html">Lab #1: String Nervous Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Earthworm.html">Lab #3: Earthworm Electrophysiology</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Drosophila/Introduction.html"><em>Drosophila</em> Behavior &amp; Optogenetics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day1.html">Day 1: The Case of the Mislabeled Fly Vials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day2.html">Day 2: The Case of the Missing Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Script.html">Fly Tracker (Local)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fly Tracker (Colab)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/FlyTracking/ColabNotebook.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fly Tracker (Colab)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-plot-velocity">Calculate &amp; Plot Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-across-all-videos">Summary Across All Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-results-optional">Download Results (Optional)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fly-tracker-colab">
+<h1>Fly Tracker (Colab)<a class="headerlink" href="#fly-tracker-colab" title="Link to this heading">#</a></h1>
+<p>This notebook tracks a fruit fly against a light background in a video, calculates its position and velocity over time, and produces path and velocity plots.</p>
+<p><strong>Original MATLAB code</strong> by Jeff Stafford, modified by A. Juavinett for BIPN 145.</p>
+<section id="how-to-use">
+<h2>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Run the <strong>Setup</strong> cell to install dependencies.</p></li>
+<li><p><strong>Upload your video</strong> (<code class="docutils literal notranslate"><span class="pre">.avi</span></code>, <code class="docutils literal notranslate"><span class="pre">.mp4</span></code>, etc.) using the upload cell.</p></li>
+<li><p><strong>Set your parameters</strong> (dish diameter, frame rate).</p></li>
+<li><p><strong>Draw your ROI</strong> on the first frame.</p></li>
+<li><p>Run the remaining cells to track the fly and view results.</p></li>
+</ol>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Install &amp; import packages { display-mode: &quot;form&quot; }</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mcolors</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineCollection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial.distance</span><span class="w"> </span><span class="kn">import</span> <span class="n">euclidean</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span><span class="p">,</span> <span class="n">output</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">IPImage</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+
+<span class="c1"># Initialize result containers (run once, then append to them)</span>
+<span class="k">if</span> <span class="s1">&#39;all_corrected&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span>
+    <span class="n">all_corrected</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">all_velocity</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialized result containers.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Existing results: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1"> video(s) processed so far.&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All packages loaded successfully!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mount-your-drive">
+<h2>Mount your drive<a class="headerlink" href="#mount-your-drive" title="Link to this heading">#</a></h2>
+<p>Run the cell below to mount your drive, which should contain your video files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="select-video-file">
+<h2>Select Video File<a class="headerlink" href="#select-video-file" title="Link to this heading">#</a></h2>
+<p>Update the path below to your video file. You’ll process one video at a time, and results will accumulate in <code class="docutils literal notranslate"><span class="pre">all_corrected</span></code> and <code class="docutils literal notranslate"><span class="pre">all_velocity</span></code>.</p>
+<blockquote>
+<div><p><strong>Tip</strong>: In the window at left, you can use the three vertical dots to copy and paste the path to your video file.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the current video file to process</span>
+<span class="n">current_video</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/video1.avi&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current video: </span><span class="si">{</span><span class="n">current_video</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-parameters">
+<h2>Set Parameters<a class="headerlink" href="#set-parameters" title="Link to this heading">#</a></h2>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">frame_rate</span></code> below as needed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Frame rate of the video</span>
+<span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span> 
+
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Diameter of the dish in centimeters</span>
+<span class="n">search_size</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># Search size for fly detection (in pixels)</span>
+<span class="n">per_pixel_threshold</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">bin_size</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Bin size for velocity calculation (in seconds)</span>
+
+<span class="n">height</span> <span class="o">=</span> <span class="n">diameter</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">diameter</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frame rate: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s1"> fps&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>frame_rate = None  # auto-detect from video (override with e.g. frame_rate = 30 if needed)</p>
+<p>diameter = 4  # Diameter of the dish in centimeters
+search_size = 20 # Search size for fly detection (in pixels)
+per_pixel_threshold = 1.5
+bin_size = 1 # Bin size for velocity calculation (in seconds)</p>
+<p>height = diameter
+width = diameter</p>
+<p>print(‘Frame rate will be auto-detected from each video.’)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Define helper functions (fly_finder, dist_filter, interpolate_pos) { display-mode: &quot;form&quot; }</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fly_finder</span><span class="p">(</span><span class="n">roi_image</span><span class="p">,</span> <span class="n">half_search</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find a fly (dark region) in a grayscale image.</span>
+<span class="sd">    Locates the darkest pixel, retrieves a search area around it,</span>
+<span class="sd">    and finds the center of pixel intensity.</span>
+
+<span class="sd">    Returns (x, y) position or (NaN, NaN) if not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">flip</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">roi_image</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">roi_image</span><span class="p">)</span>
+
+    <span class="n">ys</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">roi_image</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">xpos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="n">ypos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span>
+
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">roi_image</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">xpos</span><span class="p">)</span> <span class="o">-</span> <span class="n">half_search</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">xpos</span><span class="p">)</span> <span class="o">+</span> <span class="n">half_search</span><span class="p">),</span> <span class="n">w</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">top</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ypos</span><span class="p">)</span> <span class="o">-</span> <span class="n">half_search</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">bottom</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ypos</span><span class="p">)</span> <span class="o">+</span> <span class="n">half_search</span><span class="p">),</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">search_area</span> <span class="o">=</span> <span class="n">roi_image</span><span class="p">[</span><span class="n">top</span><span class="p">:</span><span class="n">bottom</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span><span class="n">right</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">flip</span><span class="p">:</span>
+        <span class="n">search_area</span> <span class="o">=</span> <span class="mf">255.0</span> <span class="o">-</span> <span class="n">search_area</span>
+
+    <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">search_area</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="c1"># Center of mass</span>
+        <span class="n">x_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">search_area</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">y_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">search_area</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">search_area</span> <span class="o">@</span> <span class="n">x_indices</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span> <span class="o">+</span> <span class="n">left</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">search_area</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">y_indices</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span> <span class="o">+</span> <span class="n">top</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">dist_filter</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">tele_dist_threshold</span><span class="p">,</span> <span class="n">num_avg</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Teleport filter: removes spurious points where fly position</span>
+<span class="sd">    jumps far from the mean of surrounding frames.</span>
+
+<span class="sd">    array: Nx3 array [time, x, y]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">tele_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_avg</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="n">num_avg</span><span class="p">):</span>
+        <span class="n">point</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">point</span><span class="p">)):</span>
+            <span class="k">continue</span>
+
+        <span class="n">last_set</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">num_avg</span><span class="p">:</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">last_set</span> <span class="o">=</span> <span class="n">last_set</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">last_set</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">last_set</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">last_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">last_set</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">next_set</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">num_avg</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">next_set</span> <span class="o">=</span> <span class="n">next_set</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">next_set</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">next_set</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">next_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">next_set</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">euclidean</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">last_mean</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span> <span class="ow">or</span>
+                <span class="n">euclidean</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">next_mean</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span><span class="p">):</span>
+            <span class="n">filtered</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">tele_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># More stringent check at start and end</span>
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">+</span> \
+               <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="mi">6</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">euclidean</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">filtered</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">filtered</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">tele_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">tele_count</span><span class="si">}</span><span class="s1"> points removed by the teleportation filter.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">interpolate_pos</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">inter_dist_threshold</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Linearly interpolate fly position between NaN gaps,</span>
+<span class="sd">    as long as the gap endpoints are within inter_dist_threshold.</span>
+
+<span class="sd">    array: Nx3 array [time, x, y]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">interp_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">col_pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>  <span class="c1"># x, y columns</span>
+    <span class="k">for</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span> <span class="ow">in</span> <span class="n">col_pairs</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">cx</span><span class="p">])</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">last_idx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+                <span class="n">last_point</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">last_idx</span><span class="p">,</span> <span class="n">cx</span><span class="p">:</span><span class="n">cy</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+                <span class="c1"># Find next non-NaN</span>
+                <span class="n">remaining</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">:,</span> <span class="n">cx</span><span class="p">]</span>
+                <span class="n">non_nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">remaining</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_nan</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">next_idx</span> <span class="o">=</span> <span class="n">non_nan</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">i</span>
+                <span class="n">next_point</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">next_idx</span><span class="p">,</span> <span class="n">cx</span><span class="p">:</span><span class="n">cy</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">gap</span> <span class="o">=</span> <span class="n">next_idx</span> <span class="o">-</span> <span class="n">i</span>
+
+                <span class="k">if</span> <span class="n">euclidean</span><span class="p">(</span><span class="n">last_point</span><span class="p">,</span> <span class="n">next_point</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">inter_dist_threshold</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">gap</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                        <span class="n">frac</span> <span class="o">=</span> <span class="n">j</span> <span class="o">/</span> <span class="p">(</span><span class="n">gap</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="n">result</span><span class="p">[</span><span class="n">last_idx</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="n">cx</span><span class="p">:</span><span class="n">cy</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_point</span> <span class="o">+</span> <span class="p">(</span><span class="n">next_point</span> <span class="o">-</span> <span class="n">last_point</span><span class="p">)</span> <span class="o">*</span> <span class="n">frac</span>
+                    <span class="n">interp_count</span> <span class="o">+=</span> <span class="n">gap</span>
+
+                <span class="n">i</span> <span class="o">=</span> <span class="n">next_idx</span>
+            <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">cx</span><span class="p">])</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">non_nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[:,</span> <span class="n">cx</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_nan</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">non_nan</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">interp_count</span><span class="si">}</span><span class="s1"> points recovered through interpolation.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">boundary_filter</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">diameter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove points that fall outside the circular dish.</span>
+<span class="sd">    The dish is assumed to be a circle of the given diameter,</span>
+<span class="sd">    centered at (diameter/2, diameter/2).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">dist_from_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">cx</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">cy</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">outside</span> <span class="o">=</span> <span class="n">dist_from_center</span> <span class="o">&gt;</span> <span class="n">radius</span>
+    <span class="c1"># Don&#39;t count points that are already NaN</span>
+    <span class="n">outside</span> <span class="o">=</span> <span class="n">outside</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">filtered</span><span class="p">[</span><span class="n">outside</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outside</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> points removed by the boundary filter (outside dish).&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Helper functions defined.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>#&#64;title Define helper functions (fly_finder, dist_filter, interpolate_pos) { display-mode: “form” }</p>
+<p>def fly_finder(roi_image, half_search, threshold, flip=True):
+“””
+Find a fly (dark region) in a grayscale image.
+Locates the darkest pixel, retrieves a search area around it,
+and finds the center of pixel intensity.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Returns (x, y) position or (NaN, NaN) if not found.
+&quot;&quot;&quot;
+if flip:
+    val = np.nanmin(roi_image)
+else:
+    val = np.nanmax(roi_image)
+
+ys, xs = np.where(roi_image == val)
+xpos = np.mean(xs)
+ypos = np.mean(ys)
+
+h, w = roi_image.shape
+left = max(int(round(xpos) - half_search), 0)
+right = min(int(round(xpos) + half_search), w - 1)
+top = max(int(round(ypos) - half_search), 0)
+bottom = min(int(round(ypos) + half_search), h - 1)
+
+search_area = roi_image[top:bottom+1, left:right+1].astype(np.float64)
+
+if flip:
+    search_area = 255.0 - search_area
+
+total = np.sum(search_area)
+
+if total &gt;= threshold:
+    # Center of mass
+    x_indices = np.arange(search_area.shape[1])
+    y_indices = np.arange(search_area.shape[0])
+    x = np.sum(search_area @ x_indices) / total + left
+    y = np.sum(search_area.T @ y_indices) / total + top
+    return x, y
+else:
+    return np.nan, np.nan
+</pre></div>
+</div>
+<p>def dist_filter(array, tele_dist_threshold, num_avg=5):
+“””
+Teleport filter: removes spurious points where fly position
+jumps far from the mean of surrounding frames.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array: Nx3 array [time, x, y]
+&quot;&quot;&quot;
+filtered = array.copy()
+n = len(filtered)
+x = filtered[:, 1]
+y = filtered[:, 2]
+
+def rolling_nanmean(arr, window, forward=False):
+    &quot;&quot;&quot;Rolling mean over &#39;window&#39; preceding (or following) valid elements.&quot;&quot;&quot;
+    valid = (~np.isnan(arr)).astype(np.float64)
+    filled = np.where(np.isnan(arr), 0.0, arr)
+    cs_val = np.concatenate([[0.0], np.cumsum(filled)])
+    cs_cnt = np.concatenate([[0.0], np.cumsum(valid)])
+    idx = np.arange(n)
+    if forward:
+        starts = idx + 1
+        ends = np.minimum(n, idx + 1 + window)
+    else:
+        starts = np.maximum(0, idx - window)
+        ends = idx
+    sum_v = cs_val[ends] - cs_val[starts]
+    cnt_v = cs_cnt[ends] - cs_cnt[starts]
+    with np.errstate(invalid=&#39;ignore&#39;, divide=&#39;ignore&#39;):
+        return np.where(cnt_v &gt; 0, sum_v / cnt_v, np.nan)
+
+last_x = rolling_nanmean(x, num_avg)
+last_y = rolling_nanmean(y, num_avg)
+next_x = rolling_nanmean(x, num_avg, forward=True)
+next_y = rolling_nanmean(y, num_avg, forward=True)
+
+dist_last = np.sqrt((x - last_x) ** 2 + (y - last_y) ** 2)
+dist_next = np.sqrt((x - next_x) ** 2 + (y - next_y) ** 2)
+
+valid_pts = ~np.isnan(x)
+tele_mask = valid_pts &amp; (
+    (dist_last &gt; tele_dist_threshold) | (dist_next &gt; tele_dist_threshold)
+)
+tele_mask[:num_avg] = False
+tele_mask[n - num_avg:] = False
+
+filtered[tele_mask, 1:3] = np.nan
+tele_count = int(tele_mask.sum())
+
+# Edge check at start and end (~10 iterations)
+edge_indices = list(range(0, min(5, n - 1))) + list(range(max(0, n - 6), n - 1))
+for idx in edge_indices:
+    if np.any(np.isnan(filtered[idx, 1:3])) or np.any(np.isnan(filtered[idx + 1, 1:3])):
+        continue
+    if euclidean(filtered[idx, 1:3], filtered[idx + 1, 1:3]) &gt; tele_dist_threshold / 2:
+        filtered[idx, 1:3] = np.nan
+        tele_count += 1
+
+print(f&#39;{tele_count} points removed by the teleportation filter.&#39;)
+return filtered
+</pre></div>
+</div>
+<p>def interpolate_pos(array, inter_dist_threshold):
+“””
+Linearly interpolate fly position between NaN gaps,
+as long as the gap endpoints are within inter_dist_threshold.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array: Nx3 array [time, x, y]
+&quot;&quot;&quot;
+result = array.copy()
+interp_count = 0
+
+x = result[:, 1]
+y = result[:, 2]
+nan_mask = np.isnan(x)
+
+if not nan_mask.any():
+    print(f&#39;0 points recovered through interpolation.&#39;)
+    return result
+
+# Find start and end of each NaN run in one vectorized pass
+padded = np.concatenate([[False], nan_mask, [False]])
+diff = np.diff(padded.astype(np.int8))
+starts = np.where(diff == 1)[0]      # first NaN index of each run
+ends = np.where(diff == -1)[0] - 1   # last NaN index of each run
+
+for s, e in zip(starts, ends):
+    last_idx = s - 1
+    next_idx = e + 1
+    if last_idx &lt; 0 or next_idx &gt;= len(result):
+        continue
+    last_pt = result[last_idx, 1:3]
+    next_pt = result[next_idx, 1:3]
+    if np.any(np.isnan(last_pt)) or np.any(np.isnan(next_pt)):
+        continue
+    if euclidean(last_pt, next_pt) &lt;= inter_dist_threshold:
+        gap = next_idx - last_idx
+        fracs = np.arange(1, gap) / gap
+        result[s:e + 1, 1] = last_pt[0] + fracs * (next_pt[0] - last_pt[0])
+        result[s:e + 1, 2] = last_pt[1] + fracs * (next_pt[1] - last_pt[1])
+        interp_count += e - s + 1
+
+print(f&#39;{interp_count} points recovered through interpolation.&#39;)
+return result
+</pre></div>
+</div>
+<p>def boundary_filter(array, diameter):
+“””
+Remove points that fall outside the circular dish.
+The dish is assumed to be a circle of the given diameter,
+centered at (diameter/2, diameter/2).
+“””
+filtered = array.copy()
+cx, cy = diameter / 2, diameter / 2
+radius = diameter / 2</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = filtered[:, 1]
+y = filtered[:, 2]
+dist_from_center = np.sqrt((x - cx) ** 2 + (y - cy) ** 2)
+
+outside = dist_from_center &gt; radius
+# Don&#39;t count points that are already NaN
+outside = outside &amp; ~np.isnan(x)
+filtered[outside, 1:3] = np.nan
+
+count = np.sum(outside)
+if count &gt; 0:
+    print(f&quot;  {count} points removed by the boundary filter (outside dish).&quot;)
+return filtered
+</pre></div>
+</div>
+<p>print(‘Helper functions defined.’)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Interactive ROI selector — click and drag on the image { display-mode: &quot;form&quot; }</span>
+
+<span class="c1"># Read first frame and encode as base64 for display</span>
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Could not read first frame of </span><span class="si">{</span><span class="n">current_video</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">frame_rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+<span class="n">img_h</span><span class="p">,</span> <span class="n">img_w</span> <span class="o">=</span> <span class="n">frame_rgb</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Encode frame as PNG base64</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imencode</span><span class="p">(</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame_rgb</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">))</span>
+<span class="n">img_b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Image size: </span><span class="si">{</span><span class="n">img_w</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">img_h</span><span class="si">}</span><span class="s1"> pixels&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Click and drag on the image below to select the ROI, then click &quot;Confirm ROI&quot;.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># JavaScript/HTML interactive ROI selector</span>
+<span class="n">html_code</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;div id=&quot;roi-container&quot; style=&quot;position:relative; display:inline-block; cursor:crosshair;&quot;&gt;</span>
+<span class="s2">  &lt;canvas id=&quot;roi-canvas&quot; width=&quot;</span><span class="si">{</span><span class="n">img_w</span><span class="si">}</span><span class="s2">&quot; height=&quot;</span><span class="si">{</span><span class="n">img_h</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="s2">    style=&quot;max-width:100%; height:auto; border:1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+<span class="s2">&lt;br&gt;</span>
+<span class="s2">&lt;button id=&quot;roi-confirm-btn&quot; style=&quot;font-size:16px; padding:8px 20px; background:#4CAF50;</span>
+<span class="s2">  color:white; border:none; border-radius:4px; cursor:pointer; margin-top:8px;&quot;&gt;</span>
+<span class="s2">  Confirm ROI</span>
+<span class="s2">&lt;/button&gt;</span>
+<span class="s2">&lt;p id=&quot;roi-info&quot; style=&quot;font-size:14px; color:#333;&quot;&gt;&lt;/p&gt;</span>
+
+<span class="s2">&lt;script&gt;</span>
+<span class="s2">(function() </span><span class="se">{{</span>
+<span class="s2">  var canvas = document.getElementById(&#39;roi-canvas&#39;);</span>
+<span class="s2">  var ctx = canvas.getContext(&#39;2d&#39;);</span>
+<span class="s2">  var img = new window.Image();</span>
+<span class="s2">  img.src = &#39;data:image/png;base64,</span><span class="si">{</span><span class="n">img_b64</span><span class="si">}</span><span class="s2">&#39;;</span>
+
+<span class="s2">  var drawing = false;</span>
+<span class="s2">  var x0 = 0, y0 = 0, x1 = 0, y1 = 0;</span>
+<span class="s2">  var hasROI = false;</span>
+
+<span class="s2">  // Scale factor: canvas CSS size vs actual pixel size</span>
+<span class="s2">  function getScale() </span><span class="se">{{</span>
+<span class="s2">    var rect = canvas.getBoundingClientRect();</span>
+<span class="s2">    return </span><span class="se">{{</span><span class="s2"> sx: canvas.width / rect.width, sy: canvas.height / rect.height </span><span class="se">}}</span><span class="s2">;</span>
+<span class="s2">  </span><span class="se">}}</span>
+
+<span class="s2">  img.onload = function() </span><span class="se">{{</span>
+<span class="s2">    ctx.drawImage(img, 0, 0);</span>
+<span class="s2">  </span><span class="se">}}</span><span class="s2">;</span>
+
+<span class="s2">  function redraw() </span><span class="se">{{</span>
+<span class="s2">    ctx.clearRect(0, 0, canvas.width, canvas.height);</span>
+<span class="s2">    ctx.drawImage(img, 0, 0);</span>
+<span class="s2">    if (hasROI) </span><span class="se">{{</span>
+<span class="s2">      var rx = Math.min(x0, x1);</span>
+<span class="s2">      var ry = Math.min(y0, y1);</span>
+<span class="s2">      var rw = Math.abs(x1 - x0);</span>
+<span class="s2">      var rh = Math.abs(y1 - y0);</span>
+<span class="s2">      ctx.strokeStyle = &#39;red&#39;;</span>
+<span class="s2">      ctx.lineWidth = 3;</span>
+<span class="s2">      ctx.strokeRect(rx, ry, rw, rh);</span>
+<span class="s2">      document.getElementById(&#39;roi-info&#39;).innerText =</span>
+<span class="s2">        &#39;ROI: x=&#39; + Math.round(rx) + &#39;, y=&#39; + Math.round(ry) +</span>
+<span class="s2">        &#39;, w=&#39; + Math.round(rw) + &#39;, h=&#39; + Math.round(rh);</span>
+<span class="s2">    </span><span class="se">}}</span>
+<span class="s2">  </span><span class="se">}}</span>
+
+<span class="s2">  canvas.addEventListener(&#39;mousedown&#39;, function(e) </span><span class="se">{{</span>
+<span class="s2">    var rect = canvas.getBoundingClientRect();</span>
+<span class="s2">    var scale = getScale();</span>
+<span class="s2">    x0 = (e.clientX - rect.left) * scale.sx;</span>
+<span class="s2">    y0 = (e.clientY - rect.top) * scale.sy;</span>
+<span class="s2">    drawing = true;</span>
+<span class="s2">    hasROI = false;</span>
+<span class="s2">  </span><span class="se">}}</span><span class="s2">);</span>
+
+<span class="s2">  canvas.addEventListener(&#39;mousemove&#39;, function(e) </span><span class="se">{{</span>
+<span class="s2">    if (!drawing) return;</span>
+<span class="s2">    var rect = canvas.getBoundingClientRect();</span>
+<span class="s2">    var scale = getScale();</span>
+<span class="s2">    x1 = (e.clientX - rect.left) * scale.sx;</span>
+<span class="s2">    y1 = (e.clientY - rect.top) * scale.sy;</span>
+<span class="s2">    hasROI = true;</span>
+<span class="s2">    redraw();</span>
+<span class="s2">  </span><span class="se">}}</span><span class="s2">);</span>
+
+<span class="s2">  canvas.addEventListener(&#39;mouseup&#39;, function(e) </span><span class="se">{{</span>
+<span class="s2">    drawing = false;</span>
+<span class="s2">  </span><span class="se">}}</span><span class="s2">);</span>
+
+<span class="s2">  document.getElementById(&#39;roi-confirm-btn&#39;).addEventListener(&#39;click&#39;, function() </span><span class="se">{{</span>
+<span class="s2">    if (!hasROI) </span><span class="se">{{</span>
+<span class="s2">      document.getElementById(&#39;roi-info&#39;).innerText =</span>
+<span class="s2">        &#39;No ROI drawn yet! Click and drag on the image first.&#39;;</span>
+<span class="s2">      return;</span>
+<span class="s2">    </span><span class="se">}}</span>
+<span class="s2">    var rx = Math.round(Math.min(x0, x1));</span>
+<span class="s2">    var ry = Math.round(Math.min(y0, y1));</span>
+<span class="s2">    var rw = Math.round(Math.abs(x1 - x0));</span>
+<span class="s2">    var rh = Math.round(Math.abs(y1 - y0));</span>
+
+<span class="s2">    // Send ROI back to Python via Colab&#39;s kernel eval</span>
+<span class="s2">    google.colab.kernel.invokeFunction(&#39;set_roi&#39;, [rx, ry, rw, rh], </span><span class="se">{{}}</span><span class="s2">);</span>
+<span class="s2">    document.getElementById(&#39;roi-info&#39;).innerText =</span>
+<span class="s2">      &#39;ROI CONFIRMED: x=&#39; + rx + &#39;, y=&#39; + ry + &#39;, w=&#39; + rw + &#39;, h=&#39; + rh;</span>
+<span class="s2">    document.getElementById(&#39;roi-confirm-btn&#39;).style.background = &#39;#888&#39;;</span>
+<span class="s2">    document.getElementById(&#39;roi-confirm-btn&#39;).innerText = &#39;ROI Confirmed!&#39;;</span>
+<span class="s2">  </span><span class="se">}}</span><span class="s2">);</span>
+<span class="se">}}</span><span class="s2">)();</span>
+<span class="s2">&lt;/script&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Register a callback so JavaScript can send the ROI to Python</span>
+<span class="n">roi_result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">set_roi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="n">roi_result</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ROI received: x=</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">, y=</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">, w=</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="si">}</span><span class="s1">, h=</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">output</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;set_roi&#39;</span><span class="p">,</span> <span class="n">set_roi</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">html_code</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this cell AFTER you have confirmed your ROI above</span>
+<span class="n">roi</span> <span class="o">=</span> <span class="n">roi_result</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">roi</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No ROI selected! Go back and draw a rectangle on the image, then click &#39;Confirm ROI&#39;.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Using ROI: x=</span><span class="si">{</span><span class="n">roi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">, y=</span><span class="si">{</span><span class="n">roi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">, width=</span><span class="si">{</span><span class="n">roi</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">, height=</span><span class="si">{</span><span class="n">roi</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="track-fly-in-video-s">
+<h2>Track Fly in Video(s)<a class="headerlink" href="#track-fly-in-video-s" title="Link to this heading">#</a></h2>
+<p>This processes each video frame-by-frame:</p>
+<ol class="arabic simple">
+<li><p>Creates a background image from 100 random frames</p></li>
+<li><p>Subtracts the background from each frame</p></li>
+<li><p>Finds the fly position using center-of-mass of dark pixels</p></li>
+<li><p>Applies teleportation filter and interpolation</p></li>
+<li><p>Converts pixel positions to centimeters</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Fly tracking engine — process_video() { display-mode: &quot;form&quot; }</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_video</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span> <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Process a single fly video and return the corrected position array.</span>
+<span class="sd">    Returns (Nx3 array [time_s, x_cm, y_cm], frame_rate).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">diameter</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">diameter</span>
+    <span class="n">roi_x</span><span class="p">,</span> <span class="n">roi_y</span><span class="p">,</span> <span class="n">roi_w</span><span class="p">,</span> <span class="n">roi_h</span> <span class="o">=</span> <span class="n">roi</span>
+
+    <span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">)</span>
+    <span class="n">total_frames</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_COUNT</span><span class="p">))</span>
+    <span class="n">nfrm</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="c1"># Auto-detect frame rate from video if not specified</span>
+    <span class="k">if</span> <span class="n">frame_rate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">frame_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Auto-detected frame rate: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Could not detect frame rate, using default: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Re-run with --frame-rate to set the correct value.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Video FPS: </span><span class="si">{</span><span class="n">fps</span><span class="si">}</span><span class="s2">, using override: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Sanity check: warn if video duration seems unusual</span>
+    <span class="k">if</span> <span class="n">frame_rate</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">/</span> <span class="n">frame_rate</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Estimated duration: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="ow">or</span> <span class="n">duration</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Expected ~60s video but got </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    If this looks wrong, re-run with --frame-rate to override.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- Create background from 100 random frames ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Calculating background...&quot;</span><span class="p">)</span>
+    <span class="n">bg_number</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">nfrm</span><span class="p">)</span>
+    <span class="n">bg_indices</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nfrm</span><span class="p">,</span> <span class="n">bg_number</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">sample</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">gray_sample</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">bg_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="o">*</span><span class="n">gray_sample</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">bg_number</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">frame_num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bg_indices</span><span class="p">):</span>
+        <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">)</span>
+        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="n">bg_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+    <span class="n">background</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bg_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="c1"># Pre-compute the per-pixel scale factor for background subtraction once,</span>
+    <span class="c1"># avoiding redundant division of the full background image on every frame.</span>
+    <span class="n">bg_scale</span> <span class="o">=</span> <span class="mf">256.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># --- Process each frame ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Tracking fly positions...&quot;</span><span class="p">)</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="p">(</span><span class="n">search_size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">per_pixel_threshold</span>
+    <span class="n">half_search</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">search_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">pos_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nfrm</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">nofr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nfrm</span><span class="p">):</span>
+        <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="n">nofr</span><span class="p">)</span>
+        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="n">pos_array</span><span class="p">[</span><span class="n">nofr</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nofr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+            <span class="k">continue</span>
+
+        <span class="n">frame_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+        <span class="c1"># Background subtraction using GIMP division formula</span>
+        <span class="n">frame_div</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">frame_gray</span> <span class="o">*</span> <span class="n">bg_scale</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+        <span class="c1"># Crop to ROI</span>
+        <span class="n">frame_crop</span> <span class="o">=</span> <span class="n">frame_div</span><span class="p">[</span><span class="n">roi_y</span><span class="p">:</span><span class="n">roi_y</span> <span class="o">+</span> <span class="n">roi_h</span><span class="p">,</span> <span class="n">roi_x</span><span class="p">:</span><span class="n">roi_x</span> <span class="o">+</span> <span class="n">roi_w</span><span class="p">]</span>
+
+        <span class="c1"># Find fly</span>
+        <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span> <span class="o">=</span> <span class="n">fly_finder</span><span class="p">(</span><span class="n">frame_crop</span><span class="p">,</span> <span class="n">half_search</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">pos_array</span><span class="p">[</span><span class="n">nofr</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nofr</span><span class="p">,</span> <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">]</span>
+
+        <span class="c1"># Progress update every 10%</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nfrm</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">pct</span> <span class="o">=</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">nfrm</span> <span class="o">*</span> <span class="mi">100</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">% complete (</span><span class="si">{</span><span class="n">nofr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+
+    <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+    <span class="c1"># --- Convert to real coordinates ---</span>
+    <span class="n">xscale</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="n">roi_w</span>
+    <span class="n">yscale</span> <span class="o">=</span> <span class="n">height</span> <span class="o">/</span> <span class="n">roi_h</span>
+
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">frame_rate</span><span class="p">,</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">xscale</span><span class="p">,</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">yscale</span><span class="p">,</span>
+    <span class="p">])</span>
+
+    <span class="n">skipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">skipped</span><span class="si">}</span><span class="s2"> points skipped out of </span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Apply filters and interpolation</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">boundary_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="n">diameter</span><span class="p">)</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">displacement_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">)</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">dist_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">interpolate_pos</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">corrected_array</span><span class="p">,</span> <span class="n">frame_rate</span>
+
+<span class="c1"># --- Process the current video ---</span>
+<span class="n">corrected</span> <span class="o">=</span> <span class="n">process_video</span><span class="p">(</span><span class="n">current_video</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span>
+                          <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">)</span>
+<span class="n">all_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Total videos processed: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To process another video, go back to &quot;Select Video File&quot; cell and change `current_video`, then run this cell again.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prepare-for-another-video-optional">
+<h2>Prepare for Another Video (Optional)<a class="headerlink" href="#prepare-for-another-video-optional" title="Link to this heading">#</a></h2>
+<p>If you want to process another video with the same ROI:</p>
+<ol class="arabic simple">
+<li><p>Go back to the <strong>Select Video File</strong> cell and update <code class="docutils literal notranslate"><span class="pre">current_video</span></code> to the new file path</p></li>
+<li><p>Re-run the video selection cell</p></li>
+<li><p>Skip the ROI selection (you can reuse the same ROI with <code class="docutils literal notranslate"><span class="pre">roi</span> <span class="pre">=</span> <span class="pre">roi</span></code> or draw a new one)</p></li>
+<li><p>Run the <strong>Track Fly</strong> cell again — results automatically append to <code class="docutils literal notranslate"><span class="pre">all_corrected</span></code></p></li>
+</ol>
+<p>Or, to apply a <strong>different ROI</strong> for the next video, re-run the ROI selection cells before tracking.</p>
+</section>
+<section id="plot-fly-path-s">
+<h2>Plot Fly Path(s)<a class="headerlink" href="#plot-fly-path-s" title="Link to this heading">#</a></h2>
+<p>Color-coded by time (light blue = start, dark purple = end).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">corrected</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="c1"># Plot path colored by time</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">valid</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">valid</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">segments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">:]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">lc</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BuPu&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">lc</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">valid</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">lc</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Invert y to match video</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X-coordinate (cm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y-coordinate (cm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fly Path — Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">lc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculate-plot-velocity">
+<h2>Calculate &amp; Plot Velocity<a class="headerlink" href="#calculate-plot-velocity" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate velocity for videos that haven&#39;t been processed yet</span>
+<span class="n">start_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">)</span>  <span class="c1"># Only calculate for newly added videos</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_idx</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)):</span>
+    <span class="n">corrected</span> <span class="o">=</span> <span class="n">all_corrected</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">total_time</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">frame_rate</span>
+    <span class="n">total_bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">total_time</span> <span class="o">/</span> <span class="n">bin_size</span><span class="p">))</span>
+
+    <span class="c1"># Calculate velocity per bin</span>
+    <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">bin_size</span> <span class="k">if</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">frame_rate</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_rate</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">data_rate</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;bin_size is smaller than the minimum data rate.&#39;</span><span class="p">)</span>
+
+    <span class="n">velocity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">total_bins</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span> <span class="o">-</span> <span class="n">data_rate</span><span class="p">,</span> <span class="n">data_rate</span><span class="p">):</span>
+        <span class="n">bin_idx</span> <span class="o">=</span> <span class="n">row</span> <span class="o">//</span> <span class="n">data_rate</span>
+        <span class="k">if</span> <span class="n">bin_idx</span> <span class="o">&gt;=</span> <span class="n">total_bins</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[</span><span class="n">row</span> <span class="o">+</span> <span class="n">data_rate</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">p2</span><span class="p">)):</span>
+            <span class="n">velocity</span><span class="p">[</span><span class="n">bin_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># 10x converts cm to mm</span>
+            <span class="n">velocity</span><span class="p">[</span><span class="n">bin_idx</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="n">euclidean</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
+
+    <span class="c1"># Convert from mm/bin to mm/s</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="n">velocity</span> <span class="o">/</span> <span class="n">bin_size</span>
+
+    <span class="n">all_velocity</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
+
+    <span class="c1"># Warn about absurd velocities</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;WARNING (Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">): Absurdly high velocities detected.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Consider changing the ROI or re-recording the video.&#39;</span><span class="p">)</span>
+
+    <span class="n">mean_vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
+    <span class="n">std_vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">--- Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1"> (from: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span><span class="si">}</span><span class="s1">) ---&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Mean velocity: </span><span class="si">{</span><span class="n">mean_vel</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Std deviation: </span><span class="si">{</span><span class="n">std_vel</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Plot velocity over time</span>
+    <span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">total_bins</span><span class="p">)</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">time_axis</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bin_size</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">time_axis</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.5</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Velocity (mm/s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fly Velocity — Video </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Velocity analysis complete. Total videos analyzed: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-across-all-videos">
+<h2>Summary Across All Videos<a class="headerlink" href="#summary-across-all-videos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_files</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">num_files</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># Pad velocity arrays to the same length for comparison</span>
+    <span class="n">max_len</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">all_velocity</span><span class="p">)</span>
+    <span class="n">velocity_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">num_files</span><span class="p">,</span> <span class="n">max_len</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">):</span>
+        <span class="n">velocity_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="c1"># Plot all velocities together</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">max_len</span><span class="p">)</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_files</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">velocity_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Fly </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Velocity (mm/s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;All Fly Velocities&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Summary stats across videos</span>
+    <span class="n">per_video_means</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">all_velocity</span><span class="p">]</span>
+    <span class="n">mean_across</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">per_video_means</span><span class="p">)</span>
+    <span class="n">sd_across</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">per_video_means</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">=== Summary Across </span><span class="si">{</span><span class="n">num_files</span><span class="si">}</span><span class="s1"> Videos ===&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean velocity across videos: </span><span class="si">{</span><span class="n">mean_across</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;SD of mean velocity across videos: </span><span class="si">{</span><span class="n">sd_across</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">mean_vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sd_vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">=== Summary (1 Video) ===&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean velocity: </span><span class="si">{</span><span class="n">mean_vel</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;SD of velocity: </span><span class="si">{</span><span class="n">sd_vel</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mm/s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="download-results-optional">
+<h2>Download Results (Optional)<a class="headerlink" href="#download-results-optional" title="Link to this heading">#</a></h2>
+<p>Download the tracking data as CSV files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">corrected</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_tracking.csv&#39;</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">corrected</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,X_cm,Y_cm&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Also save velocity data</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">vel</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_velocity.csv&#39;</span>
+    <span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vel</span><span class="p">))</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="n">vel_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">vel</span><span class="p">])</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">vel_data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,Velocity_mm_per_s&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jupyterbook_env"
+        },
+        kernelOptions: {
+            name: "jupyterbook_env",
+            path: "./FlyTracking"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jupyterbook_env'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Script.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fly Tracker (Local)</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-plot-velocity">Calculate &amp; Plot Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-across-all-videos">Summary Across All Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-results-optional">Download Results (Optional)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
