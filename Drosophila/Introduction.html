@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Working with LabChart Files &#8212; BIPN 145 Lab Digital Manual</title>
+    <title>Drosophila Behavior &amp; Optogenetics &#8212; BIPN 145 Lab Digital Manual</title>
   
   
   
@@ -58,11 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'LabChart/Introduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Drosophila/Introduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exporting LabChart Files" href="ExportingLabChart.html" />
-    <link rel="prev" title="BIPN 145 Digital Manual" href="../intro.html" />
+    <link rel="next" title="Day 1: The Case of the Mislabeled Fly Vials" href="Day1.html" />
+    <link rel="prev" title="Lab #3: Earthworm Electrophysiology" href="../LabManual/Earthworm.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,10 +181,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Working with LabChart Files</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="ExportingLabChart.html">Exporting LabChart Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ImportingExcel.html">Importing LabChart Files (Excel)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ImportingPython.html">Importing LabChart (Python)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../LabChart/Introduction.html">Working with LabChart Files</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ExportingLabChart.html">Exporting LabChart Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingExcel.html">Importing LabChart Files (Excel)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabChart/ImportingPython.html">Importing LabChart (Python)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Python/Introduction.html">Visualizing Data in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -206,9 +206,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../LabManual/Earthworm.html">Lab #3: Earthworm Electrophysiology</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Drosophila/Introduction.html"><em>Drosophila</em> Behavior &amp; Optogenetics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day1.html">Day 1: The Case of the Mislabeled Fly Vials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day2.html">Day 2: The Case of the Missing Methods</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#"><em>Drosophila</em> Behavior &amp; Optogenetics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Day1.html">Day 1: The Case of the Mislabeled Fly Vials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Day2.html">Day 2: The Case of the Missing Methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../FinalProjects/Introduction.html">Final Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -270,7 +270,7 @@
       
       
       
-      <li><a href="../_sources/LabChart/Introduction.md" target="_blank"
+      <li><a href="../_sources/Drosophila/Introduction.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +354,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Working with LabChart Files</h1>
+    <h1>Drosophila Behavior & Optogenetics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,8 +364,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-recordings-from-lab-computers">Saving recordings from lab computers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-labchart-files-from-your-mac-or-pc">Viewing LabChart files from your Mac or PC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-as-a-model-in-neuroscience"><em>Drosophila</em> as a model in neuroscience</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-coming-up">What’s coming up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-these-labs-you-will">In these labs you will:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -377,17 +382,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="working-with-labchart-files">
-<h1>Working with LabChart Files<a class="headerlink" href="#working-with-labchart-files" title="Link to this heading">#</a></h1>
-<section id="saving-recordings-from-lab-computers">
-<h2>Saving recordings from lab computers<a class="headerlink" href="#saving-recordings-from-lab-computers" title="Link to this heading">#</a></h2>
-<p>After finishing your experiment, save the raw data (.adicht) file. I’d recommend using either Google Drive or Dropbox to save your data so that you may access it from anywhere. Your files will rarely be bigger than 5 MB.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="drosophila-behavior-optogenetics">
+<h1><em>Drosophila</em> Behavior &amp; Optogenetics<a class="headerlink" href="#drosophila-behavior-optogenetics" title="Link to this heading">#</a></h1>
+<section id="background-goals">
+<h2>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h2>
+<section id="drosophila-as-a-model-in-neuroscience">
+<h3><em>Drosophila</em> as a model in neuroscience<a class="headerlink" href="#drosophila-as-a-model-in-neuroscience" title="Link to this heading">#</a></h3>
+<p>With just over 100,000 neurons but incredible genetic tractability, the fruit fly is an important model organism in neuroscience. About 65% of human disease-associated genes have a homolog in <em>Drosophila melanogaster</em> (Ugur et al., 2016). Like many model organisms, fruit flies are easy to reproduce, cheap, and easy to take care of in a lab. On top of that, they’ve been studied for more than a century. <em>Drosophila</em> have been used to study learning, memory, vision, sleep, addiction, courtship, and aggression, among many other behaviors.</p>
+<p>In these labs, we’ll aim to characterize the gustatory, ethological, and locomotor behavior of transgenic fruit flies, solving a few mysteries along the way.</p>
 </section>
-<section id="viewing-labchart-files-from-your-mac-or-pc">
-<h2>Viewing LabChart files from your Mac or PC<a class="headerlink" href="#viewing-labchart-files-from-your-mac-or-pc" title="Link to this heading">#</a></h2>
-<p>If you’d like to view your files on your personal computer without LabChart 8, you can download <a class="reference external" href="https://www.adinstruments.com/products/labchart-reader">LabChart 8 Reader</a>.</p>
-<p>If you’re using LabChart Reader on PC, you can simply click &amp; drag to select the data you’d like to export, copy, and then paste this into Excel. Unfortunately, LabChart Reader on Mac does not allow you to export your data.</p>
-<p>To export your data from LabChart on a PC (or the computers in lab), proceed to the next page.</p>
+<section id="what-s-coming-up">
+<h3>What’s coming up<a class="headerlink" href="#what-s-coming-up" title="Link to this heading">#</a></h3>
+<p>This module spans <strong>two days</strong> of lab:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="Day1.html"><span class="std std-doc">Day 1: The Case of the Mislabeled Fly Vials</span></a></strong> — three behavioral assays (proboscis extension reflex, ethological observation, and locomotor tracking) to characterize an unknown transgenic line.</p></li>
+<li><p><strong><a class="reference internal" href="Day2.html"><span class="std std-doc">Day 2: The Case of the Missing Methods</span></a></strong> — design your own optogenetic experiment to figure out what the genetically modified neurons control.</p></li>
+</ul>
+</section>
+<section id="in-these-labs-you-will">
+<h3>In these labs you will:<a class="headerlink" href="#in-these-labs-you-will" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Operationalize and quantify the behavior of a fruit fly</p></li>
+<li><p>Use a computer vision program to track locomotor behaviors</p></li>
+<li><p>Identify different types of transgenic flies used for neuroscience research</p></li>
+<li><p>Design an optogenetic experiment to interrogate neural circuit function</p></li>
+</ul>
+</section>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Al-Anzi, B., Tracey, W. D., &amp; Benzer, S. (2006). Response of <em>Drosophila</em> to wasabi is mediated by <em>painless</em>, the fly homolog of mammalian TRPA1/ANKTM1. <em>Current Biology</em> 16(10): 1034–1040.</p></li>
+<li><p>Chen, Y.-C. D., &amp; Dahanukar, A. (2020). Recent advances in the genetic basis of taste detection in <em>Drosophila</em>. <em>Cellular and Molecular Life Sciences</em> 77(6): 1087–1101.</p></li>
+<li><p>Devineni, A. V., &amp; Heberlein, U. (2009). Preferential ethanol consumption in <em>Drosophila</em> models features of addiction. <em>Current Biology</em> 19(24): 2126–2132.</p></li>
+<li><p>Mandel, S. J., Shoaf, M. L., Bostwick, J. R., Combs, D. J., Trudeau, V. L., &amp; Johnson, E. C. (2018). Behavioral aggression is regulated by <em>Drosophila</em> CCAP signaling. <em>Frontiers in Neural Circuits</em> 12: 45.</p></li>
+<li><p>Nakamura, M., Baldwin, D., Hannaford, S., Palka, J., &amp; Montell, C. (2002). Defective proboscis extension response (DPR), a member of the Ig superfamily required for the gustatory response to salt. <em>Journal of Neuroscience</em> 22(9): 3463–3472.</p></li>
+<li><p>Trisal, S., VijayRaghavan, K., &amp; Ramaswami, M. (2023). The proboscis extension reflex assay for evaluating taste responses in <em>Drosophila</em>. <em>Bio-protocol</em> 13(20).</p></li>
+<li><p>Ugur, B., Chen, K., &amp; Bellen, H. J. (2016). <em>Drosophila</em> tools and assays for the study of human diseases. <em>Disease Models &amp; Mechanisms</em> 9(3): 235–244.</p></li>
+</ul>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -406,7 +438,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./LabChart"
+            path: "./Drosophila"
         },
         predefinedOutput: true
     }
@@ -424,20 +456,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../LabManual/Earthworm.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">BIPN 145 Digital Manual</p>
+        <p class="prev-next-title">Lab #3: Earthworm Electrophysiology</p>
       </div>
     </a>
     <a class="right-next"
-       href="ExportingLabChart.html"
+       href="Day1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exporting LabChart Files</p>
+        <p class="prev-next-title">Day 1: The Case of the Mislabeled Fly Vials</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -457,8 +489,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-recordings-from-lab-computers">Saving recordings from lab computers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-labchart-files-from-your-mac-or-pc">Viewing LabChart files from your Mac or PC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-as-a-model-in-neuroscience"><em>Drosophila</em> as a model in neuroscience</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-coming-up">What’s coming up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-these-labs-you-will">In these labs you will:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
