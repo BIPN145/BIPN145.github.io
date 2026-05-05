@@ -1,16 +1,14 @@
-# Lab Manual
+# Welcome to BIPN 145
 
-This is an online version of our lab manual. You can also <a href="../_static/LabManual.pdf">download the full lab manual as a PDF</a>.
+This is a course about how we study the nervous system.
+You'll be asked to think, plan, and write like a neuroscientist.
 
-## Saving a page as a PDF
+This lab manual describes the set of experiments
+you’ll be conducting over the course of the quarter.
 
-Each page on this site can be downloaded as a PDF for offline use or printing.
+## This course is for everyone.
 
-1. Navigate to the page you want to save.
-2. Click the **download icon** (↓) in the top-right toolbar.
-3. Select **".pdf"** from the dropdown.
-4. Your browser's print dialog will open. Set the following options:
-   - **Destination**: Save as PDF
-   - **Paper size**: Letter
-   - *Optional* Under **More settings**, uncheck **Headers and footers** to remove the URL and date from the printed page.
-5. Click **Save**.
+Neuroscience is a diverse discipline, with folks from many different academic and personal backgrounds. We’ll be working together to create an equitable and inclusive environment of mutual respect, in which we all feel comfortable to share our moments of confusion, ask questions, and challenge our understanding.
+
+Everyone should be able to succeed in this course.
+If you do not feel that is the case, please let us know.

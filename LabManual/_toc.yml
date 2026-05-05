@@ -1,6 +1,7 @@
 format: jb-book
-root: Introduction
+root: Cover
 chapters:
+- file: Introduction
 - file: ModelingNeuralMembranes
 - file: StringNervousSystems
 - file: Earthworm

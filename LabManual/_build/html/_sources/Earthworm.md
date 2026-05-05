@@ -1,4 +1,4 @@
-# Lab #3: Earthworm Electrophysiology
+# Earthworm Electrophysiology
 
 ## Background & Goals
 
