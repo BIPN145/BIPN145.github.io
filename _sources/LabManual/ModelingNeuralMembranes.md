@@ -1,4 +1,4 @@
-# Lab #0: Modeling Neural Membranes
+# Modeling Neural Membranes
 
 **In this lab, we’ll use an online membrane simulator and a breadboard to model the properties of neural membranes and passive potentials.**
 
