@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 parts:
-   - caption: Lab Manual
+  - caption: Lab Manual
     chapters:
       - file: LabManual/Introduction.md
       - file: LabManual/ModelingNeuralMembranes.md

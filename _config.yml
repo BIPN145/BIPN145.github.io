@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: BIPN 145 Lab Digital Manual
-logo: /Users/ashley/Documents/BIPN145/BIPN145.github.io/BIPN145_logo.png
+logo: BIPN145_logo.png
 author: Ashley Juavinett
 
 only_build_toc_files: true
