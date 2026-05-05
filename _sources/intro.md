@@ -1,37 +1,39 @@
 # BIPN 145 Digital Manual
 
-This website contains code & tutorials to help you analyze & visualize your data for neurobiology lab (BIPN 145).
+Welcome to our course! :worm:
+
+This website contains lab protocols as well as code and tutorials to help you collect and analyize data for neurobiology lab (BIPN 145).
 
 ## How to use this online manual
 
-Several pages in this manual contain written or video guides to working with the software and data in BIPN 145. However, other pages are meant to be used as interactive coding notebooks.
+Several pages in this manual contain written or video guides to completing experiments in BIPN 145. However, other pages are meant to be used as interactive coding notebooks.
 
-### Interacting with code
-To interact with the coding tutorials presented here, navigate to the page with the tutorial (e.g.,  "Importing Labchart (Python)"). On these pages, you'll see a rocket icon in the top right corner. Click on this, and choose Colab. This will launch Google Colab, where you can run the code in the notebook.
+### Lab Manual
 
-Alternatively, you can copy and paste the code you see here into a Python editor of your choice, e.g., a fresh Google Colab notebook, Jupyter Notebook, or Spyder (found on the computers in lab).
+This website contains and an online version of our lab manual. You can also <a href="../_static/LabManual.pdf">download the full lab manual as a PDF</a>.
+
+## Saving a page as a PDF
+
+Each page on this site can be downloaded as a PDF for offline use or printing.
+
+1. Navigate to the page you want to save.
+2. Click the **download icon** (↓) in the top-right toolbar.
+3. Select **".pdf"** from the dropdown.
+4. Your browser's print dialog will open. Set the following options:
+   - **Destination**: Save as PDF
+   - **Paper size**: Letter
+   - *Optional* Under **More settings**, uncheck **Headers and footers** to remove the URL and date from the printed page.
+5. Click **Save**.
+
+
+## Interactive coding notebooks
+To interact with the coding tutorials presented here, navigate to the page with the tutorial (e.g.,  "Importing Labchart (Python)"). On these pages, you'll see a rocket :rocket: icon in the top right corner. Click on this, and choose Colab. This will launch Google Colab, where you can run the code in the notebook.
+
+Alternatively, you can copy and paste the code you see here into a Python editor of your choice.
 
 ```
 # Code blocks look like this!
 # If you hover, there's an option to copy the contents.
 ```
 
-### Uploading data to Colab
-To work with exported LabChart data in Python, you'll either need to upload the file to Colab or put it in Google Drive & mount your drive.
-
-**Option #1**: To upload a file, click the Directory icon on the left hand side of the window. Then, click the file upload button. There is a video of how to do this below:
-
-<iframe width="640" height="364" src="https://www.loom.com/embed/830c178cc78447b68156cd8ff1423fb3?sid=218e6c4b-b93e-4ac3-a56a-b03cac1f4e3c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-
-**Option #2** 
-1. To mount your drive, click the Directory icon on the left hand side of the window.
-2. Click the Google Drive icon.
-3. Colab will create a new cell in the notebook and prompt you to run it.
-4. If it's the first time, a separate window will pop up to ask you for access to your Drive.
-5. Click "Allow".
-6. After a few seconds, a message will print that your Drive has been mounted.
-7. Now, you can use the location of your file in a filepath that starts with `/content/drive`.
-
-### Saving work in Colab
-You can save a Colab file that you've edited just like any other file! In Colab, go to `File > Save a copy in Drive`. These files will show up in a folder called "Colab Notebooks" in your Drive.
+Note that only notebooks with code in them will have the option to open them in Colab.
