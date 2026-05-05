@@ -31,14 +31,13 @@ import ipywidgets as widgets
 import os
 import base64
 
-# Initialize result containers (run once, then append to them)
-if 'all_corrected' not in dir():
-    all_corrected = []
-    all_velocity = []
-    all_fps = []
-    print('Initialized result containers.')
-else:
-    print(f'Existing results: {len(all_corrected)} video(s) processed so far.')
+# Initialize result containers — each is created independently so adding
+# new lists in future won't require a full session restart
+if 'all_corrected' not in dir(): all_corrected = []
+if 'all_velocity'  not in dir(): all_velocity  = []
+if 'all_fps'       not in dir(): all_fps       = []
+if 'all_video_paths' not in dir(): all_video_paths = []
+print(f'Ready. {len(all_corrected)} video(s) processed so far.')
 
 print('All packages loaded successfully!')
 ------------------
