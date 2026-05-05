@@ -1,6 +1,6 @@
 # BIPN 145 Digital Manual
 
-Welcome to our course! :worm:
+Welcome to our course! 🪱
 
 This website contains lab protocols as well as code and tutorials to help you collect and analyize data for neurobiology lab (BIPN 145).
 
@@ -27,7 +27,7 @@ Each page on this site can be downloaded as a PDF for offline use or printing.
 
 
 ## Interactive coding notebooks
-To interact with the coding tutorials presented here, navigate to the page with the tutorial (e.g.,  "Importing Labchart (Python)"). On these pages, you'll see a rocket :rocket: icon in the top right corner. Click on this, and choose Colab. This will launch Google Colab, where you can run the code in the notebook.
+To interact with the coding tutorials presented here, navigate to the page with the tutorial (e.g.,  "Importing Labchart (Python)"). On these pages, you'll see a rocket 🚀 icon in the top right corner. Click on this, and choose Colab. This will launch Google Colab, where you can run the code in the notebook.
 
 Alternatively, you can copy and paste the code you see here into a Python editor of your choice.
 

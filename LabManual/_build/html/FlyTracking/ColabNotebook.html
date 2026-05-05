@@ -142,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="../ModelingNeuralMembranes.html">
+<a class="navbar-brand logo" href="../Introduction.html">
   
   
   
@@ -168,15 +168,16 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../ModelingNeuralMembranes.html">
-                    Lab #0: Modeling Neural Membranes
+                <a class="reference internal" href="../Introduction.html">
+                    Lab Manual
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ModelingNeuralMembranes.html">Lab #0: Modeling Neural Membranes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../StringNervousSystems.html">Lab #1: String Nervous Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Earthworm.html">Lab #3: Earthworm Electrophysiology</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Drosophila/Introduction.html"><em>Drosophila</em> Behavior &amp; Optogenetics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Drosophila/Introduction.html">Lab #4 <em>Drosophila</em> Behavior &amp; Optogenetics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day1.html">Day 1: The Case of the Mislabeled Fly Vials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Drosophila/Day2.html">Day 2: The Case of the Missing Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Script.html">Fly Tracker (Local)</a></li>
@@ -331,16 +332,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-steps">Notebook steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-plot-velocity">Calculate &amp; Plot Velocity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-across-all-videos">Summary Across All Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-results-optional">Download Results (Optional)</a></li>
 </ul>
             </nav>
@@ -356,15 +356,16 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="fly-tracker-colab">
 <h1>Fly Tracker (Colab)<a class="headerlink" href="#fly-tracker-colab" title="Link to this heading">#</a></h1>
 <p>This notebook tracks a fruit fly against a light background in a video, calculates its position and velocity over time, and produces path and velocity plots.</p>
-<p><strong>Original MATLAB code</strong> by Jeff Stafford, modified by A. Juavinett for BIPN 145.</p>
-<section id="how-to-use">
-<h2>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h2>
+<section id="notebook-steps">
+<h2>Notebook steps<a class="headerlink" href="#notebook-steps" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Run the <strong>Setup</strong> cell to install dependencies.</p></li>
-<li><p><strong>Upload your video</strong> (<code class="docutils literal notranslate"><span class="pre">.avi</span></code>, <code class="docutils literal notranslate"><span class="pre">.mp4</span></code>, etc.) using the upload cell.</p></li>
-<li><p><strong>Set your parameters</strong> (dish diameter, frame rate).</p></li>
-<li><p><strong>Draw your ROI</strong> on the first frame.</p></li>
-<li><p>Run the remaining cells to track the fly and view results.</p></li>
+<li><p>Run the <strong>Setup</strong> cell to import packages.</p></li>
+<li><p><strong>Mount your Google Drive</strong> and copy the path to your video file.</p></li>
+<li><p>Create the <strong>Helper Functions</strong>.</p></li>
+<li><p>Run the ROI cell and <strong>draw your ROI</strong> on the first frame, then confirm it.</p></li>
+<li><p>Run the <strong>Track Fly</strong> cell and wait for it to finish.</p></li>
+<li><p>Run the <strong>Plot</strong> and <strong>Velocity</strong> cells to view results.</p></li>
+<li><p>Re-run steps 3-7 if you would like to track an additional video.</p></li>
 </ol>
 </section>
 <section id="setup">
@@ -384,13 +385,13 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 
-<span class="c1"># Initialize result containers (run once, then append to them)</span>
-<span class="k">if</span> <span class="s1">&#39;all_corrected&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span>
-    <span class="n">all_corrected</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">all_velocity</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialized result containers.&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Existing results: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1"> video(s) processed so far.&#39;</span><span class="p">)</span>
+<span class="c1"># Initialize result containers — each is created independently so adding</span>
+<span class="c1"># new lists in future won&#39;t require a full session restart</span>
+<span class="k">if</span> <span class="s1">&#39;all_corrected&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span> <span class="n">all_corrected</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="s1">&#39;all_velocity&#39;</span>  <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span> <span class="n">all_velocity</span>  <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="s1">&#39;all_fps&#39;</span>       <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span> <span class="n">all_fps</span>       <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="s1">&#39;all_video_paths&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span> <span class="n">all_video_paths</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ready. </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1"> video(s) processed so far.&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All packages loaded successfully!&#39;</span><span class="p">)</span>
 </pre></div>
@@ -425,39 +426,18 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="set-parameters">
-<h2>Set Parameters<a class="headerlink" href="#set-parameters" title="Link to this heading">#</a></h2>
-<p>Modify the <code class="docutils literal notranslate"><span class="pre">frame_rate</span></code> below as needed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Frame rate of the video</span>
-<span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span> 
-
-<span class="n">diameter</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Diameter of the dish in centimeters</span>
-<span class="n">search_size</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># Search size for fly detection (in pixels)</span>
-<span class="n">per_pixel_threshold</span> <span class="o">=</span> <span class="mf">1.5</span>
-<span class="n">bin_size</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Bin size for velocity calculation (in seconds)</span>
-
-<span class="n">height</span> <span class="o">=</span> <span class="n">diameter</span>
-<span class="n">width</span> <span class="o">=</span> <span class="n">diameter</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frame rate: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s1"> fps&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>frame_rate = None  # auto-detect from video (override with e.g. frame_rate = 30 if needed)</p>
-<p>diameter = 4  # Diameter of the dish in centimeters
-search_size = 20 # Search size for fly detection (in pixels)
-per_pixel_threshold = 1.5
-bin_size = 1 # Bin size for velocity calculation (in seconds)</p>
-<p>height = diameter
-width = diameter</p>
-<p>print(‘Frame rate will be auto-detected from each video.’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Define helper functions (fly_finder, dist_filter, interpolate_pos) { display-mode: &quot;form&quot; }</span>
+
+<span class="c1"># --- Parameters ---</span>
+<span class="n">frame_rate</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># auto-detect from video (set e.g. frame_rate = 30 to override)</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">4</span>       <span class="c1"># dish diameter in centimeters</span>
+<span class="n">search_size</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># fly search window size in pixels</span>
+<span class="n">per_pixel_threshold</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">bin_size</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># velocity bin size in seconds</span>
+<span class="c1"># -------------------</span>
+
 
 <span class="k">def</span><span class="w"> </span><span class="nf">fly_finder</span><span class="p">(</span><span class="n">roi_image</span><span class="p">,</span> <span class="n">half_search</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -490,7 +470,6 @@ width = diameter</p>
     <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">search_area</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">:</span>
-        <span class="c1"># Center of mass</span>
         <span class="n">x_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">search_area</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">y_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">search_area</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">search_area</span> <span class="o">@</span> <span class="n">x_indices</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span> <span class="o">+</span> <span class="n">left</span>
@@ -508,33 +487,48 @@ width = diameter</p>
 <span class="sd">    array: Nx3 array [time, x, y]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">filtered</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">tele_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_avg</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="n">num_avg</span><span class="p">):</span>
-        <span class="n">point</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">point</span><span class="p">)):</span>
-            <span class="k">continue</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rolling_nanmean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">forward</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Rolling mean over &#39;window&#39; preceding (or following) valid elements.&quot;&quot;&quot;</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">filled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+        <span class="n">cs_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">filled</span><span class="p">)])</span>
+        <span class="n">cs_cnt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">valid</span><span class="p">)])</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">forward</span><span class="p">:</span>
+            <span class="n">starts</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">ends</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">window</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">starts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">window</span><span class="p">)</span>
+            <span class="n">ends</span> <span class="o">=</span> <span class="n">idx</span>
+        <span class="n">sum_v</span> <span class="o">=</span> <span class="n">cs_val</span><span class="p">[</span><span class="n">ends</span><span class="p">]</span> <span class="o">-</span> <span class="n">cs_val</span><span class="p">[</span><span class="n">starts</span><span class="p">]</span>
+        <span class="n">cnt_v</span> <span class="o">=</span> <span class="n">cs_cnt</span><span class="p">[</span><span class="n">ends</span><span class="p">]</span> <span class="o">-</span> <span class="n">cs_cnt</span><span class="p">[</span><span class="n">starts</span><span class="p">]</span>
+        <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cnt_v</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sum_v</span> <span class="o">/</span> <span class="n">cnt_v</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
 
-        <span class="n">last_set</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">num_avg</span><span class="p">:</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-        <span class="n">last_set</span> <span class="o">=</span> <span class="n">last_set</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">last_set</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])]</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">last_set</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="n">last_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">last_set</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">last_x</span> <span class="o">=</span> <span class="n">rolling_nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">num_avg</span><span class="p">)</span>
+    <span class="n">last_y</span> <span class="o">=</span> <span class="n">rolling_nanmean</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">num_avg</span><span class="p">)</span>
+    <span class="n">next_x</span> <span class="o">=</span> <span class="n">rolling_nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">num_avg</span><span class="p">,</span> <span class="n">forward</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">next_y</span> <span class="o">=</span> <span class="n">rolling_nanmean</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">num_avg</span><span class="p">,</span> <span class="n">forward</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-        <span class="n">next_set</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">num_avg</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-        <span class="n">next_set</span> <span class="o">=</span> <span class="n">next_set</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">next_set</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])]</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">next_set</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="n">next_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">next_set</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">dist_last</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">last_x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">last_y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">dist_next</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">next_x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">next_y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">euclidean</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">last_mean</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span> <span class="ow">or</span>
-                <span class="n">euclidean</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">next_mean</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span><span class="p">):</span>
-            <span class="n">filtered</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-            <span class="n">tele_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">valid_pts</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">tele_mask</span> <span class="o">=</span> <span class="n">valid_pts</span> <span class="o">&amp;</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">dist_last</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">dist_next</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">tele_mask</span><span class="p">[:</span><span class="n">num_avg</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">tele_mask</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">num_avg</span><span class="p">:]</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="c1"># More stringent check at start and end</span>
-    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">+</span> \
-               <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="mi">6</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+    <span class="n">filtered</span><span class="p">[</span><span class="n">tele_mask</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">tele_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tele_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+    <span class="n">edge_indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">6</span><span class="p">),</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">edge_indices</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])):</span>
             <span class="k">continue</span>
         <span class="k">if</span> <span class="n">euclidean</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">filtered</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">tele_dist_threshold</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
@@ -555,238 +549,213 @@ width = diameter</p>
     <span class="n">result</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">interp_count</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="n">col_pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>  <span class="c1"># x, y columns</span>
-    <span class="k">for</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span> <span class="ow">in</span> <span class="n">col_pairs</span><span class="p">:</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">cx</span><span class="p">])</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">last_idx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
-                <span class="n">last_point</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">last_idx</span><span class="p">,</span> <span class="n">cx</span><span class="p">:</span><span class="n">cy</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-                <span class="c1"># Find next non-NaN</span>
-                <span class="n">remaining</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">:,</span> <span class="n">cx</span><span class="p">]</span>
-                <span class="n">non_nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">remaining</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_nan</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">break</span>
-                <span class="n">next_idx</span> <span class="o">=</span> <span class="n">non_nan</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">i</span>
-                <span class="n">next_point</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">next_idx</span><span class="p">,</span> <span class="n">cx</span><span class="p">:</span><span class="n">cy</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-                <span class="n">gap</span> <span class="o">=</span> <span class="n">next_idx</span> <span class="o">-</span> <span class="n">i</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">result</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">result</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">nan_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-                <span class="k">if</span> <span class="n">euclidean</span><span class="p">(</span><span class="n">last_point</span><span class="p">,</span> <span class="n">next_point</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">inter_dist_threshold</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">gap</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-                        <span class="n">frac</span> <span class="o">=</span> <span class="n">j</span> <span class="o">/</span> <span class="p">(</span><span class="n">gap</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-                        <span class="n">result</span><span class="p">[</span><span class="n">last_idx</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="n">cx</span><span class="p">:</span><span class="n">cy</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_point</span> <span class="o">+</span> <span class="p">(</span><span class="n">next_point</span> <span class="o">-</span> <span class="n">last_point</span><span class="p">)</span> <span class="o">*</span> <span class="n">frac</span>
-                    <span class="n">interp_count</span> <span class="o">+=</span> <span class="n">gap</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nan_mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;0 points recovered through interpolation.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
 
-                <span class="n">i</span> <span class="o">=</span> <span class="n">next_idx</span>
-            <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">cx</span><span class="p">])</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">non_nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">[:,</span> <span class="n">cx</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_nan</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">break</span>
-                <span class="n">i</span> <span class="o">=</span> <span class="n">non_nan</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">padded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="kc">False</span><span class="p">],</span> <span class="n">nan_mask</span><span class="p">,</span> <span class="p">[</span><span class="kc">False</span><span class="p">]])</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">padded</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">))</span>
+    <span class="n">starts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">diff</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ends</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">diff</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">ends</span><span class="p">):</span>
+        <span class="n">last_idx</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">next_idx</span> <span class="o">=</span> <span class="n">e</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">last_idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">next_idx</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">last_pt</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">last_idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">next_pt</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">next_idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">last_pt</span><span class="p">))</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">next_pt</span><span class="p">)):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">euclidean</span><span class="p">(</span><span class="n">last_pt</span><span class="p">,</span> <span class="n">next_pt</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">inter_dist_threshold</span><span class="p">:</span>
+            <span class="n">gap</span> <span class="o">=</span> <span class="n">next_idx</span> <span class="o">-</span> <span class="n">last_idx</span>
+            <span class="n">fracs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">gap</span><span class="p">)</span> <span class="o">/</span> <span class="n">gap</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">s</span><span class="p">:</span><span class="n">e</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">fracs</span> <span class="o">*</span> <span class="p">(</span><span class="n">next_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">last_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">s</span><span class="p">:</span><span class="n">e</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fracs</span> <span class="o">*</span> <span class="p">(</span><span class="n">next_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">last_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">interp_count</span> <span class="o">+=</span> <span class="n">e</span> <span class="o">-</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">interp_count</span><span class="si">}</span><span class="s1"> points recovered through interpolation.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 
+
 <span class="k">def</span><span class="w"> </span><span class="nf">boundary_filter</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">diameter</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Remove points that fall outside the circular dish.</span>
-<span class="sd">    The dish is assumed to be a circle of the given diameter,</span>
-<span class="sd">    centered at (diameter/2, diameter/2).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">filtered</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span>
-
     <span class="n">x</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
     <span class="n">dist_from_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">cx</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">cy</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-
     <span class="n">outside</span> <span class="o">=</span> <span class="n">dist_from_center</span> <span class="o">&gt;</span> <span class="n">radius</span>
-    <span class="c1"># Don&#39;t count points that are already NaN</span>
     <span class="n">outside</span> <span class="o">=</span> <span class="n">outside</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">filtered</span><span class="p">[</span><span class="n">outside</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
     <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outside</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> points removed by the boundary filter (outside dish).&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> points removed by the boundary filter (outside dish).&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">filtered</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">displacement_filter</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">multiplier</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove points where the frame-to-frame displacement is much larger</span>
+<span class="sd">    than the median displacement. This catches sudden jumps that the</span>
+<span class="sd">    teleport filter might miss (e.g., runs of bad frames).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">displacements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">valid_disp</span> <span class="o">=</span> <span class="n">displacements</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">displacements</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid_disp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">filtered</span>
+    <span class="n">median_disp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">valid_disp</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">median_disp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">filtered</span>
+
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">median_disp</span> <span class="o">*</span> <span class="n">multiplier</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">displacements</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">displacements</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">displacements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+            <span class="n">filtered</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> points removed by the displacement filter (&gt;</span><span class="si">{</span><span class="n">multiplier</span><span class="si">}</span><span class="s1">x median jump).&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_video</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span> <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Process a single fly video and return the corrected position array.</span>
+<span class="sd">    Returns (Nx3 array [time_s, x_cm, y_cm], frame_rate).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">diameter</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">diameter</span>
+    <span class="n">roi_x</span><span class="p">,</span> <span class="n">roi_y</span><span class="p">,</span> <span class="n">roi_w</span><span class="p">,</span> <span class="n">roi_h</span> <span class="o">=</span> <span class="n">roi</span>
+
+    <span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">)</span>
+    <span class="n">total_frames</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_COUNT</span><span class="p">))</span>
+    <span class="n">nfrm</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="c1"># Auto-detect frame rate from video if not specified</span>
+    <span class="k">if</span> <span class="n">frame_rate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">frame_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Auto-detected frame rate: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Could not detect frame rate, using default: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Override by setting frame_rate = 30 (or your value) in the Set Parameters cell.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Video FPS: </span><span class="si">{</span><span class="n">fps</span><span class="si">}</span><span class="s2">, using override: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Sanity check: warn if video duration seems unusual</span>
+    <span class="k">if</span> <span class="n">frame_rate</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">/</span> <span class="n">frame_rate</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Estimated duration: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="ow">or</span> <span class="n">duration</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Expected ~60s video but got </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Override by setting frame_rate = 30 (or your value) in the Set Parameters cell.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- Create background from 100 random frames ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Calculating background...&quot;</span><span class="p">)</span>
+    <span class="n">bg_number</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">nfrm</span><span class="p">)</span>
+    <span class="n">bg_indices</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nfrm</span><span class="p">,</span> <span class="n">bg_number</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">sample</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">gray_sample</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">bg_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="o">*</span><span class="n">gray_sample</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">bg_number</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">frame_num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bg_indices</span><span class="p">):</span>
+        <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">)</span>
+        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="n">bg_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+    <span class="n">background</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bg_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">bg_scale</span> <span class="o">=</span> <span class="mf">256.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Pre-crop bg_scale to ROI so per-frame math runs on ROI pixels only</span>
+    <span class="n">bg_scale_roi</span> <span class="o">=</span> <span class="n">bg_scale</span><span class="p">[</span><span class="n">roi_y</span><span class="p">:</span><span class="n">roi_y</span> <span class="o">+</span> <span class="n">roi_h</span><span class="p">,</span> <span class="n">roi_x</span><span class="p">:</span><span class="n">roi_x</span> <span class="o">+</span> <span class="n">roi_w</span><span class="p">]</span>
+
+    <span class="c1"># --- Process each frame ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Tracking fly positions...&quot;</span><span class="p">)</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="p">(</span><span class="n">search_size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">per_pixel_threshold</span>
+    <span class="n">half_search</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">search_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">pos_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nfrm</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="c1"># Seek once; sequential cap.read() is far faster than per-frame seeking</span>
+    <span class="c1"># (compressed formats must decode from the last keyframe on every seek)</span>
+    <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">nofr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nfrm</span><span class="p">):</span>
+        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="n">pos_array</span><span class="p">[</span><span class="n">nofr</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nofr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Crop to ROI before float conversion so background subtraction</span>
+        <span class="c1"># operates on ROI pixels only, not the full frame</span>
+        <span class="n">frame_roi</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)[</span>
+            <span class="n">roi_y</span><span class="p">:</span><span class="n">roi_y</span> <span class="o">+</span> <span class="n">roi_h</span><span class="p">,</span> <span class="n">roi_x</span><span class="p">:</span><span class="n">roi_x</span> <span class="o">+</span> <span class="n">roi_w</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">frame_div</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">frame_roi</span> <span class="o">*</span> <span class="n">bg_scale_roi</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+        <span class="c1"># Find fly</span>
+        <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span> <span class="o">=</span> <span class="n">fly_finder</span><span class="p">(</span><span class="n">frame_div</span><span class="p">,</span> <span class="n">half_search</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">pos_array</span><span class="p">[</span><span class="n">nofr</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nofr</span><span class="p">,</span> <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">]</span>
+
+        <span class="c1"># Progress update every 10%</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nfrm</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">pct</span> <span class="o">=</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">nfrm</span> <span class="o">*</span> <span class="mi">100</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">% complete (</span><span class="si">{</span><span class="n">nofr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
+
+    <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+    <span class="c1"># --- Convert to real coordinates ---</span>
+    <span class="n">xscale</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="n">roi_w</span>
+    <span class="n">yscale</span> <span class="o">=</span> <span class="n">height</span> <span class="o">/</span> <span class="n">roi_h</span>
+
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">frame_rate</span><span class="p">,</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">xscale</span><span class="p">,</span>
+        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">yscale</span><span class="p">,</span>
+    <span class="p">])</span>
+
+    <span class="n">skipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">skipped</span><span class="si">}</span><span class="s2"> points skipped out of </span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Apply filters and interpolation</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">boundary_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="n">diameter</span><span class="p">)</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">displacement_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">)</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">dist_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">interpolate_pos</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">corrected_array</span><span class="p">,</span> <span class="n">frame_rate</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Helper functions defined.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>#&#64;title Define helper functions (fly_finder, dist_filter, interpolate_pos) { display-mode: “form” }</p>
-<p>def fly_finder(roi_image, half_search, threshold, flip=True):
-“””
-Find a fly (dark region) in a grayscale image.
-Locates the darkest pixel, retrieves a search area around it,
-and finds the center of pixel intensity.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Returns (x, y) position or (NaN, NaN) if not found.
-&quot;&quot;&quot;
-if flip:
-    val = np.nanmin(roi_image)
-else:
-    val = np.nanmax(roi_image)
-
-ys, xs = np.where(roi_image == val)
-xpos = np.mean(xs)
-ypos = np.mean(ys)
-
-h, w = roi_image.shape
-left = max(int(round(xpos) - half_search), 0)
-right = min(int(round(xpos) + half_search), w - 1)
-top = max(int(round(ypos) - half_search), 0)
-bottom = min(int(round(ypos) + half_search), h - 1)
-
-search_area = roi_image[top:bottom+1, left:right+1].astype(np.float64)
-
-if flip:
-    search_area = 255.0 - search_area
-
-total = np.sum(search_area)
-
-if total &gt;= threshold:
-    # Center of mass
-    x_indices = np.arange(search_area.shape[1])
-    y_indices = np.arange(search_area.shape[0])
-    x = np.sum(search_area @ x_indices) / total + left
-    y = np.sum(search_area.T @ y_indices) / total + top
-    return x, y
-else:
-    return np.nan, np.nan
-</pre></div>
-</div>
-<p>def dist_filter(array, tele_dist_threshold, num_avg=5):
-“””
-Teleport filter: removes spurious points where fly position
-jumps far from the mean of surrounding frames.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array: Nx3 array [time, x, y]
-&quot;&quot;&quot;
-filtered = array.copy()
-n = len(filtered)
-x = filtered[:, 1]
-y = filtered[:, 2]
-
-def rolling_nanmean(arr, window, forward=False):
-    &quot;&quot;&quot;Rolling mean over &#39;window&#39; preceding (or following) valid elements.&quot;&quot;&quot;
-    valid = (~np.isnan(arr)).astype(np.float64)
-    filled = np.where(np.isnan(arr), 0.0, arr)
-    cs_val = np.concatenate([[0.0], np.cumsum(filled)])
-    cs_cnt = np.concatenate([[0.0], np.cumsum(valid)])
-    idx = np.arange(n)
-    if forward:
-        starts = idx + 1
-        ends = np.minimum(n, idx + 1 + window)
-    else:
-        starts = np.maximum(0, idx - window)
-        ends = idx
-    sum_v = cs_val[ends] - cs_val[starts]
-    cnt_v = cs_cnt[ends] - cs_cnt[starts]
-    with np.errstate(invalid=&#39;ignore&#39;, divide=&#39;ignore&#39;):
-        return np.where(cnt_v &gt; 0, sum_v / cnt_v, np.nan)
-
-last_x = rolling_nanmean(x, num_avg)
-last_y = rolling_nanmean(y, num_avg)
-next_x = rolling_nanmean(x, num_avg, forward=True)
-next_y = rolling_nanmean(y, num_avg, forward=True)
-
-dist_last = np.sqrt((x - last_x) ** 2 + (y - last_y) ** 2)
-dist_next = np.sqrt((x - next_x) ** 2 + (y - next_y) ** 2)
-
-valid_pts = ~np.isnan(x)
-tele_mask = valid_pts &amp; (
-    (dist_last &gt; tele_dist_threshold) | (dist_next &gt; tele_dist_threshold)
-)
-tele_mask[:num_avg] = False
-tele_mask[n - num_avg:] = False
-
-filtered[tele_mask, 1:3] = np.nan
-tele_count = int(tele_mask.sum())
-
-# Edge check at start and end (~10 iterations)
-edge_indices = list(range(0, min(5, n - 1))) + list(range(max(0, n - 6), n - 1))
-for idx in edge_indices:
-    if np.any(np.isnan(filtered[idx, 1:3])) or np.any(np.isnan(filtered[idx + 1, 1:3])):
-        continue
-    if euclidean(filtered[idx, 1:3], filtered[idx + 1, 1:3]) &gt; tele_dist_threshold / 2:
-        filtered[idx, 1:3] = np.nan
-        tele_count += 1
-
-print(f&#39;{tele_count} points removed by the teleportation filter.&#39;)
-return filtered
-</pre></div>
-</div>
-<p>def interpolate_pos(array, inter_dist_threshold):
-“””
-Linearly interpolate fly position between NaN gaps,
-as long as the gap endpoints are within inter_dist_threshold.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array: Nx3 array [time, x, y]
-&quot;&quot;&quot;
-result = array.copy()
-interp_count = 0
-
-x = result[:, 1]
-y = result[:, 2]
-nan_mask = np.isnan(x)
-
-if not nan_mask.any():
-    print(f&#39;0 points recovered through interpolation.&#39;)
-    return result
-
-# Find start and end of each NaN run in one vectorized pass
-padded = np.concatenate([[False], nan_mask, [False]])
-diff = np.diff(padded.astype(np.int8))
-starts = np.where(diff == 1)[0]      # first NaN index of each run
-ends = np.where(diff == -1)[0] - 1   # last NaN index of each run
-
-for s, e in zip(starts, ends):
-    last_idx = s - 1
-    next_idx = e + 1
-    if last_idx &lt; 0 or next_idx &gt;= len(result):
-        continue
-    last_pt = result[last_idx, 1:3]
-    next_pt = result[next_idx, 1:3]
-    if np.any(np.isnan(last_pt)) or np.any(np.isnan(next_pt)):
-        continue
-    if euclidean(last_pt, next_pt) &lt;= inter_dist_threshold:
-        gap = next_idx - last_idx
-        fracs = np.arange(1, gap) / gap
-        result[s:e + 1, 1] = last_pt[0] + fracs * (next_pt[0] - last_pt[0])
-        result[s:e + 1, 2] = last_pt[1] + fracs * (next_pt[1] - last_pt[1])
-        interp_count += e - s + 1
-
-print(f&#39;{interp_count} points recovered through interpolation.&#39;)
-return result
-</pre></div>
-</div>
-<p>def boundary_filter(array, diameter):
-“””
-Remove points that fall outside the circular dish.
-The dish is assumed to be a circle of the given diameter,
-centered at (diameter/2, diameter/2).
-“””
-filtered = array.copy()
-cx, cy = diameter / 2, diameter / 2
-radius = diameter / 2</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = filtered[:, 1]
-y = filtered[:, 2]
-dist_from_center = np.sqrt((x - cx) ** 2 + (y - cy) ** 2)
-
-outside = dist_from_center &gt; radius
-# Don&#39;t count points that are already NaN
-outside = outside &amp; ~np.isnan(x)
-filtered[outside, 1:3] = np.nan
-
-count = np.sum(outside)
-if count &gt; 0:
-    print(f&quot;  {count} points removed by the boundary filter (outside dish).&quot;)
-return filtered
-</pre></div>
-</div>
-<p>print(‘Helper functions defined.’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Interactive ROI selector — click and drag on the image { display-mode: &quot;form&quot; }</span>
@@ -944,125 +913,12 @@ return filtered
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Fly tracking engine — process_video() { display-mode: &quot;form&quot; }</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">process_video</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span> <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Process a single fly video and return the corrected position array.</span>
-<span class="sd">    Returns (Nx3 array [time_s, x_cm, y_cm], frame_rate).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">height</span> <span class="o">=</span> <span class="n">diameter</span>
-    <span class="n">width</span> <span class="o">=</span> <span class="n">diameter</span>
-    <span class="n">roi_x</span><span class="p">,</span> <span class="n">roi_y</span><span class="p">,</span> <span class="n">roi_w</span><span class="p">,</span> <span class="n">roi_h</span> <span class="o">=</span> <span class="n">roi</span>
-
-    <span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span>
-    <span class="n">fps</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">)</span>
-    <span class="n">total_frames</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_COUNT</span><span class="p">))</span>
-    <span class="n">nfrm</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">-</span> <span class="mi">1</span>
-
-    <span class="c1"># Auto-detect frame rate from video if not specified</span>
-    <span class="k">if</span> <span class="n">frame_rate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">fps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">frame_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Auto-detected frame rate: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">frame_rate</span> <span class="o">=</span> <span class="mi">30</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Could not detect frame rate, using default: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Re-run with --frame-rate to set the correct value.&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Video FPS: </span><span class="si">{</span><span class="n">fps</span><span class="si">}</span><span class="s2">, using override: </span><span class="si">{</span><span class="n">frame_rate</span><span class="si">}</span><span class="s2"> fps (</span><span class="si">{</span><span class="n">total_frames</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Sanity check: warn if video duration seems unusual</span>
-    <span class="k">if</span> <span class="n">frame_rate</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">duration</span> <span class="o">=</span> <span class="n">total_frames</span> <span class="o">/</span> <span class="n">frame_rate</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Estimated duration: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">duration</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="ow">or</span> <span class="n">duration</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: Expected ~60s video but got </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s.&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    If this looks wrong, re-run with --frame-rate to override.&quot;</span><span class="p">)</span>
-
-    <span class="c1"># --- Create background from 100 random frames ---</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Calculating background...&quot;</span><span class="p">)</span>
-    <span class="n">bg_number</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">nfrm</span><span class="p">)</span>
-    <span class="n">bg_indices</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nfrm</span><span class="p">,</span> <span class="n">bg_number</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-
-    <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">ret</span><span class="p">,</span> <span class="n">sample</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">gray_sample</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-    <span class="n">bg_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="o">*</span><span class="n">gray_sample</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">bg_number</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">frame_num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bg_indices</span><span class="p">):</span>
-        <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">)</span>
-        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
-            <span class="n">bg_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-
-    <span class="n">background</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bg_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-    <span class="c1"># Pre-compute the per-pixel scale factor for background subtraction once,</span>
-    <span class="c1"># avoiding redundant division of the full background image on every frame.</span>
-    <span class="n">bg_scale</span> <span class="o">=</span> <span class="mf">256.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">background</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1"># --- Process each frame ---</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Tracking fly positions...&quot;</span><span class="p">)</span>
-    <span class="n">threshold</span> <span class="o">=</span> <span class="p">(</span><span class="n">search_size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">per_pixel_threshold</span>
-    <span class="n">half_search</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">search_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-
-    <span class="n">pos_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nfrm</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-
-    <span class="k">for</span> <span class="n">nofr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nfrm</span><span class="p">):</span>
-        <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="n">nofr</span><span class="p">)</span>
-        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
-            <span class="n">pos_array</span><span class="p">[</span><span class="n">nofr</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nofr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
-            <span class="k">continue</span>
-
-        <span class="n">frame_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
-
-        <span class="c1"># Background subtraction using GIMP division formula</span>
-        <span class="n">frame_div</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">frame_gray</span> <span class="o">*</span> <span class="n">bg_scale</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-        <span class="c1"># Crop to ROI</span>
-        <span class="n">frame_crop</span> <span class="o">=</span> <span class="n">frame_div</span><span class="p">[</span><span class="n">roi_y</span><span class="p">:</span><span class="n">roi_y</span> <span class="o">+</span> <span class="n">roi_h</span><span class="p">,</span> <span class="n">roi_x</span><span class="p">:</span><span class="n">roi_x</span> <span class="o">+</span> <span class="n">roi_w</span><span class="p">]</span>
-
-        <span class="c1"># Find fly</span>
-        <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span> <span class="o">=</span> <span class="n">fly_finder</span><span class="p">(</span><span class="n">frame_crop</span><span class="p">,</span> <span class="n">half_search</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">flip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">pos_array</span><span class="p">[</span><span class="n">nofr</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">nofr</span><span class="p">,</span> <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">]</span>
-
-        <span class="c1"># Progress update every 10%</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nfrm</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">pct</span> <span class="o">=</span> <span class="p">(</span><span class="n">nofr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">nfrm</span> <span class="o">*</span> <span class="mi">100</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">% complete (</span><span class="si">{</span><span class="n">nofr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2"> frames)&quot;</span><span class="p">)</span>
-
-    <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
-
-    <span class="c1"># --- Convert to real coordinates ---</span>
-    <span class="n">xscale</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="n">roi_w</span>
-    <span class="n">yscale</span> <span class="o">=</span> <span class="n">height</span> <span class="o">/</span> <span class="n">roi_h</span>
-
-    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
-        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">frame_rate</span><span class="p">,</span>
-        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">xscale</span><span class="p">,</span>
-        <span class="n">pos_array</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">yscale</span><span class="p">,</span>
-    <span class="p">])</span>
-
-    <span class="n">skipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">skipped</span><span class="si">}</span><span class="s2"> points skipped out of </span><span class="si">{</span><span class="n">nfrm</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Apply filters and interpolation</span>
-    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">boundary_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="n">diameter</span><span class="p">)</span>
-    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">displacement_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">)</span>
-    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">dist_filter</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">corrected_array</span> <span class="o">=</span> <span class="n">interpolate_pos</span><span class="p">(</span><span class="n">corrected_array</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">corrected_array</span><span class="p">,</span> <span class="n">frame_rate</span>
-
-<span class="c1"># --- Process the current video ---</span>
-<span class="n">corrected</span> <span class="o">=</span> <span class="n">process_video</span><span class="p">(</span><span class="n">current_video</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span>
-                          <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Process the current video ---</span>
+<span class="n">corrected</span><span class="p">,</span> <span class="n">detected_fps</span> <span class="o">=</span> <span class="n">process_video</span><span class="p">(</span><span class="n">current_video</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span>
+                                        <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">)</span>
 <span class="n">all_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span>
+<span class="n">all_fps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">detected_fps</span><span class="p">)</span>
+<span class="n">all_video_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Total videos processed: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To process another video, go back to &quot;Select Video File&quot; cell and change `current_video`, then run this cell again.&#39;</span><span class="p">)</span>
@@ -1070,17 +926,6 @@ return filtered
 </div>
 </div>
 </div>
-</section>
-<section id="prepare-for-another-video-optional">
-<h2>Prepare for Another Video (Optional)<a class="headerlink" href="#prepare-for-another-video-optional" title="Link to this heading">#</a></h2>
-<p>If you want to process another video with the same ROI:</p>
-<ol class="arabic simple">
-<li><p>Go back to the <strong>Select Video File</strong> cell and update <code class="docutils literal notranslate"><span class="pre">current_video</span></code> to the new file path</p></li>
-<li><p>Re-run the video selection cell</p></li>
-<li><p>Skip the ROI selection (you can reuse the same ROI with <code class="docutils literal notranslate"><span class="pre">roi</span> <span class="pre">=</span> <span class="pre">roi</span></code> or draw a new one)</p></li>
-<li><p>Run the <strong>Track Fly</strong> cell again — results automatically append to <code class="docutils literal notranslate"><span class="pre">all_corrected</span></code></p></li>
-</ol>
-<p>Or, to apply a <strong>different ROI</strong> for the next video, re-run the ROI selection cells before tracking.</p>
 </section>
 <section id="plot-fly-path-s">
 <h2>Plot Fly Path(s)<a class="headerlink" href="#plot-fly-path-s" title="Link to this heading">#</a></h2>
@@ -1103,8 +948,8 @@ return filtered
     <span class="n">lc</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">valid</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">lc</span><span class="p">)</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Invert y to match video</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">diameter</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">diameter</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Invert y to match video</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X-coordinate (cm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y-coordinate (cm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
@@ -1132,11 +977,12 @@ return filtered
     <span class="n">x</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 
-    <span class="n">total_time</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">frame_rate</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="n">all_fps</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">total_time</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">fps</span>
     <span class="n">total_bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">total_time</span> <span class="o">/</span> <span class="n">bin_size</span><span class="p">))</span>
 
     <span class="c1"># Calculate velocity per bin</span>
-    <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">bin_size</span> <span class="k">if</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">frame_rate</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">bin_size</span> <span class="k">if</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">fps</span> <span class="o">*</span> <span class="n">bin_size</span>
     <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_rate</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">data_rate</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -1233,29 +1079,37 @@ return filtered
 </div>
 </div>
 </section>
+<section id="prepare-for-another-video-optional">
+<h2>Prepare for Another Video (Optional)<a class="headerlink" href="#prepare-for-another-video-optional" title="Link to this heading">#</a></h2>
+<p>If you want to process another video with the same ROI:</p>
+<ol class="arabic simple">
+<li><p>Go back to the <strong>Select Video File</strong> cell and update <code class="docutils literal notranslate"><span class="pre">current_video</span></code> to the new file path</p></li>
+<li><p>Re-run the video selection cell</p></li>
+<li><p>Skip the ROI selection (you can reuse the same ROI with <code class="docutils literal notranslate"><span class="pre">roi</span> <span class="pre">=</span> <span class="pre">roi</span></code> or draw a new one)</p></li>
+<li><p>Run the <strong>Track Fly</strong> cell again — results automatically append to <code class="docutils literal notranslate"><span class="pre">all_corrected</span></code></p></li>
+</ol>
+<p>Or, to apply a <strong>different ROI</strong> for the next video, re-run the ROI selection cells before tracking.</p>
+</section>
 <section id="download-results-optional">
 <h2>Download Results (Optional)<a class="headerlink" href="#download-results-optional" title="Link to this heading">#</a></h2>
 <p>Download the tracking data as CSV files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">corrected</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">):</span>
-    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">corrected</span><span class="p">,</span> <span class="n">vel</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">,</span> <span class="n">all_velocity</span><span class="p">)):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">all_video_paths</span><span class="p">[</span><span class="n">idx</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+
     <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_tracking.csv&#39;</span>
     <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">corrected</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
-                <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,X_cm,Y_cm&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+               <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,X_cm,Y_cm&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Also save velocity data</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">vel</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_velocity</span><span class="p">):</span>
-    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">video_files</span><span class="p">[</span><span class="n">idx</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">csv_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_velocity.csv&#39;</span>
     <span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vel</span><span class="p">))</span> <span class="o">*</span> <span class="n">bin_size</span>
-    <span class="n">vel_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">vel</span><span class="p">])</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">vel_data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
-                <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,Velocity_mm_per_s&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">vel_csv</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1">_velocity.csv&#39;</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">vel_csv</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">vel</span><span class="p">]),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+               <span class="n">header</span><span class="o">=</span><span class="s1">&#39;Time_s,Velocity_mm_per_s&#39;</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">vel_csv</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">vel_csv</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1318,16 +1172,15 @@ return filtered
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-steps">Notebook steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-your-drive">Mount your drive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-video-file">Select Video File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#track-fly-in-video-s">Track Fly in Video(s)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fly-path-s">Plot Fly Path(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-plot-velocity">Calculate &amp; Plot Velocity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-across-all-videos">Summary Across All Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-another-video-optional">Prepare for Another Video (Optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-results-optional">Download Results (Optional)</a></li>
 </ul>
   </nav></div>
