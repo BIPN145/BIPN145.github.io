@@ -2497,6 +2497,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <span class="k">if</span> <span class="s1">&#39;all_corrected&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">():</span>
     <span class="n">all_corrected</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">all_velocity</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">all_fps</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialized result containers.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Existing results: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1"> video(s) processed so far.&#39;</span><span class="p">)</span>
@@ -3049,9 +3050,10 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
     <span class="k">return</span> <span class="n">corrected_array</span><span class="p">,</span> <span class="n">frame_rate</span>
 
 <span class="c1"># --- Process the current video ---</span>
-<span class="n">corrected</span> <span class="o">=</span> <span class="n">process_video</span><span class="p">(</span><span class="n">current_video</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span>
-                          <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">)</span>
+<span class="n">corrected</span><span class="p">,</span> <span class="n">detected_fps</span> <span class="o">=</span> <span class="n">process_video</span><span class="p">(</span><span class="n">current_video</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">frame_rate</span><span class="p">,</span>
+                                        <span class="n">search_size</span><span class="p">,</span> <span class="n">per_pixel_threshold</span><span class="p">)</span>
 <span class="n">all_corrected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span>
+<span class="n">all_fps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">detected_fps</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Total videos processed: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_corrected</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To process another video, go back to &quot;Select Video File&quot; cell and change `current_video`, then run this cell again.&#39;</span><span class="p">)</span>
@@ -3121,11 +3123,12 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
     <span class="n">x</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 
-    <span class="n">total_time</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">frame_rate</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="n">all_fps</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">total_time</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">fps</span>
     <span class="n">total_bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">total_time</span> <span class="o">/</span> <span class="n">bin_size</span><span class="p">))</span>
 
     <span class="c1"># Calculate velocity per bin</span>
-    <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">bin_size</span> <span class="k">if</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">frame_rate</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">bin_size</span> <span class="k">if</span> <span class="n">corrected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">fps</span> <span class="o">*</span> <span class="n">bin_size</span>
     <span class="n">data_rate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_rate</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">data_rate</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>

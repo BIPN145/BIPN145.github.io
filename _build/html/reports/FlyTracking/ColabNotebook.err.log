@@ -35,6 +35,7 @@ import base64
 if 'all_corrected' not in dir():
     all_corrected = []
     all_velocity = []
+    all_fps = []
     print('Initialized result containers.')
 else:
     print(f'Existing results: {len(all_corrected)} video(s) processed so far.')
