@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=66b0c8fd" />
@@ -370,11 +370,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-online-manual">How to use this online manual</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interacting-with-code">Interacting with code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data-to-colab">Uploading data to Colab</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-work-in-colab">Saving work in Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-manual">Lab Manual</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-a-page-as-a-pdf">Saving a page as a PDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-coding-notebooks">Interactive coding notebooks</a></li>
 </ul>
             </nav>
         </div>
@@ -388,39 +388,42 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bipn-145-digital-manual">
 <h1>BIPN 145 Digital Manual<a class="headerlink" href="#bipn-145-digital-manual" title="Link to this heading">#</a></h1>
-<p>This website contains code &amp; tutorials to help you analyze &amp; visualize your data for neurobiology lab (BIPN 145).</p>
+<p>Welcome to our course! :worm:</p>
+<p>This website contains lab protocols as well as code and tutorials to help you collect and analyize data for neurobiology lab (BIPN 145).</p>
 <section id="how-to-use-this-online-manual">
 <h2>How to use this online manual<a class="headerlink" href="#how-to-use-this-online-manual" title="Link to this heading">#</a></h2>
-<p>Several pages in this manual contain written or video guides to working with the software and data in BIPN 145. However, other pages are meant to be used as interactive coding notebooks.</p>
-<section id="interacting-with-code">
-<h3>Interacting with code<a class="headerlink" href="#interacting-with-code" title="Link to this heading">#</a></h3>
-<p>To interact with the coding tutorials presented here, navigate to the page with the tutorial (e.g.,  “Importing Labchart (Python)”). On these pages, you’ll see a rocket icon in the top right corner. Click on this, and choose Colab. This will launch Google Colab, where you can run the code in the notebook.</p>
-<p>Alternatively, you can copy and paste the code you see here into a Python editor of your choice, e.g., a fresh Google Colab notebook, Jupyter Notebook, or Spyder (found on the computers in lab).</p>
+<p>Several pages in this manual contain written or video guides to completing experiments in BIPN 145. However, other pages are meant to be used as interactive coding notebooks.</p>
+<section id="lab-manual">
+<h3>Lab Manual<a class="headerlink" href="#lab-manual" title="Link to this heading">#</a></h3>
+<p>This website contains and an online version of our lab manual. You can also <a href="../_static/LabManual.pdf">download the full lab manual as a PDF</a>.</p>
+</section>
+</section>
+<section id="saving-a-page-as-a-pdf">
+<h2>Saving a page as a PDF<a class="headerlink" href="#saving-a-page-as-a-pdf" title="Link to this heading">#</a></h2>
+<p>Each page on this site can be downloaded as a PDF for offline use or printing.</p>
+<ol class="arabic simple">
+<li><p>Navigate to the page you want to save.</p></li>
+<li><p>Click the <strong>download icon</strong> (↓) in the top-right toolbar.</p></li>
+<li><p>Select <strong>“.pdf”</strong> from the dropdown.</p></li>
+<li><p>Your browser’s print dialog will open. Set the following options:</p>
+<ul class="simple">
+<li><p><strong>Destination</strong>: Save as PDF</p></li>
+<li><p><strong>Paper size</strong>: Letter</p></li>
+<li><p><em>Optional</em> Under <strong>More settings</strong>, uncheck <strong>Headers and footers</strong> to remove the URL and date from the printed page.</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Save</strong>.</p></li>
+</ol>
+</section>
+<section id="interactive-coding-notebooks">
+<h2>Interactive coding notebooks<a class="headerlink" href="#interactive-coding-notebooks" title="Link to this heading">#</a></h2>
+<p>To interact with the coding tutorials presented here, navigate to the page with the tutorial (e.g.,  “Importing Labchart (Python)”). On these pages, you’ll see a rocket :rocket: icon in the top right corner. Click on this, and choose Colab. This will launch Google Colab, where you can run the code in the notebook.</p>
+<p>Alternatively, you can copy and paste the code you see here into a Python editor of your choice.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code blocks look like this!</span>
 <span class="c1"># If you hover, there&#39;s an option to copy the contents.</span>
 </pre></div>
 </div>
-</section>
-<section id="uploading-data-to-colab">
-<h3>Uploading data to Colab<a class="headerlink" href="#uploading-data-to-colab" title="Link to this heading">#</a></h3>
-<p>To work with exported LabChart data in Python, you’ll either need to upload the file to Colab or put it in Google Drive &amp; mount your drive.</p>
-<p><strong>Option #1</strong>: To upload a file, click the Directory icon on the left hand side of the window. Then, click the file upload button. There is a video of how to do this below:</p>
-<iframe width="640" height="364" src="https://www.loom.com/embed/830c178cc78447b68156cd8ff1423fb3?sid=218e6c4b-b93e-4ac3-a56a-b03cac1f4e3c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><strong>Option #2</strong></p>
-<ol class="arabic simple">
-<li><p>To mount your drive, click the Directory icon on the left hand side of the window.</p></li>
-<li><p>Click the Google Drive icon.</p></li>
-<li><p>Colab will create a new cell in the notebook and prompt you to run it.</p></li>
-<li><p>If it’s the first time, a separate window will pop up to ask you for access to your Drive.</p></li>
-<li><p>Click “Allow”.</p></li>
-<li><p>After a few seconds, a message will print that your Drive has been mounted.</p></li>
-<li><p>Now, you can use the location of your file in a filepath that starts with <code class="docutils literal notranslate"><span class="pre">/content/drive</span></code>.</p></li>
-</ol>
-</section>
-<section id="saving-work-in-colab">
-<h3>Saving work in Colab<a class="headerlink" href="#saving-work-in-colab" title="Link to this heading">#</a></h3>
-<p>You can save a Colab file that you’ve edited just like any other file! In Colab, go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code>. These files will show up in a folder called “Colab Notebooks” in your Drive.</p>
-</section>
+<p>Note that only notebooks with code in them will have the option to open them in Colab.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -486,11 +489,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-online-manual">How to use this online manual</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interacting-with-code">Interacting with code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data-to-colab">Uploading data to Colab</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-work-in-colab">Saving work in Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-manual">Lab Manual</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-a-page-as-a-pdf">Saving a page as a PDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-coding-notebooks">Interactive coding notebooks</a></li>
 </ul>
   </nav></div>
 
