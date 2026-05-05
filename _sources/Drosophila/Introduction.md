@@ -1,4 +1,4 @@
-# *Drosophila* Behavior & Optogenetics
+# Lab #4 *Drosophila* Behavior & Optogenetics
 
 ## Background & Goals
 
