@@ -2,15 +2,13 @@
 
 Welcome to our course! 🪱
 
-This website contains lab protocols as well as code and tutorials to help you collect and analyize data for neurobiology lab (BIPN 145).
+This website contains lab protocols as well as code and to help you complete your experiments for Neurobiology Lab (BIPN 145).
 
-## How to use this online manual
+Most of the pages in this manual contain written or video guides to completing experiments in BIPN 145. Other pages are interactive coding notebooks, which you can use to analyze and visualize your data.
 
-Several pages in this manual contain written or video guides to completing experiments in BIPN 145. However, other pages are meant to be used as interactive coding notebooks.
+## Lab Manual
 
-### Lab Manual
-
-This website contains and an online version of our lab manual. You can also <a href="../_static/LabManual.pdf">download the full lab manual as a PDF</a>.
+This website contains a full online version of our lab manual. You can also <a href="../_static/LabManual.pdf">download the full lab manual as a PDF</a>. You're encouraged to print this manual so that you have a hard copy in lab with you.
 
 ## Saving a page as a PDF
 
