@@ -33,6 +33,13 @@ import base64
 
 # Initialize result containers — each is created independently so adding
 # new lists in future won't require a full session restart
+# You can uncomment the following to reset all results if needed:
+#all_corrected  = []
+#all_velocity   = []
+#all_fps        = []
+#all_video_paths = []
+#print('Results cleared — ready to process new videos.')
+
 if 'all_corrected' not in dir(): all_corrected = []
 if 'all_velocity'  not in dir(): all_velocity  = []
 if 'all_fps'       not in dir(): all_fps       = []
