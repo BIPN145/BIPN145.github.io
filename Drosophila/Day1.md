@@ -1,6 +1,6 @@
 # Day 1: The Case of the Mislabeled Fly Vials
 
-Something terrible has happened in the lab. The flies you once knew, that were once perfectly organized and labeled, are now completely jumbled. You're pretty sure the flies are transgenic, of some sort or another. It's up to you to figure out what type of flies these are, based on three behavioral assays: a **proboscis extension reflex (PER) assay, an ethological survey, and a locomotion test**.
+Something terrible has happened in the lab. The flies you once knew, that were once perfectly organized and labeled, are now completely jumbled. You're pretty sure the flies are mutated, in one way or another. It's up to you to figure out what type of flies these are, based on three behavioral assays: a **proboscis extension reflex (PER) assay, an ethological survey, and a locomotion test**.
 
 ![](images/drosophila_intro.png)
 
@@ -106,9 +106,9 @@ It's possible your flies do something different that's *not* captured by a stand
 Your next goal for today will be to quantify **three** different behaviors that your flies perform. It is up to you to define and operationalize these behaviors.
 
 1. Freeze both groups of flies for 2–3 minutes until they stop moving.
-2. Isolate ~5 flies of each type in separate petri dishes.
+2. Isolate three flies of each type in separate petri dishes.
 
-   **Note:** Make sure they're completely awake and moving before moving on to the next step. This could take about 10 minutes.
+   **Note:** Make sure the flies are completely awake and moving before moving on to the next step. This could take about 10 minutes.
 
 3. Take a few minutes to observe both batches of flies.
 4. Choose three different behaviors that the flies do, and record them below. You also need to provide a definition for each behavior.
@@ -124,7 +124,6 @@ Your next goal for today will be to quantify **three** different behaviors that 
 5. For 5 minutes, each person in your group should observe one behavior and record the number of instances those behaviors happen in the WT flies. Record the number of instances in the table above.
 6. Do the same for the experimental group.
 
----
 
 ## Test III. Recording locomotor behavior
 
