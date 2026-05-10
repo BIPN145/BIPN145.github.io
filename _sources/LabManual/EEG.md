@@ -1,4 +1,4 @@
-# Measuring Alpha Wave Activity Using Electroencephalography
+# Measuring Alpha Wave Activity Using EEG
 
 ## Background & Goals
 
@@ -30,24 +30,20 @@ The EEG waveform contains component waves of different frequencies. These can be
 
 *Written by staff of ADInstruments & A. Juavinett. Copyright © 2015 ADInstruments Pty Ltd. All rights reserved. PowerLab® and LabChart® are registered trademarks of ADInstruments Pty Ltd.*
 
----
 
 ## Lab Protocol
 
-| **Supplies** |
-|---|
-| LabChart software & computer |
-| PowerLab 26T |
-| 5 Lead Shielded Bio Amp Cable |
-| EEG Flat Electrodes (gold contacts) |
-| Electrode Paste |
-| Abrasive Gel (NuPrep) |
-| Alcohol Swabs |
-| Medical tape |
-| Elastic bandage |
-| Cotton swab |
-
----
+### Supplies
+* LabChart software & computer
+* PowerLab 26T
+* 5 Lead Shielded Bio Amp Cable
+* EEG Flat Electrodes (gold contacts)
+* Electrode paste
+* Abrasive Gel (NuPrep)
+* Alcohol swabs
+* Medical tape
+* Elastic bandage
+* Cotton swab
 
 ### Part I. Spectral Analysis Tutorial
 
@@ -73,33 +69,29 @@ A spectrum is a representation of data based on the frequency distribution of it
    ![](images/eeg_psd_50hz.png)
 
 7. Examine the PSD plot and then the first section of the Spectrogram. Expand the vertical axes if necessary. Use the waveform cursor to identify the frequency in Hertz (Hz) of the peak in the PSD plot and the band in the Spectrogram. Values are displayed at the top of each plot.
-
-   **What is the frequency in Hertz (Hz) of this sine wave?**
-
 8. Select the second record and again view the result in the Spectrum view.
-
-   **What is the frequency in Hertz (Hz) of this second sine wave?**
-
 9. Select the third record and again view the result in the Spectrum view. You should now see two prominent peaks (PSD plot) and bands (Spectrogram) in the result.
-
-   **Are these two peaks/bands the same as for the first two records? How is this possible?**
-
 10. Select the fourth record and again view the result in the Spectrum view.
 
-    **Is there any regular signal within this record?**
+:::{admonition} Questions for reflection
+:class: tip
+- What is the frequency in Hertz (Hz) of the first sine wave?
+- What is the frequency in Hertz (Hz) of the second sine wave?
+- Are the two peaks/bands you see in record 3 the same as for the first two records? How is this possible?
+- Is there any regular signal within record 4?
+:::
 
 11. In Chart View compare the signal amplitudes of the fourth and fifth records. Note that the fifth record has lower amplitude compared with the fourth record (you may need to Autoscale to see a peak at all).
 12. Select the fourth record again. In the Spectrum view examine the PSD plot. Move the **Waveform Cursor** to the prominent peak.
-
-    **What is the frequency (Hz) of this signal?**
-    
-    **What is the power (mV²) of this signal?**
-
 13. Select the fifth record and examine the PSD plot. Move the **Waveform Cursor** to the peak.
 
-    **What is the frequency (Hz) of this signal?**
-    
-    **What is the power (mV²) of this signal?**
+:::{admonition} Questions for reflection
+:class: tip
+- What is the frequency (Hz) of the signal in record 4?
+- What is the power (mV²) of the signal in record 4?
+- What is the frequency (Hz) of the signal in record 5?
+- What is the power (mV²) of the signal in record 5?
+:::
 
 14. Examine the Spectrogram. Note that the band corresponding to the signal's frequency appears to be missing. This is because the power of the signal is small compared with the previous four records. Expand the scale on the right-hand side of the Spectrogram by setting the scale closer to the power of the signal (e.g., right-click **Set Scale** to 0 to 0.004 V²). Note that the band is now visible at the expected frequency.
 
@@ -107,7 +99,10 @@ A spectrum is a representation of data based on the frequency distribution of it
 
 15. The fifth record is the same signal as the fourth record, except that the quality of the raw signal has been affected. Compare your features (amplitude, power, frequency) of the fourth and fifth records.
 
-    **How has the quality of the signal affected the wave features?**
+:::{admonition} Questions for reflection
+:class: tip
+- How has the quality of the signal affected the wave features?
+:::
 
 ---
 
@@ -140,7 +135,10 @@ In this exercise, you will learn to recognize some of the artifacts that can app
 1. Launch LabChart with the EEG Settings file ([http://bit.ly/labchart](http://bit.ly/labchart)).
 2. Select **Bio Amp** from the EEG Channel Function pop-up menu. Make sure the settings are as follows: **Range 200 µV, High Pass 0.5 Hz, and Low Pass 50 Hz**.
 
-   - 💡 **Why are we applying high- and low-pass filters to our data?**
+:::{admonition} Questions for reflection
+:class: tip
+- Why are we applying high- and low-pass filters to our data?
+:::
 
 3. **Start** recording. Add a **comment** "blinking," and have the volunteer blink repeatedly. **Stop** recording after 10 seconds.
 4. Repeat step 3, this time, have the volunteer make eye movements. Add a **comment** "eye movements." Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer's head is still and only the eyes move.
@@ -210,13 +208,12 @@ Now you will use Spectral Analysis to examine the EEG you recorded.
 | **Wave #4** | |
 | **Wave #5** | |
 
-#### Questions for consideration
-
-**Under what conditions did you see alpha waves more clearly?**
-
-**What are alpha waves thought to indicate?**
-
-**Look at your Spectral Analysis from when the volunteer had their eyes closed. At what range do you have the greatest peak? What type of brain waves does the Spectral Analysis suggest is active?**
+:::{admonition} Questions for reflection
+:class: tip
+- Under what conditions did you see alpha waves more clearly?
+- What are alpha waves thought to indicate?
+- Look at your Spectral Analysis from when the volunteer had their eyes closed. At what range do you have the greatest peak? What type of brain waves does the Spectral Analysis suggest is active?
+:::
 
 ---
 
