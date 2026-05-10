@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'FlyTracking/ColabNotebook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Working with LabChart Files" href="../LabChart/Introduction.html" />
+    <link rel="next" title="Measuring Alpha Wave Activity Using Electroencephalography" href="../LabManual/EEG.html" />
     <link rel="prev" title="Fly Tracker (Local)" href="Script.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,6 +193,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Fly Tracker (Colab)</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../LabManual/EEG.html">Measuring Alpha Wave Activity Using Electroencephalography</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools &amp; Data Analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -544,7 +545,33 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the current video file to process</span>
 <span class="n">current_video</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/video1.avi&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current video: </span><span class="si">{</span><span class="n">current_video</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">current_video</span><span class="p">):</span>
+    <span class="n">size_mb</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File found: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">size_mb</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> MB)&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File not found: </span><span class="si">{</span><span class="n">current_video</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Troubleshooting tips:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  1. Make sure you have run the &quot;Mount your drive&quot; cell above.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  2. In the left sidebar, click the folder icon to open the file browser.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  3. Navigate to your video file, right-click it, and select &quot;Copy path&quot;.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  4. Paste the copied path above to replace the current_video value.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="c1"># Show video files in the same folder if it exists, to help spot typos</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">current_video</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+        <span class="n">videos</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+                  <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;.avi&#39;</span><span class="p">,</span> <span class="s1">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;.mov&#39;</span><span class="p">,</span> <span class="s1">&#39;.mkv&#39;</span><span class="p">,</span> <span class="s1">&#39;.mj2&#39;</span><span class="p">,</span> <span class="s1">&#39;.mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.m4v&#39;</span><span class="p">))]</span>
+        <span class="k">if</span> <span class="n">videos</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Video files found in </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">videos</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No video files found in </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s1"> — check that you are looking in the right folder.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Folder not found: </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Make sure your Drive is mounted and the path is correct.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -879,6 +906,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>The cell below is going to prompt you to select an ROI using a square. You want to select <strong>the entire petri dish</strong> (you may need to guess where the edges are if they are hard to see).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Interactive ROI selector — click and drag on the image { display-mode: &quot;form&quot; }</span>
@@ -904,7 +932,7 @@ document.write(`
 <span class="n">html_code</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">&lt;div id=&quot;roi-container&quot; style=&quot;position:relative; display:inline-block; cursor:crosshair;&quot;&gt;</span>
 <span class="s2">  &lt;canvas id=&quot;roi-canvas&quot; width=&quot;</span><span class="si">{</span><span class="n">img_w</span><span class="si">}</span><span class="s2">&quot; height=&quot;</span><span class="si">{</span><span class="n">img_h</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="s2">    style=&quot;max-width:100%; height:auto; border:1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</span>
+<span class="s2">    style=&quot;max-width:67%; height:auto; border:1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</span>
 <span class="s2">&lt;/div&gt;</span>
 <span class="s2">&lt;br&gt;</span>
 <span class="s2">&lt;button id=&quot;roi-confirm-btn&quot; style=&quot;font-size:16px; padding:8px 20px; background:#4CAF50;</span>
@@ -1280,11 +1308,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../LabChart/Introduction.html"
+       href="../LabManual/EEG.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Working with LabChart Files</p>
+        <p class="prev-next-title">Measuring Alpha Wave Activity Using Electroencephalography</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
