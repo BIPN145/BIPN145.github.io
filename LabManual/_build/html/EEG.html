@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Measuring Alpha Wave Activity Using EEG &#8212; BIPN 145 Lab Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=66b0c8fd" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'EEG';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Fly Tracker (Colab)" href="FlyTracking/ColabNotebook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="Cover.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">BIPN 145 Lab Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Cover.html">
+                    Lab Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Welcome to BIPN 145</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ModelingNeuralMembranes.html">Modeling Neural Membranes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StringNervousSystems.html">String Nervous Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Earthworm.html">Earthworm Electrophysiology</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Drosophila/Introduction.html"><em>Drosophila</em> Behavior &amp; Optogenetics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Drosophila/Day1.html">Day 1: The Case of the Mislabeled Fly Vials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Drosophila/Day2.html">Day 2: The Case of the Missing Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FlyTracking/Script.html">Fly Tracker (Local)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FlyTracking/ColabNotebook.html">Fly Tracker (Colab)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Measuring Alpha Wave Activity Using EEG</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/EEG.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Measuring Alpha Wave Activity Using EEG</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-eeg-signals">Recording EEG signals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#origins-of-the-eeg-signals">Origins of the EEG signals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-the-eeg-waveform">Components of the EEG waveform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplies">Supplies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-spectral-analysis-tutorial">Part I. Spectral Analysis Tutorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-detecting-alpha-waves">Part II. Detecting alpha waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equipment-setup-and-electrode-attachment">Equipment Setup and Electrode Attachment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-recognizing-artifacts">Exercise 1: Recognizing Artifacts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-alpha-waves-in-the-eeg">★ Exercise 2: Alpha Waves in the EEG</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-amplitude-analysis">Wave Amplitude Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis">Spectral Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-notebook">Data Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-1-alpha-waves-with-eyes-open">Table 1. Alpha Waves with Eyes Open</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-2-alpha-waves-with-eyes-shut">Table 2. Alpha Waves with Eyes Shut</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-run-your-own-experiment">★ Part III. Run your own experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-your-eeg-data">★ Analyzing your EEG data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-psd-data-from-labchart">Exporting PSD data from LabChart</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-spectrogram-data-from-labchart">Exporting spectrogram data from LabChart</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-spectrogram-data-in-python-on-the-datahub">Plotting Spectrogram data in Python (on the DataHub)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-notebook-to-plot-your-data">Open the Notebook to plot your data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="measuring-alpha-wave-activity-using-eeg">
+<h1>Measuring Alpha Wave Activity Using EEG<a class="headerlink" href="#measuring-alpha-wave-activity-using-eeg" title="Link to this heading">#</a></h1>
+<section id="background-goals">
+<h2>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h2>
+<p>The cerebral cortex contains huge numbers of neurons. Activity of these neurons is — to some extent — synchronized in regular firing rhythms. These are referred to as brain waves. Electrodes placed in pairs on the scalp can pick up variations in electrical potential that derive from this underlying cortical activity. This recording of the electrical activity in the cortex is called an electroencephalogram (EEG). EEG signals are strongly affected by different states of arousal and show characteristic changes in different stages of sleep. EEG signals are also affected by stimulation from the external environment and brain waves can become entrained to external stimuli. Electroencephalography is used, among other things, in the diagnosis of epilepsy and the diagnosis of brain death.</p>
+<section id="recording-eeg-signals">
+<h3>Recording EEG signals<a class="headerlink" href="#recording-eeg-signals" title="Link to this heading">#</a></h3>
+<p>EEG recording is technically difficult, mainly because of the small size of the voltage signals, which are typically 50 µV <strong>peak-to-peak</strong>. The signals are small because the recording electrodes are separated from the brain’s surface by the scalp, the skull, and a layer of cerebrospinal fluid. A specially designed amplifier, such as the Bio Amp built into the PowerLab, is essential to record EEGs. It is also important to use electrodes made of the right material and to connect them properly. Even with these precautions, recordings may be spoiled by a range of unwanted interfering influences, known as artifacts.</p>
+<p>In this lab, you will record EEG activity with an occipital electrode on the scalp at the back of the head. A third (ground or earth) electrode is also attached, to reduce electrical interference. In clinical EEG, it is usual to record many channels of activity from multiple recording electrodes placed in an array over the head.</p>
+</section>
+<section id="origins-of-the-eeg-signals">
+<h3>Origins of the EEG signals<a class="headerlink" href="#origins-of-the-eeg-signals" title="Link to this heading">#</a></h3>
+<p>The EEG results from slow changes in the membrane potentials of cortical neurons, especially the excitatory and inhibitory post-synaptic potentials (EPSPs and IPSPs). Very little contribution normally comes from action potentials propagated along nerve axons. The EEG reflects the sum of the electrical potential changes occurring from large populations of cells. Therefore, large amplitude waves require the synchronous activity of a large number of neurons. The rhythmic events that these waves reflect often arise in the thalamus whose activity is in turn affected by a variety of inputs including structures in the brainstem reticular formation.</p>
+</section>
+<section id="components-of-the-eeg-waveform">
+<h3>Components of the EEG waveform<a class="headerlink" href="#components-of-the-eeg-waveform" title="Link to this heading">#</a></h3>
+<p>The EEG waveform contains component waves of different frequencies. These can be extracted and provide information about different brain activities. The types of brain waves are:</p>
+<ul class="simple">
+<li><p><strong>alpha</strong> (between 8 to 13 Hz; average amplitudes of 30 to 50 µV peak-to-peak), which will be studied in this experiment. Alpha rhythm is seen when the eyes are closed and the volunteer relaxed. It is abolished by eye opening and by mental effort such as doing calculations or concentrating on an idea. It is thus thought to indicate the degree of cortical activation. The greater the activation, the lower the alpha activity. Alpha waves are strongest over the occipital (back of the head) cortex and also over the frontal cortex.</p></li>
+<li><p><strong>beta</strong> (13 to 30 Hz; &lt;20 µV peak-to-peak), which are prominent in alert individuals with their eyes open. The beta rhythm may be absent or reduced in areas of cortical damage and can be accentuated by sedative-hypnotic drugs such as benzodiazepines and barbiturates.</p></li>
+<li><p><strong>theta</strong> (4 to 8 Hz; &lt;30 µV peak-to-peak), which are seen in awake children but not adults. The theta rhythm is normal during sleep at all ages. However, some researchers separate this frequency band into two components: low theta (4–5.45 Hz) activity correlated with decreased arousal and increased drowsiness, and high theta (6–7.45 Hz) activity that is claimed to be enhanced during tasks involving working memory.</p></li>
+<li><p><strong>delta</strong> (0.5 to 4 Hz; up to 100–200 µV peak-to-peak), which is the dominant rhythm in sleep stages three and four but not seen in conscious adults. The delta rhythm tends to have the highest amplitude of any of the component EEG waves. EEG artifacts caused by movements of jaw and neck muscles can produce waves in the same frequency band.</p></li>
+<li><p><strong>gamma</strong> (30 to 50 Hz). Most people recognize gamma rhythm, but its importance is controversial. It may be associated with higher mental activity, including perception and consciousness, and it disappears under general anesthesia. One suggestion is that the gamma rhythm reflects the mental activity involved in integrating various aspects of an object (color, shape, movement, etc.) to form a coherent picture.</p></li>
+</ul>
+<p><em>Written by staff of ADInstruments &amp; A. Juavinett. Copyright © 2015 ADInstruments Pty Ltd. All rights reserved. PowerLab® and LabChart® are registered trademarks of ADInstruments Pty Ltd.</em></p>
+</section>
+</section>
+<section id="lab-protocol">
+<h2>Lab Protocol<a class="headerlink" href="#lab-protocol" title="Link to this heading">#</a></h2>
+<section id="supplies">
+<h3>Supplies<a class="headerlink" href="#supplies" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>LabChart software &amp; computer</p></li>
+<li><p>PowerLab 26T</p></li>
+<li><p>5 Lead Shielded Bio Amp Cable</p></li>
+<li><p>EEG Flat Electrodes (gold contacts)</p></li>
+<li><p>Electrode paste</p></li>
+<li><p>Abrasive Gel (NuPrep)</p></li>
+<li><p>Alcohol swabs</p></li>
+<li><p>Medical tape</p></li>
+<li><p>Elastic bandage</p></li>
+<li><p>Cotton swab</p></li>
+</ul>
+</section>
+<section id="part-i-spectral-analysis-tutorial">
+<h3>Part I. Spectral Analysis Tutorial<a class="headerlink" href="#part-i-spectral-analysis-tutorial" title="Link to this heading">#</a></h3>
+<p>A spectrum is a representation of data based on the frequency distribution of its component sine waves. Spectra indicate the strength of the various frequencies in a time-varying waveform. Spectrum View allows you to observe the frequency distribution of data that might not otherwise be easily seen. For example, it could be used to break down an EEG waveform into its various components: beta waves, alpha waves, theta waves and delta waves. A mathematical technique known as the Fast Fourier Transform is applied to the raw data. The results of this analysis can be displayed as a plot of the power (vertical axis) of different frequencies (horizontal axis) relative to each other in the input signal. This is called a <strong>Power Spectrum Density (PSD) plot</strong>. The data can also be displayed as a 3-dimensional color plot of spectral power, frequency, and time, called a <strong>Spectrogram</strong>.</p>
+<p><strong>Note:</strong> The questions here are written to ensure that you are understanding the steps of the tutorial. You do not need to answer them, and they do not directly relate to your lab report. You <em>should</em>, however, understand how to interpret a spectrogram.</p>
+<ol class="arabic">
+<li><p>Open the EEG Spectral Analysis Tutorial settings file (<a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>).</p></li>
+<li><p>Examine the Chart View. Use the <strong>View Buttons</strong> to view each block. You should see five blocks of data. The first record is a slowly oscillating sine wave.</p></li>
+<li><p>Open Spectrum view by clicking on the Spectrum View button in the Toolbar:</p>
+<p><img alt="" src="_images/eeg_spectrum_toolbar.png" /></p>
+</li>
+<li><p>Click the <strong>Smart Tile</strong> button in the LabChart Toolbar to display both windows in full screen mode.</p></li>
+<li><p>In Chart View, <strong>select</strong> the first record by double-clicking in the Time axis. This will perform a spectral analysis for this record and display the result in the Spectrum view.</p></li>
+<li><p>Adjust the horizontal scaling of plots to view the results:</p>
+<ul class="simple">
+<li><p>Set the <strong>horizontal scaling</strong> for the <strong>Power Spectrum Density (PSD)</strong> plot to 50 Hz.</p></li>
+<li><p>Use the horizontal scroll bar to display the 0 Hz to 50 Hz region of the plot.</p></li>
+<li><p>You may need to Autoscale the axes.</p></li>
+<li><p>Set the <strong>horizontal scaling</strong> for the Spectrogram to 50:1.</p></li>
+</ul>
+<p><img alt="" src="_images/eeg_psd_50hz.png" /></p>
+</li>
+<li><p>Examine the PSD plot and then the first section of the Spectrogram. Expand the vertical axes if necessary. Use the waveform cursor to identify the frequency in Hertz (Hz) of the peak in the PSD plot and the band in the Spectrogram. Values are displayed at the top of each plot.</p></li>
+<li><p>Select the second record and again view the result in the Spectrum view.</p></li>
+<li><p>Select the third record and again view the result in the Spectrum view. You should now see two prominent peaks (PSD plot) and bands (Spectrogram) in the result.</p></li>
+<li><p>Select the fourth record and again view the result in the Spectrum view.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>What is the frequency in Hertz (Hz) of the first sine wave?</p></li>
+<li><p>What is the frequency in Hertz (Hz) of the second sine wave?</p></li>
+<li><p>Are the two peaks/bands you see in record 3 the same as for the first two records? How is this possible?</p></li>
+<li><p>Is there any regular signal within record 4?</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>In Chart View compare the signal amplitudes of the fourth and fifth records. Note that the fifth record has lower amplitude compared with the fourth record (you may need to Autoscale to see a peak at all).</p></li>
+<li><p>Select the fourth record again. In the Spectrum view examine the PSD plot. Move the <strong>Waveform Cursor</strong> to the prominent peak.</p></li>
+<li><p>Select the fifth record and examine the PSD plot. Move the <strong>Waveform Cursor</strong> to the peak.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>What is the frequency (Hz) of the signal in record 4?</p></li>
+<li><p>What is the power (mV²) of the signal in record 4?</p></li>
+<li><p>What is the frequency (Hz) of the signal in record 5?</p></li>
+<li><p>What is the power (mV²) of the signal in record 5?</p></li>
+</ul>
+</div>
+<ol class="arabic" start="14">
+<li><p>Examine the Spectrogram. Note that the band corresponding to the signal’s frequency appears to be missing. This is because the power of the signal is small compared with the previous four records. Expand the scale on the right-hand side of the Spectrogram by setting the scale closer to the power of the signal (e.g., right-click <strong>Set Scale</strong> to 0 to 0.004 V²). Note that the band is now visible at the expected frequency.</p>
+<p><img alt="" src="_images/eeg_spectrogram_menu.png" /> <img alt="" src="_images/eeg_setscale.png" /></p>
+</li>
+<li><p>The fifth record is the same signal as the fourth record, except that the quality of the raw signal has been affected. Compare your features (amplitude, power, frequency) of the fourth and fifth records.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>How has the quality of the signal affected the wave features?</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="part-ii-detecting-alpha-waves">
+<h3>Part II. Detecting alpha waves<a class="headerlink" href="#part-ii-detecting-alpha-waves" title="Link to this heading">#</a></h3>
+<section id="equipment-setup-and-electrode-attachment">
+<h4>Equipment Setup and Electrode Attachment<a class="headerlink" href="#equipment-setup-and-electrode-attachment" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Make sure the PowerLab is turned <strong>off</strong> and the USB cable is connected to the computer.</p></li>
+<li><p>Connect the 5 Lead Shielded Bio Amp Cable to the Bio Amp Connector on the front panel of the PowerLab (Figure 1). The hardware needs to be connected <strong>before</strong> you open the settings file.</p></li>
+</ol>
+<p><img alt="" src="_images/eeg_setup.png" /></p>
+<p><em>Figure 1. Equipment setup for PowerLab 26T. Image courtesy of ADInstruments ©</em></p>
+<ol class="arabic" start="3">
+<li><p>Attach the leads of the EEG Flat Electrodes to the Earth, CH1 NEG and POS pins closest to the labeled side on the Bio Amp Cable. Channel 1 “<strong>positive</strong>” will lead to the inion (the bump on the back of the head above the neck) and Channel 1 “<strong>negative</strong>” will lead to the forehead. Channel 2 will be empty and the Earth will lead to the temple. Refer to Figure 1 for proper placement, but do not attach them to the volunteer yet. Follow the color scheme on the Bio Amp Cable.</p></li>
+<li><p>Remove any jewelry from the volunteer’s face, ears, and neck.</p></li>
+<li><p>With Figure 1 as a guide, locate where you will place the electrodes. Abrade the skin with the NuPrep Abrasive Gel.</p>
+<p><strong>Note:</strong> This is important as abrasion helps reduce the skin’s resistance. Your recordings will be much better if you have abraded the skin well (but not too much — that will cause irritation).</p>
+</li>
+<li><p>After abrasion, clean the area with an alcohol swab to remove the dead skin cells.</p></li>
+<li><p>While the skin is drying, scoop Electrode Paste into the EEG Flat Electrodes. When the skin is dry, stick the electrodes to the skin (Figure 1). Immediately hold the electrodes and wires in place with the medical tape. Make sure the tape firmly holds the electrodes against the head. Use the elastic bandage to wrap tightly around the head. This will help the electrodes maintain good contact with the skin.</p></li>
+<li><p>Have the volunteer lie in a comfortable position on his/her back (or sit comfortably), with the head turned so that none of the electrodes are disturbed or compressed.</p></li>
+<li><p>Check that all three electrodes are properly connected to the volunteer and the Bio Amp Cable before proceeding. Turn on the PowerLab.</p></li>
+</ol>
+</section>
+<section id="exercise-1-recognizing-artifacts">
+<h4>Exercise 1: Recognizing Artifacts<a class="headerlink" href="#exercise-1-recognizing-artifacts" title="Link to this heading">#</a></h4>
+<p>In this exercise, you will learn to recognize some of the artifacts that can appear on an EEG.</p>
+<ol class="arabic simple">
+<li><p>Launch LabChart with the EEG Settings file (<a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>).</p></li>
+<li><p>Select <strong>Bio Amp</strong> from the EEG Channel Function pop-up menu. Make sure the settings are as follows: <strong>Range 200 µV, High Pass 0.5 Hz, and Low Pass 50 Hz</strong>.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>Why are we applying high- and low-pass filters to our data?</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Start</strong> recording. Add a <strong>comment</strong> “blinking,” and have the volunteer blink repeatedly. <strong>Stop</strong> recording after 10 seconds.</p></li>
+<li><p>Repeat step 3, this time, have the volunteer make eye movements. Add a <strong>comment</strong> “eye movements.” Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer’s head is still and only the eyes move.</p></li>
+<li><p>Repeat step 3, this time, have the volunteer make head movements. Add a <strong>comment</strong> “head movements.” Have the volunteer gently move his/her head in a repeated pattern.</p></li>
+<li><p>Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. True EEG signals rarely exceed these limits.</p></li>
+<li><p>Examine the entire data trace and <strong>Autoscale</strong>, if necessary. There may be some large signals outside the ±75 µV range. <strong>Such large signals are artifacts.</strong></p></li>
+<li><p><strong>Save your data</strong>, and open a new file with the same settings.</p></li>
+</ol>
+</section>
+<section id="exercise-2-alpha-waves-in-the-eeg">
+<h4>★ Exercise 2: Alpha Waves in the EEG<a class="headerlink" href="#exercise-2-alpha-waves-in-the-eeg" title="Link to this heading">#</a></h4>
+<p>In this exercise, you will examine the effects of relaxation and eye movement on alpha waves in the EEG.</p>
+<ol class="arabic simple">
+<li><p>Make sure the volunteer is relaxed and comfortable. Have the volunteer close his/her eyes and remain quiet. Keep noise to a minimum and keep all distractions away from the volunteer.</p></li>
+<li><p><strong>Start</strong> recording. Prepare a comment with “open”; do not enter it yet.</p></li>
+<li><p>Tell the volunteer to open both eyes. Immediately press Return/Enter to add the <strong>comment</strong>. Record with the volunteer’s eyes open for 30 seconds. Do not stop recording.</p></li>
+<li><p>Prepare a comment with “shut.” When the 30 seconds are complete, tell the volunteer to close both eyes. Immediately press Return/Enter to add the <strong>comment</strong>.</p></li>
+<li><p>Repeat steps 3 and 4 twice, to give you three sets of results. <strong>Save your data</strong>.</p></li>
+</ol>
+<p><img alt="" src="_images/eeg_eyes_shut_open.png" />
+<em>EEG signal with eyes shut and open. Note alpha waves during eyes shut (left).</em></p>
+</section>
+<section id="wave-amplitude-analysis">
+<h4>Wave Amplitude Analysis<a class="headerlink" href="#wave-amplitude-analysis" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Use the <strong>View Buttons</strong> to change the horizontal compression to see data with eyes open and shut. Make a data selection that includes some data from both eyes open and eyes shut conditions. View this selection in <strong>Zoom View</strong>. This should make it easier to see the alpha wave activity. <strong>Autoscale</strong>, if necessary.</p></li>
+<li><p>In Chart View, scroll through the parts of the recording that were made with the volunteer’s eyes shut to look for alpha waves. Use the <strong>View Buttons</strong> to change the horizontal compression if necessary. The alpha waves can be recognized by their amplitude (usually 30 to 50 µV peak-to-peak) and their frequency. Each cycle of an alpha wave lasts ~0.1 s.</p></li>
+<li><p>Use the <strong>Marker</strong> and <strong>Waveform Cursor</strong> to measure the amplitude of the alpha waves. Place the <strong>Marker</strong> at the lowest point of the wave and move the <strong>Waveform Cursor</strong> to the peak of the wave. Measure the amplitudes of five waves from when the volunteer’s eyes were closed. Record the values in <strong>Table 1</strong> of the Data Notebook.</p></li>
+<li><p>Now measure wave amplitudes when the volunteer’s eyes were open. Record these values in <strong>Table 2</strong> of the Data Notebook.</p></li>
+</ol>
+</section>
+<section id="spectral-analysis">
+<h4>Spectral Analysis<a class="headerlink" href="#spectral-analysis" title="Link to this heading">#</a></h4>
+<p>Now you will use Spectral Analysis to examine the EEG you recorded.</p>
+<ol class="arabic simple">
+<li><p>Find the part of the recording when the volunteer had their eyes <em><strong>shut</strong></em>. Click-and-drag across this part of the data trace to <strong>select</strong> it.</p></li>
+<li><p>From the <strong>Window</strong> menu, select <strong>Spectrum</strong>. In the Spectrum View, choose <strong>Selected</strong> (underneath the main toolbar at the top).</p></li>
+</ol>
+<p><img alt="" src="_images/eeg_spectrum.png" />
+<em>Spectrum of an EEG</em></p>
+<ol class="arabic simple" start="3">
+<li><p>Next to Display Channels, choose Ch 3: EEG.</p></li>
+<li><p>Alpha activity should show up in the PSD plot as a clear peak in the 8–12 Hz range.</p></li>
+<li><p>Alpha activity shows up in the Spectrogram as a band of color in the 8–12 Hz range. If you cannot see the alpha activity as a clear peak in the 8–12 Hz range, manually scale the horizontal and vertical axes. Note that Spectrogram displays all the recorded data and that the selection you have made is highlighted in a darker blue color.</p></li>
+<li><p>Make a data selection of several seconds from when the volunteer had their eyes <em><strong>open</strong></em>. Select <strong>Spectrum</strong>. Note that in the PSD plot the peak in the alpha activity range of 8–12 Hz is small or absent, and in the Spectrogram the band of color in the alpha activity range of 8–12 Hz is weak or absent.</p></li>
+<li><p>In the Spectrogram, scale the horizontal axis so that all the data is visible. Note the presence and absence of the band of color in the alpha activity range of 8–12 Hz, which corresponds with the eyes shut and eyes open conditions.</p></li>
+<li><p>If you’re happy with your spectrograms (e.g., you can clearly see alpha activity in closed conditions but not open conditions), you’ve completed the task for this lab. Save your data in a safe location (we’ll deal with plotting it later).</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="data-notebook">
+<h3>Data Notebook<a class="headerlink" href="#data-notebook" title="Link to this heading">#</a></h3>
+<section id="table-1-alpha-waves-with-eyes-open">
+<h4>Table 1. Alpha Waves with Eyes Open<a class="headerlink" href="#table-1-alpha-waves-with-eyes-open" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Amplitude (µV)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wave #1</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wave #2</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wave #3</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wave #4</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wave #5</strong></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="table-2-alpha-waves-with-eyes-shut">
+<h4>Table 2. Alpha Waves with Eyes Shut<a class="headerlink" href="#table-2-alpha-waves-with-eyes-shut" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Amplitude (µV)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wave #1</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wave #2</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wave #3</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wave #4</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wave #5</strong></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Questions for reflection</p>
+<ul class="simple">
+<li><p>Under what conditions did you see alpha waves more clearly?</p></li>
+<li><p>What are alpha waves thought to indicate?</p></li>
+<li><p>Look at your Spectral Analysis from when the volunteer had their eyes closed. At what range do you have the greatest peak? What type of brain waves does the Spectral Analysis suggest is active?</p></li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iii-run-your-own-experiment">
+<h3>★ Part III. Run your own experiment<a class="headerlink" href="#part-iii-run-your-own-experiment" title="Link to this heading">#</a></h3>
+<p>In the final portion of the lab, you will run your own EEG experiment. Choose two different conditions for your subject — e.g., listening to music (or different types of music), doing something cognitively intensive like math problems, or meditating/napping. Choose a brain wave (e.g., alpha, beta, or gamma) that you’d like to analyze, and use the Spectrum view to see whether it is different across conditions. You should conduct as many repeats as you have time for. Take notes about your methods — you’ll need these for your lab report!</p>
+<p><strong>Note:</strong> If you do not have time to run this on the first EEG day, you will have time during the subsequent lab period. At minimum, you should decide what you will do for this experiment.</p>
+</section>
+<section id="analyzing-your-eeg-data">
+<h3>★ Analyzing your EEG data<a class="headerlink" href="#analyzing-your-eeg-data" title="Link to this heading">#</a></h3>
+<section id="exporting-psd-data-from-labchart">
+<h4>Exporting PSD data from LabChart<a class="headerlink" href="#exporting-psd-data-from-labchart" title="Link to this heading">#</a></h4>
+<p>The PSD chart in LabChart will give you the quantitative data you need for your lab report. For example, you can compare the power of alpha between eyes open and closed. You should do the same for your own experiment.</p>
+<ol class="arabic simple">
+<li><p>In LabChart, with your data selected in Spectrum View, go to <strong>File &gt; Export.</strong></p></li>
+<li><p>Save your file as a <strong>Spectrum PSD Text File</strong>.</p></li>
+<li><p>You can import this txt file into Excel (or MATLAB), similar to the way you import raw recording data (see <a class="reference external" href="https://docs.google.com/document/d/1nscGwk4ZoLGoE1HhwHiOv8XimzUQ80RTLfwSNeMRO6E/edit">this document</a> for a refresher).</p></li>
+</ol>
+</section>
+<section id="exporting-spectrogram-data-from-labchart">
+<h4>Exporting spectrogram data from LabChart<a class="headerlink" href="#exporting-spectrogram-data-from-labchart" title="Link to this heading">#</a></h4>
+<p><img alt="" src="_images/eeg_display_settings.png" /></p>
+<ol class="arabic simple">
+<li><p>In LabChart 8, go to <strong>Setup &gt; Display Settings</strong>. Make sure that “Always seconds” is checked (see example at right).</p></li>
+<li><p>With Spectrum view open in LabChart, select the data you’d like to export.</p></li>
+<li><p>Save your file as a <strong>Spectrogram Text File</strong>. Save your file with a name that <em><strong>does not</strong></em> have spaces.</p></li>
+</ol>
+<p><img alt="" src="_images/eeg_spectrogram_export.png" /></p>
+</section>
+<section id="plotting-spectrogram-data-in-python-on-the-datahub">
+<h4>Plotting Spectrogram data in Python (on the DataHub)<a class="headerlink" href="#plotting-spectrogram-data-in-python-on-the-datahub" title="Link to this heading">#</a></h4>
+<p>The following instructions will help you plot a spectrogram of your text file output from LabChart.</p>
+<p><strong>Update your code</strong></p>
+<ol class="arabic simple">
+<li><p>Log on to the DataHub using this link to get the most recent version of our Utilities folder: <a class="reference external" href="https://datahub.ucsd.edu/hub/user-redirect/git-sync?repo=https://github.com/BIPN145/Utilities">https://datahub.ucsd.edu/hub/user-redirect/git-sync?repo=https://github.com/BIPN145/Utilities</a></p></li>
+<li><p>Open the container for BIPN 145.</p></li>
+</ol>
+<p><strong>Upload your data to the DataHub</strong></p>
+<ol class="arabic simple">
+<li><p>In the Jupyter Dashboard, navigate into your BIPN145 folder.</p></li>
+<li><p>In the upper right-hand corner, choose the upload button (<img alt="" src="_images/datahub_upload_button.png" />) to find your exported .txt file and upload it.</p></li>
+<li><p>The file will show up on the top of your file list, with a blue upload button (<img alt="" src="_images/datahub_blue_upload.png" />). Click the button to upload.</p></li>
+</ol>
+</section>
+<section id="open-the-notebook-to-plot-your-data">
+<h4>Open the Notebook to plot your data<a class="headerlink" href="#open-the-notebook-to-plot-your-data" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Find &amp; open <code class="docutils literal notranslate"><span class="pre">plotSpectrogram.ipynb</span></code> in your BIPN145 folder.</p></li>
+<li><p>Change the file name in the first code block to your file.</p></li>
+<li><p>Work through the notebook to clean up the data and plot your file.</p></li>
+<li><p>Right-click on the image and save.</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="FlyTracking/ColabNotebook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fly Tracker (Colab)</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-eeg-signals">Recording EEG signals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#origins-of-the-eeg-signals">Origins of the EEG signals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-the-eeg-waveform">Components of the EEG waveform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplies">Supplies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-spectral-analysis-tutorial">Part I. Spectral Analysis Tutorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-detecting-alpha-waves">Part II. Detecting alpha waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equipment-setup-and-electrode-attachment">Equipment Setup and Electrode Attachment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-recognizing-artifacts">Exercise 1: Recognizing Artifacts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-alpha-waves-in-the-eeg">★ Exercise 2: Alpha Waves in the EEG</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-amplitude-analysis">Wave Amplitude Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis">Spectral Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-notebook">Data Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-1-alpha-waves-with-eyes-open">Table 1. Alpha Waves with Eyes Open</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-2-alpha-waves-with-eyes-shut">Table 2. Alpha Waves with Eyes Shut</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-run-your-own-experiment">★ Part III. Run your own experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-your-eeg-data">★ Analyzing your EEG data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-psd-data-from-labchart">Exporting PSD data from LabChart</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-spectrogram-data-from-labchart">Exporting spectrogram data from LabChart</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-spectrogram-data-in-python-on-the-datahub">Plotting Spectrogram data in Python (on the DataHub)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-notebook-to-plot-your-data">Open the Notebook to plot your data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
