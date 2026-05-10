@@ -389,14 +389,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-2-alpha-waves-with-eyes-shut">Table 2. Alpha Waves with Eyes Shut</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-run-your-own-experiment">★ Part III. Run your own experiment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-your-eeg-data">★ Analyzing your EEG data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-psd-data-from-labchart">Exporting PSD data from LabChart</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-spectrogram-data-from-labchart">Exporting spectrogram data from LabChart</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-spectrogram-data-in-python-on-the-datahub">Plotting Spectrogram data in Python (on the DataHub)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-notebook-to-plot-your-data">Open the Notebook to plot your data</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-your-eeg-data">Analyzing your EEG data</a></li>
 </ul>
 </li>
 </ul>
@@ -670,57 +663,12 @@ document.write(`
 </div>
 </section>
 </section>
-<hr class="docutils" />
-<section id="part-iii-run-your-own-experiment">
-<h3>★ Part III. Run your own experiment<a class="headerlink" href="#part-iii-run-your-own-experiment" title="Link to this heading">#</a></h3>
-<p>In the final portion of the lab, you will run your own EEG experiment. Choose two different conditions for your subject — e.g., listening to music (or different types of music), doing something cognitively intensive like math problems, or meditating/napping. Choose a brain wave (e.g., alpha, beta, or gamma) that you’d like to analyze, and use the Spectrum view to see whether it is different across conditions. You should conduct as many repeats as you have time for. Take notes about your methods — you’ll need these for your lab report!</p>
-<p><strong>Note:</strong> If you do not have time to run this on the first EEG day, you will have time during the subsequent lab period. At minimum, you should decide what you will do for this experiment.</p>
-</section>
 <section id="analyzing-your-eeg-data">
-<h3>★ Analyzing your EEG data<a class="headerlink" href="#analyzing-your-eeg-data" title="Link to this heading">#</a></h3>
-<section id="exporting-psd-data-from-labchart">
-<h4>Exporting PSD data from LabChart<a class="headerlink" href="#exporting-psd-data-from-labchart" title="Link to this heading">#</a></h4>
-<p>The PSD chart in LabChart will give you the quantitative data you need for your lab report. For example, you can compare the power of alpha between eyes open and closed. You should do the same for your own experiment.</p>
+<h3>Analyzing your EEG data<a class="headerlink" href="#analyzing-your-eeg-data" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>In LabChart, with your data selected in Spectrum View, go to <strong>File &gt; Export.</strong></p></li>
-<li><p>Save your file as a <strong>Spectrum PSD Text File</strong>.</p></li>
-<li><p>You can import this txt file into Excel (or MATLAB), similar to the way you import raw recording data (see <a class="reference external" href="https://docs.google.com/document/d/1nscGwk4ZoLGoE1HhwHiOv8XimzUQ80RTLfwSNeMRO6E/edit">this document</a> for a refresher).</p></li>
+<li><p>Export 30 seconds of one closed trial and one open trial for your analysis. [See this page if you need a reminder].(<a class="reference external" href="https://bipn145.github.io/LabChart/ExportingLabChart.html">https://bipn145.github.io/LabChart/ExportingLabChart.html</a>)</p></li>
+<li><p>Using this notebook, you can generate plots from your EEG data: <a class="reference external" href="https://bipn145.github.io/Python/SpectralAnalysis.html">https://bipn145.github.io/Python/SpectralAnalysis.html</a></p></li>
 </ol>
-</section>
-<section id="exporting-spectrogram-data-from-labchart">
-<h4>Exporting spectrogram data from LabChart<a class="headerlink" href="#exporting-spectrogram-data-from-labchart" title="Link to this heading">#</a></h4>
-<p><img alt="" src="../_images/eeg_display_settings.png" /></p>
-<ol class="arabic simple">
-<li><p>In LabChart 8, go to <strong>Setup &gt; Display Settings</strong>. Make sure that “Always seconds” is checked (see example at right).</p></li>
-<li><p>With Spectrum view open in LabChart, select the data you’d like to export.</p></li>
-<li><p>Save your file as a <strong>Spectrogram Text File</strong>. Save your file with a name that <em><strong>does not</strong></em> have spaces.</p></li>
-</ol>
-<p><img alt="" src="../_images/eeg_spectrogram_export.png" /></p>
-</section>
-<section id="plotting-spectrogram-data-in-python-on-the-datahub">
-<h4>Plotting Spectrogram data in Python (on the DataHub)<a class="headerlink" href="#plotting-spectrogram-data-in-python-on-the-datahub" title="Link to this heading">#</a></h4>
-<p>The following instructions will help you plot a spectrogram of your text file output from LabChart.</p>
-<p><strong>Update your code</strong></p>
-<ol class="arabic simple">
-<li><p>Log on to the DataHub using this link to get the most recent version of our Utilities folder: <a class="reference external" href="https://datahub.ucsd.edu/hub/user-redirect/git-sync?repo=https://github.com/BIPN145/Utilities">https://datahub.ucsd.edu/hub/user-redirect/git-sync?repo=https://github.com/BIPN145/Utilities</a></p></li>
-<li><p>Open the container for BIPN 145.</p></li>
-</ol>
-<p><strong>Upload your data to the DataHub</strong></p>
-<ol class="arabic simple">
-<li><p>In the Jupyter Dashboard, navigate into your BIPN145 folder.</p></li>
-<li><p>In the upper right-hand corner, choose the upload button (<img alt="" src="../_images/datahub_upload_button.png" />) to find your exported .txt file and upload it.</p></li>
-<li><p>The file will show up on the top of your file list, with a blue upload button (<img alt="" src="../_images/datahub_blue_upload.png" />). Click the button to upload.</p></li>
-</ol>
-</section>
-<section id="open-the-notebook-to-plot-your-data">
-<h4>Open the Notebook to plot your data<a class="headerlink" href="#open-the-notebook-to-plot-your-data" title="Link to this heading">#</a></h4>
-<ol class="arabic simple">
-<li><p>Find &amp; open <code class="docutils literal notranslate"><span class="pre">plotSpectrogram.ipynb</span></code> in your BIPN145 folder.</p></li>
-<li><p>Change the file name in the first code block to your file.</p></li>
-<li><p>Work through the notebook to clean up the data and plot your file.</p></li>
-<li><p>Right-click on the image and save.</p></li>
-</ol>
-</section>
 </section>
 </section>
 </section>
@@ -811,14 +759,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-2-alpha-waves-with-eyes-shut">Table 2. Alpha Waves with Eyes Shut</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-run-your-own-experiment">★ Part III. Run your own experiment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-your-eeg-data">★ Analyzing your EEG data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-psd-data-from-labchart">Exporting PSD data from LabChart</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-spectrogram-data-from-labchart">Exporting spectrogram data from LabChart</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-spectrogram-data-in-python-on-the-datahub">Plotting Spectrogram data in Python (on the DataHub)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-notebook-to-plot-your-data">Open the Notebook to plot your data</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-your-eeg-data">Analyzing your EEG data</a></li>
 </ul>
 </li>
 </ul>

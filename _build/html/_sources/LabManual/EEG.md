@@ -215,52 +215,7 @@ Now you will use Spectral Analysis to examine the EEG you recorded.
 - Look at your Spectral Analysis from when the volunteer had their eyes closed. At what range do you have the greatest peak? What type of brain waves does the Spectral Analysis suggest is active?
 :::
 
----
+### Analyzing your EEG data
 
-### ★ Part III. Run your own experiment
-
-In the final portion of the lab, you will run your own EEG experiment. Choose two different conditions for your subject — e.g., listening to music (or different types of music), doing something cognitively intensive like math problems, or meditating/napping. Choose a brain wave (e.g., alpha, beta, or gamma) that you'd like to analyze, and use the Spectrum view to see whether it is different across conditions. You should conduct as many repeats as you have time for. Take notes about your methods — you'll need these for your lab report!
-
-**Note:** If you do not have time to run this on the first EEG day, you will have time during the subsequent lab period. At minimum, you should decide what you will do for this experiment.
-
-### ★ Analyzing your EEG data
-
-#### Exporting PSD data from LabChart
-
-The PSD chart in LabChart will give you the quantitative data you need for your lab report. For example, you can compare the power of alpha between eyes open and closed. You should do the same for your own experiment.
-
-1. In LabChart, with your data selected in Spectrum View, go to **File > Export.**
-2. Save your file as a **Spectrum PSD Text File**.
-3. You can import this txt file into Excel (or MATLAB), similar to the way you import raw recording data (see [this document](https://docs.google.com/document/d/1nscGwk4ZoLGoE1HhwHiOv8XimzUQ80RTLfwSNeMRO6E/edit) for a refresher).
-
-#### Exporting spectrogram data from LabChart
-
-![](images/eeg_display_settings.png)
-
-1. In LabChart 8, go to **Setup > Display Settings**. Make sure that "Always seconds" is checked (see example at right).
-2. With Spectrum view open in LabChart, select the data you'd like to export.
-3. Save your file as a **Spectrogram Text File**. Save your file with a name that ***does not*** have spaces.
-
-![](images/eeg_spectrogram_export.png)
-
-#### Plotting Spectrogram data in Python (on the DataHub)
-
-The following instructions will help you plot a spectrogram of your text file output from LabChart.
-
-**Update your code**
-
-1. Log on to the DataHub using this link to get the most recent version of our Utilities folder: <https://datahub.ucsd.edu/hub/user-redirect/git-sync?repo=https://github.com/BIPN145/Utilities>
-2. Open the container for BIPN 145.
-
-**Upload your data to the DataHub**
-
-1. In the Jupyter Dashboard, navigate into your BIPN145 folder.
-2. In the upper right-hand corner, choose the upload button (![](images/datahub_upload_button.png)) to find your exported .txt file and upload it.
-3. The file will show up on the top of your file list, with a blue upload button (![](images/datahub_blue_upload.png)). Click the button to upload.
-
-#### Open the Notebook to plot your data
-
-1. Find & open `plotSpectrogram.ipynb` in your BIPN145 folder.
-2. Change the file name in the first code block to your file.
-3. Work through the notebook to clean up the data and plot your file.
-4. Right-click on the image and save.
+1. Export 30 seconds of one closed trial and one open trial for your analysis. [See this page if you need a reminder].(https://bipn145.github.io/LabChart/ExportingLabChart.html)
+2. Using this notebook, you can generate plots from your EEG data: https://bipn145.github.io/Python/SpectralAnalysis.html 
