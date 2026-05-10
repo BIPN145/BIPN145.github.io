@@ -2,8 +2,6 @@
 
 Something terrible has happened in the lab. The flies you once knew, that were once perfectly organized and labeled, are now completely jumbled. You're pretty sure the flies are mutated, in one way or another. It's up to you to figure out what type of flies these are, based on three behavioral assays: a **proboscis extension reflex (PER) assay, an ethological survey, and a locomotion test**.
 
-![](images/drosophila_intro.png)
-
 Everyone will receive one batch of wildtype flies, and one batch of an experimental group. Ultimately, **you will present your findings to the class** (see Canvas for details) so that we can determine the phenotype of our mutant flies.
 
 | **Supplies** | **Solutions** |
@@ -188,54 +186,11 @@ First, we need to arrange the camera and petri dish so that you can get everythi
 
 ### Quantify your locomotor behavior
 
-Now that you have videos of your specimen, you need to quantify the locomotor behavior. We'll use a MATLAB program to do so.
+Now that you have videos of your specimen, you need to quantify the locomotor behavior. You can do so using this notebook, which will generate means and standard deviations for each video:
 
-#### Download the code we need
+https://bipn145.github.io/FlyTracking/ColabNotebook.html 
 
-1. Download the code for **fly_tracker** from GitHub: [https://github.com/ajuavinett/fly_tracker](https://github.com/ajuavinett/fly_tracker)
-2. Extract all of the contents of the zipped folder into your **local** Documents folder (*not* a folder on your username).
-3. Open MATLAB.
-4. On the top bar of MATLAB, find the "Set Path" button:
-
-   ![](images/matlab_setpath.png)
-
-5. In this window, click "Add with Subfolders."
-6. Navigate to the folder where you extracted fly_tracker. Hit **Save**.
-
-   **Note:** You might get an error about pathdef.m. Select **Yes** and save this file in your **local** Documents folder.
-
-#### Test the tracking for a sample video
-
-7. In the MATLAB window, type:
-
-   ```matlab
-   [mean_velocity SEM_velocity] = BIPN145_flytrack
-   ```
-
-   and press enter.
-
-8. Navigate to where your movie is and select it.
-9. In the next window, draw a rectangle (click and drag) around your entire petri dish.
-10. Double-click inside the rectangle to initiate tracking.
-11. Wait for the tracking to finish. A window will pop up that shows the trajectory of your fly and its velocity across time.
-
-    **Note:** If you'd like to edit these figures in any way, you can go to **Tools > Edit Plot.**
-
-#### Run your analysis for a group of flies
-
-Once you've tested your tracking & recorded all of your movies, you can run this script for **several movies** at a time (e.g., one group of flies). You should record videos for 3 WT flies and 3 mutant flies. Do this by re-doing steps 7–11 above, but **select all of the videos for one group of flies** in the window where you are asked to pick a movie. After you've done the analysis for your wildtype flies, run the `BIPN145_flytrack` script again with your mutant fly videos.
-
-The script outputs a variable called `mean_velocity`. This will show the mean velocity (in mm/s) for *each* of your videos. `SEM_velocity` is the standard error of the mean of the velocity for these videos.
-
-To generate a mean value for the video(s) you just tracked, type:
-
-```matlab
-mean(mean_velocity)
-```
-
-and press enter.
-
-Record these values in the table below (you'll ultimately want to plot these).
+Record those values in the table below (you'll ultimately want to plot these).
 
 **Table 2.** Comparison of mean velocities for control and mutant flies.
 

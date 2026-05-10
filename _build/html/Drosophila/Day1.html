@@ -193,6 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../FlyTracking/ColabNotebook.html">Fly Tracker (Colab)</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../LabManual/EEG.html">Measuring Alpha Wave Activity Using Electroencephalography</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools &amp; Data Analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -379,12 +380,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-iii-recording-locomotor-behavior">Test III. Recording locomotor behavior</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-camera">Set up your camera</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-flies-record">Set up your flies &amp; record</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-your-locomotor-behavior">Quantify your locomotor behavior</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-code-we-need">Download the code we need</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-tracking-for-a-sample-video">Test the tracking for a sample video</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-analysis-for-a-group-of-flies">Run your analysis for a group of flies</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-your-locomotor-behavior">Quantify your locomotor behavior</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
@@ -402,7 +398,6 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="day-1-the-case-of-the-mislabeled-fly-vials">
 <h1>Day 1: The Case of the Mislabeled Fly Vials<a class="headerlink" href="#day-1-the-case-of-the-mislabeled-fly-vials" title="Link to this heading">#</a></h1>
 <p>Something terrible has happened in the lab. The flies you once knew, that were once perfectly organized and labeled, are now completely jumbled. You’re pretty sure the flies are mutated, in one way or another. It’s up to you to figure out what type of flies these are, based on three behavioral assays: a <strong>proboscis extension reflex (PER) assay, an ethological survey, and a locomotion test</strong>.</p>
-<p><img alt="" src="../_images/drosophila_intro.png" /></p>
 <p>Everyone will receive one batch of wildtype flies, and one batch of an experimental group. Ultimately, <strong>you will present your findings to the class</strong> (see Canvas for details) so that we can determine the phenotype of our mutant flies.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -734,49 +729,9 @@ document.write(`
 </section>
 <section id="quantify-your-locomotor-behavior">
 <h3>Quantify your locomotor behavior<a class="headerlink" href="#quantify-your-locomotor-behavior" title="Link to this heading">#</a></h3>
-<p>Now that you have videos of your specimen, you need to quantify the locomotor behavior. We’ll use a MATLAB program to do so.</p>
-<section id="download-the-code-we-need">
-<h4>Download the code we need<a class="headerlink" href="#download-the-code-we-need" title="Link to this heading">#</a></h4>
-<ol class="arabic">
-<li><p>Download the code for <strong>fly_tracker</strong> from GitHub: <a class="github reference external" href="https://github.com/ajuavinett/fly_tracker">ajuavinett/fly_tracker</a></p></li>
-<li><p>Extract all of the contents of the zipped folder into your <strong>local</strong> Documents folder (<em>not</em> a folder on your username).</p></li>
-<li><p>Open MATLAB.</p></li>
-<li><p>On the top bar of MATLAB, find the “Set Path” button:</p>
-<p><img alt="" src="../_images/matlab_setpath.png" /></p>
-</li>
-<li><p>In this window, click “Add with Subfolders.”</p></li>
-<li><p>Navigate to the folder where you extracted fly_tracker. Hit <strong>Save</strong>.</p>
-<p><strong>Note:</strong> You might get an error about pathdef.m. Select <strong>Yes</strong> and save this file in your <strong>local</strong> Documents folder.</p>
-</li>
-</ol>
-</section>
-<section id="test-the-tracking-for-a-sample-video">
-<h4>Test the tracking for a sample video<a class="headerlink" href="#test-the-tracking-for-a-sample-video" title="Link to this heading">#</a></h4>
-<ol class="arabic" start="7">
-<li><p>In the MATLAB window, type:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mean_velocity</span><span class="w"> </span><span class="n">SEM_velocity</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">BIPN145_flytrack</span>
-</pre></div>
-</div>
-<p>and press enter.</p>
-</li>
-<li><p>Navigate to where your movie is and select it.</p></li>
-<li><p>In the next window, draw a rectangle (click and drag) around your entire petri dish.</p></li>
-<li><p>Double-click inside the rectangle to initiate tracking.</p></li>
-<li><p>Wait for the tracking to finish. A window will pop up that shows the trajectory of your fly and its velocity across time.</p>
-<p><strong>Note:</strong> If you’d like to edit these figures in any way, you can go to <strong>Tools &gt; Edit Plot.</strong></p>
-</li>
-</ol>
-</section>
-<section id="run-your-analysis-for-a-group-of-flies">
-<h4>Run your analysis for a group of flies<a class="headerlink" href="#run-your-analysis-for-a-group-of-flies" title="Link to this heading">#</a></h4>
-<p>Once you’ve tested your tracking &amp; recorded all of your movies, you can run this script for <strong>several movies</strong> at a time (e.g., one group of flies). You should record videos for 3 WT flies and 3 mutant flies. Do this by re-doing steps 7–11 above, but <strong>select all of the videos for one group of flies</strong> in the window where you are asked to pick a movie. After you’ve done the analysis for your wildtype flies, run the <code class="docutils literal notranslate"><span class="pre">BIPN145_flytrack</span></code> script again with your mutant fly videos.</p>
-<p>The script outputs a variable called <code class="docutils literal notranslate"><span class="pre">mean_velocity</span></code>. This will show the mean velocity (in mm/s) for <em>each</em> of your videos. <code class="docutils literal notranslate"><span class="pre">SEM_velocity</span></code> is the standard error of the mean of the velocity for these videos.</p>
-<p>To generate a mean value for the video(s) you just tracked, type:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">mean</span><span class="p">(</span><span class="n">mean_velocity</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>and press enter.</p>
-<p>Record these values in the table below (you’ll ultimately want to plot these).</p>
+<p>Now that you have videos of your specimen, you need to quantify the locomotor behavior. You can do so using this notebook, which will generate means and standard deviations for each video:</p>
+<p><a class="reference external" href="https://bipn145.github.io/FlyTracking/ColabNotebook.html">https://bipn145.github.io/FlyTracking/ColabNotebook.html</a></p>
+<p>Record those values in the table below (you’ll ultimately want to plot these).</p>
 <p><strong>Table 2.</strong> Comparison of mean velocities for control and mutant flies.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -797,7 +752,6 @@ document.write(`
 </tbody>
 </table>
 </div>
-</section>
 </section>
 </section>
 <section id="troubleshooting">
@@ -913,12 +867,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-iii-recording-locomotor-behavior">Test III. Recording locomotor behavior</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-camera">Set up your camera</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-flies-record">Set up your flies &amp; record</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-your-locomotor-behavior">Quantify your locomotor behavior</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-code-we-need">Download the code we need</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-tracking-for-a-sample-video">Test the tracking for a sample video</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run-your-analysis-for-a-group-of-flies">Run your analysis for a group of flies</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-your-locomotor-behavior">Quantify your locomotor behavior</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>

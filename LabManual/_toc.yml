@@ -11,3 +11,4 @@ chapters:
   - file: Drosophila/Day2
   - file: FlyTracking/Script
   - file: FlyTracking/ColabNotebook
+- file: EEG
