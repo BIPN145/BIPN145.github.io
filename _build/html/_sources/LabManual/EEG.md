@@ -182,31 +182,7 @@ Now you will use Spectral Analysis to examine the EEG you recorded.
 5. Alpha activity shows up in the Spectrogram as a band of color in the 8–12 Hz range. If you cannot see the alpha activity as a clear peak in the 8–12 Hz range, manually scale the horizontal and vertical axes. Note that Spectrogram displays all the recorded data and that the selection you have made is highlighted in a darker blue color.
 6. Make a data selection of several seconds from when the volunteer had their eyes ***open***. Select **Spectrum**. Note that in the PSD plot the peak in the alpha activity range of 8–12 Hz is small or absent, and in the Spectrogram the band of color in the alpha activity range of 8–12 Hz is weak or absent.
 7. In the Spectrogram, scale the horizontal axis so that all the data is visible. Note the presence and absence of the band of color in the alpha activity range of 8–12 Hz, which corresponds with the eyes shut and eyes open conditions.
-8. If you're happy with your spectrograms (e.g., you can clearly see alpha activity in closed conditions but not open conditions), you've completed the task for this lab. Save your data in a safe location (we'll deal with plotting it later).
-
----
-
-### Data Notebook
-
-#### Table 1. Alpha Waves with Eyes Open
-
-| | Amplitude (µV) |
-|---|---|
-| **Wave #1** | |
-| **Wave #2** | |
-| **Wave #3** | |
-| **Wave #4** | |
-| **Wave #5** | |
-
-#### Table 2. Alpha Waves with Eyes Shut
-
-| | Amplitude (µV) |
-|---|---|
-| **Wave #1** | |
-| **Wave #2** | |
-| **Wave #3** | |
-| **Wave #4** | |
-| **Wave #5** | |
+8. If you're happy with your spectrograms (e.g., you can clearly see alpha activity in closed conditions but not open conditions), you've completed the task for this lab. Save your data in a cloud location.
 
 :::{admonition} Questions for reflection
 :class: tip
@@ -217,5 +193,26 @@ Now you will use Spectral Analysis to examine the EEG you recorded.
 
 ### Analyzing your EEG data
 
-1. Export 30 seconds of one closed trial and one open trial for your analysis. [See this page if you need a reminder].(https://bipn145.github.io/LabChart/ExportingLabChart.html)
+1. Export 30 seconds of one closed trial and one open trial for your analysis. [See this page if you need a reminder](https://bipn145.github.io/LabChart/ExportingLabChart.html)
 2. Using this notebook, you can generate plots from your EEG data: https://bipn145.github.io/Python/SpectralAnalysis.html 
+
+#### Data Notebook
+
+**Table 1. Alpha Waves with Eyes Open**
+
+| | Amplitude (µV) |
+|---|---|
+| **Wave #1** | |
+| **Wave #2** | |
+| **Wave #3** | |
+| **Wave #4** | |
+| **Wave #5** | |
+
+**Table 2. Alpha Waves with Eyes Shut**
+| | Amplitude (µV) |
+|---|---|
+| **Wave #1** | |
+| **Wave #2** | |
+| **Wave #3** | |
+| **Wave #4** | |
+| **Wave #5** | |
