@@ -547,8 +547,7 @@ document.write(`
 <li><p><strong>Start</strong> recording. Add a <strong>comment</strong> “blinking,” and have the volunteer blink repeatedly. <strong>Stop</strong> recording after 10 seconds.</p></li>
 <li><p>Repeat step 3, this time, have the volunteer make eye movements. Add a <strong>comment</strong> “eye movements.” Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer’s head is still and only the eyes move.</p></li>
 <li><p>Repeat step 3, this time, have the volunteer make head movements. Add a <strong>comment</strong> “head movements.” Have the volunteer gently move his/her head in a repeated pattern.</p></li>
-<li><p>Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. True EEG signals rarely exceed these limits.</p></li>
-<li><p>Examine the entire data trace and <strong>Autoscale</strong>, if necessary. There may be some large signals outside the ±75 µV range. <strong>Such large signals are artifacts.</strong></p></li>
+<li><p>Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits. It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving. If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary.</p></li>
 <li><p><strong>Save your data</strong>, and open a new file with the same settings.</p></li>
 </ol>
 </section>
@@ -604,58 +603,62 @@ document.write(`
 <section id="analyzing-your-eeg-data">
 <h3>Analyzing your EEG data<a class="headerlink" href="#analyzing-your-eeg-data" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Export 30 seconds of one closed trial and one open trial for your analysis. <a class="reference external" href="https://bipn145.github.io/LabChart/ExportingLabChart.html">See this page if you need a reminder</a></p></li>
+<li><p>Export 30 seconds of one closed trial and one open trial for your analysis. <a class="reference external" href="https://bipn145.github.io/LabChart/ExportingLabChart.html">See this page if you need a reminder</a>.</p></li>
 <li><p>Using this notebook, you can generate plots from your EEG data: <a class="reference external" href="https://bipn145.github.io/Python/SpectralAnalysis.html">https://bipn145.github.io/Python/SpectralAnalysis.html</a></p></li>
 </ol>
 <section id="data-notebook">
 <h4>Data Notebook<a class="headerlink" href="#data-notebook" title="Link to this heading">#</a></h4>
-<p><strong>Table 1. Alpha Waves with Eyes Open</strong></p>
+<p><strong>Table 1. Alpha Waves with Eyes Open and Closed</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Amplitude (µV)</p></th>
+<th class="head"><p>Eyes Open Amplitude (µV)</p></th>
+<th class="head"><p>Eyes Closed Amplitude (µV)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>Wave #1</strong></p></td>
 <td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Wave #2</strong></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Wave #3</strong></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Wave #4</strong></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Wave #5</strong></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Table 2. Alpha Waves with Eyes Shut</strong></p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Amplitude (µV)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Wave #1</strong></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Wave #2</strong></p></td>
 <td><p></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Wave #3</strong></p></td>
+<td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Wave #4</strong></p></td>
 <td><p></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Wave #5</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wave #5</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wave #6</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wave #7</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wave #8</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wave #9</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wave #10</strong></p></td>
+<td><p></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
