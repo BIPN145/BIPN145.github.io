@@ -154,7 +154,7 @@ In this exercise, you will examine the effects of relaxation and eye movement on
 2. **Start** recording. Prepare a comment with "open"; do not enter it yet.
 3. Tell the volunteer to open both eyes. Immediately press Return/Enter to add the **comment**. Record with the volunteer's eyes open for 30 seconds. Do not stop recording.
 4. Prepare a comment with "shut." When the 30 seconds are complete, tell the volunteer to close both eyes. Immediately press Return/Enter to add the **comment**.
-5. Repeat steps 3 and 4 twice, to give you three sets of results. **Save your data**.
+5. Repeat steps 3 and 4 nine times to give you ten total repeats of each condition. **Save your data**.
 
 ![](images/eeg_eyes_shut_open.png)
 *EEG signal with eyes shut and open. Note alpha waves during eyes shut (left).*
