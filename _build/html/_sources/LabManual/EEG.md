@@ -143,9 +143,8 @@ In this exercise, you will learn to recognize some of the artifacts that can app
 3. **Start** recording. Add a **comment** "blinking," and have the volunteer blink repeatedly. **Stop** recording after 10 seconds.
 4. Repeat step 3, this time, have the volunteer make eye movements. Add a **comment** "eye movements." Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer's head is still and only the eyes move.
 5. Repeat step 3, this time, have the volunteer make head movements. Add a **comment** "head movements." Have the volunteer gently move his/her head in a repeated pattern.
-6. Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. True EEG signals rarely exceed these limits.
-7. Examine the entire data trace and **Autoscale**, if necessary. There may be some large signals outside the ±75 µV range. **Such large signals are artifacts.**
-8. **Save your data**, and open a new file with the same settings.
+6. Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits. It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving. If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary. 
+7. **Save your data**, and open a new file with the same settings.
 
 #### ★ Exercise 2: Alpha Waves in the EEG
 
@@ -193,26 +192,23 @@ Now you will use Spectral Analysis to examine the EEG you recorded.
 
 ### Analyzing your EEG data
 
-1. Export 30 seconds of one closed trial and one open trial for your analysis. [See this page if you need a reminder](https://bipn145.github.io/LabChart/ExportingLabChart.html)
+1. Export 30 seconds of one closed trial and one open trial for your analysis. [See this page if you need a reminder](https://bipn145.github.io/LabChart/ExportingLabChart.html).
 2. Using this notebook, you can generate plots from your EEG data: https://bipn145.github.io/Python/SpectralAnalysis.html 
 
 #### Data Notebook
 
-**Table 1. Alpha Waves with Eyes Open**
+**Table 1. Alpha Waves with Eyes Open and Closed**
 
-| | Amplitude (µV) |
-|---|---|
-| **Wave #1** | |
-| **Wave #2** | |
-| **Wave #3** | |
-| **Wave #4** | |
-| **Wave #5** | |
-
-**Table 2. Alpha Waves with Eyes Shut**
-| | Amplitude (µV) |
-|---|---|
-| **Wave #1** | |
-| **Wave #2** | |
-| **Wave #3** | |
-| **Wave #4** | |
-| **Wave #5** | |
+| | Eyes Open Amplitude (µV) | Eyes Closed Amplitude (µV) |
+|---|---|---|
+| **Wave #1** | | |
+| **Wave #2** | | |
+| **Wave #3** | | |
+| **Wave #4** | | |
+| **Wave #5** | | |
+| **Wave #5** | | |
+| **Wave #6** | | |
+| **Wave #7** | | |
+| **Wave #8** | | |
+| **Wave #9** | | |
+| **Wave #10** | | |
