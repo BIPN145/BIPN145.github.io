@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Course Information
+    chapters:
+      - file: Information/Syllabus_SS26.md
   - caption: Lab Manual
     chapters:
       - file: LabManual/Introduction.md
