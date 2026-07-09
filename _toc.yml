@@ -10,7 +10,7 @@ parts:
       - file: Information/Schedule_SS26.md
   - caption: Lab Manual
     chapters:
-      - file: LabManual/Introduction.md
+      #- file: LabManual/Introduction.md
       - file: LabManual/ModelingNeuralMembranes.md
       - file: LabManual/StringNervousSystems.md
       - file: LabManual/Earthworm.md
