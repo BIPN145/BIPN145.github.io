@@ -11,6 +11,15 @@ html, html[data-theme="light"], html[data-theme="dark"] {
     h1           { font-size: 18pt; margin-top: 8pt; }
     h2           { font-size: 14pt; margin-top: 6pt; }
     h3, h4       { font-size: 12pt; margin-top: 4pt; }
+
+    /* Start each top-level chapter (lab protocol) on its own page in the
+       combined Lab Manual PDF build. Only matches direct children of the
+       book's root section, so sub-pages within a protocol (e.g. Drosophila
+       Day 1/Day 2) stay on the same flow. */
+    article.bd-article > section > div.toctree-wrapper > span[id^="document-"] + section {
+        page-break-before: always;
+        break-before: page;
+    }
 }
 
 @page {
