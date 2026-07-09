@@ -2,7 +2,7 @@
 
 /* Table row hover highlight color */
 html, html[data-theme="light"], html[data-theme="dark"] {
-    --pst-color-table-row-hover-bg: #C69214;
+    --pst-color-table-row-hover-bg: #FFEE8C;
 }
 
 @media print {
