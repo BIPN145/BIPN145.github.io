@@ -30,7 +30,7 @@ parts:
           - file: LabChart/ImportingPython.ipynb
       - file: Python/Introduction
         sections:
-          - file: Python/Uploading.ipynb
+          - file: Python/Uploading.md
           - file: Python/JupyterNotebooks.ipynb
           - file: Python/PlotScatter.ipynb
           - file: Python/FitCurve.ipynb
