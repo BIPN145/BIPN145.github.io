@@ -5,6 +5,11 @@ chapters:
 - file: ModelingNeuralMembranes
 - file: StringNervousSystems
 - file: Earthworm
+- file: Leech/Introduction
+  sections:
+  - file: Leech/IntracellularLab
+  - file: Leech/RetziusRecording
+  - file: Leech/FillingRetziusCell
 - file: Drosophila/Introduction
   sections:
   - file: Drosophila/Day1

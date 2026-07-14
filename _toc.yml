@@ -14,6 +14,11 @@ parts:
       - file: LabManual/ModelingNeuralMembranes.md
       - file: LabManual/StringNervousSystems.md
       - file: LabManual/Earthworm.md
+      - file: Leech/Introduction.md
+        sections:
+          - file: Leech/IntracellularLab.md
+          - file: Leech/RetziusRecording.md
+          - file: Leech/FillingRetziusCell.md
       - file: Drosophila/Introduction.md
         sections:
           - file: Drosophila/Day1.md

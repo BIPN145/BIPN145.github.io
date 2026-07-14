@@ -183,6 +183,7 @@
 
 
 
+
 </ul>
 
     </div>
@@ -287,6 +288,12 @@ document.write(`
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-ModelingNeuralMembranes">Modeling Neural Membranes</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-StringNervousSystems">String Nervous Systems</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Earthworm">Earthworm Electrophysiology</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/Introduction">Leech Electrophysiology</a><ul class="visible nav section-nav flex-column">
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/IntracellularLab">Intracellular Lab</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/RetziusRecording">Retzius Recording</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/FillingRetziusCell">Filling the Retzius Cell</a></li>
+</ul>
+</li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="visible nav section-nav flex-column">
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day1">Day 1: The Case of the Mislabeled Fly Vials</a></li>
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day2">Day 2: The Case of the Missing Methods</a></li>
@@ -1650,6 +1657,731 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </ul>
 </section>
 </section>
+</section>
+<span id="document-Leech/Introduction"></span><section class="tex2jax_ignore mathjax_ignore" id="leech-electrophysiology">
+<h2>Leech Electrophysiology<a class="headerlink" href="#leech-electrophysiology" title="Link to this heading">#</a></h2>
+<section id="background-goals">
+<h3>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h3>
+<section id="leeches-as-a-model-for-neuroscience">
+<h4>Leeches as a model for neuroscience<a class="headerlink" href="#leeches-as-a-model-for-neuroscience" title="Link to this heading">#</a></h4>
+<p>It might seem strange, but leeches are fantastic models for neuroscience experiments. They have a rich, well-defined repertoire of behaviors and an easily accessible, stereotyped nervous system. Over the next few labs, we’ll record from the medicinal leech, <em>Hirudo medicinalis</em>, to determine some physiological and morphological properties of neurons.</p>
+<p><img alt="" src="_images/leech_body.png" /></p>
+</section>
+<section id="leech-nervous-systems">
+<h4>Leech nervous systems<a class="headerlink" href="#leech-nervous-systems" title="Link to this heading">#</a></h4>
+<p>Leeches are annelids (segmented worms), just like our earthworm friends. They have a ventral nerve cord containing a total of 32 ganglia: 4 fused head ganglia, 21 segmental body ganglia, and 7 fused tail ganglia. We’ll be recording from the body ganglia.</p>
+<p>Each ganglion has about 400 neurons in it, most of which are paired — in other words, most of them are connected to one other neuron. The ganglia are all connected via connectives that run the length of the leech. In addition, each segmental ganglion has lateral roots that reach out to the skin. The neurons in each ganglion are laid out in stereotypical positions, and have well-defined electrophysiological properties. We’ll be looking at the ganglion from the ventral side, where many neurons are accessible:</p>
+<p><img alt="" src="_images/ganglion_cell_map.png" />
+<em>Adapted from Macagno (1980), “Number and Distribution of Neurons in Leech Segmental Ganglia.”</em></p>
+</section>
+<section id="types-of-cells-in-the-leech">
+<h4>Types of cells in the leech<a class="headerlink" href="#types-of-cells-in-the-leech" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Rz (Retzius):</strong> the biggest cells of the leech ganglion, located in the middle of the ventral side of the ganglion. These cells often show a second component in their action potential due to the close electrical coupling with the other Rz cell. These cells do not overshoot.</p></li>
+<li><p><strong>Sensory neurons:</strong> Each of these neurons projects its axon from the ganglion to a particular territory of the skin, where they have specialized mechanoreceptors. Unlike the Rz cell, these sensory neurons have overshooting, very high amplitude action potentials.</p>
+<ul>
+<li><p><strong>T (touch):</strong> three of these in the anterolateral packets on each side of the ganglion. Typically a very short, relatively low amplitude waveform (compared to other sensory neurons).</p></li>
+<li><p><strong>P (pressure):</strong> two of these in each posterolateral packet.</p></li>
+<li><p><strong>N (nociception):</strong> two in each of the anterolateral packets. These cells have very long undershoots.</p></li>
+</ul>
+</li>
+<li><p><strong>AP (anterior pagoda):</strong> large cells near the center of the anterolateral packets.</p></li>
+<li><p><strong>AE (annulus erector):</strong> motor neurons to the AE muscles in the body wall; medium-sized cells in the posterior ventromedial packet.</p></li>
+<li><p><strong>S:</strong> an unpaired cell, unlike the cell types listed above, much smaller than the other neurons listed. Record from this neuron and you shall gain infinite respect from the Gods of leech neurobiology.</p></li>
+</ul>
+<p><img alt="" src="_images/ganglion_cell_waveforms.png" />
+<em>Adapted from Nicholls &amp; Baylor (1968), “Specific modalities and receptive fields of sensory neurons in the CNS of the leech.”</em></p>
+</section>
+<section id="about-the-microelectrode-amplifier">
+<h4>About the microelectrode &amp; amplifier<a class="headerlink" href="#about-the-microelectrode-amplifier" title="Link to this heading">#</a></h4>
+<p>Instead of using a wire, we’ll be recording from these cells with a glass pipette that has been pulled to have a very tiny and sharp tip and is filled with conductive fluid. These are typically called microelectrodes. Recording from nervous systems in this way was a huge leap forward in 1949 — before then, we weren’t able to record from inside of cells (Ling &amp; Gerard, 1949).</p>
+<p>Back in the day, physiologists would make these small pipettes by pulling the glass over a flame. Now, we’ve got a dedicated machine to pull pipettes, allowing us to reproduce many microelectrodes that are the same size.</p>
+<p>And about the size — these micropipettes are really small. This small cross-sectional area of the microelectrode greatly reduces the flow of current through the electrode. In other words, it has a really high resistance (often imprecisely termed “impedance” in electrophysiology circuits). This is the quality that allows us to record very tiny changes in voltage in our cells.</p>
+<p>This high resistance is necessary, but also brings up some other problems. With really high resistance across our electrode, membrane, and PowerLab, we would almost record no voltage from a 60 mV cell.</p>
+<p>So, for these labs, we’re using a different amplifier. Because the impedance of our microelectrodes is much higher than the electrodes we used for the earthworm, we need an amplifier that can “impedance match” the microelectrode with the PowerLab. It also means that the intracellular recording system must be shielded from electrical noise much more than the extracellular system.</p>
+<p>But with all this in place, you’ll get a chance to see some real action potentials from a strange, slightly terrifying creature.</p>
+<p><strong>In these labs you will:</strong></p>
+<ul class="simple">
+<li><p>Learn how to operate and calibrate an intracellular amplifier</p></li>
+<li><p>Record action potentials from Retzius cells, both with and without current injection</p></li>
+<li><p>Fill a single cell in the leech with a fluorescent dye to visualize its structure</p></li>
+</ul>
+</section>
+<section id="what-s-coming-up">
+<h4>What’s coming up<a class="headerlink" href="#what-s-coming-up" title="Link to this heading">#</a></h4>
+<p>This module spans <strong>three lab days</strong>:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="#document-Leech/IntracellularLab"><span class="std std-doc">Intracellular Lab</span></a></strong> — troubleshoot noise, check electrode resistance, and balance the bridge on the intracellular amplifier.</p></li>
+<li><p><strong><a class="reference internal" href="#document-Leech/RetziusRecording"><span class="std std-doc">Retzius Recording</span></a></strong> — find and record from a Retzius cell, both spontaneously and with current injection.</p></li>
+<li><p><strong><a class="reference internal" href="#document-Leech/FillingRetziusCell"><span class="std std-doc">Filling the Retzius Cell</span></a></strong> — fill a leech neuron with a fluorescent dye and image it under the microscope.</p></li>
+</ul>
+</section>
+<section id="resources">
+<h4>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.hhmi.org/biointeractive/neurophysiology-virtual-lab">HHMI Virtual Leech Lab</a></p></li>
+<li><p><a class="reference external" href="https://www.jove.com/video/50631/intracellular-recording-sensory-field-mapping-culturing-identified">JOVE Video: Intracellular Recording &amp; Sensory Field Mapping</a></p></li>
+</ul>
+</section>
+<section id="references">
+<h4>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Macagno, E.R. (1980) Number and distribution of neurons in leech segmental ganglia. <em>Journal of Comparative Neurology</em> 190(2): 283–302.</p></li>
+<li><p>Nicholls, J.G. &amp; Baylor, D.A. (1968) Specific modalities and receptive fields of sensory neurons in CNS of the leech. <em>Journal of Neurophysiology</em> 31(5): 740–756.</p></li>
+<li><p>Ling, G. &amp; Gerard, R.W. (1949) The normal membrane potential of frog sartorius fibers. <em>Journal of Cellular and Comparative Physiology</em> 34(3): 383–396.</p></li>
+</ul>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+<span id="document-Leech/IntracellularLab"></span><section class="tex2jax_ignore mathjax_ignore" id="intracellular-lab">
+<h3>Intracellular Lab<a class="headerlink" href="#intracellular-lab" title="Link to this heading">#</a></h3>
+<p>The goal of this first experiment is to troubleshoot the noise in your rig, learn how to check the electrode resistance, and balance the bridge on your amplifier. You’ll also get familiar with the microscope we’re using and finding tiny things in a dish.</p>
+<p>In subsequent labs, we’ll be recording from tiny cells in the leech ganglia, as well as filling these cells with a fluorescent dye. Those experiments will require that you can quickly identify and manipulate a microelectrode underneath the microscope in order to find your cell of choice. Time is of the essence here — we’re keeping cells alive in a dish, and they won’t last forever. Becoming proficient at these steps will save you time during the recording experiments, and therefore increase your likelihood of success.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Supplies</strong></p></th>
+<th class="head"><p><strong>Cables &amp; connectors</strong></p></th>
+<th class="head"><p><strong>Solutions</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Clear plastic holder for petri dish</p></td>
+<td><p>DIN8 plug to BNC Cable (MLAC25)</p></td>
+<td><p>3M KCl</p></td>
+</tr>
+<tr class="row-odd"><td><p>PowerLab 26T, connected to computer</p></td>
+<td><p>BNC Cable</p></td>
+<td><p>Saline</p></td>
+</tr>
+<tr class="row-even"><td><p>A-M Systems 3100 Intracellular amplifier &amp; silver head stage probe</p></td>
+<td><p>Banana plug cords (5)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Microelectrode holder (AM Systems #675440)</p></td>
+<td><p>Alligator clip adapters (5)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Microelectrode (BF100-58-10)</p></td>
+<td><p>Ground wire &amp; clay or wax</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Faraday Cage</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Metal baseplate &amp; foam pads</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Micromanipulator &amp; stand</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Stereomicroscope on boom stand</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Light source</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Syringe &amp; needle</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>4 cm diameter petri dish with saline</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>4 cm diameter petri dish with microbeads</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="i-tiny-beads-optics-manipulators">
+<h4>I. Tiny beads, optics, &amp; manipulators<a class="headerlink" href="#i-tiny-beads-optics-manipulators" title="Link to this heading">#</a></h4>
+<p>This first activity will prepare you for recording from a leech ganglion. The steps you take to set up your microscope, light source, and manipulator will be almost identical next week. You might have already used a microscope before, but it’s less likely that you’ve had to do something very precise while doing so!</p>
+<section id="determining-the-diameter-of-your-viewing-field">
+<h5>Determining the diameter of your viewing field<a class="headerlink" href="#determining-the-diameter-of-your-viewing-field" title="Link to this heading">#</a></h5>
+<ol class="arabic">
+<li><p>Compute the total magnification of your microscope at 1.8X by multiplying 1.8X times the objective magnification (typically 10x, check your oculars). Write this value in Table 1.</p></li>
+<li><p>Similarly, compute the total magnification for ~5X and 11X. Write these values in Table 1.</p></li>
+<li><p>Place the ruler underneath the microscope at 1.8X and look through the oculars. Determine the diameter of your viewing field and record this in Table 1.</p></li>
+<li><p>It’ll be tough to do the same at high magnification, so instead we can use this formula:</p>
+<blockquote>
+<div><p>high power field diameter = (low power field diameter × low power magnification) ÷ high power magnification</p>
+</div></blockquote>
+</li>
+<li><p>Using this equation, determine the diameter of the viewing field for 5x and 11x.</p></li>
+</ol>
+<p><strong>Table 1.</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Objective</p></th>
+<th class="head"><p>Total Magnification</p></th>
+<th class="head"><p>Diameter of viewing field (mm)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1.8x</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>5x</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>11x</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="setting-up-your-lights-and-microscope">
+<h5>Setting up your lights and microscope<a class="headerlink" href="#setting-up-your-lights-and-microscope" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>First, set your dish with microbeads into the clear acrylic holder. Be careful placing these into the holder — it’s designed to fit on the ledge inside.</p></li>
+<li><p>Arrange your lights so that they’re shining onto the dish.</p></li>
+<li><p>Bring the beads into focus at a low magnification (1.8–3x).</p></li>
+<li><p>Move to the highest magnification, and bring the beads into focus. Adjust your light source so that the beads are clearly visible.</p></li>
+<li><p>Use your calculated viewing field diameter to estimate the size of the smallest bead in your dish.</p></li>
+</ol>
+<p><strong>Given the diameter of your viewing field, what is your estimated diameter of the smallest microbead in your dish?</strong> ______________________</p>
+</section>
+<section id="using-your-manipulator">
+<h5>Using your manipulator<a class="headerlink" href="#using-your-manipulator" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Get a microelectrode from the front and use the syringe to fill it with KCl.</p></li>
+<li><p>Gently put the microelectrode onto the wire of the microelectrode holder and screw it in.</p></li>
+<li><p>Put the micropipette holder into the silver headstage by pushing the gold pin into the bottom.</p></li>
+<li><p>Make sure that your manipulator arm is at a right angle. Any angles that are not perpendicular will make it difficult to maneuver your micropipette.</p></li>
+<li><p>Move the manipulator base (you need to turn the magnetic switch to OFF) close to the dish so that the tip of the “electrode” is within 3 inches of your dish.</p></li>
+<li><p>Use the knobs on the manipulator to bring the tip of your pipette about ½ inch above your beads.</p></li>
+<li><p>Bring the focus above the dish so that the tip of the pipette is now in focus.</p></li>
+<li><p>Lower the focus, and bring the tip of the pipette into that field of view.</p></li>
+<li><p>Repeat this until the tip of the pipette is at the same focus as the glass beads.</p></li>
+<li><p>At a high magnification (11X), you should see the glass beads being repelled by the tip of the pipette, or be able to push them around.</p></li>
+<li><p>Once you have the tip of your pipette at the same focus as your beads, raise your electrode and remove the dish of beads.</p></li>
+</ol>
+<p><strong>Troubleshooting</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Observation</p></th>
+<th class="head"><p>Likely issue(s)</p></th>
+<th class="head"><p>Possible solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The view through the scope is blurry</p></td>
+<td><p>You’re out of focus</p></td>
+<td><p>Adjust the focus</p></td>
+</tr>
+<tr class="row-odd"><td><p>There are weird light artifacts and reflections that make it difficult to see</p></td>
+<td><p>The light is not set up well</p></td>
+<td><p>Change the angle, intensity, and distance of the light source. Try 1 light source vs. 2.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ii-preparing-your-recording-setup">
+<h4>II. Preparing your recording setup<a class="headerlink" href="#ii-preparing-your-recording-setup" title="Link to this heading">#</a></h4>
+<section id="setting-up-powerlab-the-amplifier">
+<h5>Setting up PowerLab &amp; the Amplifier<a class="headerlink" href="#setting-up-powerlab-the-amplifier" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Make sure that your PowerLab is off.</p></li>
+<li><p>Configure your PowerLab &amp; amplifier as in Figure 1:</p></li>
+</ol>
+<p><img alt="" src="_images/equipment_setup.png" />
+<em>Figure 1. Equipment setup.</em></p>
+<p>The amplifier settings should be as follows:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DC Offset knob</p></td>
+<td><p>Counterclockwise</p></td>
+</tr>
+<tr class="row-odd"><td><p>DC Offset (+/Off/−)</p></td>
+<td><p>Off</p></td>
+</tr>
+<tr class="row-even"><td><p>Transients</p></td>
+<td><p>Counterclockwise</p></td>
+</tr>
+<tr class="row-odd"><td><p>DC Balance</p></td>
+<td><p>Counterclockwise</p></td>
+</tr>
+<tr class="row-even"><td><p>Low Pass</p></td>
+<td><p>5 kHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ω TEST</p></td>
+<td><p>Off</p></td>
+</tr>
+<tr class="row-even"><td><p>Notch</p></td>
+<td><p>Off</p></td>
+</tr>
+<tr class="row-odd"><td><p>Capacity Compensation Knobs</p></td>
+<td><p>Fully counterclockwise</p></td>
+</tr>
+<tr class="row-even"><td><p>Current Injection</p></td>
+<td><p>Fully counterclockwise (zero) — <strong>VERY IMPORTANT!</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Current Injection Knob (Cont/Off/Momen)</p></td>
+<td><p>Off</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic" start="3">
+<li><p>Once everything is connected, turn on your PowerLab and the Amplifier.</p>
+<p><strong>Note:</strong> The AM 3100 amplifier needs to warm up for 5 minutes before doing any recording. You can proceed to set up your electrode though.</p>
+</li>
+</ol>
+</section>
+<section id="prepare-the-saline-manipulator-electrode-and-ground-wire">
+<h5>Prepare the saline, manipulator, electrode, and ground wire<a class="headerlink" href="#prepare-the-saline-manipulator-electrode-and-ground-wire" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Your manipulator and electrode should already be set up from Step I. However, if you broke your electrode during Step I, you should prepare a new one.</p></li>
+<li><p>Fill a small petri dish with saline and put it into the holder.</p></li>
+<li><p>Using the clay, position the ground wire so that it is in the saline but at the edge of your petri dish. Your ground wire should be plugged into “GND” on the amplifier. You may need to piggy-back it onto another banana plug cord to do so.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="iii-noise-resistance-and-balancing-the-bridge">
+<h4>III. Noise, resistance, and balancing the bridge<a class="headerlink" href="#iii-noise-resistance-and-balancing-the-bridge" title="Link to this heading">#</a></h4>
+<section id="check-for-noise-in-your-signal">
+<h5>Check for noise in your signal<a class="headerlink" href="#check-for-noise-in-your-signal" title="Link to this heading">#</a></h5>
+<p>First things first — with this recording configuration, we’ll probably pick up much more noise than we need to troubleshoot.</p>
+<ol class="arabic">
+<li><p>Maneuver the tip of the microelectrode into the saline.</p>
+<p><strong>Note:</strong> Be very careful while moving your microelectrode around! If you break the tip of it, you’ll need to get a new electrode.</p>
+</li>
+<li><p>Open LabChart with the Leech Settings file (<a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>).</p></li>
+<li><p>Open the Input Amplifier for your recording (“Action Potential”) channel.</p></li>
+<li><p>Change the zoom on your signal and the range (if necessary) so that your signal fills about ⅔ of the screen.</p></li>
+<li><p>Chances are you’ll see 60 Hz noise. In order to get rid of this, ground (one-by-one, watching to see how they change the signal) your: Faraday cage, metal plate, microscope, and light (clip on to the metal parts) to the ground pin on the back of the PowerLab. It will help to piggy-back banana plug cords.</p></li>
+<li><p>Once you’ve reduced your noise as much as possible, you can move on.</p>
+<p><strong>Note:</strong> As you’re moving things around your rig, make sure that your lights can reach your petri dish and that you can easily manipulate the electrode &amp; knobs on your amplifier.</p>
+</li>
+</ol>
+<p>For the next steps, you’ll need to use these knobs on your amplifier:</p>
+<p><img alt="" src="_images/amplifier_panel.png" /></p>
+</section>
+<section id="check-the-resistance-of-your-electrode">
+<h5>Check the resistance of your electrode<a class="headerlink" href="#check-the-resistance-of-your-electrode" title="Link to this heading">#</a></h5>
+<ol class="arabic">
+<li><p>With the Input Amplifier window open, note the voltage of the trace. It will likely not be exactly at zero. This is due to the slight differences in the potentials of the ground and recording electrodes, and will change when you change electrodes.</p></li>
+<li><p>Switch the DC OFFSET to positive (+). Using the DC OFFSET knob on the amplifier, position the tracing so that it is very close to 0 volts. You may need to set the switch next to DC OFFSET to negative (−) depending on what direction you need to move your signal.</p>
+<p><img alt="" src="_images/dc_offset_knob.png" /></p>
+<p><strong>Note:</strong> If the voltage is drifting wildly, make sure that your ground wire is in place in the saline and that everything is still grounded properly. Restarting LabChart &amp; turning on/off the PowerLab is also a good troubleshooting step.</p>
+</li>
+<li><p>With the tip of your electrode in the saline, press Start in LabChart. You should be viewing in Chart mode.</p></li>
+<li><p>Very quickly, turn on and off the Ω TEST on the Amplifier. This Ω TEST sends 10 nA of current into the electrode.</p></li>
+<li><p>Press Stop in LabChart.</p></li>
+<li><p>For the data you just recorded, autoscale the channel in time and voltage so that you can clearly see a square wave pulse.</p></li>
+<li><p>If your waveform is not square, turn the CAPACITY COMPENSATION knob on the amplifier slightly clockwise and repeat the Ω TEST. You can treat LabChart like an oscilloscope and let it run (press Start) while you do these tests.</p>
+<p><strong>Note:</strong> Do not turn the CAPACITY COMPENSATION knob too far — it will result in uncontrolled oscillations in your output. If you do this while recording from a cell, you will greatly damage the cell.</p>
+</li>
+<li><p>Once you’ve squared up your waveform, measure the height of this square wave in volts.</p></li>
+</ol>
+<p>Calculate the resistance of your electrode according to Ohm’s Law (V = IR). In the units we’re working with here, 1 MΩ = 1 mV / 1 nA. Since the Ω TEST sends 10 nA, with 1X gain a 10 mV shift in the output voltage corresponds to 1 MΩ resistance.</p>
+<p><strong>Electrode resistance = ______________________</strong></p>
+<p>The resistance of your electrode should be between 20–60 MΩ. If it’s too high (&gt;60 MΩ), it might be clogged. Use the Ringer button and try again. If it’s too low (&lt;20 MΩ), the tip of your electrode probably broke — get a new electrode.</p>
+</section>
+<section id="balancing-the-bridge-for-current-injection">
+<h5>Balancing the bridge for current injection<a class="headerlink" href="#balancing-the-bridge-for-current-injection" title="Link to this heading">#</a></h5>
+<p>We need to balance the bridge circuit of the amplifier if we want to inject current into a cell. The cell and the electrode each have their own capacitance and resistance. You dial out the resistance of your electrode before you impale the cell; otherwise your recording will reflect the voltage change across the electrode, instead of the actual voltage of the cell.</p>
+<ol class="arabic">
+<li><p>Set the CURRENT INJECTION (CONT-OFF-MOMEN) switch to CONT and the μA knob rotated fully counterclockwise.</p>
+<p><strong>Note:</strong> If this switch is not on CONT (continuous), no current will be injected.</p>
+</li>
+<li><p>Go to the Setup menu and select Stimulator. Set up the Stimulator to deliver a 10 mV (1 nA current) as a train of 100 pulses:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Start Delay</p></td>
+<td><p>0 seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>Repeats</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>Max Repeat Rate</p></td>
+<td><p>0.66</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pulse Height</p></td>
+<td><p>0.01 V (10 mV)</p></td>
+</tr>
+<tr class="row-even"><td><p>Pulse Width</p></td>
+<td><p>1 s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p>Set Channel 2 as your stimulus Marker Channel.</p></li>
+<li><p>Close the Stimulator dialog and open the Stimulator Panel. Start recording, and if necessary zero the electrode again using the DC OFFSET knob.</p></li>
+<li><p>Turn the stimulator on to inject a train of 1 nA of current pulses.</p></li>
+<li><p>Adjust the DC BALANCE knob as necessary to remove the electrode voltage drop from the output signal.</p></li>
+<li><p>There will still be “rabbit ears” or transients — these are large spikes when you turn the current on and off — but very little change in standing voltage:</p>
+<p><img alt="" src="_images/bridge_balance.png" />
+<em>Figure 2. Bridge balance traces.</em></p>
+</li>
+<li><p>Adjust the Current Compensation TRANSIENT controls to minimize transients occurring when the current is gated on and off. The left knob controls the slope of the transient, the right knob controls the peaks.</p></li>
+<li><p>Stop recording.</p></li>
+<li><p>Set the CURRENT INJECTION knob back to OFF.</p></li>
+<li><p>Save your data as “Leech electrode setup”. If you made any changes to the settings file (e.g., Channel names, range, etc.) you’ll also want to save it as a new settings file by going to File &gt; Save As LabChart Settings File. Save this in a safe, clouded place.</p></li>
+<li><p>Do not move any of the knobs or cords. You’ll need these to be in place for the next lab.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<span id="document-Leech/RetziusRecording"></span><section class="tex2jax_ignore mathjax_ignore" id="retzius-recording">
+<h3>Retzius Recording<a class="headerlink" href="#retzius-recording" title="Link to this heading">#</a></h3>
+<p>Now that you’re comfortable with the microscope, manipulator, and amplifier, it’s time to record from a real leech ganglion. In this lab, you’ll find and impale a Retzius cell, characterize its spontaneous firing, and inject current to see how it responds.</p>
+<section id="i-preparing-for-recording">
+<h4>I. Preparing for recording<a class="headerlink" href="#i-preparing-for-recording" title="Link to this heading">#</a></h4>
+<p>First, you need to fill and arrange your electrode, troubleshoot noise, and configure your amplifier in the same way that you did in the <a class="reference internal" href="#document-Leech/IntracellularLab"><span class="std std-doc">Intracellular Lab</span></a>.</p>
+<p>Once you’ve confirmed that your manipulator and recording equipment is ready to go, get a leech ganglion.</p>
+<ol class="arabic">
+<li><p>Maneuver your electrode into the saline bath. At the moment, there isn’t any need to get it close to the ganglion — as long as it’s in the saline, you can measure the resistance and troubleshoot noise.</p></li>
+<li><p>Make sure the peak-to-peak noise level of your recording is &lt; 5 mV. There shouldn’t be any obvious sinusoidal noise in your data. If there is, find the source and ground it.</p></li>
+<li><p>Test the resistance of the electrode (follow the steps from the previous lab):</p>
+<p><strong>Electrode resistance:</strong> ______________________</p>
+</li>
+<li><p>Balance the bridge — it shouldn’t be too far off since it should be balanced from the previous lab.</p></li>
+</ol>
+<section id="getting-your-leech-microelectrode-in-focus">
+<h5>Getting your leech &amp; microelectrode in focus<a class="headerlink" href="#getting-your-leech-microelectrode-in-focus" title="Link to this heading">#</a></h5>
+<p>Before we can do any recording, we need to ensure that your light is set up well so that you can see your ganglion.</p>
+<ol class="arabic">
+<li><p>Gently rest your petri dish in the plastic holder.</p></li>
+<li><p>Bring the leech ganglia into focus, and adjust your light and equipment positioning as necessary.</p></li>
+<li><p>When you can clearly see your ganglia, see if you can spot the two Retzius cells in the middle (Figure 3).</p>
+<p><img alt="" src="_images/ganglion_retzius_cells.png" />
+<em>Figure 3. Ventral view of leech ganglion.</em></p>
+<p><strong>Note:</strong> If you cannot see the two Retzius cells, it might be because your lighting needs to be adjusted, or because your ganglia is mistakenly set with the ventral side up.</p>
+</li>
+<li><p>Using the clay, position the ground wire so that it is in the saline but at the edge of your petri dish. Your ground wire should be plugged into “GND” on the amplifier.</p></li>
+</ol>
+</section>
+</section>
+<section id="ii-recording-from-a-retzius-cell">
+<h4>II. Recording from a Retzius cell<a class="headerlink" href="#ii-recording-from-a-retzius-cell" title="Link to this heading">#</a></h4>
+<section id="finding-and-impaling-a-retzius-cell">
+<h5>Finding and impaling a Retzius cell<a class="headerlink" href="#finding-and-impaling-a-retzius-cell" title="Link to this heading">#</a></h5>
+<ol class="arabic">
+<li><p>Slowly and carefully move the tip of your electrode down towards the ganglia, until it is very close to the Retzius cells.</p>
+<p><strong>Note:</strong> It helps to do this at medium magnification (5–8X) but in the end, you should be looking at your cells and electrode at the highest magnification possible (11X).</p>
+<p><strong>Note #2:</strong> The tip of your electrode will probably be very hard to see. You can move it slightly from side to side if you lose track of it. You may need to adjust your light source so that you can see both the ganglion and the tip of the electrode.</p>
+</li>
+<li><p>While hovering above the cell but before getting too close, check your resistance again. Be sure to also keep the recording voltage close to zero while you’re outside of the cell.</p></li>
+<li><p>Once you think you’re as close as possible to the cell, even dimpling the cell under the pressure from the electrode tip, start recording.</p></li>
+<li><p>Firmly tap the electrode to encourage it to enter the cell. While tapping, watch the recording screen.</p></li>
+<li><p>If you entered the cell, you should see your membrane potential rapidly drop to about −50 mV and stay there.</p>
+<p><strong>Note:</strong> If your membrane potential goes below −65 mV, you’re likely in a glia cell.</p>
+</li>
+<li><p>If all goes well, you should see your Retzius cell firing very clear spontaneous action potentials!</p></li>
+<li><p>If your first attempt is unsuccessful, slightly advance the electrode towards the cell and try again. If this doesn’t work, reposition the electrode to a different part of the cell and try again. Frequently check the resistance of your electrode to ensure that it is not broken or clogged.</p></li>
+</ol>
+<p>Once you have successfully impaled a Retzius cell, take note of the resting membrane potential of the cell:</p>
+<p><strong>Resting membrane potential:</strong> ______________________</p>
+<p><strong>Note:</strong> The resting membrane potential will change slightly over time. Your most accurate measurement will be from when you first pierce the cell.</p>
+<p>Also take note of the shape of this action potential. Does it overshoot (past zero)? Does it undershoot?</p>
+</section>
+<section id="recording-spontaneous-action-potentials">
+<h5>Recording spontaneous action potentials ★<a class="headerlink" href="#recording-spontaneous-action-potentials" title="Link to this heading">#</a></h5>
+<p>We’ll collect 10 different 10 second windows of spontaneous action potentials from your cell, in order to estimate the spontaneous firing rate and measure the action potential height, spike width, and after-hyperpolarization of your cell.</p>
+<p><strong>Note:</strong> You can also do this with the data you recorded directly after you impaled the cell. But having 10 separate windows will make it a bit easier to calculate the spontaneous firing rate.</p>
+<ol class="arabic simple">
+<li><p>Configure Scope View to collect data with a 10 second duration.</p></li>
+<li><p>Set repeats to 10, and press Start.</p></li>
+<li><p>Confirm that you have 10, 10 second recordings with spontaneous action potentials by looking through your pages.</p></li>
+</ol>
+<p>You will ultimately use this data to fill in Table 1, but don’t take the time to do this now. Move on to stimulating your Retzius cell while you have one.</p>
+</section>
+</section>
+<section id="iii-stimulating-the-retzius-cell">
+<h4>III. Stimulating the Retzius cell ★<a class="headerlink" href="#iii-stimulating-the-retzius-cell" title="Link to this heading">#</a></h4>
+<p>Once you have characterized the spontaneous activity of your cell, we can also inject current to see how the cell responds to inputs.</p>
+<ol class="arabic">
+<li><p>Set up your Stimulator as a pulse with the following parameters:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Delay</p></td>
+<td><p>5 ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max Repeat Rate</p></td>
+<td><p>0.5 Hz</p></td>
+</tr>
+<tr class="row-even"><td><p>Repeats</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Duration</p></td>
+<td><p>500 ms</p></td>
+</tr>
+<tr class="row-even"><td><p>Pulse Height</p></td>
+<td><p>10 mV (PowerLab will tell the amp to send 1 nA for each 10 mV)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p>Make sure that your CURRENT INJECTION toggles are on positive (+) and CONT.</p></li>
+<li><p>Configure Scope View in LabChart so that you can see one, 1 second sweep when a stimulus pulse is sent.</p></li>
+<li><p>Press Start to send current into your cell. Observe whether or not this elicits action potentials from the cell, and whether the cell adapts to the stimulus.</p></li>
+<li><p>Repeat the stimulation 10 times (or more, if it seems highly variable). You’ll need these repeats for your spike train metrics in your lab report.</p>
+<p><strong>Note:</strong> For this step, do not use averaging. Averaging will repeatedly send the same stimulus with only a short break. Give the cell a few seconds to recover in between stimuli.</p>
+</li>
+<li><p>Repeat the stimulation with the following current levels (with 10 repeats per current level): −0.5 nA, 1.5 nA, 2.0 nA. You’ll ultimately need to count the number of action potentials for each of these (you should have four different current levels total) for a figure in your lab report.</p></li>
+</ol>
+</section>
+<section id="sample-data-notebook-for-retzius-cell-recording">
+<h4>Sample data notebook for Retzius cell recording<a class="headerlink" href="#sample-data-notebook-for-retzius-cell-recording" title="Link to this heading">#</a></h4>
+<p><strong>Table 1.</strong> Spontaneous action potential characteristics.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action Potential</p></th>
+<th class="head"><p>AP Height</p></th>
+<th class="head"><p>AP Spike Width</p></th>
+<th class="head"><p>After-hyperpolarization Amplitude</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Mean (or Median)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SD (or IQR)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Note: This table is a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.</em></p>
+<p><strong>Table 2.</strong> Characteristics of spike trains elicited by a 500 ms, 1 nA square wave stimulus.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Trial</p></th>
+<th class="head"><p>Latency to spike</p></th>
+<th class="head"><p>First interspike interval (ISI)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Mean (or Median)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SD (or IQR)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Note: This table is a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.</em></p>
+</section>
+</section>
+<span id="document-Leech/FillingRetziusCell"></span><section class="tex2jax_ignore mathjax_ignore" id="filling-the-retzius-cell">
+<h3>Filling the Retzius Cell<a class="headerlink" href="#filling-the-retzius-cell" title="Link to this heading">#</a></h3>
+<p>In this final leech lab, you’ll fill the cell you recorded from with a fluorescent dye so that you can visualize its structure under the microscope.</p>
+<section id="additional-supplies">
+<h4>Additional Supplies<a class="headerlink" href="#additional-supplies" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Glass slide &amp; coverslip</p></li>
+<li><p>Glycerol</p></li>
+<li><p>Bulb &amp; glass pipette</p></li>
+<li><p>Small vial of either Alexa Fluor 488 (green) or Alexa Fluor 594 (red) conjugated dextran dye (5% in dH₂0)</p></li>
+<li><p>Phosphate buffer (PB)</p></li>
+<li><p>2% Paraformaldehyde (PFA) in 0.1 M PB</p></li>
+<li><p>Waste containers (2)</p></li>
+</ul>
+</section>
+<section id="i-preparing-your-experiment">
+<h4>I. Preparing Your Experiment<a class="headerlink" href="#i-preparing-your-experiment" title="Link to this heading">#</a></h4>
+<p>First, we have to prepare an electrode that has dye in the tip. These dyes diffuse well through cells and will latch onto proteins when we fix the ganglia.</p>
+<p>We’ll use one of two dyes: an Alexa Fluor 488 dextran (green), or an Alexa Fluor 594 dextran (red). If you have time today, you are welcome to fill more than one cell to compare two neurons.</p>
+<ol class="arabic simple">
+<li><p>You’ll be given a small vial with dye in it.</p></li>
+<li><p>Place your glass pipette with the back end (the non-sharp end) into the small vial. The dye will be wicked along the fiber inside of the pipette.</p></li>
+<li><p>Hold the pipette there for ~1–3 minutes until you can see traces of dye in the sharp tip of the glass pipette.</p></li>
+<li><p>Remove the pipette from the small vial of dye.</p></li>
+<li><p>Using the syringe, fill the pipette with 3M KCl solution. Leave a small gap (3–5 mm) of air between the dye and the KCl.</p></li>
+<li><p>Carefully attach your glass pipette into the gold microelectrode holder by sliding the metal wire into the pipette, pressing firmly, and screwing it tight. Make sure that the pipette is not going to fall out of the holder.</p></li>
+<li><p>Attach the pipette holder to the head stage.</p></li>
+</ol>
+<section id="checking-the-resistance-of-your-electrode">
+<h5>Checking the resistance of your electrode<a class="headerlink" href="#checking-the-resistance-of-your-electrode" title="Link to this heading">#</a></h5>
+<p><strong>Note:</strong> For this experiment, you need to check the resistance, but you do not need to balance the bridge.</p>
+<p>Measure the resistance of your electrode by following the steps in the previous lab protocol. In the same way, use Ohm’s law to calculate the electrode resistance. The resistance with the dye will be higher than before, but should still not be higher than 100 MΩ.</p>
+<p><strong>Electrode resistance = ______________________</strong></p>
+<p>If your resistance is higher than 100 MΩ, try the Ringer button to clear it. If this doesn’t work after several tries, get a new pipette.</p>
+</section>
+<section id="configuring-labchart-stimulus-pulses">
+<h5>Configuring LabChart &amp; stimulus pulses<a class="headerlink" href="#configuring-labchart-stimulus-pulses" title="Link to this heading">#</a></h5>
+<p><strong>Note:</strong> While someone in your group is configuring the stimulus pulses, another group member should move onto Part II: Impaling a neuron.</p>
+<p>Your configuration for LabChart will look similar to our leech recording session. Before we impale a cell, we’ll also configure our pulses to look like this:</p>
+<p><img alt="" src="_images/dye_stimulus_waveform.png" /></p>
+<p>LabChart will tell the amplifier to send 1 nA for each 10 mV of stimulus given. Calculate the stimulator voltage we need for 1 and 3 nA and record above.</p>
+<ol class="arabic">
+<li><p>Open a new experiment in LabChart with the Leech Experiment settings.</p></li>
+<li><p>Open the Stimulator window (Setup &gt; Stimulator).</p></li>
+<li><p>Change the wave type to “Double Pulse” setting in the Stimulator.</p></li>
+<li><p>Set the parameters of your stimulus using the diagram below:</p>
+<p><img alt="" src="_images/stimulator_double_pulse.png" /></p>
+<p><strong>Hint:</strong> The waveform above is one positive pulse immediately followed by a negative pulse. You may need to change the possible range of these parameters before you can modify them to your needs.</p>
+<p><strong>Note:</strong> Change the Pulse Width of the second stimulus based on the diagram above. You can click on “Customize” to reassure yourself that you’ve configured the stimulus correctly.</p>
+</li>
+<li><p>Close the window when you’re done.</p></li>
+</ol>
+<section id="optional-step-directly-monitor-your-stimulus-waveform">
+<h6>Optional step: Directly monitor your stimulus waveform<a class="headerlink" href="#optional-step-directly-monitor-your-stimulus-waveform" title="Link to this heading">#</a></h6>
+<p>To confirm that you’ve configured your stimulus correctly, you might want to actually monitor the stimulus waveform. But if you’re running low on time, you should skip this step.</p>
+<ol class="arabic simple">
+<li><p>Unplug the EXTERNAL input to the amplifier and plug it into PowerLab Input 2 (using the DIN8 to BNC adapter). This will allow us to directly monitor the stimulus.</p></li>
+<li><p>Change to Scope view, and change the Duration to 1 s.</p></li>
+<li><p>Press Start and observe the shape of your waveform on your Stimulator channel (Channel 2). You may want to remove the Stimulus Marker from this channel if it’s impeding your ability to see the waveform.</p></li>
+<li><p>Plug the External cord back in. It should be as in the Setup diagram, with PowerLab Output (+) going into the EXTERNAL input on the amplifier.</p></li>
+<li><p>Return to Chart view.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="ii-impaling-a-neuron-filling-your-cell-1-hour">
+<h4>II. Impaling a neuron &amp; filling your cell (1 hour)<a class="headerlink" href="#ii-impaling-a-neuron-filling-your-cell-1-hour" title="Link to this heading">#</a></h4>
+<section id="impaling-a-neuron">
+<h5>Impaling a neuron<a class="headerlink" href="#impaling-a-neuron" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Impale a neuron of your choice, just as you did in the <a class="reference internal" href="#document-Leech/RetziusRecording"><span class="std std-doc">Retzius Recording</span></a> experiment. You should try to target the cell you recorded from previously.</p></li>
+<li><p>Briefly confirm its identity electrophysiologically. In other words, observe its firing rate and the shape of the action potential. If you’re still not sure, inject current as we did in the recording experiment.</p></li>
+</ol>
+</section>
+<section id="filling-your-cell">
+<h5>Filling your cell<a class="headerlink" href="#filling-your-cell" title="Link to this heading">#</a></h5>
+<p>Eject dye from the electrode by passing pulses of current into the cell. You should have the pulses configured already.</p>
+<ol class="arabic">
+<li><p>Make sure that the Current knob on your amplifier is on CONT (Continuous).</p></li>
+<li><p>Turn the Stimulator ON and press Start.</p></li>
+<li><p>Carefully turn off your surgery lights to avoid bleaching the dye.</p></li>
+<li><p>Monitor the resistance of your electrode by observing the voltage change during each current pulse.</p></li>
+<li><p>If the electrode starts to clog, your resistance (and change in voltage) will go up dramatically.</p></li>
+<li><p>If your electrode looks like it’s clogging, slowly remove it from the cell. Test the resistance (see above if you need a refresher on how to do this). Press the Ringer button on the amplifier, and test again. Repeat as necessary. If this does not solve your problem, make a new electrode (if time allows).</p></li>
+<li><p>Every five minutes, turn off the Stimulator. Observe the resting potential of the cell to ensure that you’re still in it. Turn on your lights and check to see if you can see any dye in the cell.</p>
+<p><strong>Note:</strong> Even if you can’t see dye, that doesn’t mean it’s not there! We’ll know for sure after fixing the ganglion and looking under the filters with the microscope.</p>
+</li>
+<li><p>Once you’re content (or there is one hour left in class), slowly remove the electrode from the cell and stop recording in LabChart.</p></li>
+<li><p>Save your data, just in case your dye fill doesn’t work and you’d like to look at the data to figure out why.</p></li>
+</ol>
+</section>
+</section>
+<section id="iii-fixing-mounting-your-cells-1-hour">
+<h4>III. Fixing &amp; mounting your cells (1 hour)<a class="headerlink" href="#iii-fixing-mounting-your-cells-1-hour" title="Link to this heading">#</a></h4>
+<section id="fixing-rinsing">
+<h5>Fixing &amp; rinsing<a class="headerlink" href="#fixing-rinsing" title="Link to this heading">#</a></h5>
+<p>In order to view the filled cells, we first need to fix them with paraformaldehyde.</p>
+<ol class="arabic simple">
+<li><p>Notify the IA or Instructor that you’re ready. They’ll perform the following steps under a fume hood:</p></li>
+<li><p>Pour the leech saline from the dish into the buffer waste container.</p></li>
+<li><p>Under the hood, add 2% PFA in 0.1 M phosphate buffer to your dish. Be sure that the ganglion is well submerged in the PFA. Fix for at least 20 minutes, while covered.</p></li>
+<li><p>Dump the PFA from the plate into the PFA waste container.</p></li>
+<li><p>Rinse your ganglia with phosphate buffer (PB) and dump into the buffer waste container.</p></li>
+<li><p>Fill the dish with phosphate buffer and leave, covered, for 10 minutes.</p></li>
+<li><p>When you get the ganglia back from the IA, dump out the PB, and repeat the PB wash twice (for a total of three 10 minute rinses).</p></li>
+</ol>
+</section>
+<section id="mounting-on-a-slide">
+<h5>Mounting on a slide ★<a class="headerlink" href="#mounting-on-a-slide" title="Link to this heading">#</a></h5>
+<p>Once your leech ganglion is fixed and washed, it’s ready to be prepared on a microscope slide for imaging.</p>
+<ol class="arabic simple">
+<li><p>Get a glass microscope slide and a coverslip.</p></li>
+<li><p>Under the microscope, carefully remove the pins (4) from the leech ganglion dish with a pair of forceps. Leave the pins in the dish. The leech ganglion should be resting there.</p></li>
+<li><p>Using the dropper, put a tiny drop of glycerol solution on the slide.</p></li>
+<li><p>Gently pick up your ganglion and place it in the glycerol.</p></li>
+<li><p>Add a coverslip. If you’ve never coverslipped before, ask for a demo.</p></li>
+<li><p>Bring your slide to the fluorescent microscope to see what it looks like and take a photo!</p></li>
+</ol>
+</section>
+</section>
+<section id="troubleshooting">
+<h4>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Observation</p></th>
+<th class="head"><p>Likely issue(s)</p></th>
+<th class="head"><p>Possible solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I can’t see any cells, or they’re really out of focus</p></td>
+<td><p>Your lights are not properly aligned, or your focus needs to be adjusted</p></td>
+<td><p>Try different light angles &amp; configurations (1 light, or 2 lights), adjust the focus</p></td>
+</tr>
+<tr class="row-odd"><td><p>My signal is really noisy</p></td>
+<td><p>Something needs to be grounded</p></td>
+<td><p>Make sure that everything metal within your Faraday cage is grounded, and that the Faraday cage itself is grounded</p></td>
+</tr>
+<tr class="row-even"><td><p>My resistance is really, really low (&lt; 15 MΩ)</p></td>
+<td><p>The tip of the electrode broke</p></td>
+<td><p>Replace your electrode with a new one</p></td>
+</tr>
+<tr class="row-odd"><td><p>My electrode resistance is too high (&gt; 30 MΩ)</p></td>
+<td><p>It is clogged</p></td>
+<td><p>Remove the electrode from the cell (if applicable) and press the “Ringer” button to try to unclog it. If this doesn’t help after several tries, get a new electrode.</p></td>
+</tr>
+<tr class="row-even"><td><p>There are no longer any spikes</p></td>
+<td><p>Your electrode is no longer in the cell; your cell is very quiet; your cell died</p></td>
+<td><p>Tap your electrode holder or gently move it closer to re-insert it into the cell</p></td>
+</tr>
+<tr class="row-odd"><td><p>When I inject voltage, the reading says “Out of Range”</p></td>
+<td><p>Your resistance is really high</p></td>
+<td><p>(If applicable) remove the electrode from the cell, and use the Ringer button. Test your resistance again.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</div>
 </section>
 <span id="document-Drosophila/Introduction"></span><section class="tex2jax_ignore mathjax_ignore" id="drosophila-behavior-optogenetics">
 <h2><em>Drosophila</em> Behavior &amp; Optogenetics<a class="headerlink" href="#drosophila-behavior-optogenetics" title="Link to this heading">#</a></h2>
@@ -3505,6 +4237,12 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-ModelingNeuralMembranes">Modeling Neural Membranes</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-StringNervousSystems">String Nervous Systems</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Earthworm">Earthworm Electrophysiology</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/Introduction">Leech Electrophysiology</a><ul class="visible nav section-nav flex-column">
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/IntracellularLab">Intracellular Lab</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/RetziusRecording">Retzius Recording</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/FillingRetziusCell">Filling the Retzius Cell</a></li>
+</ul>
+</li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="visible nav section-nav flex-column">
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day1">Day 1: The Case of the Mislabeled Fly Vials</a></li>
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila/Day2">Day 2: The Case of the Missing Methods</a></li>
