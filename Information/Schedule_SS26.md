@@ -23,11 +23,11 @@
 | Tue Aug 25 | Electroencephalography (EEG) | **Lab #8:** EEG | **DUE** *Drosophila* optogenetics methods & results write-up |
 | Wed Aug 26 | EEG analysis | **Lab #8:** EEG (analysis) | **DUE (Wed @ 11:59 pm)** *Drosophila* Presentation slides |
 | Thu Aug 27 | *Drosophila* Presentations | Allen Mouse Brain Connectivity | **DUE** EEG Quiz & Results; **Submit** Final Project Equipment & Needs [[Spreadsheet](https://docs.google.com/spreadsheets/d/14kze5zsIq6UysFW7IlHqHWGzS2Hxy9YtRlLK-9Qoq3s/edit?usp=sharing)] |
-| Fri Aug 28 | Visualizing the nervous system; mapping neural circuits & two-photon calcium imaging | Visual perception in a mouse (Allen Observatory) | **DUE** Allen Connectivity Lab |
+| Fri Aug 28 | Visualizing the nervous system; mapping neural circuits & two-photon calcium imaging | Visual perception in a mouse | **DUE** Allen Connectivity Lab |
 | **Week 5** |  |  |  |
 | Tue Sep 1 | Careers in neuroscience | **Work on final projects** | **DUE** Allen Observatory Lab |
 | Wed Sep 2 | Review for Exam #2 | **Work on final projects** |  |
-| Thu Sep 3 | Final project workshop / open Q&A | **Work on final projects** |  |
-| Fri Sep 4 | Final project presentations | Final project presentations *(in MALK B90)* |  |
+| Thu Sep 3 | Exam #2 | **Work on final projects** |  |
+| Fri Sep 4 | Final project work time, Q&A | **Work on final projects** |  |
 | **Finals** |  |  |  |
-| Sat Sep 5 | **Exam #2** — 11:30a–2:29p, MALK B90 | — | **DUE** Final project lab reports |
+| Sat Sep 5 | **Final Project Presentations** — 11:30a–2:29p, MALK B90 | — |  |
