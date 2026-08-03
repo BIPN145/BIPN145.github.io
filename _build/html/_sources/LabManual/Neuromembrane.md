@@ -1,4 +1,4 @@
-#  Neuromembrane
+# Neuromembrane
 
 :::{admonition} About Neuromembrane
 :class: seealso, dropdown
