@@ -2,7 +2,10 @@ format: jb-book
 root: Cover
 chapters:
 - file: Introduction
-- file: ModelingNeuralMembranes
+- file: ModelingIntroduction
+  sections:
+  - file: Neuromembrane
+  - file: RCcircuits
 - file: StringNervousSystems
 - file: Earthworm
 - file: Leech/Introduction
