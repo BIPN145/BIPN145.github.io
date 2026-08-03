@@ -11,7 +11,10 @@ parts:
   - caption: Lab Manual
     chapters:
       #- file: LabManual/Introduction.md
-      - file: LabManual/ModelingNeuralMembranes.md
+      - file: LabManual/ModelingIntroduction.md
+        sections:
+          - file: LabManual/Neuromembrane.md
+          - file: LabManual/RCcircuits.md
       - file: LabManual/StringNervousSystems.md
       - file: LabManual/Earthworm.md
       - file: Leech/Introduction.md

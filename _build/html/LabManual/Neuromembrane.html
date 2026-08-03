@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Retzius Recording &#8212; BIPN 145 Lab Digital Manual</title>
+    <title>Neuromembrane &#8212; BIPN 145 Lab Digital Manual</title>
   
   
   
@@ -58,11 +58,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Leech/RetziusRecording';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'LabManual/Neuromembrane';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Filling the Retzius Cell" href="FillingRetziusCell.html" />
-    <link rel="prev" title="Intracellular Lab" href="IntracellularLab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +123,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -186,13 +186,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../Information/Schedule_SS26.html">Course schedule for SSII</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab Manual</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../LabManual/StringNervousSystems.html">String Nervous Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../LabManual/Earthworm.html">Earthworm Electrophysiology</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Leech Electrophysiology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntracellularLab.html">Intracellular Lab</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Retzius Recording</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FillingRetziusCell.html">Filling the Retzius Cell</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="StringNervousSystems.html">String Nervous Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Earthworm.html">Earthworm Electrophysiology</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Leech/Introduction.html">Leech Electrophysiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Leech/IntracellularLab.html">Intracellular Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Leech/RetziusRecording.html">Retzius Recording</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Leech/FillingRetziusCell.html">Filling the Retzius Cell</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Drosophila/Introduction.html"><em>Drosophila</em> Behavior &amp; Optogenetics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -202,7 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../FlyTracking/ColabNotebook.html">Fly Tracker (Colab)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../LabManual/EEG.html">Measuring Alpha Wave Activity Using EEG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EEG.html">Measuring Alpha Wave Activity Using EEG</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools &amp; Data Analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -283,7 +283,7 @@
       
       
       
-      <li><a href="../_sources/Leech/RetziusRecording.md" target="_blank"
+      <li><a href="../_sources/LabManual/Neuromembrane.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Retzius Recording</h1>
+    <h1>Neuromembrane</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,17 +377,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparing-for-recording">I. Preparing for recording</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-your-leech-microelectrode-in-focus">Getting your leech &amp; microelectrode in focus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-resting-membrane-potential">Part I: Resting membrane potential</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol">Protocol</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recording-from-a-retzius-cell">II. Recording from a Retzius cell</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-impaling-a-retzius-cell">Finding and impaling a Retzius cell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-spontaneous-action-potentials">Recording spontaneous action potentials ★</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-stimulating-the-retzius-cell">III. Stimulating the Retzius cell ★</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-data-notebook-for-retzius-cell-recording">Sample data notebook for Retzius cell recording</a></li>
 </ul>
             </nav>
         </div>
@@ -399,176 +392,284 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="retzius-recording">
-<h1>Retzius Recording<a class="headerlink" href="#retzius-recording" title="Link to this heading">#</a></h1>
-<p>Now that you’re comfortable with the microscope, manipulator, and amplifier, it’s time to record from a real leech ganglion. In this lab, you’ll find and impale a Retzius cell, characterize its spontaneous firing, and inject current to see how it responds.</p>
-<section id="i-preparing-for-recording">
-<h2>I. Preparing for recording<a class="headerlink" href="#i-preparing-for-recording" title="Link to this heading">#</a></h2>
-<p>First, you need to fill and arrange your electrode, troubleshoot noise, and configure your amplifier in the same way that you did in the <a class="reference internal" href="IntracellularLab.html"><span class="std std-doc">Intracellular Lab</span></a>.</p>
-<p>Once you’ve confirmed that your manipulator and recording equipment is ready to go, get a leech ganglion.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="neuromembrane">
+<h1>Neuromembrane<a class="headerlink" href="#neuromembrane" title="Link to this heading">#</a></h1>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">About Neuromembrane</p>
+<p><strong>Neuromembrane</strong> was made by a team of University of Alberta researchers and a company known as Atmist. Many thanks to Christelle Sabatier, Michael Wright, and Declan Ali for sharing similar lesson plans. Their ideas are integrated here.</p>
+</div>
+<section id="part-i-resting-membrane-potential">
+<h2>Part I: Resting membrane potential<a class="headerlink" href="#part-i-resting-membrane-potential" title="Link to this heading">#</a></h2>
+<p>First, we’ll explore the properties of the membrane that lead to a resting membrane potential. By the end of this part, you will be able to:</p>
+<ul class="simple">
+<li><p>Explain how a negative resting membrane potential is maintained</p></li>
+<li><p>Identify the factors that determine and maintain resting membrane potential</p></li>
+<li><p>Use the Goldman-Hodgkin-Katz to calculate the membrane potential given the concentrations and permeabilities of K+ and Na+</p></li>
+<li><p>Generate simulation data to illustrate the dependence of the resting membrane potential on K+</p></li>
+</ul>
+<section id="protocol">
+<h3>Protocol<a class="headerlink" href="#protocol" title="Link to this heading">#</a></h3>
 <ol class="arabic">
-<li><p>Maneuver your electrode into the saline bath. At the moment, there isn’t any need to get it close to the ganglion — as long as it’s in the saline, you can measure the resistance and troubleshoot noise.</p></li>
-<li><p>Make sure the peak-to-peak noise level of your recording is &lt; 5 mV. There shouldn’t be any obvious sinusoidal noise in your data. If there is, find the source and ground it.</p></li>
-<li><p>Test the resistance of the electrode (follow the steps from the previous lab):</p>
-<p><strong>Electrode resistance:</strong> ______________________</p>
+<li><p>Go to <a class="reference external" href="https://neuromembrane.biology.ualberta.ca/">https://neuromembrane.biology.ualberta.ca/</a> and click “Continue to App.”</p></li>
+<li><p>To open the resting membrane potential simulation, click on the top left to open a menu of stimulations. Choose “Resting Potential Simulation.”</p>
+<p>On the right hand side, you’ll see a membrane. The area below the membrane is the inside of the cell. The area above the membrane is the outside of the cell.</p>
 </li>
-<li><p>Balance the bridge — it shouldn’t be too far off since it should be balanced from the previous lab.</p></li>
+<li><p>This simulation will open by default without any leak channels or pumps. Let’s first add a couple of leak channels to the membrane and observe what happens. Click the plus sign next to “LEAK CHANNELS” to add a Na+ and K+ channel to the membrane.</p></li>
 </ol>
-<section id="getting-your-leech-microelectrode-in-focus">
-<h3>Getting your leech &amp; microelectrode in focus<a class="headerlink" href="#getting-your-leech-microelectrode-in-focus" title="Link to this heading">#</a></h3>
-<p>Before we can do any recording, we need to ensure that your light is set up well so that you can see your ganglion.</p>
-<ol class="arabic">
-<li><p>Gently rest your petri dish in the plastic holder.</p></li>
-<li><p>Bring the leech ganglia into focus, and adjust your light and equipment positioning as necessary.</p></li>
-<li><p>When you can clearly see your ganglia, see if you can spot the two Retzius cells in the middle (Figure 3).</p>
-<p><img alt="" src="../_images/ganglion_retzius_cells.png" />
-<em>Figure 3. Ventral view of leech ganglion.</em></p>
-<p><strong>Note:</strong> If you cannot see the two Retzius cells, it might be because your lighting needs to be adjusted, or because your ganglia is mistakenly set with the ventral side up.</p>
-</li>
-<li><p>Using the clay, position the ground wire so that it is in the saline but at the edge of your petri dish. Your ground wire should be plugged into “GND” on the amplifier.</p></li>
+<p>These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 5:100 (Na:K). Note also that the concentration settings are also set for you — at first, there is equal [Na+] and [K+] inside and outside of the membrane.</p>
+<ol class="arabic simple" start="4">
+<li><p>First, we’ll observe what happens when we have more K+ permeability, but equal ion concentrations. Click on “CREATE SIMULATION” to open the stimulation page. <strong>Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.</strong></p></li>
+<li><p>To run Simulation #1, click the play button. You can also change the speed so that it will run faster. <strong>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.</strong></p></li>
+<li><p>Go back to the Settings page by choosing “Back to settings” in the simulation play menu.</p></li>
+<li><p>In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.
+Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
+<li><p>Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. <strong>Before running Simulation #2, write your 1-2 sentence prediction in Table 1.</strong></p></li>
+<li><p>Run Simulation #2 and observe what happens to the membrane potential. <strong>Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.</strong> For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).</p></li>
+<li><p>Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values to reflect more biological values across the membrane. <strong>Write your prediction for Simulation #3 in the table.</strong></p></li>
+<li><p>Run the simulation again and observe what happens to the membrane potential.</p></li>
 </ol>
-</section>
-</section>
-<section id="ii-recording-from-a-retzius-cell">
-<h2>II. Recording from a Retzius cell<a class="headerlink" href="#ii-recording-from-a-retzius-cell" title="Link to this heading">#</a></h2>
-<section id="finding-and-impaling-a-retzius-cell">
-<h3>Finding and impaling a Retzius cell<a class="headerlink" href="#finding-and-impaling-a-retzius-cell" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Slowly and carefully move the tip of your electrode down towards the ganglia, until it is very close to the Retzius cells.</p>
-<p><strong>Note:</strong> It helps to do this at medium magnification (5–8X) but in the end, you should be looking at your cells and electrode at the highest magnification possible (11X).</p>
-<p><strong>Note #2:</strong> The tip of your electrode will probably be very hard to see. You can move it slightly from side to side if you lose track of it. You may need to adjust your light source so that you can see both the ganglion and the tip of the electrode.</p>
-</li>
-<li><p>While hovering above the cell but before getting too close, check your resistance again. Be sure to also keep the recording voltage close to zero while you’re outside of the cell.</p></li>
-<li><p>Once you think you’re as close as possible to the cell, even dimpling the cell under the pressure from the electrode tip, start recording.</p></li>
-<li><p>Firmly tap the electrode to encourage it to enter the cell. While tapping, watch the recording screen.</p></li>
-<li><p>If you entered the cell, you should see your membrane potential rapidly drop to about −50 mV and stay there.</p>
-<p><strong>Note:</strong> If your membrane potential goes below −65 mV, you’re likely in a glia cell.</p>
-</li>
-<li><p>If all goes well, you should see your Retzius cell firing very clear spontaneous action potentials!</p></li>
-<li><p>If your first attempt is unsuccessful, slightly advance the electrode towards the cell and try again. If this doesn’t work, reposition the electrode to a different part of the cell and try again. Frequently check the resistance of your electrode to ensure that it is not broken or clogged.</p></li>
+<div class="tip admonition">
+<p class="admonition-title">Log your predictions</p>
+<p>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in a table formatted to one like Table 1, below. Here is a <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing">Google Spreadsheet Template</a>.</p>
+</div>
+<p><strong>Table 1. Simulation predictions &amp; observations</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sim #</p></th>
+<th class="head"><p>Types of Channels</p></th>
+<th class="head"><p>[Ion]</p></th>
+<th class="head"><p>PNa/K</p></th>
+<th class="head"><p>Prediction</p></th>
+<th class="head"><p>Observation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td><p>Leak channels only</p></td>
+<td><p>All 50 mM</p></td>
+<td><p>5 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
+<td><p>All 50 mM</p></td>
+<td><p>5 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
+<td><p>Na+ high outside; K+ high inside</p></td>
+<td><p>5 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
+<td><p>Na+ high outside; K+ high inside</p></td>
+<td><p>100 Na+; 5 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td><p>Leak channels &amp; Na+/K+ pump</p></td>
+<td><p>Na+ high outside; K+ high inside</p></td>
+<td><p>100 Na+; 100 K+</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? <strong>Answer Q1 on the quiz. Report your answer in mV.</strong></p></li>
 </ol>
-<p>Once you have successfully impaled a Retzius cell, take note of the resting membrane potential of the cell:</p>
-<p><strong>Resting membrane potential:</strong> ______________________</p>
-<p><strong>Note:</strong> The resting membrane potential will change slightly over time. Your most accurate measurement will be from when you first pierce the cell.</p>
-<p>Also take note of the shape of this action potential. Does it overshoot (past zero)? Does it undershoot?</p>
-</section>
-<section id="recording-spontaneous-action-potentials">
-<h3>Recording spontaneous action potentials ★<a class="headerlink" href="#recording-spontaneous-action-potentials" title="Link to this heading">#</a></h3>
-<p>We’ll collect 10 different 10 second windows of spontaneous action potentials from your cell, in order to estimate the spontaneous firing rate and measure the action potential height, spike width, and after-hyperpolarization of your cell.</p>
-<p><strong>Note:</strong> You can also do this with the data you recorded directly after you impaled the cell. But having 10 separate windows will make it a bit easier to calculate the spontaneous firing rate.</p>
+<p><strong>Here are a few hints to help you:</strong></p>
+<ul class="simple">
+<li><p>P is relative permeability; other constants can be found on the lecture slides.</p></li>
+<li><p>To simplify, you may determine a constant for the first portion of the equation (RT/F) and use that for future calculations.</p></li>
+<li><p>You can use “Insert &gt; Equation” in Google Docs or Microsoft Word to show your work, or simply jot it on paper, take a picture, and paste it here.</p></li>
+<li><p>Google search has a built-in scientific calculator! You can bring it up by typing any formula into the search bar. For example, type <code class="docutils literal notranslate"><span class="pre">=5*150</span></code> into Google Search.</p></li>
+</ul>
+<div class="attention admonition">
+<p class="admonition-title">Q1. Calculation of GHK</p>
+<p>Using the GHK equation for Na⁺ and K⁺ only, calculate the voltage across the membrane for simulation #3 and show your work. Does this match the voltage in the simulation? Report your answer in mV.</p>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Finally, let’s check to see how much ion permeability matters. Go back to the settings page and reverse the Na+ and K+ permeabilities.</p></li>
+<li><p>Write your prediction for Simulation #4 in Table 1.</p></li>
+<li><p>Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. <strong>Answer Q2 on the quiz. Report your answer in mV.</strong></p></li>
+</ol>
+<div class="attention admonition">
+<p class="admonition-title">Q2.</p>
+<p>With the high permeability to Na⁺ and low permeability to K⁺, what is the resting membrane potential? Report your value in mV out to one decimal point.</p>
+</div>
+<ol class="arabic simple" start="16">
+<li><p>On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.</p></li>
+<li><p>Run the simulation to see what happens, record your observations, and respond to the question below. <strong>Answer Q3 on the quiz.</strong></p></li>
+</ol>
+<div class="attention admonition">
+<p class="admonition-title">Q3.</p>
+<p>Which of these simulations best models a typical neural membrane?</p>
+</div>
+<ol class="arabic simple" start="18">
+<li><p>Next, we’ll check to see whether or not the membrane potential depends on [K+]out. Reset the permeabilities and ion concentrations to the default values.</p></li>
+<li><p>Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage.</p></li>
+</ol>
+<div class="admonition-q4 admonition">
+<p class="admonition-title">Q4</p>
+<p>Complete Table 2 and then answer Q4 on the quiz. <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing">You can use the Table 2 tab on the Google Spreadsheet template</a>.</p>
+</div>
+<p><strong>Table 2. Dependence of Vrest on [K+]out</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>[K+]out (mM)</p></th>
+<th class="head text-center"><p>Vrest (mV)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>10</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>20</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>50</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>200</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="20">
+<li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components.</p></li>
+</ol>
+<div class="attention admonition">
+<p class="admonition-title">Q5.</p>
+<p>In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you. Once you’re done, answer Q5 on the quiz.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>What it models</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>I_Na</strong></p></td>
+<td><p>sodium current across the membrane</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>g_Na</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>E_Na</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>I_K</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>g_K</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>E_K</strong></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<h2 class="rubric" id="part-ii-passive-membrane-simulation">Part II: Passive membrane simulation</h2>
+<p>In this part, you’ll set up a simulation that models one portion of an axon or dendrite. By the end of this part, you will be able to:</p>
+<ul class="simple">
+<li><p>Describe how voltage passively spreads through an axon or dendrite</p></li>
+<li><p>Understand length and time constants</p></li>
+<li><p>Determine how the passive spread of voltage is affected by diameter and membrane capacitance</p></li>
+</ul>
+<h3 class="rubric" id="id1">Protocol</h3>
 <ol class="arabic simple">
-<li><p>Configure Scope View to collect data with a 10 second duration.</p></li>
-<li><p>Set repeats to 10, and press Start.</p></li>
-<li><p>Confirm that you have 10, 10 second recordings with spontaneous action potentials by looking through your pages.</p></li>
+<li><p>Go to  <a class="reference external" href="https://neuromembrane.biology.ualberta.ca/">https://neuromembrane.biology.ualberta.ca/</a> (if you’re not already there) and open up the “Passive Membrane Simulation” (or Cable Theory Simulation)  in the menu in the top left corner.</p></li>
+<li><p>Add an external recording electrode that is two length constants () away from your stimulating electrode by clicking the <strong>+</strong> button and changing the value after the second recording site. <strong>Answer Q6 on the quiz.</strong></p></li>
 </ol>
-<p>You will ultimately use this data to fill in Table 1, but don’t take the time to do this now. Move on to stimulating your Retzius cell while you have one.</p>
-</section>
-</section>
-<section id="iii-stimulating-the-retzius-cell">
-<h2>III. Stimulating the Retzius cell ★<a class="headerlink" href="#iii-stimulating-the-retzius-cell" title="Link to this heading">#</a></h2>
-<p>Once you have characterized the spontaneous activity of your cell, we can also inject current to see how the cell responds to inputs.</p>
-<ol class="arabic">
-<li><p>Set up your Stimulator as a pulse with the following parameters:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Delay</p></td>
-<td><p>5 ms</p></td>
-</tr>
-<tr class="row-odd"><td><p>Max Repeat Rate</p></td>
-<td><p>0.5 Hz</p></td>
-</tr>
-<tr class="row-even"><td><p>Repeats</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>Duration</p></td>
-<td><p>500 ms</p></td>
-</tr>
-<tr class="row-even"><td><p>Pulse Height</p></td>
-<td><p>10 mV (PowerLab will tell the amp to send 1 nA for each 10 mV)</p></td>
-</tr>
-</tbody>
-</table>
+<div class="attention admonition">
+<p class="admonition-title">Q6.</p>
+<p>Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences.</p>
 </div>
-</li>
-<li><p>Make sure that your CURRENT INJECTION toggles are on positive (+) and CONT.</p></li>
-<li><p>Configure Scope View in LabChart so that you can see one, 1 second sweep when a stimulus pulse is sent.</p></li>
-<li><p>Press Start to send current into your cell. Observe whether or not this elicits action potentials from the cell, and whether the cell adapts to the stimulus.</p></li>
-<li><p>Repeat the stimulation 10 times (or more, if it seems highly variable). You’ll need these repeats for your spike train metrics in your lab report.</p>
-<p><strong>Note:</strong> For this step, do not use averaging. Averaging will repeatedly send the same stimulus with only a short break. Give the cell a few seconds to recover in between stimuli.</p>
-</li>
-<li><p>Repeat the stimulation with the following current levels (with 10 repeats per current level): −0.5 nA, 1.5 nA, 2.0 nA. You’ll ultimately need to count the number of action potentials for each of these (you should have four different current levels total) for a figure in your lab report.</p></li>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. <strong>Answer Q7 on the quiz.</strong></p></li>
 </ol>
+<div class="tip admonition">
+<p class="admonition-title">Q7.</p>
+<p>Describe what this circuit diagram is showing us. Be sure to define each of the different components (r_m, r_i, c_m).</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Re-set the cable settings and click on “CREATE SIMULATION” to run our first iteration of this passive current injection. The current will be injected starting at 10 ms, and will be injected for 30 ms total. Observe the top plot to fill out row one in Table 3. For your “observations,” take a close look at the Voltage vs. Time plot.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Reflection</p>
+<p>Why is our current injection this shape when recorded across the membrane?</p>
+</div>
+<p><strong>Table 3. Current injection results</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sim #</p></th>
+<th class="head text-center"><p>Diameter</p></th>
+<th class="head text-center"><p>Cm</p></th>
+<th class="head"><p>Peak voltage at 2</p></th>
+<th class="head"><p>Distance to 2 electrode</p></th>
+<th class="head"><p>Voltage at 0 electrode &#64; 28 ms</p></th>
+<th class="head"><p>Voltage at 2 electrode &#64; 28 ms</p></th>
+<th class="head"><p>Observations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>5 µm</p></td>
+<td class="text-center"><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>2 µm</p></td>
+<td class="text-center"><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>2 µm</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The dorsal root ganglion axon of a giant blue whale has a diameter of ~2 µm. In the CABLE SETTINGS on the left, change the diameter of the simulated axon to model this axon.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Reflection</p>
+<p>With this smaller diameter of 2 µm, do other parameters of the membrane (bottom of the CABLE SETTINGS window) change? If so, why?</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Run the simulation with the smaller diameter and observe the Voltage vs Time plot again. Hint: you can use the Autoscale button (![][image2]) if the trace goes off the plot. Fill out Table 3 for this 2 µm cable simulation.</p></li>
+<li><p>Double the capacitance of the membrane, from 1 to 2 μF/cm2. Describe what happens to the time constant and the resulting voltage over time plot with more capacitance in Table 3.</p></li>
+</ol>
+<p>Optional: Later in the course, you may want to use the Neuromembrane simulator to model the action potential. There is a <a class="reference external" href="https://docs.google.com/document/d/14yS7gj4IyZvIWO3KI5tqYkXIkytr7Y8ES7v4SbK9quM/edit?tab=t.0#heading=h.z78xt7uiejq">protocol here</a>.</p>
 </section>
-<section id="sample-data-notebook-for-retzius-cell-recording">
-<h2>Sample data notebook for Retzius cell recording<a class="headerlink" href="#sample-data-notebook-for-retzius-cell-recording" title="Link to this heading">#</a></h2>
-<p><strong>Table 1.</strong> Spontaneous action potential characteristics.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Action Potential</p></th>
-<th class="head"><p>AP Height</p></th>
-<th class="head"><p>AP Spike Width</p></th>
-<th class="head"><p>After-hyperpolarization Amplitude</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>…</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Mean (or Median)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>SD (or IQR)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><em>Note: This table is a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.</em></p>
-<p><strong>Table 2.</strong> Characteristics of spike trains elicited by a 500 ms, 1 nA square wave stimulus.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Trial</p></th>
-<th class="head"><p>Latency to spike</p></th>
-<th class="head"><p>First interspike interval (ISI)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>…</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Mean (or Median)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>SD (or IQR)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><em>Note: This table is a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.</em></p>
 </section>
 </section>
 
@@ -585,7 +686,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Leech"
+            path: "./LabManual"
         },
         predefinedOutput: true
     }
@@ -602,24 +703,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="IntracellularLab.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Intracellular Lab</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="FillingRetziusCell.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Filling the Retzius Cell</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -636,17 +719,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparing-for-recording">I. Preparing for recording</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-your-leech-microelectrode-in-focus">Getting your leech &amp; microelectrode in focus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-resting-membrane-potential">Part I: Resting membrane potential</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol">Protocol</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recording-from-a-retzius-cell">II. Recording from a Retzius cell</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-impaling-a-retzius-cell">Finding and impaling a Retzius cell</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-spontaneous-action-potentials">Recording spontaneous action potentials ★</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-stimulating-the-retzius-cell">III. Stimulating the Retzius cell ★</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-data-notebook-for-retzius-cell-recording">Sample data notebook for Retzius cell recording</a></li>
 </ul>
   </nav></div>
 
