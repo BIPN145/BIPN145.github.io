@@ -44,19 +44,6 @@ Kirchhoff’s laws state two relatively intuitive facts:
 ## Modeling capacitance
 Capacitors are defined by two conducting substances separated by a non-conducting substance in the middle. Capacitors accumulate electric charge on the insulator. The accumulated charge creates an electric field between the conductors and stores electrical energy. Salty fluids that make up the intra- and extracellular solutions of the cell are conductive, the lipid bilayer is not. Therefore, the neural membrane acts as a capacitor. 
 
-When one conducting region of the capacitor accumulates a charge, an electric field is created, which pushes the charge off of the next conducting region. This phenomenon only lasts a short amount of time, producing a brief current which is expressed as:
-
-:::{admonition} Capacitor Current
-:class: note
-**I = C dV/dt**
-
-| Symbol | Meaning |
-|---|---|
-| I | current (amperes) |
-| C | capacitance (farads) |
-| dV/dt | rate of voltage change with time |
-:::
-
 To summarize and add a couple useful symbols:
 
 ![Table of circuit components, their symbols, a sample current step, the resulting voltage response, and the governing equation for resistors and capacitors](images/circuit_component_symbols.png)
@@ -90,4 +77,4 @@ Lastly, these types of circuits are really useful for designing neuroscience exp
 
 This video will explain how to complete the activities in our lab on a breadboard:
 
-<iframe width="560" height="315" src="https://youtu.be/qPSuzXQk2Qs?si=0AF59k4ZYzvzrwhT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qPSuzXQk2Qs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
