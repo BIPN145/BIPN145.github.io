@@ -608,6 +608,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <div class="attention admonition">
 <p class="admonition-title">Q5.</p>
 <p>In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you. Once you’re done, answer Q5 on the quiz.</p>
+</div>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Component</p></th>
@@ -636,15 +637,19 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </tbody>
 </table>
 </div>
+</section>
+</section>
 <hr class="docutils" />
-<h2 class="rubric" id="part-ii-passive-membrane-simulation">Part II: Passive membrane simulation</h2>
+<section id="part-ii-passive-membrane-simulation">
+<h4>Part II: Passive membrane simulation<a class="headerlink" href="#part-ii-passive-membrane-simulation" title="Link to this heading">#</a></h4>
 <p>In this part, you’ll set up a simulation that models one portion of an axon or dendrite. By the end of this part, you will be able to:</p>
 <ul class="simple">
 <li><p>Describe how voltage passively spreads through an axon or dendrite</p></li>
 <li><p>Understand length and time constants</p></li>
 <li><p>Determine how the passive spread of voltage is affected by diameter and membrane capacitance</p></li>
 </ul>
-<h3 class="rubric" id="id1">Protocol</h3>
+<section id="id1">
+<h5>Protocol<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
 <ol class="arabic simple">
 <li><p>Go to  <a class="reference external" href="https://neuromembrane.biology.ualberta.ca/">https://neuromembrane.biology.ualberta.ca/</a> (if you’re not already there) and open up the “Passive Membrane Simulation” (or Cable Theory Simulation)  in the menu in the top left corner.</p></li>
 <li><p>Add an external recording electrode that is two length constants () away from your stimulating electrode by clicking the <strong>+</strong> button and changing the value after the second recording site. <strong>Answer Q6 on the quiz.</strong></p></li>
@@ -653,11 +658,10 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <p class="admonition-title">Q6.</p>
 <p>Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences.</p>
 </div>
-</div>
 <ol class="arabic simple" start="3">
 <li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. <strong>Answer Q7 on the quiz.</strong></p></li>
 </ol>
-<div class="tip admonition">
+<div class="attention admonition">
 <p class="admonition-title">Q7.</p>
 <p>Describe what this circuit diagram is showing us. Be sure to define each of the different components (r_m, r_i, c_m).</p>
 </div>
@@ -923,8 +927,8 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </section>
 </section>
 <hr class="docutils" />
-<section id="lab-protocol">
-<h3>Lab Protocol<a class="headerlink" href="#lab-protocol" title="Link to this heading">#</a></h3>
+<section id="protocol">
+<h3>Protocol<a class="headerlink" href="#protocol" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Supplies</strong></p></th>
@@ -968,9 +972,8 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </tbody>
 </table>
 </div>
-</section>
 <section id="i-setting-up-labchart-8">
-<h3>I. Setting up LabChart 8<a class="headerlink" href="#i-setting-up-labchart-8" title="Link to this heading">#</a></h3>
+<h4>I. Setting up LabChart 8<a class="headerlink" href="#i-setting-up-labchart-8" title="Link to this heading">#</a></h4>
 <p>LabChart 8 is the software we’ll be using to record electrophysiology data. Before performing our experiment, we need to set up LabChart to <strong>acquire</strong> and <strong>display</strong> the data as we want.</p>
 <ol class="arabic">
 <li><p>Turn on the PowerLab 26T.</p></li>
@@ -994,7 +997,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </ol>
 </section>
 <section id="ii-finding-sources-of-electrical-noise">
-<h3>II. Finding sources of electrical noise<a class="headerlink" href="#ii-finding-sources-of-electrical-noise" title="Link to this heading">#</a></h3>
+<h4>II. Finding sources of electrical noise<a class="headerlink" href="#ii-finding-sources-of-electrical-noise" title="Link to this heading">#</a></h4>
 <p>One of the biggest issues in electrophysiology is noise from overhead lights and other electronics in the room. It’ll help to get an understanding of where noise in your rig is coming from.</p>
 <ol class="arabic">
 <li><p>Connect a DIN8-BNC adapter and a double 3-way BNC adapter to <strong>Input 2</strong> of the PowerLab. Plug in a red banana cable to the positive (red) side of the connector.</p></li>
@@ -1022,7 +1025,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </div>
 </section>
 <section id="iii-recording-stimulator-outputs">
-<h3>III. Recording stimulator outputs<a class="headerlink" href="#iii-recording-stimulator-outputs" title="Link to this heading">#</a></h3>
+<h4>III. Recording stimulator outputs<a class="headerlink" href="#iii-recording-stimulator-outputs" title="Link to this heading">#</a></h4>
 <p>We’ll use our PowerLab as a stimulator that can send voltage pulses into our specimen. We can change the timing, shape, amplitude, and repetition of these stimuli via the Stimulator window in LabChart. We’ll directly record these stimuli by sending the output of the PowerLab into an input.</p>
 <ol class="arabic">
 <li><p>Change your view to <strong>Scope view</strong>, which looks like the sweeps of an oscilloscope. The advantage of Scope View is that it allows the overlay and averaging of your data.</p></li>
@@ -1071,10 +1074,10 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </section>
 <hr class="docutils" />
 <section id="iv-recording-the-stimulus-artifact">
-<h3>IV. Recording the stimulus artifact<a class="headerlink" href="#iv-recording-the-stimulus-artifact" title="Link to this heading">#</a></h3>
+<h4>IV. Recording the stimulus artifact<a class="headerlink" href="#iv-recording-the-stimulus-artifact" title="Link to this heading">#</a></h4>
 <p>Lastly, we’ll add an amplifier (the BioAmp) to our circuit, and use this to record from a string soaked in saline. The string doesn’t have a nervous system, but we’ll add some voltage with our stimulator and observe the change in voltage from another point on the string.</p>
 <section id="set-up-your-string-stimulation-experiment">
-<h4>Set up your string stimulation experiment<a class="headerlink" href="#set-up-your-string-stimulation-experiment" title="Link to this heading">#</a></h4>
+<h5>Set up your string stimulation experiment<a class="headerlink" href="#set-up-your-string-stimulation-experiment" title="Link to this heading">#</a></h5>
 <p>Your setup for the string stimulation will look like this:</p>
 <p><img alt="String stimulation setup diagram" src="_images/powerlab_front.png" /></p>
 <ol class="arabic">
@@ -1107,7 +1110,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </ol>
 </section>
 <section id="stimulate-your-string">
-<h4>Stimulate your string!<a class="headerlink" href="#stimulate-your-string" title="Link to this heading">#</a></h4>
+<h5>Stimulate your string!<a class="headerlink" href="#stimulate-your-string" title="Link to this heading">#</a></h5>
 <a class="reference internal image-reference" href="_images/string_electrodes.png"><img alt="_images/string_electrodes.png" class="align-center" src="_images/string_electrodes.png" style="width: 150px;" />
 </a>
 <ol class="arabic">
@@ -1142,7 +1145,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </ol>
 </section>
 <section id="save-your-file-export-your-data">
-<h4>Save your file &amp; export your data<a class="headerlink" href="#save-your-file-export-your-data" title="Link to this heading">#</a></h4>
+<h5>Save your file &amp; export your data<a class="headerlink" href="#save-your-file-export-your-data" title="Link to this heading">#</a></h5>
 <p>LabChart buffers files to disk in case of a power failure or computer crash, but it’s wise to save work frequently. Saving files in LabChart is the same as saving any file on your personal computer.</p>
 <p>Please backup your LabChart data files to the Google Drive you set up at the start of the quarter.</p>
 <ol class="arabic simple">
@@ -1154,6 +1157,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <li><p>Copy your plots into a Word or Google document.</p></li>
 <li><p>See your instructor’s Canvas assignment for detailed directions about what else you need to submit.</p></li>
 </ol>
+</section>
 </section>
 <hr class="docutils" />
 <section id="troubleshooting">

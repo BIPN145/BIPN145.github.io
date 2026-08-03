@@ -28,7 +28,7 @@ Before the lab, watch this video and read the protocol below:
 
 ---
 
-## Lab Protocol
+## Protocol
 
 | **Supplies** | **Cables & connectors** | **Solutions** |
 |---|---|---|
@@ -42,7 +42,7 @@ Before the lab, watch this video and read the protocol below:
 | Eyedropper | | |
 
 
-## I. Setting up LabChart 8
+### I. Setting up LabChart 8
 
 LabChart 8 is the software we'll be using to record electrophysiology data. Before performing our experiment, we need to set up LabChart to **acquire** and **display** the data as we want.
 
@@ -58,7 +58,7 @@ LabChart 8 is the software we'll be using to record electrophysiology data. Befo
    * Make the sampling rate for Channel 1 **"40k/s"** and ensure that *"Same sampling rate for all channels"* is checked.
    * Make sure that the far-right column says **"No calculation"** for all three channels.
 
-## II. Finding sources of electrical noise
+### II. Finding sources of electrical noise
 
 One of the biggest issues in electrophysiology is noise from overhead lights and other electronics in the room. It'll help to get an understanding of where noise in your rig is coming from.
 
@@ -79,7 +79,7 @@ One of the biggest issues in electrophysiology is noise from overhead lights and
 :::
 
 
-## III. Recording stimulator outputs
+### III. Recording stimulator outputs
 
 We'll use our PowerLab as a stimulator that can send voltage pulses into our specimen. We can change the timing, shape, amplitude, and repetition of these stimuli via the Stimulator window in LabChart. We'll directly record these stimuli by sending the output of the PowerLab into an input.
 
@@ -114,11 +114,11 @@ We'll use our PowerLab as a stimulator that can send voltage pulses into our spe
 
 ---
 
-## IV. Recording the stimulus artifact
+### IV. Recording the stimulus artifact
 
 Lastly, we'll add an amplifier (the BioAmp) to our circuit, and use this to record from a string soaked in saline. The string doesn't have a nervous system, but we'll add some voltage with our stimulator and observe the change in voltage from another point on the string.
 
-### Set up your string stimulation experiment
+#### Set up your string stimulation experiment
 
 Your setup for the string stimulation will look like this:
 
@@ -140,7 +140,7 @@ Your setup for the string stimulation will look like this:
    > **Note:** This marker tells you *when* the stimulus was sent, but does not indicate the height or length of the stimulus. This means you need to label your pages with your stimulation parameters.
 
 
-### Stimulate your string!
+#### Stimulate your string!
 
 :::{image} images/string_electrodes.png
 :width: 150px
@@ -167,7 +167,7 @@ Is the amplitude of the stimulus artifact the same as the amplitude of the stimu
 9. Change the location of the stimulating electrodes. How does this change the shape of the artifact?
 10. Remove the ground electrode. How does this change your recording?
 
-### Save your file & export your data
+#### Save your file & export your data
 
 LabChart buffers files to disk in case of a power failure or computer crash, but it's wise to save work frequently. Saving files in LabChart is the same as saving any file on your personal computer.
 

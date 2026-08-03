@@ -115,6 +115,7 @@ Complete Table 2 and then answer Q4 on the quiz. [You can use the Table 2 tab on
 :::{admonition} Q5.
 :class: attention
 In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you. Once you're done, answer Q5 on the quiz.
+:::
 
 | Component | What it models |
 |---|---|
@@ -150,7 +151,7 @@ Before running the simulation or changing any parameters, describe the setup of 
 3. Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. **Answer Q7 on the quiz.**
 
 :::{admonition} Q7.
-:class: tip
+:class: attention
 Describe what this circuit diagram is showing us. Be sure to define each of the different components (r_m, r_i, c_m).
 :::
 
