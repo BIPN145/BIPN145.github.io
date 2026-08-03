@@ -6,7 +6,7 @@
 | :---- | :---- | :---- | :---- |
 | **Week 1** |  |  |  |
 | Tue Aug 4 | Introduction to BIPN 145 & nervous systems| Safety talk & lab group formation | Take the incoming survey (link on Canvas); take the online [safety test](https://biolabclass-safetyquiz.ucsd.edu/) |
-| Wed Aug 5 | The passive membrane & modeling neural activity | **Lab #1:** Modeling Neural Membranes *in silico* | **READ** [the protocol](https://bipn145.github.io/LabManual/ModelingNeuralMembranes.html) and **WATCH** [the video tutorial](https://www.youtube.com/watch?v=qPSuzXQk2Qs) |
+| Wed Aug 5 | The passive membrane & modeling neural activity | **Lab #1:** Modeling Neural Membranes *in silico* | **READ** [the protocol](https://bipn145.github.io/LabManual/ModelingIntroduction.html) and **WATCH** [the video tutorial](https://www.youtube.com/watch?v=qPSuzXQk2Qs) |
 | Thu Aug 6 | Recording from the nervous system & coding in BIPN 145 | **Lab #2:** String Lab | **DUE** Modeling Neural Membranes Quiz; Extracellular Pre-Lab Quiz |
 | Fri Aug 7 | Earthworm nervous systems; the action potential | **Lab #3:** Earthworm Experiments | **READ** Hodgkin & Huxley (1939); **WATCH/READ** [Exporting data from LabChart](https://bipn145.github.io/LabChart/ExportingLabChart.html); **DUE** String Lab *(Group Assignment)* |
 | **Week 2** |  |  |  |
