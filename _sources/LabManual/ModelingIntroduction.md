@@ -75,6 +75,6 @@ We can calculate a time constant, which represents the time it takes to reach a 
 
 Lastly, these types of circuits are really useful for designing neuroscience experiments. Many labs rely on breadboards and microcontrollers (e.g. Arduino) to create custom setups. Once you know how to wire up a circuit and program an Arduino, you can do pretty much anything.
 
-This video will explain how to complete the activities in our lab on a breadboard:
+[This video](https://www.youtube.com/watch?v=qPSuzXQk2Qs) will explain how to complete the activities in our lab on a breadboard.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qPSuzXQk2Qs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
