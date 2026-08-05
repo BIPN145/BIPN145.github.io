@@ -141,21 +141,10 @@ In this part, you’ll set up a simulation that models one portion of an axon or
 1. Go to  [https://neuromembrane.biology.ualberta.ca/](https://neuromembrane.biology.ualberta.ca/) (if you’re not already there) and open up the “Passive Membrane Simulation” (or Cable Theory Simulation)  in the menu in the top left corner.
 
 2. Add an external recording electrode that is two length constants () away from your stimulating electrode by clicking the **\+** button and changing the value after the second recording site. **Answer Q6 on the quiz.**
-   
 
-:::{admonition} Q6.
-:class: attention
-Before running the simulation or changing any parameters, describe the setup of this “experiment” in 1-2 sentences.
-:::
+3. Inspect the parameters on the left hand side of the screen. **Answer Q7 on the quiz.**
 
-3. Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components. **Answer Q7 on the quiz.**
-
-:::{admonition} Q7.
-:class: attention
-Describe what this circuit diagram is showing us. Be sure to define each of the different components (r_m, r_i, c_m).
-:::
-
-4. Re-set the cable settings and click on “CREATE SIMULATION” to run our first iteration of this passive current injection. The current will be injected starting at 10 ms, and will be injected for 30 ms total. Observe the top plot to fill out row one in Table 3\. For your “observations,” take a close look at the Voltage vs. Time plot.
+4. Re-set the cable settings and click on “CREATE SIMULATION” to run our first iteration of this passive current injection. Observe the top plot to fill out row one in Table 3\. For your “observations,” take a close look at the Voltage vs. Time plot.
 
 :::{admonition} Reflection
 :class: tip
@@ -179,6 +168,6 @@ With this smaller diameter of 2 µm, do other parameters of the membrane (bottom
 
 6. Run the simulation with the smaller diameter and observe the Voltage vs Time plot again. Hint: you can use the Autoscale button (![][image2]) if the trace goes off the plot. Fill out Table 3 for this 2 µm cable simulation.
 
-7. Double the capacitance of the membrane, from 1 to 2 μF/cm2. Describe what happens to the time constant and the resulting voltage over time plot with more capacitance in Table 3\.
+7. Double the specific capacitance of the membrane, from 1 to 2 μF/cm2. Describe what happens to the time constant and the resulting voltage over time plot with more capacitance in Table 3\.
 
 Optional: Later in the course, you may want to use the Neuromembrane simulator to model the action potential. There is a [protocol here](https://docs.google.com/document/d/14yS7gj4IyZvIWO3KI5tqYkXIkytr7Y8ES7v4SbK9quM/edit?tab=t.0#heading=h.z78xt7uiejq). 
