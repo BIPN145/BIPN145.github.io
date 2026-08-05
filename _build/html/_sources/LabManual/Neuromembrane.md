@@ -142,7 +142,7 @@ In this part, you’ll set up a simulation that models one portion of an axon or
 
 2. Add an external recording electrode that is two length constants (λ) away from your stimulating electrode by clicking the **\+** button and changing the value after the second recording site. **Answer Q6 on the quiz.**
 
-3. Inspect the parameters on the left hand side of the screen. **Answer Q7 on the quiz.**
+3. Inspect the parameters on the left hand side of the screen. To see how these electrical components are being modeled, click on **3D** on the bottom to toggle to a **2D** diagram, and then choose "Show Circuit Diagram." **Answer Q7 on the quiz.**
 
 4. Re-set the cable settings and click on “CREATE SIMULATION” to run our first iteration of this passive current injection. Observe the top plot to fill out row one in Table 3\. For your “observations,” take a close look at the Voltage vs. Time plot.
 
