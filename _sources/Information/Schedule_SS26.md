@@ -8,9 +8,9 @@
 | Tue Aug 4 | Introduction to BIPN 145 & nervous systems| Safety talk & lab group formation | Take the incoming survey (link on Canvas); take the online [safety test](https://biolabclass-safetyquiz.ucsd.edu/) |
 | Wed Aug 5 | The passive membrane & modeling neural activity | **Lab #1:** Modeling Neural Membranes *in silico* | **READ** [the protocol](https://bipn145.github.io/LabManual/ModelingIntroduction.html) and **WATCH** [the video tutorial](https://www.youtube.com/watch?v=qPSuzXQk2Qs) |
 | Thu Aug 6 | Recording from the nervous system & coding in BIPN 145 | **Lab #2:** String Lab | **DUE** Modeling Neural Membranes Quiz; Extracellular Pre-Lab Quiz |
-| Fri Aug 7 | Earthworm nervous systems; the action potential | **Lab #3:** Earthworm Experiments | **READ** Hodgkin & Huxley (1939); **WATCH/READ** [Exporting data from LabChart](https://bipn145.github.io/LabChart/ExportingLabChart.html); **DUE** String Lab *(Group Assignment)* |
+| Fri Aug 7 | The action potential; earthworm nervous systems | **Lab #3:** Earthworm Experiments | **READ** Hodgkin & Huxley (1939); **WATCH/READ** [Exporting data from LabChart](https://bipn145.github.io/LabChart/ExportingLabChart.html); **DUE** String Lab *(Group Assignment)* |
 | **Week 2** |  |  |  |
-| Tue Aug 11 | Writing lab reports & statistics | **Lab #3:** Earthworm Experiments (continued) |  |
+| Tue Aug 11 | Writing lab reports | **Lab #3:** Earthworm Experiments (continued) |  |
 | Wed Aug 12 | Two-sample statistics; the speed of the nervous system | **Lab #4:** Intracellular Equipment | **DUE** Intracellular Pre-Lab Quiz |
 | Thu Aug 13 | Leech physiology & cell types; intracellular & patch clamp recording | **Lab #4:** Recording from the Retzius Cell of the Leech | |
 | Fri Aug 14 *(drop w/o "W" deadline)* | Review for Exam #1 | **Lab #4:** Filling a cell in the leech |  |
