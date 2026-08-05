@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 #   BIPN 145 Neurobiology Laboratory
 
 	**Lecture:** MWF 11-11:50 AM in  

@@ -50,3 +50,7 @@ parts:
         sections:
           - file: FinalProjects/EMGAnalysis.ipynb
           - file: FinalProjects/AveragePSD.ipynb
+  - caption: Unlisted
+    hidden: true
+    chapters:
+      - file: Information/Schedule_FA26.md

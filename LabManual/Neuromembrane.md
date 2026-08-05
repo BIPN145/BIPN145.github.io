@@ -140,7 +140,7 @@ In this part, you’ll set up a simulation that models one portion of an axon or
 
 1. Go to  [https://neuromembrane.biology.ualberta.ca/](https://neuromembrane.biology.ualberta.ca/) (if you’re not already there) and open up the “Passive Membrane Simulation” (or Cable Theory Simulation)  in the menu in the top left corner.
 
-2. Add an external recording electrode that is two length constants () away from your stimulating electrode by clicking the **\+** button and changing the value after the second recording site. **Answer Q6 on the quiz.**
+2. Add an external recording electrode that is two length constants (λ) away from your stimulating electrode by clicking the **\+** button and changing the value after the second recording site. **Answer Q6 on the quiz.**
 
 3. Inspect the parameters on the left hand side of the screen. **Answer Q7 on the quiz.**
 
@@ -153,7 +153,7 @@ In this part, you’ll set up a simulation that models one portion of an axon or
 
 **Table 3\. Current injection results**
 
-| Sim \# | Diameter | Cm | Peak voltage at 2 | Distance to 2 electrode | Voltage at 0 electrode @ 28 ms | Voltage at 2 electrode @ 28 ms | Observations |
+| Sim \# | Diameter | Cm | Peak voltage at 2λ | Distance to 2λ electrode | Voltage at 0λ electrode @ 28 ms | Voltage at 2λ electrode @ 28 ms | Observations |
 | :---: | :---: | :---: | ----- | ----- | ----- | ----- | ----- |
 | 1 | 5 µm | 1 |  |  |  |   |  |
 | 2 | 2 µm | 1 |  |  |  |  |  |
