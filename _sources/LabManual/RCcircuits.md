@@ -6,10 +6,9 @@ Let’s build a circuit that models the passive membrane simulations you perform
 | **Parts** | **Cables & Adapters** |
 |---|---|
 | PowerLab & Computer | DIN8 to BNC adapter (1) |
-| 1.5 V (x2) battery & holder (2) | BNC to double banana adapter (2) |
-| Resistors: 3 kΩ, 15 kΩ, 33 kΩ, 100 kΩ (3), 220 kΩ, 470 kΩ | Banana plug cable (4) |
-| 1 µF capacitor | Alligator clips (4) |
-| 1-100 kΩ potentiometer | |
+| 1 µF capacitor | BNC to double banana adapter (1) |
+| Resistors: 3 kΩ, 15 kΩ, 33 kΩ, 100 kΩ, 220 kΩ, 330 kΩ | Banana plug cable (4) |
+|  | Alligator clips (4) |
 
 ## Getting familiar with your breadboard
 
@@ -24,14 +23,17 @@ Build the circuit below. We’ll use the OUTPUT of your Powerlab to send a pulse
    **CAUTION**: Do not connect the \+ and \- terminals. This will short the circuit, heat, and melt the plastic. Check that your circuit is set up properly before turning on the pulse from your computer.
 
 2. Attach single BNC adapters to the \+ and \- outputs of the PowerLab.  
-   1. Alternatively, connect a **BNC to double banana cable adapter** to the \+ output of your PowerLab.   
-3. Attach a red banana cable to the \+ terminal and a black banana cable to the \- terminal of your PowerLab.   
+
+3. Attach a red banana cable to the \+ terminal and a black banana cable to the \- terminal of your PowerLab. 
+
 4. Attach the banana cables to red and black jumper wires using alligator clips, and insert the black and red jumper wires to the power rails, as shown in the circuit. 
 
    **NOTE:** Ensure that all circuit components are properly inserted into the breadboard. The wires should make contact with the metal strips inside the breadboard. 
 
 5. Add additional jumper wires, a resistor, and a capacitor, as shown in the circuit.   
-6. We’ll use the PowerLab as our voltmeter, to record voltage in our circuit. Plug a **BNC to DIN8 adapter** and **double banana adapter** into Input 1 of the PowerLab.  
+
+6. We’ll use the PowerLab as our voltmeter, to record voltage in our circuit. Plug a **BNC to DIN8 adapter** and **double banana adapter** into Input 1 of the PowerLab. 
+
 7. Connect the ground/reference (**black**, \-) side of the double banana adapter to the circuit ground with alligator clips.
 
    **NOTE:** The “ground” in this circuit is really going to be our reference electrode. It should be connected to the black side of Input 1\.
@@ -49,7 +51,7 @@ You may need to Autoscale the channel (right click) to be able to see the entire
 
 :::{admonition} Q8.
 :class: attention
-The time constant should equal 𝛕 = RC. What *should* the time constant be (in seconds), given the resistors and capacitors in the circuit?** Mind your units. **Answer Q8 on the quiz.**
+The time constant should equal 𝛕 = RC. What *should* the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit?** Mind your units. **Answer Q8 on the quiz.**
 :::
 
 ### Measure your time constant
