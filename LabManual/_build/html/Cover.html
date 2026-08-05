@@ -471,16 +471,17 @@ If you do not feel that is the case, please let us know.</p>
 </li>
 <li><p>This simulation will open by default without any leak channels or pumps. Let’s first add a couple of leak channels to the membrane and observe what happens. Click the plus sign next to “LEAK CHANNELS” to add a Na+ and K+ channel to the membrane.</p></li>
 </ol>
-<p>These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 5:100 (Na:K). Note also that the concentration settings are also set for you — at first, there is equal [Na+] and [K+] inside and outside of the membrane.</p>
+<div class="tip admonition">
+<p class="admonition-title">Reflection</p>
+<p>These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 0.05:1 (Na:K). Note that at these default settings, there is also equal [Na+] and [K+] inside and outside of the membrane.</p>
+</div>
 <ol class="arabic simple" start="4">
-<li><p>First, we’ll observe what happens when we have more K+ permeability, but equal ion concentrations. Click on “CREATE SIMULATION” to open the stimulation page. <strong>Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.</strong></p></li>
-<li><p>To run Simulation #1, click the play button. You can also change the speed so that it will run faster. <strong>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.</strong></p></li>
-<li><p>Go back to the Settings page by choosing “Back to settings” in the simulation play menu.</p></li>
-<li><p>In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.
-Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
+<li><p>First, we’ll observe what happens over time when we have more K+ permeability, but equal ion concentrations. <strong>Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.</strong></p></li>
+<li><p>Once you have your prediction, click on the play button to run the simulation. You can also change the speed so that it will run faster. <strong>What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.</strong></p></li>
+<li><p>In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump. Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <li><p>Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. <strong>Before running Simulation #2, write your 1-2 sentence prediction in Table 1.</strong></p></li>
 <li><p>Run Simulation #2 and observe what happens to the membrane potential. <strong>Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.</strong> For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).</p></li>
-<li><p>Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values to reflect more biological values across the membrane. <strong>Write your prediction for Simulation #3 in the table.</strong></p></li>
+<li><p>Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values (Na: 10 mM inside, 140 mM outside; K+: 140 mM inside, 4 mM outside) to reflect more biological values across the membrane. <strong>Write your prediction for Simulation #3 in the table.</strong></p></li>
 <li><p>Run the simulation again and observe what happens to the membrane potential.</p></li>
 </ol>
 <div class="tip admonition">
@@ -537,7 +538,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </tbody>
 </table>
 </div>
-<ol class="arabic simple" start="12">
+<ol class="arabic simple" start="11">
 <li><p>Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? <strong>Answer Q1 on the quiz. Report your answer in mV.</strong></p></li>
 </ol>
 <p><strong>Here are a few hints to help you:</strong></p>
@@ -551,7 +552,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <p class="admonition-title">Q1. Calculation of GHK</p>
 <p>Using the GHK equation for Na⁺ and K⁺ only, calculate the voltage across the membrane for simulation #3 and show your work. Does this match the voltage in the simulation? Report your answer in mV.</p>
 </div>
-<ol class="arabic simple" start="13">
+<ol class="arabic simple" start="12">
 <li><p>Finally, let’s check to see how much ion permeability matters. Go back to the settings page and reverse the Na+ and K+ permeabilities.</p></li>
 <li><p>Write your prediction for Simulation #4 in Table 1.</p></li>
 <li><p>Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. <strong>Answer Q2 on the quiz. Report your answer in mV.</strong></p></li>
@@ -560,7 +561,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <p class="admonition-title">Q2.</p>
 <p>With the high permeability to Na⁺ and low permeability to K⁺, what is the resting membrane potential? Report your value in mV out to one decimal point.</p>
 </div>
-<ol class="arabic simple" start="16">
+<ol class="arabic simple" start="15">
 <li><p>On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.</p></li>
 <li><p>Run the simulation to see what happens, record your observations, and respond to the question below. <strong>Answer Q3 on the quiz.</strong></p></li>
 </ol>
@@ -568,7 +569,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 <p class="admonition-title">Q3.</p>
 <p>Which of these simulations best models a typical neural membrane?</p>
 </div>
-<ol class="arabic simple" start="18">
+<ol class="arabic simple" start="17">
 <li><p>Next, we’ll check to see whether or not the membrane potential depends on [K+]out. Reset the permeabilities and ion concentrations to the default values.</p></li>
 <li><p>Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage.</p></li>
 </ol>
@@ -602,7 +603,7 @@ Click the plus button next to Na+/K+ pump to add one to the membrane.</p></li>
 </tbody>
 </table>
 </div>
-<ol class="arabic simple" start="20">
+<ol class="arabic simple" start="19">
 <li><p>Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components.</p></li>
 </ol>
 <div class="attention admonition">

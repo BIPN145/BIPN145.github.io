@@ -24,24 +24,24 @@ First, we’ll explore the properties of the membrane that lead to a resting mem
 
 3. This simulation will open by default without any leak channels or pumps. Let’s first add a couple of leak channels to the membrane and observe what happens. Click the plus sign next to “LEAK CHANNELS” to add a Na+ and K+ channel to the membrane. 
 
-These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 5:100 (Na:K). Note also that the concentration settings are also set for you — at first, there is equal [Na+] and [K+] inside and outside of the membrane.
+:::{admonition} Reflection
+:class: tip
+These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 0.05:1 (Na:K). Note that at these default settings, there is also equal [Na+] and [K+] inside and outside of the membrane.
+:::
 
-4. First, we’ll observe what happens when we have more K+ permeability, but equal ion concentrations. Click on “CREATE SIMULATION” to open the stimulation page. **Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.**
+4. First, we’ll observe what happens over time when we have more K+ permeability, but equal ion concentrations. **Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.** 
 
-5. To run Simulation #1, click the play button. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.**
+5. Once you have your prediction, click on the play button to run the simulation. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.**
 
-6. Go back to the Settings page by choosing “Back to settings” in the simulation play menu.
+6. In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump. Click the plus button next to Na+/K+ pump to add one to the membrane.
 
-7. In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump.
-   Click the plus button next to Na+/K+ pump to add one to the membrane.
+7. Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. **Before running Simulation #2, write your 1-2 sentence prediction in Table 1.**
 
-8. Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. **Before running Simulation #2, write your 1-2 sentence prediction in Table 1.**
+8. Run Simulation #2 and observe what happens to the membrane potential. **Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.** For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).
 
-9. Run Simulation #2 and observe what happens to the membrane potential. **Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.** For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).
+9. Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values (Na: 10 mM inside, 140 mM outside; K+: 140 mM inside, 4 mM outside) to reflect more biological values across the membrane. **Write your prediction for Simulation #3 in the table.**
 
-10. Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values to reflect more biological values across the membrane. **Write your prediction for Simulation #3 in the table.**
-
-11. Run the simulation again and observe what happens to the membrane potential. 
+10. Run the simulation again and observe what happens to the membrane potential. 
 
 :::{admonition} Log your predictions
 :class: tip 
@@ -58,7 +58,7 @@ What happens to the voltage over time? Why is the voltage across the membrane th
 | 4 | Leak channels & Na+/K+ pump | Na+ high outside; K+ high inside | 100 Na+; 5 K+ | | |
 | 5 | Leak channels & Na+/K+ pump | Na+ high outside; K+ high inside | 100 Na+; 100 K+ | | |
 
-12. Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? **Answer Q1 on the quiz. Report your answer in mV.**
+11. Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? **Answer Q1 on the quiz. Report your answer in mV.**
 
 **Here are a few hints to help you:**
 
@@ -72,29 +72,29 @@ What happens to the voltage over time? Why is the voltage across the membrane th
 Using the GHK equation for Na⁺ and K⁺ only, calculate the voltage across the membrane for simulation #3 and show your work. Does this match the voltage in the simulation? Report your answer in mV.
 :::
 
-13. Finally, let’s check to see how much ion permeability matters. Go back to the settings page and reverse the Na+ and K+ permeabilities.
+12. Finally, let’s check to see how much ion permeability matters. Go back to the settings page and reverse the Na+ and K+ permeabilities.
 
-14. Write your prediction for Simulation #4 in Table 1.
+13. Write your prediction for Simulation #4 in Table 1.
 
-15. Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. **Answer Q2 on the quiz. Report your answer in mV.**
+14. Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. **Answer Q2 on the quiz. Report your answer in mV.**
 
 :::{admonition} Q2.
 :class: attention
 With the high permeability to Na⁺ and low permeability to K⁺, what is the resting membrane potential? Report your value in mV out to one decimal point.
 :::
 
-16. On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.
+15. On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.
 
-17. Run the simulation to see what happens, record your observations, and respond to the question below. **Answer Q3 on the quiz.**
+16. Run the simulation to see what happens, record your observations, and respond to the question below. **Answer Q3 on the quiz.**
 
 :::{admonition} Q3.
 :class: attention
 Which of these simulations best models a typical neural membrane?
 :::
 
-18. Next, we’ll check to see whether or not the membrane potential depends on [K+]out. Reset the permeabilities and ion concentrations to the default values.
+17. Next, we’ll check to see whether or not the membrane potential depends on [K+]out. Reset the permeabilities and ion concentrations to the default values.
 
-19. Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage. 
+18. Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage. 
 
 :::{admonition} Q4
 Complete Table 2 and then answer Q4 on the quiz. [You can use the Table 2 tab on the Google Spreadsheet template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing).
@@ -110,7 +110,7 @@ Complete Table 2 and then answer Q4 on the quiz. [You can use the Table 2 tab on
 | 50 |  |
 | 200 |  |
 
-20. Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components.
+19. Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components.
 
 :::{admonition} Q5.
 :class: attention
