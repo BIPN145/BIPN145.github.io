@@ -62,7 +62,7 @@ LabChart 8 is the software we'll be using to record electrophysiology data. Befo
 
 One of the biggest issues in electrophysiology is noise from overhead lights and other electronics in the room. It'll help to get an understanding of where noise in your rig is coming from.
 
-1. Connect a DIN8-BNC adapter and a BNC to double banana adapter to **Input 2** of the PowerLab. Plug in a red banana cable to the positive (red) side of the connector.
+1. Connect a DIN8-BNC adapter and a double 3-way BNC adapter to **Input 2** of the PowerLab. Plug in a red banana cable to the positive (red) side of the connector.
 2. Hold the lead (the end of the banana cable) in your hand.
 3. In the Channel Settings window, click on **Input Amplifier** for Channel 2. The Input Amplifier window will show the voltage that you're recording. This allows for precise setting of the input range for a recording channel and provides filtering options.
 4. The signal at your rig may be variable. To adjust the sensitivity of the channel, choose an appropriate range setting from the **Range** drop-down list in the Input Amplifier dialog.
@@ -86,7 +86,7 @@ We'll use our PowerLab as a stimulator that can send voltage pulses into our spe
 1. Change your view to **Scope view**, which looks like the sweeps of an oscilloscope. The advantage of Scope View is that it allows the overlay and averaging of your data.
 2. In Scope view, set the **Duration** to **20 ms**. This changes how long each sweep of data is.
 3. Remove the DIN8-BNC adapter & cable from Input 2.
-4. On the PowerLab, connect the **(+) Output** to **Input 1** using the BNC cable and DIN8-BNC adapter.
+4. On the PowerLab, connect the **(+) Output** to **Input 1** using the BNC to DIN8 cable.
 5. Go to **Setup > Stimulator** to open the Stimulator window. This is the window where you can modify the shape, timing, and amplitude of the stimulus output.
 6. Make sure that the **Waveform Name** is set to **Pulse**.
 7. Change the range of the Pulse Height to **-5 to 5 V** by clicking the ruler button next to the Pulse Height option.
