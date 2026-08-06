@@ -9,12 +9,9 @@ copyright: "2026"
 only_build_toc_files: true
 
 sphinx:
-  recursive_update: true
   config:
     html_static_path: ["_static"]
     html_css_files: ["custom.css"]
-    html_theme_options:
-      sidebar_includehidden: false
 
 repository:
   url: https://github.com/BIPN145/BIPN145.github.io
