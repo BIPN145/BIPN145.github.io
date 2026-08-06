@@ -391,7 +391,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-manual">Lab Manual</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-a-page-as-a-pdf">Saving a page as a PDF</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-coding-notebooks">Interactive coding notebooks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-coding-notebooks">Interactive coding notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data-to-colab">Uploading data to Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-uploading-directly">Option 1: Uploading directly</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-mounting-your-drive">Option 2: Mounting your drive</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-work-in-colab">Saving work in Colab</a></li>
 </ul>
 </li>
 </ul>
@@ -430,8 +438,9 @@ document.write(`
 <li><p>Click <strong>Save</strong>.</p></li>
 </ol>
 </section>
+</section>
 <section id="interactive-coding-notebooks">
-<h3>Interactive coding notebooks<a class="headerlink" href="#interactive-coding-notebooks" title="Link to this heading">#</a></h3>
+<h2>Interactive coding notebooks<a class="headerlink" href="#interactive-coding-notebooks" title="Link to this heading">#</a></h2>
 <p>To interact with the coding tutorials presented here, navigate to the page with the tutorial (e.g.,  “Importing Labchart (Python)”). On these pages, you’ll see a rocket 🚀 icon in the top right corner. Click on this, and choose Colab. This will launch Google Colab, where you can run the code in the notebook.</p>
 <p>Alternatively, you can copy and paste the code you see here into a Python editor of your choice.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code blocks look like this!</span>
@@ -439,6 +448,30 @@ document.write(`
 </pre></div>
 </div>
 <p><strong>Note that only notebooks with code in them will have the option to open them in Colab.</strong></p>
+<section id="uploading-data-to-colab">
+<h3>Uploading data to Colab<a class="headerlink" href="#uploading-data-to-colab" title="Link to this heading">#</a></h3>
+<p>To work with exported LabChart data in Python, you’ll either need to upload the file to Colab or put it in Google Drive &amp; mount your drive.</p>
+<section id="option-1-uploading-directly">
+<h4>Option 1: Uploading directly<a class="headerlink" href="#option-1-uploading-directly" title="Link to this heading">#</a></h4>
+<p>To upload a file, click the Directory icon on the left hand side of the window. Then, click the file upload button. There is a video of how to do this below:</p>
+<iframe width="640" height="364" src="https://www.loom.com/embed/830c178cc78447b68156cd8ff1423fb3?sid=218e6c4b-b93e-4ac3-a56a-b03cac1f4e3c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</section>
+<section id="option-2-mounting-your-drive">
+<h4>Option 2: Mounting your drive<a class="headerlink" href="#option-2-mounting-your-drive" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>To mount your drive, click the Directory icon on the left hand side of the window.</p></li>
+<li><p>Click the Google Drive icon.</p></li>
+<li><p>Colab will create a new cell in the notebook and prompt you to run it.</p></li>
+<li><p>If it’s the first time, a separate window will pop up to ask you for access to your Drive.</p></li>
+<li><p>Click “Allow”.</p></li>
+<li><p>After a few seconds, a message will print that your Drive has been mounted.</p></li>
+<li><p>Now, you can use the location of your file in a filepath that starts with <code class="docutils literal notranslate"><span class="pre">/content/drive</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="saving-work-in-colab">
+<h3>Saving work in Colab<a class="headerlink" href="#saving-work-in-colab" title="Link to this heading">#</a></h3>
+<p>You can save a Colab file that you’ve edited just like any other file! In Colab, go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code>. These files will show up in a folder called “Colab Notebooks” in your Drive.</p>
 </section>
 </section>
 <div class="toctree-wrapper compound">
@@ -510,7 +543,15 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-manual">Lab Manual</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-a-page-as-a-pdf">Saving a page as a PDF</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-coding-notebooks">Interactive coding notebooks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-coding-notebooks">Interactive coding notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data-to-colab">Uploading data to Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-uploading-directly">Option 1: Uploading directly</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-mounting-your-drive">Option 2: Mounting your drive</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-work-in-colab">Saving work in Colab</a></li>
 </ul>
 </li>
 </ul>
