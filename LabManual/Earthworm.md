@@ -114,7 +114,10 @@ Make sure the PowerLab is turned off.
 
 ![](images/string_electrodes.png)
 
-> **Note:** Throughout every step of this procedure, be careful not to stretch the earthworm. This will damage the nerve and your experiment will not work.
+:::{admonition} Don't stretch your worm!
+:class: danger
+Throughout every step of this procedure, be careful not to stretch the earthworm. This will damage the nerve and your experiment will not work.
+:::
 
 1. Obtain a large, lively earthworm. Rinse it with saline if it is dirty.
 2. **Anesthetize the earthworm** by placing it in the petri dish with 10% ethanol (in Earthworm Ringer's solution) for 5 minutes.
@@ -288,7 +291,7 @@ In the next step, you'll determine the shortest time between stimuli where you c
 
 **Table 4.** MGF conduction velocity data.
 
-| Trial | MGF Baseline Latency (s) | Speed (m/s) | MGF Experimental Latency (s) | Speed (m/s) |
+| Trial | MGF Room Temperature Latency (s) | Speed (m/s) | MGF Cold Temperature Latency (s) | Speed (m/s) |
 |---|---|---|---|---|
 | 1 | | | | |
 | 2 | | | | |
