@@ -93,7 +93,6 @@ Make sure the PowerLab is turned off.
 4. Once you're confident everything is connected correctly, turn on the PowerLab.
 
 ![](images/powerlab_front.png)
-*Image courtesy of ADInstruments ©*
 
 #### Setting up LabChart 8
 
@@ -136,9 +135,8 @@ Throughout every step of this procedure, be careful not to stretch the earthworm
    >
    > **Note #2:** It helps to place your recording electrodes as lateral as possible, while still holding down the worm.
 
----
 
-### II. Determining the threshold of your fibers ★
+### II. Determining the threshold of your fibers
 
 In this experiment, you will send a stimulus into the earthworm while recording from it to determine the threshold voltage of the medial and lateral giant fibers.
 
@@ -191,7 +189,7 @@ In the next stage, you will attempt to elicit an action potential in the lateral
 
 ---
 
-### III. Calculate the rheobase ★
+### II. Calculate the rheobase
 
 In Part III, we'll change the stimulus amplitude and duration to calculate the rheobase and chronaxie of the earthworm medial giant fiber (read the Background if you forget what these are).
 
@@ -205,9 +203,9 @@ In the previous experiment, we gave a stimulus for 0.2 ms. Now, we'll modify the
 
 **Table 2.** Data for strength-duration curve.
 
-| Duration (ms) | 0.06 | 0.08 | 0.10 | 0.20 | 0.40 | 0.60 | 1.00 |
-|---|---|---|---|---|---|---|---|
-| Stimulus Amplitude (V) | | | | | | | |
+| Duration (ms) | 0.06 | 0.08 | 0.10 | 0.20 | 0.40 | 0.60 | 1.00 | 1.40 | 1.80 |
+|---|---|---|---|---|---|---|---| ---|---|
+| Stimulus Amplitude (V) | | | | | | | | | |
 
 ---
 
@@ -273,7 +271,7 @@ In the next step, you'll determine the shortest time between stimuli where you c
 
 ---
 
-### V. Compute the conduction velocity ★
+### V. Compute the conduction velocity
 
 *(If you're doing this on a different day, follow the same steps for preparing LabChart & your earthworm as you did in the previous earthworm experiment.)*
 
@@ -287,33 +285,44 @@ In the next step, you'll determine the shortest time between stimuli where you c
 #### Determine the MGF latency to spike
 
 1. Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to your elicited action potential.
-2. Repeat this 5 times and record your data in Table 4.
+2. Repeat this **10** times and record your data in Table 4.
 
-**Table 4.** MGF conduction velocity data.
+**Table 4.** MGF conduction velocity data at room temperature.
 
-| Trial | MGF Room Temperature Latency (s) | Speed (m/s) | MGF Cold Temperature Latency (s) | Speed (m/s) |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
+| Trial | MGF Cold Temperature Latency (s) | Speed (m/s) |
+|---|---|---|
+| 1 | | | 
+| 2 | | | 
+| 3 | | |
+| 4 | | | 
+| 5 | | | 
+| 6 | | | 
+| 7 | | | 
+| 8 | | | 
+| 9 | | | 
+| 10 | | |
 
 3. Since we know when the AP occurred and the distance between your electrodes, we can calculate the speed of the action potential. Record these values in the "Speed" column of the table above. *(Reminder: speed = distance/time.)*
-
-**How fast, on average, is your action potential traveling down the MGF?** ______________________
-
----
 
 ### VI. Design your own experiment to test the impact of temperature on MGF conduction velocity 
 For this final part, you will design your own experiment to test the impact of temperature on conduction velocity. We will provide ice and a thermometer, but the rest is up to you! If you are performing this experiment on a separate worm, be sure to measure the threshold for the MGF as described above.
 
 Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report. Think about what someone needs to know in order to replicate this experiment exactly as you did.
 
+**Table 5.** MGF conduction velocity data.
 
-We will test the effect of ______________________________ on ______________________________.
-
-We will do this by...
+| Trial | MGF Cold Temperature Latency (s) | Speed (m/s) |
+|---|---|---|
+| 1 | | | 
+| 2 | | | 
+| 3 | | |
+| 4 | | | 
+| 5 | | | 
+| 6 | | | 
+| 7 | | | 
+| 8 | | | 
+| 9 | | | 
+| 10 | | |
 
 #### Conduct your experiment
 
@@ -333,11 +342,3 @@ Record your results in the MGF Experimental AP Latency column of Table 4. You'll
 | My worm is bleeding | The electrode is through the blood vessel | Move the electrode more lateral; if you don't get an AP after this, get a new worm |
 | There is a stimulus artifact, but no visible response to stimuli between 1–3 V | Your electrodes may not be placed well, or your worm may be damaged | Try to reposition the electrodes on a different place in the worm. If this doesn't work, get a new worm. |
 | My recording just looks like a big up and down squiggle (like a sine wave) | You're picking up 60 Hz noise | Ground everything (Faraday cage, ground recording pin, amplifier) to the ground pin on the back of the PowerLab. Averaging multiple trials can also get rid of noise. |
-
----
-
-### Possible opportunities for student projects
-
-- Application of chemicals, nerve blockers, etc. to test for effects on the nervous system
-- Earthworm dissection & recordings (as in Gunther, 1976 or 1972)
-- Demonstrating facilitation of conduction rate (Bullock, 1951)

@@ -466,6 +466,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics-generalize-from-observed-data-to-the-world-at-large"><em>Inferential statistics</em> generalize from observed data to the world at large</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-estimate-effect-size">Step 5. Estimate Effect Size</a></li>
 </ul>
             </nav>
         </div>
@@ -727,8 +728,77 @@ KS p-value:   0.666861007096217206502331009688
 </div>
 </div>
 </div>
-<p>That’s it for this notebook! You can adapt this code for lots of different projects (including your final project!).</p>
 </section>
+</section>
+<section id="step-5-estimate-effect-size">
+<h2>Step 5. Estimate Effect Size<a class="headerlink" href="#step-5-estimate-effect-size" title="Link to this heading">#</a></h2>
+<p>A p-value tells you <em>whether</em> a difference exists, but not <em>how large</em> that difference is. <strong>Effect size</strong> quantifies the magnitude of the difference between your two groups.</p>
+<blockquote>
+<div><p><strong>Task</strong>: Choose the measure that matches the test you ran in Step 4, and uncomment only that block of code below.</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Test used</p></th>
+<th class="head"><p>Effect size measure</p></th>
+<th class="head"><p>(Loose) Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Independent t-test</p></td>
+<td><p><strong>Cohen’s d</strong></p></td>
+<td><p>0.2 = small, 0.5 = medium, 0.8 = large</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mann-Whitney U</p></td>
+<td><p><strong>Rank-biserial correlation (r)</strong></p></td>
+<td><p>0.1 = small, 0.3 = medium, 0.5 = large</p></td>
+</tr>
+<tr class="row-even"><td><p>Wilcoxon signed-rank</p></td>
+<td><p><strong>Rank-biserial correlation (r)</strong></p></td>
+<td><p>0.1 = small, 0.3 = medium, 0.5 = large</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">data_1</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">data_2</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># --- Option A: Cohen&#39;s d (use after an independent t-test) ---</span>
+<span class="n">pooled_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">d1</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d2</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cohens_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">d2</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">pooled_std</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cohen&#39;s d = </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">cohens_d</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Print the absolute value of Cohen&#39;s d</span>
+
+<span class="c1"># --- Option B: Rank-biserial correlation (use after Mann-Whitney U) ---</span>
+<span class="c1"># u_stat, _ = stats.mannwhitneyu(d1, d2, alternative=&#39;two-sided&#39;)</span>
+<span class="c1"># r_mwu = 1 - (2 * u_stat) / (len(d1) * len(d2))</span>
+<span class="c1"># print(f&quot;Rank-biserial r (Mann-Whitney U) = {r_mwu:.3f}&quot;)</span>
+
+<span class="c1"># --- Option C: Rank-biserial correlation (use after Wilcoxon signed-rank) ---</span>
+<span class="c1"># w_stat, _ = stats.wilcoxon(d1, d2)</span>
+<span class="c1"># n = len(d1)</span>
+<span class="c1"># r_wilcoxon = 1 - (4 * w_stat) / (n * (n + 1))</span>
+<span class="c1"># print(f&quot;Rank-biserial r (Wilcoxon) = {r_wilcoxon:.3f}&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">data_1</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">data_2</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># --- Option A: Cohen&#39;s d (use after an independent t-test) ---</span>
+
+<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;dropna&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s it for this notebook! You can adapt this code for lots of different projects (including your final project!).</p>
 </section>
 </section>
 
@@ -809,6 +879,7 @@ KS p-value:   0.666861007096217206502331009688
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics-generalize-from-observed-data-to-the-world-at-large"><em>Inferential statistics</em> generalize from observed data to the world at large</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-estimate-effect-size">Step 5. Estimate Effect Size</a></li>
 </ul>
   </nav></div>
 
