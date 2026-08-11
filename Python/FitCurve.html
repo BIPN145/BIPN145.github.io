@@ -524,15 +524,14 @@ a = r + \frac{r*c}{t}
 
 <span class="c1"># Import &amp; configure plotting packages</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline 
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
 <span class="c1"># Define pulse</span>
 <span class="n">pulse_width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">rheobase</span> <span class="o">=</span> <span class="mf">.5</span> <span class="c1"># in V</span>
-<span class="n">chronaxie</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># in ms</span>
+<span class="n">model_rheobase</span> <span class="o">=</span> <span class="mf">.5</span> <span class="c1"># in V</span>
+<span class="n">model_chronaxie</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># in ms</span>
 
-<span class="n">amplitude</span> <span class="o">=</span> <span class="n">rheobase</span><span class="o">+</span><span class="p">((</span><span class="n">rheobase</span><span class="o">*</span><span class="n">chronaxie</span><span class="p">)</span><span class="o">/</span><span class="n">pulse_width</span><span class="p">)</span>
+<span class="n">amplitude</span> <span class="o">=</span> <span class="n">model_rheobase</span><span class="o">+</span><span class="p">((</span><span class="n">model_rheobase</span><span class="o">*</span><span class="n">model_chronaxie</span><span class="p">)</span><span class="o">/</span><span class="n">pulse_width</span><span class="p">)</span>
 
 <span class="c1"># Use our function &amp; fit the curve!</span>
 <span class="n">sample_popt</span><span class="p">,</span> <span class="n">sample_pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">pulse_width</span><span class="p">,</span><span class="n">amplitude</span><span class="p">)</span>
@@ -541,8 +540,8 @@ a = r + \frac{r*c}{t}
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pulse_width</span><span class="p">,</span> <span class="n">func</span><span class="p">(</span><span class="n">pulse_width</span><span class="p">,</span> <span class="o">*</span><span class="n">sample_popt</span><span class="p">),</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 
 <span class="c1"># Plot chronaxie &amp; rheobase lines</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">chronaxie</span><span class="p">,</span><span class="n">amplitude</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">amplitude</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">rheobase</span><span class="p">,</span><span class="n">pulse_width</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">pulse_width</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">model_chronaxie</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">model_rheobase</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span> <span class="p">,</span><span class="n">xmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 
 <span class="c1"># Label the axes &amp; show plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stimulus Amplitude (Volts)&#39;</span><span class="p">)</span>
@@ -553,7 +552,7 @@ a = r + \frac{r*c}{t}
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/342a4a81d5e303e9656f992531f1a73089050fd365bf28f5fdc6d2d4c34a634d.png"><img alt="../_images/342a4a81d5e303e9656f992531f1a73089050fd365bf28f5fdc6d2d4c34a634d.png" src="../_images/342a4a81d5e303e9656f992531f1a73089050fd365bf28f5fdc6d2d4c34a634d.png" style="width: 554px; height: 432px;" />
+<a class="reference internal image-reference" href="../_images/5d91e5d206a51512764671db0e87c0dc4cfdacb90edde37a41d1666464798568.png"><img alt="../_images/5d91e5d206a51512764671db0e87c0dc4cfdacb90edde37a41d1666464798568.png" src="../_images/5d91e5d206a51512764671db0e87c0dc4cfdacb90edde37a41d1666464798568.png" style="width: 554px; height: 432px;" />
 </a>
 </div>
 </div>
@@ -578,7 +577,9 @@ a = r + \frac{r*c}{t}
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xnew</span><span class="p">,</span> <span class="n">func</span><span class="p">(</span><span class="n">xnew</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">),</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
-<span class="c1"># Optional -- can you figure out how to add rheobase &amp; chronaxie?</span>
+<span class="c1"># Can you figure out how to add rheobase &amp; chronaxie?</span>
+<span class="c1"># rheobase = ...</span>
+<span class="c1"># chronaxie = ...</span>
 
 <span class="c1"># Add your labels here!</span>
 
