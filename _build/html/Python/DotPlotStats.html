@@ -717,7 +717,7 @@ KS p-value:   0.666861007096217206502331009688
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">data_1</span><span class="p">,</span><span class="n">data_2</span><span class="p">))</span> <span class="c1"># to run an independent t-test</span>
 <span class="c1"># print(stats.ttest_rel(data_1,data_2)) # to run an dependent t-test</span>
-<span class="c1"># print(stats.mannwhitneyu(data_1,_2)) # to run a mannwhitneyu</span>
+<span class="c1"># print(stats.mannwhitneyu(data_1,data_2)) # to run a mannwhitneyu</span>
 <span class="c1"># print(stats.wilcoxon(data_1,data_2)) # to run a wilcoxon signed rank test</span>
 </pre></div>
 </div>
@@ -763,22 +763,19 @@ KS p-value:   0.666861007096217206502331009688
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="n">d1</span> <span class="o">=</span> <span class="n">data_1</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">d2</span> <span class="o">=</span> <span class="n">data_2</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-
 <span class="c1"># --- Option A: Cohen&#39;s d (use after an independent t-test) ---</span>
-<span class="n">pooled_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">d1</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d2</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">cohens_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">d2</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">pooled_std</span>
+<span class="n">pooled_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">data_1</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">data_2</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cohens_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">data_2</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">pooled_std</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cohen&#39;s d = </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">cohens_d</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Print the absolute value of Cohen&#39;s d</span>
 
 <span class="c1"># --- Option B: Rank-biserial correlation (use after Mann-Whitney U) ---</span>
-<span class="c1"># u_stat, _ = stats.mannwhitneyu(d1, d2, alternative=&#39;two-sided&#39;)</span>
-<span class="c1"># r_mwu = 1 - (2 * u_stat) / (len(d1) * len(d2))</span>
+<span class="c1"># u_stat, _ = stats.mannwhitneyu(data_1, data_2, alternative=&#39;two-sided&#39;)</span>
+<span class="c1"># r_mwu = 1 - (2 * u_stat) / (len(data_1) * len(data_2))</span>
 <span class="c1"># print(f&quot;Rank-biserial r (Mann-Whitney U) = {r_mwu:.3f}&quot;)</span>
 
 <span class="c1"># --- Option C: Rank-biserial correlation (use after Wilcoxon signed-rank) ---</span>
-<span class="c1"># w_stat, _ = stats.wilcoxon(d1, d2)</span>
-<span class="c1"># n = len(d1)</span>
+<span class="c1"># w_stat, _ = stats.wilcoxon(data_1, data_2)</span>
+<span class="c1"># n = len(data_1)</span>
 <span class="c1"># r_wilcoxon = 1 - (4 * w_stat) / (n * (n + 1))</span>
 <span class="c1"># print(f&quot;Rank-biserial r (Wilcoxon) = {r_wilcoxon:.3f}&quot;)</span>
 </pre></div>
@@ -787,13 +784,14 @@ KS p-value:   0.666861007096217206502331009688
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">data_1</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">data_2</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># --- Option A: Cohen&#39;s d (use after an independent t-test) ---</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># --- Option A: Cohen&#39;s d (use after an independent t-test) ---</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">pooled_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">data_1</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">data_2</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">cohens_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">data_2</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">pooled_std</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cohen&#39;s d = </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">cohens_d</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Print the absolute value of Cohen&#39;s d</span>
 
-<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;dropna&#39;
+<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;std&#39;
 </pre></div>
 </div>
 </div>

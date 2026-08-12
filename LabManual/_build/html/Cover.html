@@ -1681,7 +1681,10 @@ If you do not feel that is the case, please let us know.</p>
 <section id="v-compute-the-conduction-velocity">
 <h4>V. Compute the conduction velocity<a class="headerlink" href="#v-compute-the-conduction-velocity" title="Link to this heading">#</a></h4>
 <p><em>(If you’re doing this on a different day, follow the same steps for preparing LabChart &amp; your earthworm as you did in the previous earthworm experiment.)</em></p>
-<p><strong>How far is your first recording pin (−) from your cathode (−) stimulation pin? Be sure to include units:</strong> ______________________</p>
+<ol class="arabic simple" start="0">
+<li><p>First, note the distance <em>in meters</em> between your reference electrode (−) and your cathode (−) stimulation pin?</p></li>
+</ol>
+<p><strong>Distance (m)</strong>: ___________________</p>
 <ol class="arabic simple">
 <li><p><strong>In PowerLab, press Start.</strong> Confirm that you have two recording channels.</p></li>
 <li><p>Follow the same protocol as in the previous experiments to determine the threshold required to elicit an action potential from your medial giant fiber.</p></li>
@@ -1690,7 +1693,7 @@ If you do not feel that is the case, please let us know.</p>
 <section id="determine-the-mgf-latency-to-spike">
 <h5>Determine the MGF latency to spike<a class="headerlink" href="#determine-the-mgf-latency-to-spike" title="Link to this heading">#</a></h5>
 <ol class="arabic simple">
-<li><p>Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to your elicited action potential.</p></li>
+<li><p>Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to the peak of your elicited action potential.</p></li>
 <li><p>Repeat this <strong>10</strong> times and record your data in Table 4.</p></li>
 </ol>
 <p><strong>Table 4.</strong> MGF conduction velocity data at room temperature.</p>
@@ -2046,7 +2049,10 @@ If you do not feel that is the case, please let us know.</p>
 <li><p>Move to the highest magnification, and bring the beads into focus. Adjust your light source so that the beads are clearly visible.</p></li>
 <li><p>Use your calculated viewing field diameter to estimate the size of the smallest bead in your dish.</p></li>
 </ol>
-<p><strong>Given the diameter of your viewing field, what is your estimated diameter of the smallest microbead in your dish?</strong> ______________________</p>
+<div class="attention admonition">
+<p class="admonition-title">A sense of scale</p>
+<p>Given the diameter of your viewing field, what is your estimated diameter of the <em>largest</em> microbead in your dish?</p>
+</div>
 </section>
 <section id="using-your-manipulator">
 <h5>Using your manipulator<a class="headerlink" href="#using-your-manipulator" title="Link to this heading">#</a></h5>
@@ -2252,25 +2258,28 @@ If you do not feel that is the case, please let us know.</p>
 <h4>I. Preparing for recording<a class="headerlink" href="#i-preparing-for-recording" title="Link to this heading">#</a></h4>
 <p>First, you need to fill and arrange your electrode, troubleshoot noise, and configure your amplifier in the same way that you did in the <a class="reference internal" href="#document-Leech/IntracellularLab"><span class="std std-doc">Intracellular Lab</span></a>.</p>
 <p>Once you’ve confirmed that your manipulator and recording equipment is ready to go, get a leech ganglion.</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Maneuver your electrode into the saline bath. At the moment, there isn’t any need to get it close to the ganglion — as long as it’s in the saline, you can measure the resistance and troubleshoot noise.</p></li>
 <li><p>Make sure the peak-to-peak noise level of your recording is &lt; 5 mV. There shouldn’t be any obvious sinusoidal noise in your data. If there is, find the source and ground it.</p></li>
-<li><p>Test the resistance of the electrode (follow the steps from the previous lab):</p>
-<p><strong>Electrode resistance:</strong> ______________________</p>
-</li>
-<li><p>Balance the bridge — it shouldn’t be too far off since it should be balanced from the previous lab.</p></li>
+<li><p>Test the resistance of the electrode (follow the <a class="reference external" href="https://bipn145.github.io/Leech/IntracellularLab.html#iii-noise-resistance-and-balancing-the-bridge">steps in the Intracellular Lab</a>).</p></li>
+<li><p>Quickly balance the bridge — it shouldn’t be too far off since it should be balanced from the previous lab.</p></li>
 </ol>
 <section id="getting-your-leech-microelectrode-in-focus">
 <h5>Getting your leech &amp; microelectrode in focus<a class="headerlink" href="#getting-your-leech-microelectrode-in-focus" title="Link to this heading">#</a></h5>
 <p>Before we can do any recording, we need to ensure that your light is set up well so that you can see your ganglion.</p>
 <ol class="arabic">
 <li><p>Gently rest your petri dish in the plastic holder.</p></li>
-<li><p>Bring the leech ganglia into focus, and adjust your light and equipment positioning as necessary.</p></li>
+<li><p>Bring the leech ganglia into focus, and adjust your light and manipulator positioning as necessary.</p></li>
 <li><p>When you can clearly see your ganglia, see if you can spot the two Retzius cells in the middle (Figure 3).</p>
 <p><img alt="" src="_images/ganglion_retzius_cells.png" />
 <em>Figure 3. Ventral view of leech ganglion.</em></p>
-<p><strong>Note:</strong> If you cannot see the two Retzius cells, it might be because your lighting needs to be adjusted, or because your ganglia is mistakenly set with the ventral side up.</p>
 </li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Check your lighting!</p>
+<p>If you cannot see the two Retzius cells, it might be because your lighting needs to be adjusted, or because your ganglia is mistakenly set with the ventral side up.</p>
+</div>
+<ol class="arabic simple" start="4">
 <li><p>Using the clay, position the ground wire so that it is in the saline but at the edge of your petri dish. Your ground wire should be plugged into “GND” on the amplifier.</p></li>
 </ol>
 </section>
@@ -2293,8 +2302,22 @@ If you do not feel that is the case, please let us know.</p>
 <li><p>If all goes well, you should see your Retzius cell firing very clear spontaneous action potentials!</p></li>
 <li><p>If your first attempt is unsuccessful, slightly advance the electrode towards the cell and try again. If this doesn’t work, reposition the electrode to a different part of the cell and try again. Frequently check the resistance of your electrode to ensure that it is not broken or clogged.</p></li>
 </ol>
-<p>Once you have successfully impaled a Retzius cell, take note of the resting membrane potential of the cell:</p>
-<p><strong>Resting membrane potential:</strong> ______________________</p>
+<div class="danger admonition">
+<p class="admonition-title">Save your data!</p>
+<p><em>Save your data</em> (as a LabChart Data File) as soon as you have anything to save. Please make sure you are saving your data</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Having trouble?</p>
+<p>Make sure the following is true:</p>
+<ul class="simple">
+<li><p><em>Both</em> the recording electrode &amp; ground wire are in the saline</p></li>
+<li><p>Electrode is fully inserted into electrode holder</p></li>
+<li><p>Amplifier is ON</p></li>
+<li><p>The amplifier CURRENT INJECTION knob is at 0 μA (fully counterclockwise)</p></li>
+<li><p>If trying to zero signal: DC OFFSET switch is on + or –</p></li>
+</ul>
+<p>See TROUBLESHOOTING at the end of this protocol for additional tips.</p>
+</div>
 <p><strong>Note:</strong> The resting membrane potential will change slightly over time. Your most accurate measurement will be from when you first pierce the cell.</p>
 <p>Also take note of the shape of this action potential. Does it overshoot (past zero)? Does it undershoot?</p>
 </section>
@@ -2314,7 +2337,7 @@ If you do not feel that is the case, please let us know.</p>
 <h4>III. Stimulating the Retzius cell ★<a class="headerlink" href="#iii-stimulating-the-retzius-cell" title="Link to this heading">#</a></h4>
 <p>Once you have characterized the spontaneous activity of your cell, we can also inject current to see how the cell responds to inputs.</p>
 <ol class="arabic">
-<li><p>Set up your Stimulator as a pulse with the following parameters:</p>
+<li><p>Set up your Stimulator as a pulse with the following parameters. Note that the PowerLab will tell the amp to send 1 nA for each 10 mV.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -2331,11 +2354,11 @@ If you do not feel that is the case, please let us know.</p>
 <tr class="row-even"><td><p>Repeats</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>Duration</p></td>
+<tr class="row-odd"><td><p>Pulse Width</p></td>
 <td><p>500 ms</p></td>
 </tr>
 <tr class="row-even"><td><p>Pulse Height</p></td>
-<td><p>10 mV (PowerLab will tell the amp to send 1 nA for each 10 mV)</p></td>
+<td><p>10 mV</p></td>
 </tr>
 </tbody>
 </table>
@@ -2372,12 +2395,12 @@ If you do not feel that is the case, please let us know.</p>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>Mean (or Median)</p></td>
+<tr class="row-even"><td><p>Mean</p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>SD (or IQR)</p></td>
+<tr class="row-odd"><td><p>SD</p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -2403,18 +2426,18 @@ If you do not feel that is the case, please let us know.</p>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>Mean (or Median)</p></td>
+<tr class="row-even"><td><p>Mean</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>SD (or IQR)</p></td>
+<tr class="row-odd"><td><p>SD</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><em>Note: This table is a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.</em></p>
+<p><em>Note: These tables are a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.</em></p>
 </section>
 </section>
 <span id="document-Leech/FillingRetziusCell"></span><section class="tex2jax_ignore mathjax_ignore" id="filling-the-retzius-cell">

@@ -53,7 +53,10 @@ This first activity will prepare you for recording from a leech ganglion. The st
 4. Move to the highest magnification, and bring the beads into focus. Adjust your light source so that the beads are clearly visible.
 5. Use your calculated viewing field diameter to estimate the size of the smallest bead in your dish.
 
-**Given the diameter of your viewing field, what is your estimated diameter of the smallest microbead in your dish?** ______________________
+:::{admonition} A sense of scale
+:class: attention
+Given the diameter of your viewing field, what is your estimated diameter of the *largest* microbead in your dish? 
+:::
 
 ### Using your manipulator
 

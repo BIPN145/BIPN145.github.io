@@ -275,7 +275,9 @@ In the next step, you'll determine the shortest time between stimuli where you c
 
 *(If you're doing this on a different day, follow the same steps for preparing LabChart & your earthworm as you did in the previous earthworm experiment.)*
 
-**How far is your first recording pin (−) from your cathode (−) stimulation pin? Be sure to include units:** ______________________
+0. First, note the distance *in meters* between your reference electrode (−) and your cathode (−) stimulation pin?
+
+**Distance (m)**: ___________________
 
 1. **In PowerLab, press Start.** Confirm that you have two recording channels.
 2. Follow the same protocol as in the previous experiments to determine the threshold required to elicit an action potential from your medial giant fiber.
@@ -284,7 +286,7 @@ In the next step, you'll determine the shortest time between stimuli where you c
 
 #### Determine the MGF latency to spike
 
-1. Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to your elicited action potential.
+1. Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to the peak of your elicited action potential.
 2. Repeat this **10** times and record your data in Table 4.
 
 **Table 4.** MGF conduction velocity data at room temperature.

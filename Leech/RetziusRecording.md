@@ -10,24 +10,24 @@ Once you've confirmed that your manipulator and recording equipment is ready to 
 
 1. Maneuver your electrode into the saline bath. At the moment, there isn't any need to get it close to the ganglion — as long as it's in the saline, you can measure the resistance and troubleshoot noise.
 2. Make sure the peak-to-peak noise level of your recording is < 5 mV. There shouldn't be any obvious sinusoidal noise in your data. If there is, find the source and ground it.
-3. Test the resistance of the electrode (follow the steps from the previous lab):
-
-   **Electrode resistance:** ______________________
-
-4. Balance the bridge — it shouldn't be too far off since it should be balanced from the previous lab.
+3. Test the resistance of the electrode (follow the [steps in the Intracellular Lab](https://bipn145.github.io/Leech/IntracellularLab.html#iii-noise-resistance-and-balancing-the-bridge)).
+4. Quickly balance the bridge — it shouldn't be too far off since it should be balanced from the previous lab.
 
 ### Getting your leech & microelectrode in focus
 
 Before we can do any recording, we need to ensure that your light is set up well so that you can see your ganglion.
 
 1. Gently rest your petri dish in the plastic holder.
-2. Bring the leech ganglia into focus, and adjust your light and equipment positioning as necessary.
+2. Bring the leech ganglia into focus, and adjust your light and manipulator positioning as necessary.
 3. When you can clearly see your ganglia, see if you can spot the two Retzius cells in the middle (Figure 3).
 
    ![](images/ganglion_retzius_cells.png)
    *Figure 3. Ventral view of leech ganglion.*
 
-   **Note:** If you cannot see the two Retzius cells, it might be because your lighting needs to be adjusted, or because your ganglia is mistakenly set with the ventral side up.
+:::{admonition} Check your lighting!
+:class: tip
+If you cannot see the two Retzius cells, it might be because your lighting needs to be adjusted, or because your ganglia is mistakenly set with the ventral side up.
+:::
 
 4. Using the clay, position the ground wire so that it is in the saline but at the edge of your petri dish. Your ground wire should be plugged into "GND" on the amplifier.
 
@@ -51,9 +51,23 @@ Before we can do any recording, we need to ensure that your light is set up well
 6. If all goes well, you should see your Retzius cell firing very clear spontaneous action potentials!
 7. If your first attempt is unsuccessful, slightly advance the electrode towards the cell and try again. If this doesn't work, reposition the electrode to a different part of the cell and try again. Frequently check the resistance of your electrode to ensure that it is not broken or clogged.
 
-Once you have successfully impaled a Retzius cell, take note of the resting membrane potential of the cell:
+:::{admonition} Save your data!
+:class: danger
+*Save your data* (as a LabChart Data File) as soon as you have anything to save. Please make sure you are saving your data
+:::
 
-**Resting membrane potential:** ______________________
+:::{admonition} Having trouble?
+:class: attention
+
+Make sure the following is true:
+* *Both* the recording electrode & ground wire are in the saline
+* Electrode is fully inserted into electrode holder
+* Amplifier is ON
+* The amplifier CURRENT INJECTION knob is at 0 μA (fully counterclockwise)
+* If trying to zero signal: DC OFFSET switch is on + or –
+
+See TROUBLESHOOTING at the end of this protocol for additional tips.
+:::
 
 **Note:** The resting membrane potential will change slightly over time. Your most accurate measurement will be from when you first pierce the cell.
 
@@ -75,15 +89,15 @@ You will ultimately use this data to fill in Table 1, but don't take the time to
 
 Once you have characterized the spontaneous activity of your cell, we can also inject current to see how the cell responds to inputs.
 
-1. Set up your Stimulator as a pulse with the following parameters:
+1. Set up your Stimulator as a pulse with the following parameters. Note that the PowerLab will tell the amp to send 1 nA for each 10 mV.
 
    | Parameter | Value |
    |---|---|
    | Delay | 5 ms |
    | Max Repeat Rate | 0.5 Hz |
    | Repeats | 1 |
-   | Duration | 500 ms |
-   | Pulse Height | 10 mV (PowerLab will tell the amp to send 1 nA for each 10 mV) |
+   | Pulse Width | 500 ms |
+   | Pulse Height | 10 mV |
 
 2. Make sure that your CURRENT INJECTION toggles are on positive (+) and CONT.
 3. Configure Scope View in LabChart so that you can see one, 1 second sweep when a stimulus pulse is sent.
@@ -102,8 +116,8 @@ Once you have characterized the spontaneous activity of your cell, we can also i
 |---|---|---|---|
 | 1 | | | |
 | ... | | | |
-| Mean (or Median) | | | |
-| SD (or IQR) | | | |
+| Mean | | | |
+| SD | | | |
 
 *Note: This table is a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.*
 
@@ -113,7 +127,7 @@ Once you have characterized the spontaneous activity of your cell, we can also i
 |---|---|---|
 | 1 | | |
 | ... | | |
-| Mean (or Median) | | |
-| SD (or IQR) | | |
+| Mean | | |
+| SD | | |
 
-*Note: This table is a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.*
+*Note: These tables are a suggestion for how to ultimately collect data for this portion of the report. Set up a similar table after you have collected your data.*
