@@ -386,16 +386,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-as-a-model-in-neuroscience"><em>Drosophila</em> as a model in neuroscience</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bittersweet-mystery">A bittersweet mystery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-as-a-model-in-neuroscience"><em>Drosophila</em> as a model in neuroscience</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-replicate-a-published-protocol">Can we replicate a published protocol?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-gr5a-and-gr66a">Why Gr5a and Gr66a?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-lab-you-will">In this lab you will:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-protocol">Read the protocol</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-protocols">Common protocols</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fly-crossing-preparation">Fly Crossing &amp; Preparation</a></li>
 </ul>
 </li>
@@ -413,17 +411,20 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="drosophila-behavior-optogenetics">
 <h1><em>Drosophila</em> Behavior &amp; Optogenetics<a class="headerlink" href="#drosophila-behavior-optogenetics" title="Link to this heading">#</a></h1>
-<section id="background-goals">
-<h2>Background &amp; Goals<a class="headerlink" href="#background-goals" title="Link to this heading">#</a></h2>
+<section id="a-bittersweet-mystery">
+<h2>A bittersweet mystery<a class="headerlink" href="#a-bittersweet-mystery" title="Link to this heading">#</a></h2>
+<p>You’ve made a <em>bitter</em> mistake. You mixed up two unlabeled tubes of optogenetic flies. Both fly lines express CsChrimson, a red-light activated channelrhodopsin, but the neurons in which the CsChrimson is expressed differ.
+One tube contains a Gr5a-Gal4 × UAS-CsChrimson cross, in which CsChrimson is expressed in neurons that detect sweet compounds (including sucrose). These are the “sweet” optogenetic flies, because illuminating them with red light activates the neural circuitry involved in sweet taste perception. The other tube contains a Gr66a-Gal4 × UAS-CsChrimson cross, in which CsChrimson is expressed in bitter-sensing neurons. These are the “bitter” optogenetic flies, because illuminating them with red light activates the neural circuitry involved in the perception of bitter, noxious tastants.</p>
+<p><strong>Your goal is to design and implement experiments that will allow you to determine whether your mystery flies express CsChrimson in sweet-sensing neurons or bitter-sensing neurons.</strong></p>
+</section>
 <section id="drosophila-as-a-model-in-neuroscience">
-<h3><em>Drosophila</em> as a model in neuroscience<a class="headerlink" href="#drosophila-as-a-model-in-neuroscience" title="Link to this heading">#</a></h3>
+<h2><em>Drosophila</em> as a model in neuroscience<a class="headerlink" href="#drosophila-as-a-model-in-neuroscience" title="Link to this heading">#</a></h2>
 <p>With about 140,000 neurons aand incredible genetic tractability, the fruit fly is an important model organism in neuroscience. About 65% of human disease-associated genes have a homolog in <em>Drosophila melanogaster</em> (Ugur et al., 2016). Like many model organisms, fruit flies are easy to reproduce, cheap, and easy to take care of in a lab. On top of that, they’ve been studied for more than a century. <em>Drosophila</em> have been used to study learning, memory, vision, sleep, addiction, courtship, and aggression, among many other behaviors.</p>
 <p>As summarized in <a class="reference external" href="https://www.jove.com/t/67964/behavioral-assays-for-optogenetic-manipulation-neural-circuits">Akil et al. (2026)</a>, <em>Drosophila</em> are particularly amenable to experiments with optogenetic manipulations:</p>
 <blockquote>
 <div><p>Its small size and semi-transparent cuticle enhance the penetration of light, especially long-wavelength red light, enabling efficient optogenetic manipulation. While Drosophila cells cannot produce sufficient retinal, a crucial cofactor for the functionality of channelrhodopsins, adding retinal to their diet compensates for this limitation, ensuring effective activation of optogenetic tools.</p>
 </div></blockquote>
 <p>In this lab, we’ll try to replicate two of the protocols from this paper.</p>
-</section>
 </section>
 <section id="can-we-replicate-a-published-protocol">
 <h2>Can we replicate a published protocol?<a class="headerlink" href="#can-we-replicate-a-published-protocol" title="Link to this heading">#</a></h2>
@@ -440,11 +441,18 @@ document.write(`
 <li><p>Identify different types of transgenic flies used for neuroscience research</p></li>
 <li><p>Implement an optogenetic experiment to interrogate neural circuit function</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Comprehension Check</p>
+<ol class="arabic simple">
+<li><p>How does the Gal4-UAS system result in CsChrimson expression in different neurons?</p></li>
+<li><p>CsChrimson is a red-light shifted channelrhodopsin. What happens when you shine a red light on a Gr5a-Gal4 x UAS-CsChrimson cross?</p></li>
+</ol>
+</div>
 </section>
 </section>
-<section id="read-the-protocol">
-<h2>Read the protocol<a class="headerlink" href="#read-the-protocol" title="Link to this heading">#</a></h2>
-<p>First, you’ll be assigned to read and watch the protocol for the proboscis extension or the fly maze assay. We’ll discuss these protocols in small groups during the first day of lab, and you’ll turn in a small write up summarizing these experiments.</p>
+<section id="common-protocols">
+<h2>Common protocols<a class="headerlink" href="#common-protocols" title="Link to this heading">#</a></h2>
+<p>We’ve done the first few steps for both of these assays for you, detailed below.</p>
 <section id="fly-crossing-preparation">
 <h3>Fly Crossing &amp; Preparation<a class="headerlink" href="#fly-crossing-preparation" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
@@ -535,16 +543,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-goals">Background &amp; Goals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-as-a-model-in-neuroscience"><em>Drosophila</em> as a model in neuroscience</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bittersweet-mystery">A bittersweet mystery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-as-a-model-in-neuroscience"><em>Drosophila</em> as a model in neuroscience</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-replicate-a-published-protocol">Can we replicate a published protocol?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-gr5a-and-gr66a">Why Gr5a and Gr66a?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-lab-you-will">In this lab you will:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-protocol">Read the protocol</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-protocols">Common protocols</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fly-crossing-preparation">Fly Crossing &amp; Preparation</a></li>
 </ul>
 </li>

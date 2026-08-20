@@ -1,8 +1,14 @@
 # *Drosophila* Behavior & Optogenetics
 
-## Background & Goals
+## A bittersweet mystery
 
-### *Drosophila* as a model in neuroscience
+You’ve made a *bitter* mistake. You mixed up two unlabeled tubes of optogenetic flies. Both fly lines express CsChrimson, a red-light activated channelrhodopsin, but the neurons in which the CsChrimson is expressed differ.
+One tube contains a Gr5a-Gal4 × UAS-CsChrimson cross, in which CsChrimson is expressed in neurons that detect sweet compounds (including sucrose). These are the "sweet" optogenetic flies, because illuminating them with red light activates the neural circuitry involved in sweet taste perception. The other tube contains a Gr66a-Gal4 × UAS-CsChrimson cross, in which CsChrimson is expressed in bitter-sensing neurons. These are the "bitter" optogenetic flies, because illuminating them with red light activates the neural circuitry involved in the perception of bitter, noxious tastants. 
+
+**Your goal is to design and implement experiments that will allow you to determine whether your mystery flies express CsChrimson in sweet-sensing neurons or bitter-sensing neurons.**
+
+
+## *Drosophila* as a model in neuroscience
 
 With about 140,000 neurons aand incredible genetic tractability, the fruit fly is an important model organism in neuroscience. About 65% of human disease-associated genes have a homolog in *Drosophila melanogaster* (Ugur et al., 2016). Like many model organisms, fruit flies are easy to reproduce, cheap, and easy to take care of in a lab. On top of that, they've been studied for more than a century. *Drosophila* have been used to study learning, memory, vision, sleep, addiction, courtship, and aggression, among many other behaviors.
 
@@ -26,9 +32,15 @@ Because Gr5a and Gr66a neurons drive opposite behaviors, this assay lets you cau
 - Identify different types of transgenic flies used for neuroscience research
 - Implement an optogenetic experiment to interrogate neural circuit function
 
-## Read the protocol
+:::{admonition} Comprehension Check
+:class: tip
+1. How does the Gal4-UAS system result in CsChrimson expression in different neurons?
+2. CsChrimson is a red-light shifted channelrhodopsin. What happens when you shine a red light on a Gr5a-Gal4 x UAS-CsChrimson cross?
+:::
 
-First, you'll be assigned to read and watch the protocol for the proboscis extension or the fly maze assay. We'll discuss these protocols in small groups during the first day of lab, and you'll turn in a small write up summarizing these experiments.
+## Common protocols
+
+We've done the first few steps for both of these assays for you, detailed below.
 
 ### Fly Crossing & Preparation
 
