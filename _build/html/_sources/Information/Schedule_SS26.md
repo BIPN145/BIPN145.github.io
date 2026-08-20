@@ -17,11 +17,11 @@
 | **Week 3** |  |  |  |
 | Tue Aug 18 | **Exam #1** | Analysis & catch-up day | **DUE** Earthworm Lab Report |
 | Wed Aug 19 | How is science funded? & introduction to final projects | Final project brainstorm; equipment & needs | **DUE** Leech Lab *(Group Assignment)* |
-| Thu Aug 20 | Measuring behavior in *Drosophila* and more | **Lab #7:** The Case of the Mislabeled Vials | **READ** your *Drosophila* behavior handout|
-| Fri Aug 21 *(drop w/ "W" deadline)* | *Drosophila* genetics & optogenetics | *Drosophila* lab continued | **DUE** Project proposals |
+| Thu Aug 20 | Measuring behavior in *Drosophila* and more | **Lab #5** *Drosophila* paper discussion | |
+| Fri Aug 21 *(drop w/ "W" deadline)* | *Drosophila* genetics & optogenetics | **Lab #5** *Drosophila* optogenetics lab | **DUE** Project proposals |
 | **Week 4** |  |  |  |
-| Tue Aug 25 | Electroencephalography (EEG) | **Lab #8:** EEG | **DUE** *Drosophila* optogenetics methods & results write-up |
-| Wed Aug 26 | *Drosophila* Presentations | **Lab #8:** EEG (analysis) | **DUE (Wed @ 11:59 pm)** *Drosophila* Presentation slides |
+| Tue Aug 25 | Electroencephalography (EEG) | **Lab #6:** EEG | **DUE** *Drosophila* Presentation slides |
+| Wed Aug 26 | *Drosophila* Presentations | **Lab #6:** EEG (analysis) |  |
 | Thu Aug 27 | Visualizing the nervous system | Allen Mouse Brain Connectivity | **DUE** EEG Quiz & Results |
 | Fri Aug 28 | Neuroscience in the 21st century | Visual perception in a mouse | **DUE** Allen Connectivity Lab |
 | **Week 5** |  |  |  |

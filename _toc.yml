@@ -22,12 +22,16 @@ parts:
           - file: Leech/IntracellularLab.md
           - file: Leech/RetziusRecording.md
           - file: Leech/FillingRetziusCell.md
-      - file: Drosophila/Introduction.md
+#- file: Drosophila/Introduction
+#  sections:
+#  - file: Drosophila/Day1
+#  - file: Drosophila/Day2
+#  - file: FlyTracking/Script
+#  - file: FlyTracking/ColabNotebook
+      - file: Drosophila_new/Introduction
         sections:
-          - file: Drosophila/Day1.md
-          - file: Drosophila/Day2.md
-          - file: FlyTracking/Script.ipynb
-          - file: FlyTracking/ColabNotebook.ipynb
+          - file: Drosophila_new/PER
+          - file: Drosophila_new/FlyMaze
       - file: LabManual/EEG.md
   - caption: Tools & Data Analysis
     chapters:

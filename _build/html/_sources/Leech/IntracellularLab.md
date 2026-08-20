@@ -10,14 +10,12 @@ In subsequent labs, we'll be recording from tiny cells in the leech ganglia, as 
 | PowerLab 26T, connected to computer | BNC Cable | Saline |
 | A-M Systems 3100 Intracellular amplifier & silver head stage probe | Banana plug cords (5) | |
 | Microelectrode holder (AM Systems #675440) | Alligator clip adapters (5) | |
-| Microelectrode (BF100-58-10) | Ground wire & clay or wax | |
+| Microelectrode (BF100-58-10) | Ground wire & clay | |
 | Faraday Cage | | |
 | Metal baseplate & foam pads | | |
 | Micromanipulator & stand | | |
 | Stereomicroscope on boom stand | | |
 | Light source | | |
-| Syringe & needle | | |
-| 4 cm diameter petri dish with saline | | |
 | 4 cm diameter petri dish with microbeads | | |
 
 ---
@@ -51,7 +49,6 @@ This first activity will prepare you for recording from a leech ganglion. The st
 2. Arrange your lights so that they're shining onto the dish.
 3. Bring the beads into focus at a low magnification (1.8–3x).
 4. Move to the highest magnification, and bring the beads into focus. Adjust your light source so that the beads are clearly visible.
-5. Use your calculated viewing field diameter to estimate the size of the smallest bead in your dish.
 
 :::{admonition} A sense of scale
 :class: attention
@@ -63,16 +60,15 @@ Given the diameter of your viewing field, what is your estimated diameter of the
 1. Get a microelectrode from the front and use the syringe to fill it with KCl.
 2. Gently put the microelectrode onto the wire of the microelectrode holder and screw it in.
 3. Put the micropipette holder into the silver headstage by pushing the gold pin into the bottom.
-4. Make sure that your manipulator arm is at a right angle. Any angles that are not perpendicular will make it difficult to maneuver your micropipette.
-5. Move the manipulator base (you need to turn the magnetic switch to OFF) close to the dish so that the tip of the "electrode" is within 3 inches of your dish.
+4. Make sure that your manipulator arm is at a right angle. In other words, when you turn the “y” knob of the manipulator, it should move directly up and down in your dish, and turning the “x” knob should move it left and right. Any angles that are not perpendicular will make it difficult to maneuver your micropipette.
+5. If you think you might need to move the manipulator base, please alert someone on the instructional staff.
 6. Use the knobs on the manipulator to bring the tip of your pipette about ½ inch above your beads.
 7. Bring the focus above the dish so that the tip of the pipette is now in focus.
 8. Lower the focus, and bring the tip of the pipette into that field of view.
-9. Repeat this until the tip of the pipette is at the same focus as the glass beads.
-10. At a high magnification (11X), you should see the glass beads being repelled by the tip of the pipette, or be able to push them around.
-11. Once you have the tip of your pipette at the same focus as your beads, raise your electrode and remove the dish of beads.
+9. Repeat this until the tip of the pipette is at *almost* the same focus as the glass beads, without your tip touching the bottom of the plate!
+10. Once you have the tip of your pipette at the same focus as your beads, raise your electrode and remove the dish of beads.
 
-**Troubleshooting**
+### Troubleshooting
 
 | Observation | Likely issue(s) | Possible solution |
 |---|---|---|
@@ -142,7 +138,7 @@ For the next steps, you'll need to use these knobs on your amplifier:
 
 ### Check the resistance of your electrode
 
-1. With the Input Amplifier window open, note the voltage of the trace. It will likely not be exactly at zero. This is due to the slight differences in the potentials of the ground and recording electrodes, and will change when you change electrodes.
+1. With the Input Amplifier window open, note the voltage of the trace. It will likely not be exactly at zero. This is due to the slight differences in the potentials of the ground and recording electrodes (**the offset potential**), and will change when you change electrodes.
 2. Switch the DC OFFSET to positive (+). Using the DC OFFSET knob on the amplifier, position the tracing so that it is very close to 0 volts. You may need to set the switch next to DC OFFSET to negative (−) depending on what direction you need to move your signal.
 
    ![](images/dc_offset_knob.png)
@@ -152,18 +148,23 @@ For the next steps, you'll need to use these knobs on your amplifier:
 3. With the tip of your electrode in the saline, press Start in LabChart. You should be viewing in Chart mode.
 4. Very quickly, turn on and off the Ω TEST on the Amplifier. This Ω TEST sends 10 nA of current into the electrode.
 5. Press Stop in LabChart.
-6. For the data you just recorded, autoscale the channel in time and voltage so that you can clearly see a square wave pulse.
-7. If your waveform is not square, turn the CAPACITY COMPENSATION knob on the amplifier slightly clockwise and repeat the Ω TEST. You can treat LabChart like an oscilloscope and let it run (press Start) while you do these tests.
+6. For the data you just recorded, autoscale the channel in time and voltage so that you can see the highest voltage.
 
-   **Note:** Do not turn the CAPACITY COMPENSATION knob too far — it will result in uncontrolled oscillations in your output. If you do this while recording from a cell, you will greatly damage the cell.
+:::{admonition} Let it run!
+:class: tip
+ You can treat LabChart like an oscilloscope and let it run (press Start) while you do these tests. 
+:::
 
-8. Once you've squared up your waveform, measure the height of this square wave in volts.
-
-Calculate the resistance of your electrode according to Ohm's Law (V = IR). In the units we're working with here, 1 MΩ = 1 mV / 1 nA. Since the Ω TEST sends 10 nA, with 1X gain a 10 mV shift in the output voltage corresponds to 1 MΩ resistance.
+Calculate the resistance of your electrode according to Ohm's Law (V = IR). In the units we're working with here, 1 MΩ = 1 mV / 1 nA. Since the Ω TEST sends 10 nA, with 1X gain **a 10 mV shift in the output voltage corresponds to 1 MΩ resistance**.
 
 **Electrode resistance = ______________________**
 
 The resistance of your electrode should be between 20–60 MΩ. If it's too high (>60 MΩ), it might be clogged. Use the Ringer button and try again. If it's too low (<20 MΩ), the tip of your electrode probably broke — get a new electrode.
+
+:::{admonition} We might need to be flexible.
+:class: tip
+What we consider an acceptable resistance depends on how the electrodes look each quarter and how the lab is progressing. We will let you know if you should refer to a different resistance range than the one given above. 
+:::
 
 ### Balancing the bridge for current injection
 

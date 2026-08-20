@@ -1,0 +1,84 @@
+# Two-Choice Optogenetic Preference Assay
+
+In this protocol, you'll use a simple maze to ask a simple question with a genetically precise tool: does activating a specific population of taste neurons with light cause a fly to *approach* or *avoid* that light?
+
+You'll be given vials of two different fly lines, each expressing the red light-gated ion channel **CsChrimson** in a different population of gustatory receptor neurons — either **Gr5a** (sweet-sensing) or **Gr66a** (bitter-sensing). You won't be told which vial is which. Using a **two-choice assay**, you'll collect behavioral data, calculate a **preference index**, run a statistical test, and use your results to figure out — and defend — which genotype is in each vial.
+
+This protocol follows Fu et al. (2023), "[Using Drosophila Two-Choice Assay to Study Optogenetics in Hands-On Neurobiology Laboratory Activities](https://doi.org/10.59390/SDWH9124)", published in the *Journal of Undergraduate Neuroscience Education*.
+
+**Supplies**
+* 3D-printed fly maze 
+* 2 testing tubes per maze (1 clear, 1 foil-wrapped)
+* Red LED light source
+* BNC Cable
+* Power cable
+* Lux meter app (on phone)
+* Timer
+* Small funnel
+* Ice and ice bucket
+* Vials of Gr5a>CsChrimson and Gr66a>CsChrimson flies 
+
+## Setting up the fly maze
+
+![](images/fly_maze_setup.png)
+
+The fly maze has a **loading hole** on top, with holes on each side for the testing. Two testing tubes — one clear, one wrapped in foil — insert into the two testing holes.
+
+1. Insert the clear tube into one testing hole and the foil-wrapped tube into the other.
+
+## Set up your light
+
+1. Connect the red LED to the PowerLab Output using the BNC cable.
+2. Connect the 5V power to the LED.
+3. Configure LabChart to send 1 second pulses of red light every other second in Setup → Stimulator. This will allow you to control the pulse heights (2V-10V). More voltage will change LED intensity.
+4. Position the red LED next to the clear tube. Use the lux meter to measure the light intensity at this distance.
+4. Measure the output from your LED using a lightmeter on your phone.
+
+**Light intensity: ____________**
+
+## Running the two-choice assay
+
+1. Place one of your vials of flies into ice until the flies are immobile. 
+2. Once the flies are immobile, using the funnel, tap flies from one vial into the top loading hole.
+3. Wait one minute, or until you see any fly emerge into the testing side. Once you do, start the red LED pulse.
+4. Wait one more minute for flies to move.
+5. **Count the clear-tube (red-light side) flies:** Without moving the maze, quickly count how many flies are in the clear side. If you need to, you can take a picture!
+6. **Count the foil-tube (dark side) flies:** Carefully remove the foil from the dark side and quickly count the flies within. Include any flies that you see within the loading space in this count as well, since they never made it to the red-light tube.
+8. Record all three counts in **Data Table 1**.
+9. 
+
+
+## Calculating the preference index
+
+For each vial, calculate a **preference index (PI)**:
+
+$$
+PI = \frac{N_{red} - N_{dark}}{N_{total}}
+$$
+
+where $N_{red}$ is the number of flies on the red-light side, $N_{dark}$ is the number of flies on the dark side (foil tube + elevator hole), and $N_{total}$ is the total number of flies tested.
+
+PI ranges from **−1** (every fly avoided the light) to **+1** (every fly moved toward the light). A PI near **0** indicates no preference either way.
+
+:::{admonition} Guesses, please!
+:class: tip
+Based on your preference indices, which vial do you think is Gr5a>CsChrimson, and which is Gr66a>CsChrimson?
+:::
+
+## Reflection Questions
+
+1. Why is **red** light used for CsChrimson activation in this assay, rather than blue or green light?
+2. Fu et al. found that when flies were loaded through the *testing* hole instead of the *loading* hole, flies started at the boundary between the light and dark sides rather than in the middle — and this changed their results. Which direction do you think this would bias the preference index, and why?
+3. This lab module doesn't include formal control groups (e.g., wild-type flies, single-transgene flies, or flies raised without ATR) due to time constraints. What would each of these controls tell you, and which do you think is most important to add if you had more time?
+4. Gr5a and Gr66a neurons are largely non-overlapping — but not entirely, and both project into a shared brain region (the subesophageal ganglion). How might overlapping expression complicate interpretation of a result like this?
+
+
+## Troubleshooting
+
+| **Observation** | **Likely issue(s)** | **Possible solution** |
+|---|---|---|
+| Flies aren't moving at all after loading | Flies are cold-stunned from handling, or starved too long | Give flies a minute to recover before starting the timer; check starvation window |
+| Preference index is close to 0 for both genotypes | Light intensity too low | Recheck lux meter reading at 11 cm; note loading method used |
+| Flies escape during tube transfer | Funnel not seated tightly, or flies not sufficiently tapped down | Tap tube firmly on the bench before removing caps; work over a container |
+| Counted flies don't match starting vial number | Flies lost during transfer, or miscounted | Recount; note any discrepancy in your data table rather than adjusting counts |
+

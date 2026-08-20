@@ -13,10 +13,14 @@ chapters:
   - file: Leech/IntracellularLab
   - file: Leech/RetziusRecording
   - file: Leech/FillingRetziusCell
-- file: Drosophila/Introduction
+#- file: Drosophila/Introduction
+#  sections:
+#  - file: Drosophila/Day1
+#  - file: Drosophila/Day2
+#  - file: FlyTracking/Script
+#  - file: FlyTracking/ColabNotebook
+- file: Drosophila_new/Introduction
   sections:
-  - file: Drosophila/Day1
-  - file: Drosophila/Day2
-  - file: FlyTracking/Script
-  - file: FlyTracking/ColabNotebook
+  - file: Drosophila_new/PER
+  - file: Drosophila_new/FlyMaze
 - file: EEG
