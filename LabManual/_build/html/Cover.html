@@ -298,7 +298,9 @@ document.write(`
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/FillingRetziusCell">Filling the Retzius Cell</a></li>
 </ul>
 </li>
-<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="simple visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="visible nav section-nav flex-column">
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/PER">Proboscis Extension Reflex (PER) Assay</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/FlyMaze">Two-Choice Optogenetic Preference Assay</a></li>
 </ul>
 </li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-EEG">Measuring Alpha Wave Activity Using EEG</a></li>
@@ -2650,6 +2652,185 @@ If you do not feel that is the case, please let us know.</p>
 <p>Ugur, B., Chen, K., &amp; Bellen, H. J. (2016). <em>Drosophila</em> tools and assays for the study of human diseases. <em>Disease Models &amp; Mechanisms</em> 9(3): 235–244.</p>
 </section>
 <div class="toctree-wrapper compound">
+<span id="document-Drosophila_new/PER"></span><section class="tex2jax_ignore mathjax_ignore" id="proboscis-extension-reflex-per-assay">
+<h3>Proboscis Extension Reflex (PER) Assay<a class="headerlink" href="#proboscis-extension-reflex-per-assay" title="Link to this heading">#</a></h3>
+<p><img alt="" src="_images/per_overview.png" /></p>
+<p>The <strong>proboscis extension</strong> is the reflexive extension of the mouthpart (proboscis) in response to taste stimuli. It is a fundamental feeding behavior that can be stimulated by exposing the antennae, labellar hairs, or tarsi (last segments of the leg) to an appetitive taste stimulus. This approach has been used to investigate the neural circuit, including gustatory sensory neurons, taste projection neurons, and proboscis motor neurons (e.g. <a class="reference external" href="https://elifesciences.org/articles/79887">Shiu et al., 2022</a>).</p>
+<section id="immobilization">
+<h4>Immobilization<a class="headerlink" href="#immobilization" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Place fly tubes on ice for 2–3 minutes until flies are immobile.</p></li>
+</ol>
+<div class="danger admonition">
+<p class="admonition-title">Keep an eye on your flies!</p>
+<p>Do not leave your flies on ice too long! As soon as they’re not moving, you can transfer them.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Place the bottom of the petri dish upside down on ice. Wipe away condensation before placing flies on the dish.</p></li>
+<li><p>Using a brush, <em>very gently</em> isolate one fly onto the petri dish and <em>carefully</em> orient the fly so it is dorsal-side up (Panel E in the figure below). Be gentle — the flies are very fragile.</p></li>
+<li><p>Prepare a coverslip: using the transfer pipette, place a tiny drop (1 μl, &lt;2 mm in diameter) of glue on a coverslip.</p></li>
+</ol>
+<p><img alt="" src="_images/per_immobilization.png" /></p>
+<ol class="arabic simple" start="5">
+<li><p>Gently lower the coverslip onto the dorsal side of the fly, until just submerging the back and wings, immobilizing the fly in the glue (Figures F–G above).</p></li>
+</ol>
+<div class="danger admonition">
+<p class="admonition-title">Carefully mount your flies</p>
+<p>Only the back should be submerged in the glue. The head, proboscis, and at least one leg should be exposed — if any one of those parts is submerged, try again with another fly. If you’ve only submerged the wings, try flipping the coverslip over and using forceps to gently lower the back into the glue.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Place one damp paper towel in the plastic container on your lab bench. Ensure the box is dry. Place the coverslip in the box and close the container to regulate humidity.</p></li>
+<li><p>Repeat with the remaining flies. You should prepare <strong>10</strong> flies total.</p></li>
+<li><p>Allow the flies to recover for at least <strong>1.5 hours</strong> before testing. Complete the other behavioral tests during the recovery period.</p></li>
+</ol>
+</section>
+<section id="running-the-per-assay">
+<h4>Running the PER assay<a class="headerlink" href="#running-the-per-assay" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Identify the flies that are moving after the rest period.</p></li>
+<li><p>Place the cover slip under the microscope. Use a syringe to deliver a droplet of water to satiate the fly, preventing thirst-induced proboscis extensions.</p></li>
+<li><p>Put on your laser blocking glasses.</p></li>
+</ol>
+<div class="danger admonition">
+<p class="admonition-title">Eye protection</p>
+<p>Eye protection that can filter out red laser/light is essential when observing the red light through the microscope.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Manually hold a red laser pointer to shine red light at the proboscis/head of a single fly (700 lux) while observing the PER response through the microscope.</p></li>
+<li><p>Observe and record proboscis extension within a 30-s window. Score each fly using the following recording system:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Score</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>No extension</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.5</p></td>
+<td><p>Extension lasts 1–2 s</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Extension lasts over 3 s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>After testing light-induced proboscis extension, examine the response to 4% sucrose using a syringe. Expel a droplet of sucrose at the end of the needle and bring it close to the fly proboscis. <strong>Discard the data from flies that fail to respond to the sucrose droplet.</strong></p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Guesses, please!</p>
+<p>Based on your proboscis extension results, which vial do you think is Gr5a&gt;CsChrimson, and which is Gr66a&gt;CsChrimson?</p>
+</div>
+</section>
+</section>
+<span id="document-Drosophila_new/FlyMaze"></span><section class="tex2jax_ignore mathjax_ignore" id="two-choice-optogenetic-preference-assay">
+<h3>Two-Choice Optogenetic Preference Assay<a class="headerlink" href="#two-choice-optogenetic-preference-assay" title="Link to this heading">#</a></h3>
+<p>In this protocol, you’ll use a simple maze to ask a simple question with a genetically precise tool: does activating a specific population of taste neurons with light cause a fly to <em>approach</em> or <em>avoid</em> that light?</p>
+<p>You’ll be given vials of two different fly lines, each expressing the red light-gated ion channel <strong>CsChrimson</strong> in a different population of gustatory receptor neurons — either <strong>Gr5a</strong> (sweet-sensing) or <strong>Gr66a</strong> (bitter-sensing). You won’t be told which vial is which. Using a <strong>two-choice assay</strong>, you’ll collect behavioral data, calculate a <strong>preference index</strong>, run a statistical test, and use your results to figure out — and defend — which genotype is in each vial.</p>
+<p>This protocol follows Fu et al. (2023), “<a class="reference external" href="https://doi.org/10.59390/SDWH9124">Using Drosophila Two-Choice Assay to Study Optogenetics in Hands-On Neurobiology Laboratory Activities</a>”, published in the <em>Journal of Undergraduate Neuroscience Education</em>.</p>
+<p><strong>Supplies</strong></p>
+<ul class="simple">
+<li><p>3D-printed fly maze</p></li>
+<li><p>2 testing tubes per maze (1 clear, 1 foil-wrapped)</p></li>
+<li><p>Red LED light source</p></li>
+<li><p>BNC Cable</p></li>
+<li><p>Power cable</p></li>
+<li><p>Lux meter app (on phone)</p></li>
+<li><p>Timer</p></li>
+<li><p>Small funnel</p></li>
+<li><p>Ice and ice bucket</p></li>
+<li><p>Vials of Gr5a&gt;CsChrimson and Gr66a&gt;CsChrimson flies</p></li>
+</ul>
+<section id="setting-up-the-fly-maze">
+<h4>Setting up the fly maze<a class="headerlink" href="#setting-up-the-fly-maze" title="Link to this heading">#</a></h4>
+<p><img alt="" src="Drosophila_new/images/fly_maze_setup.png" /></p>
+<p>The fly maze has a <strong>loading hole</strong> on top, with holes on each side for the testing. Two testing tubes — one clear, one wrapped in foil — insert into the two testing holes.</p>
+<ol class="arabic simple">
+<li><p>Insert the clear tube into one testing hole and the foil-wrapped tube into the other.</p></li>
+</ol>
+</section>
+<section id="set-up-your-light">
+<h4>Set up your light<a class="headerlink" href="#set-up-your-light" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Connect the red LED to the PowerLab Output using the BNC cable.</p></li>
+<li><p>Connect the 5V power to the LED.</p></li>
+<li><p>Configure LabChart to send 1 second pulses of red light every other second in Setup → Stimulator. This will allow you to control the pulse heights (2V-10V). More voltage will change LED intensity.</p></li>
+<li><p>Position the red LED next to the clear tube. Use the lux meter to measure the light intensity at this distance.</p></li>
+<li><p>Measure the output from your LED using a lightmeter on your phone.</p></li>
+</ol>
+<p><strong>Light intensity: ____________</strong></p>
+</section>
+<section id="running-the-two-choice-assay">
+<h4>Running the two-choice assay<a class="headerlink" href="#running-the-two-choice-assay" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Place one of your vials of flies into ice until the flies are immobile.</p></li>
+<li><p>Once the flies are immobile, using the funnel, tap flies from one vial into the top loading hole.</p></li>
+<li><p>Wait one minute, or until you see any fly emerge into the testing side. Once you do, start the red LED pulse.</p></li>
+<li><p>Wait one more minute for flies to move.</p></li>
+<li><p><strong>Count the clear-tube (red-light side) flies:</strong> Without moving the maze, quickly count how many flies are in the clear side. If you need to, you can take a picture!</p></li>
+<li><p><strong>Count the foil-tube (dark side) flies:</strong> Carefully remove the foil from the dark side and quickly count the flies within. Include any flies that you see within the loading space in this count as well, since they never made it to the red-light tube.</p></li>
+<li><p>Record all three counts in <strong>Data Table 1</strong>.</p></li>
+<li></li>
+</ol>
+</section>
+<section id="calculating-the-preference-index">
+<h4>Calculating the preference index<a class="headerlink" href="#calculating-the-preference-index" title="Link to this heading">#</a></h4>
+<p>For each vial, calculate a <strong>preference index (PI)</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+PI = \frac{N_{red} - N_{dark}}{N_{total}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_{red}\)</span> is the number of flies on the red-light side, <span class="math notranslate nohighlight">\(N_{dark}\)</span> is the number of flies on the dark side (foil tube + elevator hole), and <span class="math notranslate nohighlight">\(N_{total}\)</span> is the total number of flies tested.</p>
+<p>PI ranges from <strong>−1</strong> (every fly avoided the light) to <strong>+1</strong> (every fly moved toward the light). A PI near <strong>0</strong> indicates no preference either way.</p>
+<div class="tip admonition">
+<p class="admonition-title">Guesses, please!</p>
+<p>Based on your preference indices, which vial do you think is Gr5a&gt;CsChrimson, and which is Gr66a&gt;CsChrimson?</p>
+</div>
+</section>
+<section id="reflection-questions">
+<h4>Reflection Questions<a class="headerlink" href="#reflection-questions" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Why is <strong>red</strong> light used for CsChrimson activation in these assays, rather than blue or green light?</p></li>
+<li><p>Fu et al. found that when flies were loaded through the <em>testing</em> hole instead of the <em>loading</em> hole, flies started at the boundary between the light and dark sides rather than in the middle — and this changed their results. Which direction do you think this would bias the preference index, and why?</p></li>
+<li><p>This lab module doesn’t include formal control groups (e.g., wild-type flies, single-transgene flies, or flies raised without ATR) due to time constraints. What would each of these controls tell you, and which do you think is most important to add if you had more time?</p></li>
+<li><p>Gr5a and Gr66a neurons are largely non-overlapping — but not entirely, and both project into a shared brain region (the subesophageal ganglion). How might overlapping expression complicate interpretation of a result like this?</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h4>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Observation</strong></p></th>
+<th class="head"><p><strong>Likely issue(s)</strong></p></th>
+<th class="head"><p><strong>Possible solution</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Flies aren’t moving at all after loading</p></td>
+<td><p>Flies are cold-stunned from handling, or starved too long</p></td>
+<td><p>Give flies a minute to recover before starting the timer; check starvation window</p></td>
+</tr>
+<tr class="row-odd"><td><p>Preference index is close to 0 for both genotypes</p></td>
+<td><p>Light intensity too low</p></td>
+<td><p>Recheck lux meter reading at 11 cm; note loading method used</p></td>
+</tr>
+<tr class="row-even"><td><p>Flies escape during tube transfer</p></td>
+<td><p>Funnel not seated tightly, or flies not sufficiently tapped down</p></td>
+<td><p>Tap tube firmly on the bench before removing caps; work over a container</p></td>
+</tr>
+<tr class="row-odd"><td><p>Counted flies don’t match starting vial number</p></td>
+<td><p>Flies lost during transfer, or miscounted</p></td>
+<td><p>Recount; note any discrepancy in your data table rather than adjusting counts</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 </div>
 </section>
 <span id="document-EEG"></span><section class="tex2jax_ignore mathjax_ignore" id="measuring-alpha-wave-activity-using-eeg">
@@ -2982,7 +3163,9 @@ If you do not feel that is the case, please let us know.</p>
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Leech/FillingRetziusCell">Filling the Retzius Cell</a></li>
 </ul>
 </li>
-<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="simple visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/Introduction"><em>Drosophila</em> Behavior &amp; Optogenetics</a><ul class="visible nav section-nav flex-column">
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/PER">Proboscis Extension Reflex (PER) Assay</a></li>
+<li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Drosophila_new/FlyMaze">Two-Choice Optogenetic Preference Assay</a></li>
 </ul>
 </li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-EEG">Measuring Alpha Wave Activity Using EEG</a></li>

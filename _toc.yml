@@ -22,10 +22,10 @@ parts:
           - file: Leech/IntracellularLab.md
           - file: Leech/RetziusRecording.md
           - file: Leech/FillingRetziusCell.md
-      - file: Drosophila_new/Introduction
+      - file: LabManual/Drosophila_new/Introduction
         sections:
-          - file: Drosophila_new/PER
-          - file: Drosophila_new/FlyMaze
+          - file: LabManual/Drosophila_new/PER
+          - file: LabManual/Drosophila_new/FlyMaze
       - file: LabManual/EEG.md
   - caption: Tools & Data Analysis
     chapters:
