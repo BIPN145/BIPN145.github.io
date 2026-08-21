@@ -55,6 +55,12 @@ We've done the first few steps for both of these assays for you, detailed below.
 Although previous studies recommend starving the Gr5a flies because sugar-seeking behavior is strongest when flies are food-deprived, we aren't able to do that for our lab.
 :::
 
+:::{admonition} Concept Check
+:class: tip
+Why is **red** light used for CsChrimson activation in these assays, rather than blue or green light?
+:::
+
+
 ## Relevant references
 
 Chen, Y.-C. D., & Dahanukar, A. (2020). Recent advances in the genetic basis of taste detection in *Drosophila*. *Cellular and Molecular Life Sciences* 77(6): 1087–1101.

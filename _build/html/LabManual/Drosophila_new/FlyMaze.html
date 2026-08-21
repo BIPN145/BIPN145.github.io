@@ -390,7 +390,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-light">Set up your light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-two-choice-assay">Running the two-choice assay</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-preference-index">Calculating the preference index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-questions">Reflection Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
             </nav>
@@ -406,7 +405,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="two-choice-optogenetic-preference-assay">
 <h1>Two-Choice Optogenetic Preference Assay<a class="headerlink" href="#two-choice-optogenetic-preference-assay" title="Link to this heading">#</a></h1>
 <p>In this protocol, you’ll use a simple maze to ask a simple question with a genetically precise tool: does activating a specific population of taste neurons with light cause a fly to <em>approach</em> or <em>avoid</em> that light?</p>
-<p>You’ll be given vials of two different fly lines, each expressing the red light-gated ion channel <strong>CsChrimson</strong> in a different population of gustatory receptor neurons — either <strong>Gr5a</strong> (sweet-sensing) or <strong>Gr66a</strong> (bitter-sensing). You won’t be told which vial is which. Using a <strong>two-choice assay</strong>, you’ll collect behavioral data, calculate a <strong>preference index</strong>, run a statistical test, and use your results to figure out — and defend — which genotype is in each vial.</p>
+<p>You’ll be given a vial of flies that express the red light-gated ion channel <strong>CsChrimson</strong> in a particular population of gustatory receptor neurons: either <strong>Gr5a</strong> (sweet-sensing) or <strong>Gr66a</strong> (bitter-sensing). You won’t be told which you have. Using a <strong>two-choice assay</strong>, you’ll collect behavioral data, calculate a <strong>preference index</strong>, and use your results to figure out — and defend — which genotype you have.</p>
 <p>This protocol follows Fu et al. (2023), “<a class="reference external" href="https://doi.org/10.59390/SDWH9124">Using Drosophila Two-Choice Assay to Study Optogenetics in Hands-On Neurobiology Laboratory Activities</a>”, published in the <em>Journal of Undergraduate Neuroscience Education</em>.</p>
 <p><strong>Supplies</strong></p>
 <ul class="simple">
@@ -450,7 +449,7 @@ document.write(`
 <li><p><strong>Count the clear-tube (red-light side) flies:</strong> Without moving the maze, quickly count how many flies are in the clear side. If you need to, you can take a picture!</p></li>
 <li><p><strong>Count the foil-tube (dark side) flies:</strong> Carefully remove the foil from the dark side and quickly count the flies within. Include any flies that you see within the loading space in this count as well, since they never made it to the red-light tube.</p></li>
 <li><p>Record all three counts in <strong>Data Table 1</strong>.</p></li>
-<li></li>
+<li><p>Repeat with your other vial of flies.</p></li>
 </ol>
 </section>
 <section id="calculating-the-preference-index">
@@ -464,17 +463,8 @@ PI = \frac{N_{red} - N_{dark}}{N_{total}}
 <p>PI ranges from <strong>−1</strong> (every fly avoided the light) to <strong>+1</strong> (every fly moved toward the light). A PI near <strong>0</strong> indicates no preference either way.</p>
 <div class="tip admonition">
 <p class="admonition-title">Guesses, please!</p>
-<p>Based on your preference indices, which vial do you think is Gr5a&gt;CsChrimson, and which is Gr66a&gt;CsChrimson?</p>
+<p>Based on your preference indices, do you think you have Gr5a&gt;CsChrimson or Gr66a&gt;CsChrimson flies?</p>
 </div>
-</section>
-<section id="reflection-questions">
-<h2>Reflection Questions<a class="headerlink" href="#reflection-questions" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Why is <strong>red</strong> light used for CsChrimson activation in these assays, rather than blue or green light?</p></li>
-<li><p>Fu et al. found that when flies were loaded through the <em>testing</em> hole instead of the <em>loading</em> hole, flies started at the boundary between the light and dark sides rather than in the middle — and this changed their results. Which direction do you think this would bias the preference index, and why?</p></li>
-<li><p>This lab module doesn’t include formal control groups (e.g., wild-type flies, single-transgene flies, or flies raised without ATR) due to time constraints. What would each of these controls tell you, and which do you think is most important to add if you had more time?</p></li>
-<li><p>Gr5a and Gr66a neurons are largely non-overlapping — but not entirely, and both project into a shared brain region (the subesophageal ganglion). How might overlapping expression complicate interpretation of a result like this?</p></li>
-</ol>
 </section>
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
@@ -576,7 +566,6 @@ PI = \frac{N_{red} - N_{dark}}{N_{total}}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-light">Set up your light</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-two-choice-assay">Running the two-choice assay</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-preference-index">Calculating the preference index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-questions">Reflection Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
   </nav></div>

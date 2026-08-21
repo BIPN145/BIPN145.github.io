@@ -55,7 +55,9 @@ Eye protection that can filter out red laser/light is essential when observing t
 
 6. After testing light-induced proboscis extension, examine the response to 4% sucrose using a syringe. Expel a droplet of sucrose at the end of the needle and bring it close to the fly proboscis. **Discard the data from flies that fail to respond to the sucrose droplet.**
 
+7. Repeat with your wildtype flies.
+
 :::{admonition} Guesses, please!
 :class: tip
-Based on your proboscis extension results, which vial do you think is Gr5a>CsChrimson, and which is Gr66a>CsChrimson?
+Based on your proboscis extension results, do you think you have Gr5a>CsChrimson or Gr66a>CsChrimson flies?
 :::

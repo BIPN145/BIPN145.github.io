@@ -2,7 +2,7 @@
 
 In this protocol, you'll use a simple maze to ask a simple question with a genetically precise tool: does activating a specific population of taste neurons with light cause a fly to *approach* or *avoid* that light?
 
-You'll be given vials of two different fly lines, each expressing the red light-gated ion channel **CsChrimson** in a different population of gustatory receptor neurons — either **Gr5a** (sweet-sensing) or **Gr66a** (bitter-sensing). You won't be told which vial is which. Using a **two-choice assay**, you'll collect behavioral data, calculate a **preference index**, run a statistical test, and use your results to figure out — and defend — which genotype is in each vial.
+You'll be given a vial of flies that express the red light-gated ion channel **CsChrimson** in a particular population of gustatory receptor neurons: either **Gr5a** (sweet-sensing) or **Gr66a** (bitter-sensing). You won't be told which you have. Using a **two-choice assay**, you'll collect behavioral data, calculate a **preference index**, and use your results to figure out — and defend — which genotype you have.
 
 This protocol follows Fu et al. (2023), "[Using Drosophila Two-Choice Assay to Study Optogenetics in Hands-On Neurobiology Laboratory Activities](https://doi.org/10.59390/SDWH9124)", published in the *Journal of Undergraduate Neuroscience Education*.
 
@@ -45,7 +45,7 @@ The fly maze has a **loading hole** on top, with holes on each side for the test
 5. **Count the clear-tube (red-light side) flies:** Without moving the maze, quickly count how many flies are in the clear side. If you need to, you can take a picture!
 6. **Count the foil-tube (dark side) flies:** Carefully remove the foil from the dark side and quickly count the flies within. Include any flies that you see within the loading space in this count as well, since they never made it to the red-light tube.
 8. Record all three counts in **Data Table 1**.
-9. 
+9. Repeat with your other vial of flies.
 
 
 ## Calculating the preference index
@@ -62,15 +62,8 @@ PI ranges from **−1** (every fly avoided the light) to **+1** (every fly moved
 
 :::{admonition} Guesses, please!
 :class: tip
-Based on your preference indices, which vial do you think is Gr5a>CsChrimson, and which is Gr66a>CsChrimson?
+Based on your preference indices, do you think you have Gr5a>CsChrimson or Gr66a>CsChrimson flies?
 :::
-
-## Reflection Questions
-
-1. Why is **red** light used for CsChrimson activation in these assays, rather than blue or green light?
-2. Fu et al. found that when flies were loaded through the *testing* hole instead of the *loading* hole, flies started at the boundary between the light and dark sides rather than in the middle — and this changed their results. Which direction do you think this would bias the preference index, and why?
-3. This lab module doesn't include formal control groups (e.g., wild-type flies, single-transgene flies, or flies raised without ATR) due to time constraints. What would each of these controls tell you, and which do you think is most important to add if you had more time?
-4. Gr5a and Gr66a neurons are largely non-overlapping — but not entirely, and both project into a shared brain region (the subesophageal ganglion). How might overlapping expression complicate interpretation of a result like this?
 
 
 ## Troubleshooting
