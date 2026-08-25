@@ -4,10 +4,11 @@ orphan: true
 
 #   BIPN 145 Neurobiology Laboratory
 
-	**Lecture:** MWF 11-11:50 AM in  
-	[Humanities and Social Sciences Building](https://maps.app.goo.gl/YWLvBcp36dg5E1Z46) 1128A 
 
-	**Lab:** Fridays 12:30 \- 4:20 PM in [York Hall](https://maps.app.goo.gl/LD31ZSMy6w4bNCSF6) 1310	
+**Lecture:** MWF 11-11:50 AM in  
+[Humanities and Social Sciences Building](https://maps.app.goo.gl/YWLvBcp36dg5E1Z46) 1128A 
+
+**Lab:** Fridays 12:30 \- 4:20 PM in [York Hall](https://maps.app.goo.gl/LD31ZSMy6w4bNCSF6) 1310	
 
 
 ## **Course schedule** 
@@ -17,12 +18,12 @@ orphan: true
 | :---- | :---- | :---- | :---- |
 | **Week 1** |  |  |  |
 | Sep 25 | Lecture | An introduction to BIPN 145 & nervous systems | Take the incoming survey (link on Canvas) |
-|  | Lab | Modeling Neural Membranes| Take the online safety test [https://biolabclass-safetyquiz.ucsd.edu/](https://biolabclass-safetyquiz.ucsd.edu/) |
+|  | Lab | String Lab | Take the online safety test [https://biolabclass-safetyquiz.ucsd.edu/](https://biolabclass-safetyquiz.ucsd.edu/) |
 | **Week 2** |  |  |  |
 | Sep 28 | Lecture | Modeling neural activity |  |
 | Sep 30 | Lecture | Recording from the nervous system | **DUE** RC Circuit Quiz |
 | Oct 2 | Lecture | Earthworm nervous systems | **DUE** Earthworm Pre-Lab Quiz |
-|  | Lab | String Lab | **WATCH/READ** [Exporting data from LabChart](https://bipn145.github.io/LabChart/ExportingLabChart.html) |
+|  | Lab | Modeling Neural Membranes | **WATCH/READ** [Exporting data from LabChart](https://bipn145.github.io/LabChart/ExportingLabChart.html) |
 | **Week 3** |  |  |  |
 | Oct 5 | Lecture | The action potential | **READ** Hodgkin & Huxley (1939) |
 | Oct 7 | Lecture | Writing lab reports | **DUE** String Lab |
