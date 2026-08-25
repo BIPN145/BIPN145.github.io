@@ -73,20 +73,19 @@ A spectrum is a representation of data based on the frequency distribution of it
 9. Select the third record and again view the result in the Spectrum view. You should now see two prominent peaks (PSD plot) and bands (Spectrogram) in the result.
 10. Select the fourth record and again view the result in the Spectrum view.
 
-:::{admonition} Questions for reflection
-:class: tip
+:::{admonition} Quiz Questions
+:class: attention
 - What is the frequency in Hertz (Hz) of the first sine wave?
 - What is the frequency in Hertz (Hz) of the second sine wave?
 - Are the two peaks/bands you see in record 3 the same as for the first two records? How is this possible?
-- Is there any regular signal within record 4?
 :::
 
 11. In Chart View compare the signal amplitudes of the fourth and fifth records. Note that the fifth record has lower amplitude compared with the fourth record (you may need to Autoscale to see a peak at all).
 12. Select the fourth record again. In the Spectrum view examine the PSD plot. Move the **Waveform Cursor** to the prominent peak.
 13. Select the fifth record and examine the PSD plot. Move the **Waveform Cursor** to the peak.
 
-:::{admonition} Questions for reflection
-:class: tip
+:::{admonition} Quiz Questions
+:class: attention
 - What is the frequency (Hz) of the signal in record 4?
 - What is the power (mV²) of the signal in record 4?
 - What is the frequency (Hz) of the signal in record 5?
@@ -99,12 +98,11 @@ A spectrum is a representation of data based on the frequency distribution of it
 
 15. The fifth record is the same signal as the fourth record, except that the quality of the raw signal has been affected. Compare your features (amplitude, power, frequency) of the fourth and fifth records.
 
-:::{admonition} Questions for reflection
-:class: tip
-- How has the quality of the signal affected the wave features?
+:::{admonition} Quiz Question
+:class: attention
+- Has the quality of the signal (e.g. its amplitude) impacted what you're able to detect in the power spectral density (PSD) plot (assuming you have it scaled to be able to see any bumps in the PSD?)
 :::
 
----
 
 ### Part II. Detecting alpha waves
 
@@ -133,7 +131,7 @@ A spectrum is a representation of data based on the frequency distribution of it
 In this exercise, you will learn to recognize some of the artifacts that can appear on an EEG.
 
 1. Launch LabChart with the EEG Settings file ([http://bit.ly/labchart](http://bit.ly/labchart)).
-2. Select **Bio Amp** from the EEG Channel Function pop-up menu. Make sure the settings are as follows: **Range 200 µV, High Pass 0.5 Hz, and Low Pass 50 Hz**.
+2. Go to Setup > Channel Settings and click on the **Bio Amp** button. In the window that opens, make sure the settings are as follows: **Range 200 µV, High Pass 0.5 Hz, and Low Pass 50 Hz**.
 
 :::{admonition} Questions for reflection
 :class: tip
@@ -143,7 +141,7 @@ In this exercise, you will learn to recognize some of the artifacts that can app
 3. **Start** recording. Add a **comment** "blinking," and have the volunteer blink repeatedly. **Stop** recording after 10 seconds.
 4. Repeat step 3, this time, have the volunteer make eye movements. Add a **comment** "eye movements." Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer's head is still and only the eyes move.
 5. Repeat step 3, this time, have the volunteer make head movements. Add a **comment** "head movements." Have the volunteer gently move his/her head in a repeated pattern.
-6. Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits. It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving. If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary. 
+6. Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits. *It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving.* If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary. 
 7. **Save your data**, and open a new file with the same settings.
 
 #### ★ Exercise 2: Alpha Waves in the EEG

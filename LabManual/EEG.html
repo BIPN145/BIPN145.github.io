@@ -488,13 +488,12 @@ document.write(`
 <li><p>Select the third record and again view the result in the Spectrum view. You should now see two prominent peaks (PSD plot) and bands (Spectrogram) in the result.</p></li>
 <li><p>Select the fourth record and again view the result in the Spectrum view.</p></li>
 </ol>
-<div class="tip admonition">
-<p class="admonition-title">Questions for reflection</p>
+<div class="attention admonition">
+<p class="admonition-title">Quiz Questions</p>
 <ul class="simple">
 <li><p>What is the frequency in Hertz (Hz) of the first sine wave?</p></li>
 <li><p>What is the frequency in Hertz (Hz) of the second sine wave?</p></li>
 <li><p>Are the two peaks/bands you see in record 3 the same as for the first two records? How is this possible?</p></li>
-<li><p>Is there any regular signal within record 4?</p></li>
 </ul>
 </div>
 <ol class="arabic simple" start="11">
@@ -502,8 +501,8 @@ document.write(`
 <li><p>Select the fourth record again. In the Spectrum view examine the PSD plot. Move the <strong>Waveform Cursor</strong> to the prominent peak.</p></li>
 <li><p>Select the fifth record and examine the PSD plot. Move the <strong>Waveform Cursor</strong> to the peak.</p></li>
 </ol>
-<div class="tip admonition">
-<p class="admonition-title">Questions for reflection</p>
+<div class="attention admonition">
+<p class="admonition-title">Quiz Questions</p>
 <ul class="simple">
 <li><p>What is the frequency (Hz) of the signal in record 4?</p></li>
 <li><p>What is the power (mV²) of the signal in record 4?</p></li>
@@ -517,14 +516,13 @@ document.write(`
 </li>
 <li><p>The fifth record is the same signal as the fourth record, except that the quality of the raw signal has been affected. Compare your features (amplitude, power, frequency) of the fourth and fifth records.</p></li>
 </ol>
-<div class="tip admonition">
-<p class="admonition-title">Questions for reflection</p>
+<div class="attention admonition">
+<p class="admonition-title">Quiz Question</p>
 <ul class="simple">
-<li><p>How has the quality of the signal affected the wave features?</p></li>
+<li><p>Has the quality of the signal (e.g. its amplitude) impacted what you’re able to detect in the power spectral density (PSD) plot (assuming you have it scaled to be able to see any bumps in the PSD?)</p></li>
 </ul>
 </div>
 </section>
-<hr class="docutils" />
 <section id="part-ii-detecting-alpha-waves">
 <h3>Part II. Detecting alpha waves<a class="headerlink" href="#part-ii-detecting-alpha-waves" title="Link to this heading">#</a></h3>
 <section id="equipment-setup-and-electrode-attachment">
@@ -552,7 +550,7 @@ document.write(`
 <p>In this exercise, you will learn to recognize some of the artifacts that can appear on an EEG.</p>
 <ol class="arabic simple">
 <li><p>Launch LabChart with the EEG Settings file (<a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>).</p></li>
-<li><p>Select <strong>Bio Amp</strong> from the EEG Channel Function pop-up menu. Make sure the settings are as follows: <strong>Range 200 µV, High Pass 0.5 Hz, and Low Pass 50 Hz</strong>.</p></li>
+<li><p>Go to Setup &gt; Channel Settings and click on the <strong>Bio Amp</strong> button. In the window that opens, make sure the settings are as follows: <strong>Range 200 µV, High Pass 0.5 Hz, and Low Pass 50 Hz</strong>.</p></li>
 </ol>
 <div class="tip admonition">
 <p class="admonition-title">Questions for reflection</p>
@@ -564,7 +562,7 @@ document.write(`
 <li><p><strong>Start</strong> recording. Add a <strong>comment</strong> “blinking,” and have the volunteer blink repeatedly. <strong>Stop</strong> recording after 10 seconds.</p></li>
 <li><p>Repeat step 3, this time, have the volunteer make eye movements. Add a <strong>comment</strong> “eye movements.” Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer’s head is still and only the eyes move.</p></li>
 <li><p>Repeat step 3, this time, have the volunteer make head movements. Add a <strong>comment</strong> “head movements.” Have the volunteer gently move his/her head in a repeated pattern.</p></li>
-<li><p>Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits. It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving. If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary.</p></li>
+<li><p>Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits. <em>It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving.</em> If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary.</p></li>
 <li><p><strong>Save your data</strong>, and open a new file with the same settings.</p></li>
 </ol>
 </section>
