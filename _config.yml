@@ -12,6 +12,7 @@ sphinx:
   config:
     html_static_path: ["_static"]
     html_css_files: ["custom.css"]
+    html_js_files: ["custom.js"]
 
 repository:
   url: https://github.com/BIPN145/BIPN145.github.io
