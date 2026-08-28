@@ -25,9 +25,9 @@
 | Thu Aug 27 | Visualizing the nervous system | Allen Mouse Brain Connectivity | **DUE** EEG Quiz & Results |
 | Fri Aug 28 | Neuroscience in the 21st century | Visual perception in a mouse | **DUE** Allen Connectivity Lab |
 | **Week 5** |  |  |  |
-| Tue Sep 1 | Final project planning session | **Work on final projects** | **DUE** Allen Observatory Lab |
-| Wed Sep 2 | Review for Exam #2 | **Work on final projects** |  |
-| Thu Sep 3 | Exam #2 | **Work on final projects** |  |
-| Fri Sep 4 | Careers in neuroscience | **Work on final projects** |  |
+| Tue Sep 1 | Final project planning session *IN YORK 1310* | **Work on final projects** | **DUE** Allen Observatory Lab |
+| Wed Sep 2 | Review for Exam #2 *IN YORK 1310* | **Work on final projects** |  |
+| Thu Sep 3 | Exam #2 *IN YORK 1310*| **Work on final projects** |  |
+| Fri Sep 4 | Careers in neuroscience *IN YORK 1310*| **Work on final projects** |  |
 | **Finals** |  |  |  |
 | Sat Sep 5 |   11:30a–2:29p, MALK B90 | **Final Project Presentations** |  |
