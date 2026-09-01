@@ -51,4 +51,4 @@ parts:
   - caption: Unlisted
     hidden: true
     chapters:
-      - file: Information/Schedule_FA26.md
+      - file: Information/Syllabus_FA26.md

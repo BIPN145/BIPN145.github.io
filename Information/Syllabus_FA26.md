@@ -21,7 +21,7 @@ You may be surprised about some of the topics in this course. You'll spend a lot
 
 **Office hours:** *By appointment*
 
-**Lecture:** MWF 11:00–11:50 am in MALK B90 [Humanities and Social Sciences Building](https://maps.app.goo.gl/YWLvBcp36dg5E1Z46) 1128A 
+**Lecture:** MWF 11:00–11:50 am in [COA](https://sheeptester.github.io/ucsd-classrooms/?term=2026-09-25T00.00&building=COA) 117
 
 **Lab:** Friday 12:30-4:20 pm in [York Hall](https://maps.app.goo.gl/LD31ZSMy6w4bNCSF6) 1310
 
