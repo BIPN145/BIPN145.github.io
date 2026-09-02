@@ -126,21 +126,21 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 |  | Lab | Earthworm Experiments |  |
 | **Week 3** |  |  |  |
 | Oct 12 | Lecture | The speed of the nervous system  |  |
-| Oct 14 | Lecture | Earthworm Data Analysis (**MANDATORY**) | **DUE Thursday, Oct 15 (night):** Earthworm Draft |
+| Oct 14 | Lecture | Earthworm Data Analysis (**MANDATORY**) | |
 | Oct 16 | Lecture | Intracellular & patch clamp recording | **DUE** Leech Pre-Lab Quiz |
 |  | Lab | Intracellular Equipment |  |
 | **Week 4** |  |  |  |
 | Oct 19 | Lecture |  Leech Physiology & Cell Types |  |
-| Oct 21 | Lecture | Leech Paper Discussion (**MANDATORY**)   |  |
-| Oct 23 ([drop deadline](https://blink.ucsd.edu/instructors/courses/enrollment/calendars/index.html)) | Lecture | **Review for the exam** | **DUE Sunday, Oct 25:** Earthworm Draft Feedback |
+| Oct 21 | Lecture | Leech Paper Discussion (**MANDATORY**)   | **DUE** Earthworm Lab Report |
+| Oct 23 ([drop deadline](https://blink.ucsd.edu/instructors/courses/enrollment/calendars/index.html)) | Lecture | **Review for the exam** |  |
 |  | Lab | Leech Experiments |  |
 | **Week 5** |  |  |  |
-| Oct 26 | Lecture | Leech Data Analysis (**MANDATORY**) |  |
-| Oct 28 | Lecture | **Exam \#1** |  |
-| Oct 30 | Lecture | How is science funded? and Introduction to final projects  |  |
+| Oct 26 | Lecture | **Exam \#1**  |  |
+| Oct 28 | Lecture | How is science funded? & Introduction to final projects |  |
+| Oct 30 | Lecture | Ethology & behavior |  |
 |  | Lab | Leech Experiments (*Continued*) |  |
 | **Week 6** |  |  |  |
-| Nov 2 | Lecture | Ethology & behavior | **DUE** Leech Lab *(Group)* |
+| Nov 2 | Lecture | Leech Data Analysis (**MANDATORY**)  |  |
 | Nov 4 ([deadline to drop w/ "W"](https://blink.ucsd.edu/instructors/courses/enrollment/calendars/index.html)) | Lecture | Drosophila Behavior (**MANDATORY**)| **READ** your [Drosophila behavior handout](https://drive.google.com/drive/folders/1xpdF4kuvf3vWaiafQ82TdmQTqWK_qqoE?usp=drive_link) |
 | Nov 6 | Lecture | Drosophila Optogenetics |  |
 |  | Lab | [Drosophila Behavior & Optogenetics](https://bipn145.github.io/LabManual/Drosophila_new/Introduction.html)|  |
