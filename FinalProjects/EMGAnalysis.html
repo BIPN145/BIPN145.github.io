@@ -236,7 +236,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unlisted</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Information/Schedule_FA26.html">BIPN 145 Neurobiology Laboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Information/Syllabus_FA26.html">BIPN 145 Neurobiology Laboratory SSII (2026)</a></li>
 </ul>
 
     </div>
@@ -456,8 +456,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-analysis">Python Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-plot-the-entire-dataset">Step 1: Plot the entire dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-detect-bicep-curl-activations">Step 2: Detect bicep curl activations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-calculate-average-emg-during-each-burst">Step 3: Calculate average EMG during each burst</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-calculate-the-area-under-each-burst">Step 4: Calculate the area under each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-calculate-peak-voltage-of-each-burst">Step 3: Calculate peak voltage of each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-calculate-average-emg-during-each-burst">Step 4: Calculate average EMG during each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-calculate-the-area-under-each-burst">Step 5: Calculate the area under each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-save-results-to-a-csv-file">Step 6: Save results to a CSV file</a></li>
 </ul>
             </nav>
         </div>
@@ -680,8 +682,41 @@ Standardized burst duration: 3.61 s (722 samples)
 </div>
 </div>
 </section>
-<section id="step-3-calculate-average-emg-during-each-burst">
-<h2>Step 3: Calculate average EMG during each burst<a class="headerlink" href="#step-3-calculate-average-emg-during-each-burst" title="Link to this heading">#</a></h2>
+<section id="step-3-calculate-peak-voltage-of-each-burst">
+<h2>Step 3: Calculate peak voltage of each burst<a class="headerlink" href="#step-3-calculate-peak-voltage-of-each-burst" title="Link to this heading">#</a></h2>
+<p>The <strong>peak EMG</strong> is the maximum voltage reached during a contraction. It reflects the single highest level of muscle activation, but — unlike the average or AUC — it depends on just one sample and so can be sensitive to brief noise spikes.</p>
+<p>Below, we’ll collect the peak voltage of each burst into a list (this is simply the voltage at each detected peak).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collect the peak voltage for each curl</span>
+<span class="n">peak_voltages</span> <span class="o">=</span> <span class="p">[</span><span class="n">recording</span><span class="p">[</span><span class="n">peak_idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">peak_idx</span> <span class="ow">in</span> <span class="n">peaks</span><span class="p">]</span>
+
+<span class="c1"># Print results</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">peak_val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">peak_voltages</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Curl </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">: Peak EMG = </span><span class="si">{</span><span class="n">peak_val</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> mV&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Mean peak across all curls: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">peak_voltages</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> mV&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Standard deviation:          </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">peak_voltages</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> mV&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Curl 1: Peak EMG = 0.8687 mV
+Curl 2: Peak EMG = 0.6952 mV
+Curl 3: Peak EMG = 0.6810 mV
+Curl 4: Peak EMG = 0.7040 mV
+Curl 5: Peak EMG = 0.6580 mV
+Curl 6: Peak EMG = 0.7080 mV
+Curl 7: Peak EMG = 0.5619 mV
+
+Mean peak across all curls: 0.6967 mV
+Standard deviation:          0.0842 mV
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-calculate-average-emg-during-each-burst">
+<h2>Step 4: Calculate average EMG during each burst<a class="headerlink" href="#step-4-calculate-average-emg-during-each-burst" title="Link to this heading">#</a></h2>
 <p>The <strong>average EMG</strong> (mean voltage during a contraction) measures the typical activation intensity during a burst. Unlike the peak, it’s less sensitive to single-sample noise. Unlike the AUC, it’s independent of burst duration — making it useful for comparing contractions of different lengths.</p>
 <p>Below, we’ll calculate the mean RMS voltage within each standardized burst.</p>
 <div class="cell docutils container">
@@ -716,8 +751,8 @@ Standard deviation:    0.0205 mV
 </div>
 </div>
 </section>
-<section id="step-4-calculate-the-area-under-each-burst">
-<h2>Step 4: Calculate the area under each burst<a class="headerlink" href="#step-4-calculate-the-area-under-each-burst" title="Link to this heading">#</a></h2>
+<section id="step-5-calculate-the-area-under-each-burst">
+<h2>Step 5: Calculate the area under each burst<a class="headerlink" href="#step-5-calculate-the-area-under-each-burst" title="Link to this heading">#</a></h2>
 <p>The <strong>area under the curve (AUC)</strong> of an RMS EMG burst measures total muscle activation — it reflects both how strongly <em>and</em> how long the muscle was recruited during each curl. Sometimes this is called the “integrated EMG.”</p>
 <p>Below, we’ll calculate the area using the <strong>trapezoidal rule</strong> (<code class="docutils literal notranslate"><span class="pre">np.trapezoid</span></code>), which approximates the area by summing thin trapezoids under the signal. The result is in units of <strong>mV·s</strong> (millivolt-seconds).</p>
 <div class="cell docutils container">
@@ -751,6 +786,123 @@ Standard Deviation of AUC: 0.0740 mV·s
 </pre></div>
 </div>
 </div>
+</div>
+</section>
+<section id="step-6-save-results-to-a-csv-file">
+<h2>Step 6: Save results to a CSV file<a class="headerlink" href="#step-6-save-results-to-a-csv-file" title="Link to this heading">#</a></h2>
+<p>Finally, let’s collect the peak, average, and AUC values for each curl into a single table and save it as a CSV file. This makes it easy to open the results in Excel, Google Sheets, or reload them for further analysis in Python.</p>
+<p>Each row is one curl; the columns are the peak time, peak voltage, average voltage, and AUC.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Combine the peak, mean, and AUC results into one table (one row per curl)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;curl&#39;</span><span class="p">:</span>        <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">peaks</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;peak_time_s&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">timestamps</span><span class="p">[</span><span class="n">peaks</span><span class="p">],</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="s1">&#39;peak_mV&#39;</span><span class="p">:</span>     <span class="n">peak_voltages</span><span class="p">,</span>
+    <span class="s1">&#39;mean_mV&#39;</span><span class="p">:</span>     <span class="n">means</span><span class="p">,</span>
+    <span class="s1">&#39;auc_mV_s&#39;</span><span class="p">:</span>    <span class="n">areas</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1"># Save alongside the input file, e.g. &quot;baseline_1.txt&quot; -&gt; &quot;baseline_1_results.csv&quot;</span>
+<span class="n">output_filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_results.csv&#39;</span>
+<span class="n">results</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Saved results to </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved results to baseline_1_results.csv
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>curl</th>
+      <th>peak_time_s</th>
+      <th>peak_mV</th>
+      <th>mean_mV</th>
+      <th>auc_mV_s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>3.985</td>
+      <td>0.868650</td>
+      <td>0.301428</td>
+      <td>1.088623</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>15.360</td>
+      <td>0.695164</td>
+      <td>0.257964</td>
+      <td>0.931498</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>29.135</td>
+      <td>0.680962</td>
+      <td>0.229110</td>
+      <td>0.827324</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>45.705</td>
+      <td>0.703953</td>
+      <td>0.254654</td>
+      <td>0.919686</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>53.300</td>
+      <td>0.658003</td>
+      <td>0.272792</td>
+      <td>0.984879</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>62.195</td>
+      <td>0.707984</td>
+      <td>0.272388</td>
+      <td>0.983730</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>70.460</td>
+      <td>0.561880</td>
+      <td>0.256929</td>
+      <td>0.927635</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -823,8 +975,10 @@ Standard Deviation of AUC: 0.0740 mV·s
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-analysis">Python Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-plot-the-entire-dataset">Step 1: Plot the entire dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-detect-bicep-curl-activations">Step 2: Detect bicep curl activations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-calculate-average-emg-during-each-burst">Step 3: Calculate average EMG during each burst</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-calculate-the-area-under-each-burst">Step 4: Calculate the area under each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-calculate-peak-voltage-of-each-burst">Step 3: Calculate peak voltage of each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-calculate-average-emg-during-each-burst">Step 4: Calculate average EMG during each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-calculate-the-area-under-each-burst">Step 5: Calculate the area under each burst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-save-results-to-a-csv-file">Step 6: Save results to a CSV file</a></li>
 </ul>
   </nav></div>
 
