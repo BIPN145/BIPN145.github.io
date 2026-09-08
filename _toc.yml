@@ -4,10 +4,6 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Course Information
-    chapters:
-      - file: Information/Syllabus_SS26.md
-      - file: Information/Schedule_SS26.md
   - caption: Lab Manual
     chapters:
       #- file: LabManual/Introduction.md
@@ -44,10 +40,8 @@ parts:
           - file: Python/SpectralAnalysis.ipynb
   - caption: Final Projects
     chapters:
-      - file: FinalProjects/Introduction
-        sections:
-          - file: FinalProjects/EMGAnalysis.ipynb
-          - file: FinalProjects/AveragePSD.ipynb
+      - file: FinalProjects/EMGAnalysis.ipynb
+      - file: FinalProjects/AveragePSD.ipynb
   - caption: Unlisted
     hidden: true
     chapters:
