@@ -1,4 +1,4 @@
-# Day 1 Lab Orientation
+# Lab Orientation
 ## Meeting Your Tools: PowerLab, LabChart, and Your First Signal (EMG)
 
 
@@ -152,22 +152,23 @@ In this abbreviated experiment, you'll use EMG to record signals from the flexor
 
 ### **2B. Setting up your EMG electrodes**
 
+![Figure: FDS muscle anatomy, identification, and electrode placement](images/emg_scavenger_setup.png)
+
+(Left) Anatomy of the flexor digitorum superficialis (FDS) muscle (image © Kenhub). (Middle) Identifying the FDS muscle: with your arm resting on your lab bench, palm up, close only your first four fingers (not the thumb). You'll see a bump when the FDS muscle flexes; mark this location as shown. (Right) Electrode placement on the FDS muscle. The white negative electrode is placed near the wrist, and the black positive electrode is placed closer to the elbow. The green ground electrode is attached to the velcro wrist-strap.
+
+
 1. Remove any jewelry from the volunteer’s hand and arm. Use the marker in your toolbox to mark two
-small crosses 2-3 cm apart on the skin above the flexor digitorum superficialis (use Figures 3 and 4 as a guide). Abrade the skin with abrasive NuPrep gel. This is important as abrasion helps reduce the skin’s resistance. After abrasion, clean the area with an alcohol pad to remove the dead skin cells.
+small crosses 2-3 cm apart on the skin above the flexor digitorum superficialis (use the figure above as a guide). Abrade the skin with abrasive NuPrep gel. This is important as abrasion helps reduce the skin’s resistance. After abrasion, clean the area with an alcohol pad to remove the dead skin cells.
 
 2. While the skin is drying, attach the Shielded Lead Wires to the Bio Amp Cable: Use the bottom three inputs (NEG, POS, EARTH) and follow the color scheme on the BioAmp cable. Attach the disposable snap-on electrodes to the end of the negative and positive wires.
 
-3. Put the snap on electrodes and velcro grounding strap on the volunteer. The negative electrode is placed closest to the wrist, and the positive electrode is placed on the belly of the FDS muscle. The Earth (green) will be connected to the velcro grounding strap. Refer to Figures 3 and 4 for proper placement.
+3. Put the snap on electrodes and velcro grounding strap on the volunteer. The negative electrode is placed closest to the wrist, and the positive electrode is placed on the belly of the FDS muscle. The Earth (green) will be connected to the velcro grounding strap. Refer to the figure above as a guide.
 
 :::{admonition} Trouble grounding?
 :class: tip
 If you have trouble getting a proper ground connection with the wrist strap, you can
 also directly attach a Disposable Electrode and place the ground at the wrist.
 :::
-
-![Figure 4: FDS muscle anatomy, identification, and electrode placement](images/emg_scavenger_setup.png)
-
-(Left) Anatomy of the flexor digitorum superficialis (FDS) muscle (image © Kenhub). (Middle) Identifying the FDS muscle: with your arm resting on your lab bench, palm up, close only your first four fingers (not the thumb). You'll see a bump when the FDS muscle flexes; mark this location as shown. (Right) Electrode placement on the FDS muscle. The white negative electrode is placed near the wrist, and the black positive electrode is placed closer to the elbow. The green ground electrode is attached to the velcro wrist-strap.
 
 ### **2C: Recording EMG Signals**
 
