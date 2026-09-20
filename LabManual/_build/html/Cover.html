@@ -184,6 +184,7 @@
 
 
 
+
 </ul>
 
     </div>
@@ -285,6 +286,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Introduction">Welcome to BIPN 145</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-LabOrientation">Day 1 Lab Orientation</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-ModelingIntroduction">Modeling Neural Membranes</a><ul class="visible nav section-nav flex-column">
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Neuromembrane">Neuromembrane</a></li>
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-RCcircuits">RC Circuits</a></li>
@@ -330,6 +332,234 @@ you’ll be conducting over the course of the quarter.</p>
 <p>Neuroscience is a diverse discipline, with folks from many different academic and personal backgrounds. We’ll be working together to create an equitable and inclusive environment of mutual respect, in which we all feel comfortable to share our moments of confusion, ask questions, and challenge our understanding.</p>
 <p>Everyone should be able to succeed in this course.
 If you do not feel that is the case, please let us know.</p>
+</section>
+</section>
+<span id="document-LabOrientation"></span><section class="tex2jax_ignore mathjax_ignore" id="day-1-lab-orientation">
+<h2>Day 1 Lab Orientation<a class="headerlink" href="#day-1-lab-orientation" title="Link to this heading">#</a></h2>
+<section id="meeting-your-tools-powerlab-labchart-and-your-first-signal-emg">
+<h3>Meeting Your Tools: PowerLab, LabChart, and Your First Signal (EMG)<a class="headerlink" href="#meeting-your-tools-powerlab-labchart-and-your-first-signal-emg" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Today’s guiding question</p>
+<p>How does a physiological signal — something happening inside a living body — become a number and a picture on your screen?</p>
+</div>
+<p>By the end of today you will have:</p>
+<ol class="arabic simple">
+<li><p>Located and connected the physical hardware (PowerLab + adaptors + electrodes)</p></li>
+<li><p>Recorded a real signal (EMG) using LabChart</p></li>
+<li><p>Located and learned the purpose of key functions in LabChart.</p></li>
+</ol>
+<p><strong>As you work through the lab activities, complete the scavenger hunt tasks:</strong></p>
+<ul class="simple">
+<li><p>📸 Take a photo or screenshot.</p></li>
+<li><p>❓ Discuss with your teammates.</p></li>
+</ul>
+<p>If you get stuck, refer to the <a class="reference external" href="https://cdn.adinstruments.com/adi-web/manuals/LabChart7_1_QRG.pdf">Student LabChart Guide</a>.</p>
+<hr class="docutils" />
+<p><strong>Supplies</strong></p>
+<ul class="simple">
+<li><p>LabChart &amp; PowerLab</p></li>
+<li><p>DIN8-BNC adaptor</p></li>
+<li><p>Single female banana plug BNC adaptor</p></li>
+<li><p>Banana cable</p></li>
+<li><p>BioAmp cable</p></li>
+<li><p>Shielded Lead Wires (3 Snap-on)</p></li>
+<li><p>Disposable electrodes (2)</p></li>
+<li><p>Nuprep abrasive gel</p></li>
+<li><p>Alcohol pad</p></li>
+<li><p>Marker</p></li>
+</ul>
+</section>
+<section id="part-1-hardware-software-scavenger-hunt">
+<h3>Part 1: Hardware &amp; Software Scavenger Hunt<a class="headerlink" href="#part-1-hardware-software-scavenger-hunt" title="Link to this heading">#</a></h3>
+<section id="a-setting-up-labchart-8">
+<h4><strong>1A: Setting up LabChart 8</strong><a class="headerlink" href="#a-setting-up-labchart-8" title="Link to this heading">#</a></h4>
+<p>LabChart 8 is the software we’ll be using to record electrophysiology data. Before performing our experiment, we need to set up LabChart to acquire and display the data as we want.</p>
+<ol class="arabic simple">
+<li><p>Turn on the PowerLab 26T. <em>You should see a green blinking light. If you don’t see this light, what’s the first thing you should check?</em></p></li>
+<li><p>Open LabChart 8. You should see that the PowerLab is connected with a green check mark.</p></li>
+<li><p>Open a new experiment by choosing the New button (bottom left-hand corner).</p></li>
+<li><p>By default, LabChart prepares to record from too many channels, which crowds the screen. We need to decide how many channels to record. Go to Setup &gt; Channel Settings.</p></li>
+</ol>
+<ul class="simple">
+<li><p>At the bottom of the window, change Number of Channels to 1, and make sure that it is on (box on the left is checked).</p></li>
+<li><p>Rename the channel “Raw Recording”.</p></li>
+<li><p>Click OK</p></li>
+</ul>
+<blockquote>
+<div><p>📸 <strong>Take a photo/screenshot of LabChart configured as described</strong></p>
+</div></blockquote>
+</section>
+<section id="b-identifying-hardware">
+<h4><strong>1B: Identifying Hardware</strong><a class="headerlink" href="#b-identifying-hardware" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Identify the four “Input” ports on the PowerLab.</p></li>
+<li><p>Find the Cables and Connections Cheat Sheet hanging on the wall near your bench</p></li>
+</ol>
+<blockquote>
+<div><p>📸<strong>Take a photo of the Cables and Connections Cheat Sheet</strong></p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Connect a DIN8-BNC adapter to Input 1 of the PowerLab.
+<em>Notice that the DIN8 pins are small and fragile. When plugging in the DIN8 and when attaching cables, do NOT twist the DIN8</em></p></li>
+<li><p>Attach a single female banana plug BNC adaptor to the DIN8-BNC adaptor.
+<em>Notice that the BNC cable uses a twist-lock mechanism, and must be turned 90 degrees to lock into the port. Be careful to avoid twisting the DIN8 when doing so.</em></p></li>
+<li><p>Plug in a banana cable to the adaptor.</p></li>
+</ol>
+<blockquote>
+<div><p>📸<strong>Take a photo of the front of your PowerLab in this configuration.</strong></p>
+</div></blockquote>
+</section>
+<section id="c-finding-sources-of-electrical-noise">
+<h4><strong>1C: Finding sources of electrical noise</strong><a class="headerlink" href="#c-finding-sources-of-electrical-noise" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Hold the lead (the end of the banana cable) in your hand.</p></li>
+<li><p>In the Channel Settings window, click on Input Amplifier for Channel 1. The Input Amplifier window will show the voltage that you’re recording. This allows for precise setting of the input range for a recording channel and provides filtering options.</p></li>
+<li><p>The signal at your rig may be variable. To adjust the sensitivity of the channel, choose an appropriate range setting from the Range drop-down list in the Input Amplifier dialog.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Understanding range</p>
+<p>The number displayed in the range menu indicates the maximum input voltage currently selected. Notice how as you decrease the range the vertical scale changes and the small rhythmic deflections that appear on the signal trace increase in amplitude.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Choose a range such that your signal fills about ⅔ of the window.</p></li>
+<li><p>Observe the change in the recorded voltage with the electrode lead held overhead (near the lights) and then near the ground (away from the lights).</p></li>
+</ol>
+<blockquote>
+<div><p>📸 <strong>In the future, we’ll ground noisy signals by directing them into a grounding post. Take a photo of the grounding post on the back of your PowerLab</strong></p>
+</div></blockquote>
+<div class="tip admonition">
+<p class="admonition-title">Can’t find your ground post?</p>
+<p><em>See the labeled schematic on page 2 of the Student Guide for help: <a class="reference external" href="https://cdn.adinstruments.com/adi-web/manuals/LabChart7_1_QRG.pdf">https://cdn.adinstruments.com/adi-web/manuals/LabChart7_1_QRG.pdf</a></em></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">A future of Faraday cages</p>
+<p>In the future, we’ll also address noise using a Faraday cage, a large mesh metal cage used to ground your electrophysiology rig.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Adjust the horizontal scale (the small and large mountain icons) to manually zoom on on the recorded signal so you can see 0.1-0.2 seconds of the recording. Count the number of peaks (or troughs) in 0.1 second.</p></li>
+</ol>
+<blockquote>
+<div><p>📸 <strong>Take a photo of ~0.1 seconds of the recording from the banana cable “electrode.”</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>❓<strong>What is the frequency, where 1 Hz = 1 cycle/second, of this noise?</strong></p>
+</div></blockquote>
+</section>
+</section>
+<section id="part-2-recording-emg-signals">
+<h3>Part 2: Recording EMG Signals<a class="headerlink" href="#part-2-recording-emg-signals" title="Link to this heading">#</a></h3>
+<p><strong>We encounter two problems when recording from nervous systems:</strong></p>
+<ol class="arabic simple">
+<li><p>Signals are very small</p></li>
+<li><p>The environment is noisy</p></li>
+</ol>
+<p>An amplifier can amplify biological signals, so that we can record them amongst the noisy environment.</p>
+<p>Here, we’ll use a BioAmp to amplify extracellular signals in BIPN 145. <strong>Extracellular recordings</strong> detect electrical signals from outside cells, and usually are used to record signals from many cells at once. For example, we can use extracellular electrodes to record electrical signals from skeletal muscle fibers as they depolarize and contract. This technique is called <strong>electromyography (EMG)</strong>. Surface EMG is a safe, non-invasive technique to record the activity of skeletal muscles using electrodes placed directly on the skin.</p>
+<p>In this abbreviated experiment, you’ll use EMG to record signals from the flexor digitorum superficialis (FDS), a muscle involved in handgrip.</p>
+<section id="a-setting-up-the-bioamp">
+<h4><strong>2A: Setting up the BioAmp</strong><a class="headerlink" href="#a-setting-up-the-bioamp" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Turn off the Powerlab and close out of LabChart</p></li>
+<li><p>Remove all of the cords from the PowerLab and disassemble the parts before returning them to their original location. To earn professionalism points in this class, you’ll need to return all materials to their original locations, in their original condition.</p></li>
+</ol>
+<blockquote>
+<div><p>📸 <strong>Take a photo of your toolboxes, with the parts returned to their original locations</strong></p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Connect the BioAmp to the PowerLab. <em>Ensure the notch on the BioAmp port lines up with the notch on the cable</em></p></li>
+<li><p>Turn the Powerlab back on and open a new LabChart file.</p></li>
+<li><p>Change the configuration of your recording so that you are now using the BioAmp:</p>
+<ul class="simple">
+<li><p>Go into Setup &gt; Channel Settings.</p></li>
+<li><p>Find the channel that lists the BioAmp under the Input Amplifier column.</p></li>
+<li><p>Rename that channel to “BioAmp Recording.” and uncheck all other channels.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="b-setting-up-your-emg-electrodes">
+<h4><strong>2B. Setting up your EMG electrodes</strong><a class="headerlink" href="#b-setting-up-your-emg-electrodes" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Remove any jewelry from the volunteer’s hand and arm. Use the marker in your toolbox to mark two
+small crosses 2-3 cm apart on the skin above the flexor digitorum superficialis (use Figures 3 and 4 as a guide). Abrade the skin with abrasive NuPrep gel. This is important as abrasion helps reduce the skin’s resistance. After abrasion, clean the area with an alcohol pad to remove the dead skin cells.</p></li>
+<li><p>While the skin is drying, attach the Shielded Lead Wires to the Bio Amp Cable: Use the bottom three inputs (NEG, POS, EARTH) and follow the color scheme on the BioAmp cable. Attach the disposable snap-on electrodes to the end of the negative and positive wires.</p></li>
+<li><p>Put the snap on electrodes and velcro grounding strap on the volunteer. The negative electrode is placed closest to the wrist, and the positive electrode is placed on the belly of the FDS muscle. The Earth (green) will be connected to the velcro grounding strap. Refer to Figures 3 and 4 for proper placement.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Trouble grounding?</p>
+<p>If you have trouble getting a proper ground connection with the wrist strap, you can
+also directly attach a Disposable Electrode and place the ground at the wrist.</p>
+</div>
+<p><img alt="Figure 4: FDS muscle anatomy, identification, and electrode placement" src="_images/emg_scavenger_setup.png" /></p>
+<p>(Left) Anatomy of the flexor digitorum superficialis (FDS) muscle (image © Kenhub). (Middle) Identifying the FDS muscle: with your arm resting on your lab bench, palm up, close only your first four fingers (not the thumb). You’ll see a bump when the FDS muscle flexes; mark this location as shown. (Right) Electrode placement on the FDS muscle. The white negative electrode is placed near the wrist, and the black positive electrode is placed closer to the elbow. The green ground electrode is attached to the velcro wrist-strap.</p>
+</section>
+<section id="c-recording-emg-signals">
+<h4><strong>2C: Recording EMG Signals</strong><a class="headerlink" href="#c-recording-emg-signals" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Have the volunteer sit in a relaxed position with their elbow bent 90 degrees and palm facing upward. Make sure the volunteer’s elbow is not on the table and the volunteer is facing away from the monitor.</p></li>
+<li><p>Open Chart View on LabChart and click Start to begin recording.</p></li>
+<li><p>Have the volunteer make a light contraction of the FDS muscle. This is done by gently bending the first four fingers (exclusing the thumb) in a “one handed clap” motion. Hold the movement for 3 seconds.</p></li>
+<li><p>Repeat step 2, but this time try to make the EMG signal larger in amplitude.</p></li>
+</ol>
+<blockquote>
+<div><p>❓<strong>How can you increase the amplitude of your EMG signal?</strong></p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Click Stop to pause your recording.</p></li>
+</ol>
+<blockquote>
+<div><p>📸 <strong>Right click to Autoscale your signal and take a photo</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>❓ <strong>Identify the buttons that you can use to change the time scale on your recording and draw a sketch of them.</strong></p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Chart View displays data in a continuous recording, while Scope View allows you to record discreet sweeps of data. Select Scope View from the Window panel on the top of your screen</p></li>
+</ol>
+<blockquote>
+<div><p>📸 <strong>Set the sample duration to 5 s. Take a photo of the window in LabChart where you can set the sample duration</strong></p>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Record 3 5-second sweeps of data and name each page in Scope View. We recommend unchecking the “Overlay” box on the top left, so you only see one recording at a time.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Relaxed</p></li>
+<li><p>Gentle fist</p></li>
+<li><p>Clenched fist</p></li>
+</ul>
+<blockquote>
+<div><p>📸 <strong>Take a photo of the three named recordings.</strong></p>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>In the Clenched Fist recording, drag the Marker Tool on the bottom left corner (or right click, “Set Marker) to the peak of the highest EMG waveform. You may need to zoom in manually to place the marker. Move your cursor along the trace and look in the top right corner for the Δ output, which calculates the difference in voltage and time between your cursor and the Marker tool.</p></li>
+</ol>
+<blockquote>
+<div><p>📸 <strong>Use the Marker Tool to measure the height of your largest EMG wave from peak to trough. Take a photo.</strong></p>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>Return to Chart View and start recording again. We’re going to play with the parameters that determine the range and frequency of our signal sampling.</p></li>
+</ol>
+<blockquote>
+<div><p>❓ <strong>Identify two places in LabChart where you can set the Range of your recording</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>📸 <strong>Adjust the range so your signal goes “out of range”. Take a photo of your signal.</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>📸 <strong>Reduce the sampling rate of your recording to 20/s and take a video of your recorded trace</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>❓ <strong>What happens when sampling rate is slower than the frequency of your physiological signal?</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>💬 <strong>Before cleaning up and closing out of LabChart, let your instructional team know you are done. They’ll ask you to show them a random selection of the scavenger hunt tasks. If you have any questions about the lab course or today’s activities, please ask!</strong></p>
+</div></blockquote>
+<hr class="docutils" />
+<p><em>Written by staff of ADInstruments, edited by A. Juavinett, M. Marino, and I. Maita
+Copyright © 2015 ADInstruments Pty Ltd. All rights reserved. PowerLab® and LabChart® are registered trademarks of
+ADInstruments Pty Ltd. The names of specific recording units, such as PowerLab 8/30, are trademarks of ADInstruments Pty Ltd.
+Chart and Scope (application programs) are trademarks of ADInstruments Pty Ltd. <a class="reference external" href="http://www.ADInstruments.com">www.ADInstruments.com</a></em></p>
+</section>
 </section>
 </section>
 <span id="document-ModelingIntroduction"></span><section class="tex2jax_ignore mathjax_ignore" id="modeling-neural-membranes">
@@ -3166,6 +3396,7 @@ PI = \frac{N_{red} - N_{dark}}{N_{total}}
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Introduction">Welcome to BIPN 145</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-LabOrientation">Day 1 Lab Orientation</a></li>
 <li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#document-ModelingIntroduction">Modeling Neural Membranes</a><ul class="visible nav section-nav flex-column">
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-Neuromembrane">Neuromembrane</a></li>
 <li class="toctree-l2 toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-RCcircuits">RC Circuits</a></li>

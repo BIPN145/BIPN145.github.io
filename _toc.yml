@@ -6,7 +6,7 @@ root: intro
 parts:
   - caption: Lab Manual
     chapters:
-      #- file: LabManual/Introduction.md
+      - file: LabManual/LabOrientation.md
       - file: LabManual/ModelingIntroduction.md
         sections:
           - file: LabManual/Neuromembrane.md
