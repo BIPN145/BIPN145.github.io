@@ -393,16 +393,26 @@ If you do not feel that is the case, please let us know.</p>
 <h4><strong>1B: Identifying Hardware</strong><a class="headerlink" href="#b-identifying-hardware" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Identify the four “Input” ports on the PowerLab.</p></li>
-<li><p>Find the Cables and Connections Cheat Sheet hanging on the wall near your bench</p></li>
+<li><p>Find the Cables &amp; Connections Cheat Sheet hanging on the wall near your bench.</p></li>
 </ol>
 <blockquote>
 <div><p>📸<strong>Take a photo of the Cables and Connections Cheat Sheet</strong></p>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li><p>Connect a DIN8-BNC adapter to Input 1 of the PowerLab.
-<em>Notice that the DIN8 pins are small and fragile. When plugging in the DIN8 and when attaching cables, do NOT twist the DIN8</em></p></li>
-<li><p>Attach a single female banana plug BNC adaptor to the DIN8-BNC adaptor.
-<em>Notice that the BNC cable uses a twist-lock mechanism, and must be turned 90 degrees to lock into the port. Be careful to avoid twisting the DIN8 when doing so.</em></p></li>
+<li><p>Connect a DIN8-BNC adapter to Input 1 of the PowerLab.</p></li>
+</ol>
+<div class="danger admonition">
+<p class="admonition-title">Be careful with our equipment!</p>
+<p>The DIN8 pins are small and fragile. When plugging in the DIN8 and when attaching cables, do NOT twist the DIN8.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Attach a single female banana plug BNC adaptor to the DIN8-BNC adaptor.</p></li>
+</ol>
+<div class="danger admonition">
+<p class="admonition-title">BNC, twist it please!</p>
+<p>The BNC cable uses a twist-lock mechanism, and must be turned 90 degrees to lock into the port. Be careful to avoid twisting the DIN8 when doing so.</p>
+</div>
+<ol class="arabic simple" start="5">
 <li><p>Plug in a banana cable to the adaptor.</p></li>
 </ol>
 <blockquote>
@@ -1004,8 +1014,8 @@ Chart and Scope (application programs) are trademarks of ADInstruments Pty Ltd. 
 <p>You may need to Autoscale the channel (right click) to be able to see the entire trace.</p>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">Q8.</p>
-<p>The time constant should equal 𝛕 = RC. What <em>should</em> the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit?** Mind your units. <strong>Answer Q8 on the quiz.</strong></p>
+<p class="admonition-title">Our theoretical constant</p>
+<p>The time constant should equal 𝛕 = RC. What <em>should</em> the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit? <strong>Mind your units, and answer this question on the quiz.</strong></p>
 </div>
 <section id="measure-your-time-constant">
 <h5>Measure your time constant<a class="headerlink" href="#measure-your-time-constant" title="Link to this heading">#</a></h5>
@@ -1058,7 +1068,7 @@ Chart and Scope (application programs) are trademarks of ADInstruments Pty Ltd. 
 </div>
 <div class="attention admonition">
 <p class="admonition-title">Plot your results</p>
-<p><strong>Plot the time constant against the resistance.  Answer Q9a and Q9b on the quiz.</strong> Look for the corresponding tab on the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing">Modeling Neural Membranes Google Sheet template</a>.</p>
+<p><strong>Plot the time constant against the resistance, and answer the corresponding questions on the quiz.</strong> Look for the corresponding tab on the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing">Modeling Neural Membranes Google Sheet template</a>.</p>
 </div>
 <section id="plotting-tips">
 <h6>Plotting Tips<a class="headerlink" href="#plotting-tips" title="Link to this heading">#</a></h6>
@@ -1072,12 +1082,11 @@ Chart and Scope (application programs) are trademarks of ADInstruments Pty Ltd. 
 </li>
 <li><p><strong>Python</strong>: Use the <a class="reference external" href="https://bipn145.github.io/Python/PlotScatter.html">Plot Scatter</a> notebook!</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Reflection question</strong>: Circling back to biology</p>
+<p>Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: <a class="reference external" href="https://neuroelectro.org/ephys_prop/index.html">https://neuroelectro.org/ephys_prop/index.html</a>. Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?</p>
+</div>
 </section>
-</section>
-<section id="check-your-time-constant-against-the-literature">
-<h5>Check your time constant against the literature<a class="headerlink" href="#check-your-time-constant-against-the-literature" title="Link to this heading">#</a></h5>
-<p>Let’s circle back to biology. Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: <a class="reference external" href="https://neuroelectro.org/ephys_prop/index.html">https://neuroelectro.org/ephys_prop/index.html</a></p>
-<p>Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?</p>
 </section>
 </section>
 <section id="troubleshooting">

@@ -49,9 +49,9 @@ Build the circuit below. We’ll use the OUTPUT of your Powerlab to send a pulse
 You may need to Autoscale the channel (right click) to be able to see the entire trace.
 :::
 
-:::{admonition} Q8.
+:::{admonition} Our theoretical constant
 :class: attention
-The time constant should equal 𝛕 = RC. What *should* the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit?** Mind your units. **Answer Q8 on the quiz.**
+The time constant should equal 𝛕 = RC. What *should* the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit? **Mind your units, and answer this question on the quiz.**
 :::
 
 ### Measure your time constant
@@ -89,7 +89,7 @@ Next, we’ll see how the time constant of the circuit changes in response to th
 
 :::{admonition} Plot your results
 :class: attention
-**Plot the time constant against the resistance.  Answer Q9a and Q9b on the quiz.** Look for the corresponding tab on the [Modeling Neural Membranes Google Sheet template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing).
+**Plot the time constant against the resistance, and answer the corresponding questions on the quiz.** Look for the corresponding tab on the [Modeling Neural Membranes Google Sheet template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing).
 ::: 
 
 
@@ -100,12 +100,10 @@ Next, we’ll see how the time constant of the circuit changes in response to th
   * Enter your values into the table *without* units so that Sheets will recognize them as numerical. You can indicate the correct units in the table and axes labels.
 * **Python**: Use the [Plot Scatter](https://bipn145.github.io/Python/PlotScatter.html) notebook!
 
-
-### Check your time constant against the literature
-
-Let’s circle back to biology. Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: [https://neuroelectro.org/ephys\_prop/index.html](https://neuroelectro.org/ephys_prop/index.html) 
-
-Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?
+:::{admonition} **Reflection question**: Circling back to biology
+:class: tip
+Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: [https://neuroelectro.org/ephys\_prop/index.html](https://neuroelectro.org/ephys_prop/index.html). Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?
+::: 
 
 
 ## Troubleshooting
@@ -116,7 +114,3 @@ Choose a paper from the example above and look for the reported time constant. I
 | Your signal is really noisy | You’re not grounded. Your pulse is not being properly sent. | Double check your circuit is connected correctly |
 | You don’t see a fin-shaped waveform | Your Scope/Chart View is not scaled properly.  Your capacitor is not properly connected or broken. | Try autoscaling Check the capacitor placement or replace it. |
 | You’ve got “rabbit ears” on your waveform | Your voltage is reversed somewhere | Check the power terminals are connected in the right direction |
-
-[image1]: <data:image/png;base64,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>
-
-[image2]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAA4klEQVR4Xu2RsQ2EMAxF2SS0tJQI6GAImIOaMENSwhKUMFxORnL0EyMB4rq74kk4334KcaKUct8kiQ/e8hcq17at2/c9oOs6n8/zLHKcvxSijImlmF0Kq6oKcmIcx2fCbdsO0ZkUZXxTnD8V8jdKqW6axtdpmh5nJMV5IeRGhqRZlvma3jTuQYTwLUKY53lQa61d3/e+XpbF1XUd9CBCSG/Iv4gLoLooCrEoWiDOnwppYJomsQACF0WyW1vmgXVdgwzhnkdCgt4s7uGb3RKWZemstQHDMPjcGCNynBfCt/yg8APkN+HF3bFkQgAAAABJRU5ErkJggg==>
