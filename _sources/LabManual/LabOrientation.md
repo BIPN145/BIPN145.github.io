@@ -64,15 +64,23 @@ LabChart 8 is the software we’ll be using to record electrophysiology data. Be
 
 1. Identify the four "Input" ports on the PowerLab.
 
-2. Find the Cables and Connections Cheat Sheet hanging on the wall near your bench
+2. Find the Cables & Connections Cheat Sheet hanging on the wall near your bench.
 
 >  📸**Take a photo of the Cables and Connections Cheat Sheet**
 
 3. Connect a DIN8-BNC adapter to Input 1 of the PowerLab.
-   *Notice that the DIN8 pins are small and fragile. When plugging in the DIN8 and when attaching cables, do NOT twist the DIN8*
+
+:::{admonition} Be careful with our equipment!
+:class: danger
+The DIN8 pins are small and fragile. When plugging in the DIN8 and when attaching cables, do NOT twist the DIN8.
+:::
 
 4. Attach a single female banana plug BNC adaptor to the DIN8-BNC adaptor.
-*Notice that the BNC cable uses a twist-lock mechanism, and must be turned 90 degrees to lock into the port. Be careful to avoid twisting the DIN8 when doing so.*
+
+:::{admonition} BNC, twist it please!
+:class: danger
+The BNC cable uses a twist-lock mechanism, and must be turned 90 degrees to lock into the port. Be careful to avoid twisting the DIN8 when doing so.
+:::
 
 5. Plug in a banana cable to the adaptor.
 

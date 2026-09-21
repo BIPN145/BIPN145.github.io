@@ -183,6 +183,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab Manual</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="LabOrientation.html">Lab Orientation</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ModelingIntroduction.html">Modeling Neural Membranes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Neuromembrane.html">Neuromembrane</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">RC Circuits</a></li>
@@ -384,7 +385,6 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-tips">Plotting Tips</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-time-constant-against-the-literature">Check your time constant against the literature</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
@@ -455,8 +455,8 @@ document.write(`
 <p>You may need to Autoscale the channel (right click) to be able to see the entire trace.</p>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">Q8.</p>
-<p>The time constant should equal 𝛕 = RC. What <em>should</em> the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit?** Mind your units. <strong>Answer Q8 on the quiz.</strong></p>
+<p class="admonition-title">Our theoretical constant</p>
+<p>The time constant should equal 𝛕 = RC. What <em>should</em> the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit? <strong>Mind your units, and answer this question on the quiz.</strong></p>
 </div>
 <section id="measure-your-time-constant">
 <h3>Measure your time constant<a class="headerlink" href="#measure-your-time-constant" title="Link to this heading">#</a></h3>
@@ -509,7 +509,7 @@ document.write(`
 </div>
 <div class="attention admonition">
 <p class="admonition-title">Plot your results</p>
-<p><strong>Plot the time constant against the resistance.  Answer Q9a and Q9b on the quiz.</strong> Look for the corresponding tab on the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing">Modeling Neural Membranes Google Sheet template</a>.</p>
+<p><strong>Plot the time constant against the resistance, and answer the corresponding questions on the quiz.</strong> Look for the corresponding tab on the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing">Modeling Neural Membranes Google Sheet template</a>.</p>
 </div>
 <section id="plotting-tips">
 <h4>Plotting Tips<a class="headerlink" href="#plotting-tips" title="Link to this heading">#</a></h4>
@@ -523,12 +523,11 @@ document.write(`
 </li>
 <li><p><strong>Python</strong>: Use the <a class="reference external" href="https://bipn145.github.io/Python/PlotScatter.html">Plot Scatter</a> notebook!</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Reflection question</strong>: Circling back to biology</p>
+<p>Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: <a class="reference external" href="https://neuroelectro.org/ephys_prop/index.html">https://neuroelectro.org/ephys_prop/index.html</a>. Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?</p>
+</div>
 </section>
-</section>
-<section id="check-your-time-constant-against-the-literature">
-<h3>Check your time constant against the literature<a class="headerlink" href="#check-your-time-constant-against-the-literature" title="Link to this heading">#</a></h3>
-<p>Let’s circle back to biology. Are the time constants you measured similar to what you’d find in a real neuron? Check this website to look at a collection of examples from the literature: <a class="reference external" href="https://neuroelectro.org/ephys_prop/index.html">https://neuroelectro.org/ephys_prop/index.html</a></p>
-<p>Choose a paper from the example above and look for the reported time constant. Is the time constant in your circuit similar? If not, why might it be different?</p>
 </section>
 </section>
 <section id="troubleshooting">
@@ -634,7 +633,6 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-tips">Plotting Tips</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-time-constant-against-the-literature">Check your time constant against the literature</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>

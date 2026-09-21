@@ -61,7 +61,7 @@ If you cannot attend a lab session due to illness or for any other reason, **ple
 * Final scores will be converted to letter grades, where A = 90–100%, B = 80–89.99%, C = 70–79.99%, D = 60–69.99%, and F = 0–59.99%. For plus and minus grades, A+ = 97–100, A = 93–96.99, A- = 90–92.99, B+ = 87–89.99, B = 83–86.99, B- = 80–82.99, and so on.
 * Final scores are as you see them on Canvas, once all of your assignments are graded. There is no rounding up to the closest score.
 
-**Please note that add/drop deadlines are different for lab courses than lecture courses.** Students who drop a Biology lab class after the end of the second class meeting will be assigned a "W". Additional details: [http://biology.ucsd.edu/go/ug-labs](http://biology.ucsd.edu/go/ug-labs). Summer Session II enrollment deadlines: **drop without a "W" by August 14, 2026**, and **drop with a "W" by August 21, 2026** ([full calendar](https://summersession.ucsd.edu/calendar/index.html)).
+**Please note that add/drop deadlines are different for lab courses than lecture courses.** Students who drop a Biology lab class after the end of the second class meeting will be assigned a "W". Additional details: [http://biology.ucsd.edu/go/ug-labs](http://biology.ucsd.edu/go/ug-labs).
 
 ## Course philosophy
 
