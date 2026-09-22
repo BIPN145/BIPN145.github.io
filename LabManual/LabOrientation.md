@@ -66,7 +66,7 @@ LabChart 8 is the software we’ll be using to record electrophysiology data. Be
 
 2. Find the Cables & Connections Cheat Sheet hanging on the wall near your bench.
 
->  📸 **Take a photo of the Cables and Connections Cheat Sheet** with the actual cables and connections in your toolbox next to their portraits.
+>  📸 **Take a photo of the Cables and Connections Cheat Sheet, with the actual cables and connections in your toolbox next to their portraits**
 
 3. Connect a DIN8-BNC adapter to Input 1 of the PowerLab.
 
