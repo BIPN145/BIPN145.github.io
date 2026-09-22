@@ -120,7 +120,7 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 |  | Lab | String Lab & RC Circuits | **WATCH/READ** [Exporting data from LabChart](https://bipn145.github.io/LabChart/ExportingLabChart.html) |
 | **Week 2** |  |  |  |
 | Oct 5 | Lecture | Earthworm nervous systems | **DUE** String Lab & RC Circuit Quiz |
-| Oct 7 | Lecture | The action potential (**MANDATORY**) | **READ** Hodgkin & Huxley (1939) |
+| Oct 7 | Lecture | The action potential | **READ** Hodgkin & Huxley (1939) |
 | Oct 9 | Lecture | Writing lab reports|  |
 |  | Lab | Earthworm Experiments |  |
 | **Week 3** |  |  |  |
