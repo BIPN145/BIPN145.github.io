@@ -77,7 +77,7 @@ In engineering, 5𝛕 is consisted the time it takes for a capacitor to fully ch
 
 Next, we’ll see how the time constant of the circuit changes in response to the resistance strength. Use the following resistors in your circuit, and use the steps above to determine the time constant for each. 
 
-**Table 4. Resistance vs. Time Constant 
+**Table 4. Resistance vs. Time Constant**
 | Resistance | Time Constant |
 | :---- | :---- |
 | 3 kΩ |  |

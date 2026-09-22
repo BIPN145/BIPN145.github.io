@@ -2,8 +2,7 @@
 orphan: true
 ---
 
-#   BIPN 145 Neurobiology Laboratory SSII (2026)
-
+#   BIPN 145 Neurobiology Laboratory (FA26)
 Welcome to BIPN 145! This is a course about how we study the nervous system. You'll be asked to think, plan, and write like a neuroscientist.
 
 You may be surprised about some of the topics in this course. You'll spend a lot of time learning about nervous systems, but we'll also spend some time talking about experimental design, technology, ethics, and analyzing big data sets.
