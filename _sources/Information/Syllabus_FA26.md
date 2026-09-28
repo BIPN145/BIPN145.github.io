@@ -115,7 +115,7 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 |  | Lab | Group formation & scavenger hunt| Take the [online safety test](https://biolabclass-safetyquiz.ucsd.edu/). |
 | **Week 1** |  |  |  |
 | Sep 28 | Lecture | Modeling neural activity |  |
-| Sep 30 | Lecture | Neuromembrane activity (**MANDATORY**) |  |
+| Sep 30 | Lecture | [Neuromembrane activity](https://bipn145.github.io/LabManual/Neuromembrane.html) (**MANDATORY**) |  |
 | Oct 2 | Lecture | Recording from the nervous system | **DUE** Neuromembrane Quiz & Earthworm Pre-Lab Quiz |
 |  | Lab | String Lab & RC Circuits | **WATCH/READ** [Exporting data from LabChart](https://bipn145.github.io/LabChart/ExportingLabChart.html) |
 | **Week 2** |  |  |  |
