@@ -29,11 +29,11 @@ Do not directly connect the \+ and \- terminals. This can short the circuit, hea
 
 3. We’ll use the PowerLab as our voltmeter, to record voltage in our circuit. Plug a **BNC to DIN8 adapter** and **double banana adapter** into Input 1 of the PowerLab. Check that your PowerLab looks like the image below:
 
-![Figure: PowerLab front panel set up for the RC circuit](images/powerlab_front_RC.png)
+![Figure: PowerLab front panel set up for the RC circuit](images/powerlab_front_RC.jpg)
 
 4. Add the jumper wires, the 100 kΩ resistor, and a capacitor to your breadboard as shown in the circuit below.
 
-![Figure: RC Circuit Diagram](images/RCcircuit_breadboard.png)
+![Figure: RC Circuit Diagram](images/RCcircuit_breadboard-01.png)
 
 :::{admonition} Make a good connection!
 :class: tip
