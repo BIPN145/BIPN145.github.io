@@ -18,31 +18,47 @@ Breadboards are really useful ways to prototype and model electrical circuits (a
 
 Build the circuit below. We’ll use the OUTPUT of your Powerlab to send a pulse of current through the circuit. 
 
-1. It helps to start with the output ends in the power rails and work your way around. The **red** wire from the PowerLab is the positive terminal. 
+1. Attach single BNC adapters to the \+ and \- outputs of the PowerLab.  
 
-   **CAUTION**: Do not connect the \+ and \- terminals. This will short the circuit, heat, and melt the plastic. Check that your circuit is set up properly before turning on the pulse from your computer.
+2. Attach a red banana cable to the \+ terminal and a black banana cable to the \- terminal of your PowerLab. 
 
-2. Attach single BNC adapters to the \+ and \- outputs of the PowerLab.  
+:::{admonition} Caution
+:class: danger
+Do not directly connect the \+ and \- terminals. This can short the circuit, heat, and melt the plastic. Check that your circuit is set up properly before turning on the stimulator in LabChart.
+:::
 
-3. Attach a red banana cable to the \+ terminal and a black banana cable to the \- terminal of your PowerLab. 
+3. We’ll use the PowerLab as our voltmeter, to record voltage in our circuit. Plug a **BNC to DIN8 adapter** and **double banana adapter** into Input 1 of the PowerLab. Check that your PowerLab looks like the image below:
 
-4. Attach the banana cables to red and black jumper wires using alligator clips, and insert the black and red jumper wires to the power rails, as shown in the circuit. 
+![Figure: PowerLab front panel set up for the RC circuit](images/powerlab_front_RC.png)
 
-   **NOTE:** Ensure that all circuit components are properly inserted into the breadboard. The wires should make contact with the metal strips inside the breadboard. 
+4. Add the jumper wires, the 100 kΩ resistor, and a capacitor to your breadboard as shown in the circuit below.
 
-5. Add additional jumper wires, a resistor, and a capacitor, as shown in the circuit.   
+![Figure: RC Circuit Diagram](images/RCcircuit_breadboard.png)
 
-6. We’ll use the PowerLab as our voltmeter, to record voltage in our circuit. Plug a **BNC to DIN8 adapter** and **double banana adapter** into Input 1 of the PowerLab. 
+:::{admonition} Make a good connection!
+:class: tip
+Ensure that all circuit components are properly inserted into the breadboard. The wires should make contact with the metal strips inside the breadboard. 
+::: 
 
-7. Connect the ground/reference (**black**, \-) side of the double banana adapter to the circuit ground with alligator clips.
+5. Connect the ground/reference (**black**, \-) side of the double banana adapter to the circuit ground with alligator clips.
 
-   **NOTE:** The “ground” in this circuit is really going to be our reference electrode. It should be connected to the black side of Input 1\.
+:::{admonition} The ground is our reference!
+:class: tip
+The “ground” in this circuit is really going to be our reference electrode. It should be connected to the black side of Input 1\.
+:::
 
-8. Connect the “hot” pin (**red,** \+) of the double banana adaptor to the “record here” point on the circuit diagram.
+6. Using an alligator clip, connect the **red** recording electrode (the banana cable) to the “record here” point on the circuit diagram.
 
-9. Open LabChart with the **Circuit Lab** settings ([http://bit.ly/labchart](http://bit.ly/labchart))  
-10. Set up the Stimulator to stimulate with 1 V for **1 second**. Make sure the range of your recording channel is 1 V.  Switch the stimulator to “on”.   
-11. Open Scope View and press **\>Start**. You should see a waveform on your screen.   
+7. Open LabChart with the **Circuit Lab** settings ([http://bit.ly/labchart](http://bit.ly/labchart)) 
+
+8. Set up the Stimulator to stimulate with **1 V** of Pulse Height for a Pulse Width of **1 second**.  Switch the stimulator to “On”. 
+
+:::{admonition} Setting an appropriate range
+:class: tip
+If you are sending in 1 V of stimulation, what do you think is an appropriate range for your recording?
+:::
+
+9. Open Scope View and press **\>Start**. You should see a fin-shaped waveform on your screen.   
 
 :::{admonition} Autoscale!
 :class: tip
@@ -58,7 +74,7 @@ The time constant should equal 𝛕 = RC. What *should* the time constant be (in
 
 We can also measure the time constant by measuring how long it takes the curve to rise or decay. One time constant (𝛕) is defined by when the circuit rises to **63.2%** of its total charge (alternately, we could see how long it takes to decay 1/e, about 37%). 
 
-To empirically measure your time constant, follow these steps. 
+To empirically measure your time constant, starting with the 100 kΩ resistor, follow these steps. 
 
 1. Make sure your voltage is very close to zero at baseline.  
 2. Find the maximum voltage (Vmax) that your circuit reaches. 		  
@@ -76,6 +92,11 @@ In engineering, 5𝛕 is consisted the time it takes for a capacitor to fully ch
 ### Record and plot your time constant with different resistors
 
 Next, we’ll see how the time constant of the circuit changes in response to the resistance strength. Use the following resistors in your circuit, and use the steps above to determine the time constant for each. 
+
+:::{admonition} Start from what you know!
+:class: tip
+Since you already recorded from the 100 kΩ resistor, and we have predictions about how this will change as we modify resistance, we recommend either going one step down or one step up in resistance.
+:::
 
 **Table 4. Resistance vs. Time Constant**
 | Resistance | Time Constant |
