@@ -67,7 +67,7 @@ You may need to Autoscale the channel (right click) to be able to see the entire
 
 :::{admonition} Our theoretical constant
 :class: attention
-The time constant should equal 𝛕 = RC. What *should* the time constant be (in seconds), given the 100 kOhm resistor and 1 uF capacitor in this circuit? **Mind your units, and answer this question on the quiz.**
+The time constant should equal 𝛕 = RC. What *should* the time constant be (in seconds), given the 100 kΩ resistor and 1 uF capacitor in this circuit? **Mind your units, and answer this question on the quiz.**
 :::
 
 ### Measure your time constant
