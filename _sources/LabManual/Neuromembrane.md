@@ -16,37 +16,25 @@ First, we’ll explore the properties of the membrane that lead to a resting mem
 
 ### Protocol
 
-1. Go to [https://neuromembrane.biology.ualberta.ca/](https://neuromembrane.biology.ualberta.ca/) and click "Continue to App."
+1. Go to [https://neuromembrane.biology.ualberta.ca/](https://neuromembrane.biology.ualberta.ca/) and click "Continue to Simulator."
 
-2. To open the resting membrane potential simulation, click on the top left to open a menu of stimulations. Choose “Resting Potential Simulation.” 
+2. By default, the Resting Potential simulation will open. On the right hand side, you’ll see a membrane. The area below the membrane is the inside of the cell. The area above the membrane is the outside of the cell.
 
-   On the right hand side, you’ll see a membrane. The area below the membrane is the inside of the cell. The area above the membrane is the outside of the cell.
-
-3. This simulation will open by default without any leak channels or pumps. Let’s first add a couple of leak channels to the membrane and observe what happens. Click the plus sign next to “LEAK CHANNELS” to add a Na+ and K+ channel to the membrane. 
+3. This simulation will open by default without any leak channels or pumps. Let’s first add a couple of leak channels to the membrane and observe what happens. **Click the plus sign next to “LEAK CHANNELS” to add a Na+ and K+ channel to the membrane.**
 
 :::{admonition} Reflection
 :class: tip
 These single channels represent many, many channels in the membrane that are allowing either Na+ or K+ to cross. By default, these will open with a relative permeability of 0.05:1 (Na:K). Note that at these default settings, there is also equal [Na+] and [K+] inside and outside of the membrane.
 :::
 
-4. First, we’ll observe what happens over time when we have more K+ permeability, but equal ion concentrations. **Before running the simulation, write a 1-2 sentence prediction for what will happen in Table 1.** 
-
-5. Once you have your prediction, click on the play button to run the simulation. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.**
-
-6. In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump. Click the plus button next to Na+/K+ pump to add one to the membrane.
-
-7. Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations back to the previous settings — where all of the concentrations are 50 mM. **Before running Simulation #2, write your 1-2 sentence prediction in Table 1.**
-
-8. Run Simulation #2 and observe what happens to the membrane potential. **Has adding a Na+/K+ pump changed anything about the resting membrane potential? Why or why not? Add your observations to the table.** For this simulation, note that we’re just using the Na/K pump to be able to change the concentration across the membrane. The Na/K is not operational (yet).
-
-9. Go back to the settings page. In real neurons, ion concentrations are not equivalent. Change the concentrations of K+ and Na+ back to their default values (Na: 10 mM inside, 140 mM outside; K+: 140 mM inside, 4 mM outside) to reflect more biological values across the membrane. **Write your prediction for Simulation #3 in the table.**
-
-10. Run the simulation again and observe what happens to the membrane potential. 
+4. First, we’ll observe what happens over time when we have more K+ permeability, but equal ion concentrations.
 
 :::{admonition} Log your predictions
 :class: tip 
-What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in a table formatted to one like Table 1, below. Here is a [Google Spreadsheet Template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing).
+What happens to the voltage over time? Why is the voltage across the membrane this value? For each of our simulations, write a 1-2 sentence prediction for what will happen, like Table 1, below. Here is a [Google Spreadsheet Template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing).
 :::
+
+5. Once you have your prediction, click on the play button to run the simulation. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.** Here is a [Google Spreadsheet Template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing) for your table.
 
 **Table 1. Simulation predictions & observations**
 
@@ -58,13 +46,27 @@ What happens to the voltage over time? Why is the voltage across the membrane th
 | 4 | Leak channels & Na+/K+ pump | Na+ high outside; K+ high inside | 100 Na+; 5 K+ | | |
 | 5 | Leak channels & Na+/K+ pump | Na+ high outside; K+ high inside | 100 Na+; 100 K+ | | |
 
-11. Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work. Does this match the voltage in the simulation? **Answer Q1 on the quiz. Report your answer in mV.**
+6. In order to modify the concentration across the membrane, we’ll need a Na+/K+ pump. Click the plus button next to Na+/K+ pump to add one to the membrane.
+
+:::{admonition} The Na+/K+ pump
+:class: tip
+Although the Na+/K+ pump will be present in our membrane to allow us to modify the concentration, we won't be paying it too much mind today. It will steady move three Na+ out and two K+ in when it is there, but this won't dramatically change the membrane potential. For this simulation, we're largely concerned with the impact of changing the ion concentrations and permeabilities.
+:::
+
+7. Notice that the CONCENTRATION SETTINGS have now changed as well.  Change these concentrations such that they are 50 mM each. **Before running Simulation #2, write your 1-2 sentence prediction in Table 1.**
+
+8. Run Simulation #2 and observe what happens to the membrane potential.
+
+9. In real neurons, ion concentrations are not equivalent across the membrane. Change the concentrations of K+ and Na+ back to their default values (**Na: 10 mM inside, 140 mM outside; K+: 140 mM inside, 4 mM outside**) to reflect more biological values across the membrane. **Write your prediction for Simulation #3 in the table.**
+
+10. Run the simulation again and observe what happens to the membrane potential. 
+
+11. **Using the Goldman-Hodgkin-Katz (GHK) equation for Na+ and K+ only, calculate what the voltage across the membrane should be for simulation #3 and show your work.** Does this match the voltage in the simulation?
 
 **Here are a few hints to help you:**
 
-* P is relative permeability; other constants can be found on the lecture slides.
-* To simplify, you may determine a constant for the first portion of the equation (RT/F) and use that for future calculations.
-* You can use “Insert > Equation” in Google Docs or Microsoft Word to show your work, or simply jot it on paper, take a picture, and paste it here.
+* P is *relative* permeability; other constants can be found on the lecture slides.
+* To simplify, you can use a predetermined constant for the first portion of the equation (RT/F).
 * Google search has a built-in scientific calculator! You can bring it up by typing any formula into the search bar. For example, type `=5*150` into Google Search.
 
 :::{admonition} Q1. Calculation of GHK
@@ -76,7 +78,7 @@ Using the GHK equation for Na⁺ and K⁺ only, calculate the voltage across the
 
 13. Write your prediction for Simulation #4 in Table 1.
 
-14. Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. **Answer Q2 on the quiz. Report your answer in mV.**
+14. Run Simulation #4 and observe what happens. Record your observations in Table 1 and respond to the question below. 
 
 :::{admonition} Q2.
 :class: attention
@@ -85,7 +87,7 @@ With the high permeability to Na⁺ and low permeability to K⁺, what is the re
 
 15. On the settings page, set both the Na+ and K+ permeabilities to 100. Write your prediction in Table 1.
 
-16. Run the simulation to see what happens, record your observations, and respond to the question below. **Answer Q3 on the quiz.**
+16. Run the simulation to see what happens, record your observations, and respond to the question below.
 
 :::{admonition} Q3.
 :class: attention
@@ -110,11 +112,11 @@ Complete Table 2 and then answer Q4 on the quiz. [You can use the Table 2 tab on
 | 50 |  |
 | 200 |  |
 
-19. Click the “Toggle Circuit Diagram” button on the top right hand corner to overlay circuit components.
+19. Click the "3D" button to make your simulation "2D", and then click the “Toggle Circuit Diagram” to the right to overlay the circuit components of this membrane.
 
 :::{admonition} Q5.
 :class: attention
-In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you. Once you're done, answer Q5 on the quiz.
+In a few words, describe what each of the following are modeling in the neuron. The first one has been done for you.
 :::
 
 | Component | What it models |
@@ -138,7 +140,7 @@ In this part, you’ll set up a simulation that models one portion of an axon or
 
 ### Protocol
 
-1. Go to  [https://neuromembrane.biology.ualberta.ca/](https://neuromembrane.biology.ualberta.ca/) (if you’re not already there) and open up the “Passive Membrane Simulation” (or Cable Theory Simulation)  in the menu in the top left corner.
+1. Go to  [https://neuromembrane.biology.ualberta.ca/](https://neuromembrane.biology.ualberta.ca/) (if you’re not already there) and open up the “Passive Membrane" simulation in the menu in the top left corner.
 
 2. Add an external recording electrode that is two length constants (λ) away from your stimulating electrode by clicking the **\+** button and changing the value after the second recording site. **Answer Q6 on the quiz.**
 
@@ -170,4 +172,6 @@ With this smaller diameter of 2 µm, do other parameters of the membrane (bottom
 
 7. Double the specific capacitance of the membrane, from 1 to 2 μF/cm2. Describe what happens to the time constant and the resulting voltage over time plot with more capacitance in Table 3\.
 
-Optional: Later in the course, you may want to use the Neuromembrane simulator to model the action potential. There is a [protocol here](https://docs.google.com/document/d/14yS7gj4IyZvIWO3KI5tqYkXIkytr7Y8ES7v4SbK9quM/edit?tab=t.0#heading=h.z78xt7uiejq). 
+-----
+
+**Optional additional activity**: Later in the course, you may want to use the Neuromembrane simulator to model the action potential or to better understand voltage clamp. There is a [protocol here](https://docs.google.com/document/d/14yS7gj4IyZvIWO3KI5tqYkXIkytr7Y8ES7v4SbK9quM/edit?tab=t.0#heading=h.z78xt7uiejq) for their action potential simulator . 
