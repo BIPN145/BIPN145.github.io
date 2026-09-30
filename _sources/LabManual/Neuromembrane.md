@@ -34,7 +34,7 @@ These single channels represent many, many channels in the membrane that are all
 What happens to the voltage over time? Why is the voltage across the membrane this value? For each of our simulations, write a 1-2 sentence prediction for what will happen, like Table 1, below. Here is a [Google Spreadsheet Template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing).
 :::
 
-5. Once you have your prediction, click on the play button to run the simulation. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.** Here is a [Google Spreadsheet Template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing) for your table.
+5. Once you have your prediction, click on the play button to run the simulation. You can also change the speed so that it will run faster. **What happens to the voltage over time? Why is the voltage across the membrane this value? Write your observations in Table 1.**
 
 **Table 1. Simulation predictions & observations**
 
@@ -99,6 +99,7 @@ Which of these simulations best models a typical neural membrane?
 18. Systematically change [K+]out to fill in the table below. Hint: if you hover over the chart on the left, you’ll be able to see the precise voltage. 
 
 :::{admonition} Q4
+:class: attention
 Complete Table 2 and then answer Q4 on the quiz. [You can use the Table 2 tab on the Google Spreadsheet template](https://docs.google.com/spreadsheets/d/1Jg2RWFHUMrMBwb_iIrArJ1SlwGvIHXGjixTGJQ5B9s0/edit?usp=sharing).
 ::: 
 
