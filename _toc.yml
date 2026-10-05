@@ -13,6 +13,8 @@ parts:
           - file: LabManual/RCcircuits.md
       - file: LabManual/StringNervousSystems.md
       - file: LabManual/Earthworm.md
+        sections:
+          - file: LabManual/EarthwormRefractory.md
       - file: Leech/Introduction.md
         sections:
           - file: Leech/IntracellularLab.md
