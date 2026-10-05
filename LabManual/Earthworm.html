@@ -66,7 +66,7 @@
     <script src="../_static/custom.js?v=01356269"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Leech Electrophysiology" href="../Leech/Introduction.html" />
+    <link rel="next" title="Earthworm Extension: Refractory Period" href="EarthwormRefractory.html" />
     <link rel="prev" title="String Nervous Systems" href="StringNervousSystems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -230,7 +230,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="StringNervousSystems.html">String Nervous Systems</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Earthworm Electrophysiology</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Earthworm Electrophysiology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="EarthwormRefractory.html">Earthworm Extension: Refractory Period</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Leech/Introduction.html">Leech Electrophysiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Leech/IntracellularLab.html">Intracellular Lab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Leech/RetziusRecording.html">Retzius Recording</a></li>
@@ -434,13 +437,12 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers">Determine the threshold to recruit the Lateral Giant Fibers</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-calculate-the-rheobase">II. Calculate the rheobase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-determine-the-refractory-period">IV. Determine the refractory period</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-compute-the-conduction-velocity">V. Compute the conduction velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-calculate-the-rheobase">III. Calculate the rheobase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-compute-the-conduction-velocity">IV. Compute the conduction velocity</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">VI. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">V. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
 </ul>
 </li>
@@ -481,17 +483,15 @@
 </section>
 <section id="properties-of-action-potentials">
 <h3>Properties of action potentials<a class="headerlink" href="#properties-of-action-potentials" title="Link to this heading">#</a></h3>
-<p>In this lab, we’ll determine the <strong>threshold</strong>, <strong>rheobase &amp; chronaxie</strong>, <strong>refractory period</strong>, and <strong>conduction velocity</strong> for the earthworm giant fiber system. We’re recording compound action potentials (CAPs) from many axons in these fiber bundles, but the underlying principles are the same.</p>
+<p>In this lab, we’ll determine the <strong>threshold</strong>, <strong>rheobase &amp; chronaxie</strong>, and <strong>conduction velocity</strong> for the earthworm giant fiber system. We’re recording compound action potentials (CAPs) from many axons in these fiber bundles, but the underlying principles are the same.</p>
 <p>The <strong>threshold</strong> is defined as the minimum stimulus voltage that elicits an action potential 50% of the time. We’ll determine this with short stimuli. Stimulus voltages that don’t elicit an action potential are called subthreshold; stimulus voltages that do elicit an action potential are called suprathreshold.</p>
 <p>In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The <strong>rheobase</strong> is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the <strong>chronaxie</strong>. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. We can plot this data in a strength duration curve:</p>
 <p><img alt="" src="../_images/bahringbauer2014.png" /></p>
-<p>The <strong>absolute refractory period</strong> is the minimum amount of time needed for a neuron to fire a second action potential. This is caused by the inactivation of sodium channels after an action potential — it takes time for them to close, to then be reopened by a depolarizing stimulus. Since we’re recording from many axons, your measured refractory period will be more variable than for a single axon. We’ll define the absolute refractory period as the time when the amplitude of the second CAP is 30% of the first.</p>
-<p>After an action potential, the membrane of the axon is also hyperpolarized, due to the slowness of K⁺ channels closing. So, there is a period of time where the neuron requires more voltage to fire an action potential. This period is called the <strong>relative refractory period</strong>. In this lab, we’ll identify it as the period where the amplitude of the second CAP is 30–90% of the first.</p>
+<p><em>An optional extension on the refractory period is available on the <a class="reference external" href="https://bipn145.github.io/LabManual/EarthwormRefractory.html">course website</a>.</em></p>
 <p><strong>In these experiments you will:</strong></p>
 <ul class="simple">
 <li><p>Stimulate the ventral nerve cord of the earthworm to elicit an action potential</p></li>
 <li><p>Determine the voltage that is needed to recruit the lateral giant fibers</p></li>
-<li><p>Estimate the absolute and relative refractory period between action potentials</p></li>
 <li><p>Calculate the speed of an action potential</p></li>
 <li><p>Propose your own hypothesis about conduction velocity</p></li>
 <li><p>Conduct your experiment to test your hypothesis</p></li>
@@ -740,8 +740,8 @@
 </section>
 </section>
 <hr class="docutils" />
-<section id="ii-calculate-the-rheobase">
-<h3>II. Calculate the rheobase<a class="headerlink" href="#ii-calculate-the-rheobase" title="Link to this heading">#</a></h3>
+<section id="iii-calculate-the-rheobase">
+<h3>III. Calculate the rheobase<a class="headerlink" href="#iii-calculate-the-rheobase" title="Link to this heading">#</a></h3>
 <p>In Part III, we’ll change the stimulus amplitude and duration to calculate the rheobase and chronaxie of the earthworm medial giant fiber (read the Background if you forget what these are).</p>
 <p>In the previous experiment, we gave a stimulus for 0.2 ms. Now, we’ll modify the stimulus duration and amplitude to determine the minimum stimulus requirement, regardless of duration.</p>
 <ol class="arabic">
@@ -786,188 +786,8 @@
 </div>
 </section>
 <hr class="docutils" />
-<section id="iv-determine-the-refractory-period">
-<h3>IV. Determine the refractory period<a class="headerlink" href="#iv-determine-the-refractory-period" title="Link to this heading">#</a></h3>
-<p>In the next step, you’ll determine the shortest time between stimuli where you can elicit two different CAPs from the MGF. In other words, we’ll determine the relative and absolute refractory period of these fibers.</p>
-<ol class="arabic">
-<li><p>Set your pulse height so that you can comfortably elicit a response from the MGF.</p></li>
-<li><p><strong>In Setup &gt; Stimulator, change Repeats to 2</strong> in order to play multiple pulses.</p></li>
-<li><p>We also need to change the time between each stimulus. PowerLab thinks of this interval as Hz. To start, we want 15 ms between each stimulus.</p>
-<blockquote>
-<div><p><strong>Note:</strong> Remember that Hertz (Hz) means events per second. So, 1 Hz = 1 event per second, and 10 Hz = 10 events per second. 1 ÷ frequency (in Hz) = time between stimuli (in seconds).</p>
-</div></blockquote>
-</li>
-</ol>
-<div class="tip admonition">
-<p class="admonition-title">Questions for reflection</p>
-<ul class="simple">
-<li><p>How many milliseconds would there be between each stimulus at 10 Hz stimulation?</p></li>
-<li><p>For 15 ms between each stimulus, what should the frequency of stimulation (in Hz) be?</p></li>
-</ul>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Fill out this chart with the corresponding Hz values for each interval length:</p></li>
-</ol>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Interval (ms)</p></th>
-<th class="head"><p>15</p></th>
-<th class="head"><p>14</p></th>
-<th class="head"><p>13</p></th>
-<th class="head"><p>12</p></th>
-<th class="head"><p>11</p></th>
-<th class="head"><p>10</p></th>
-<th class="head"><p>9</p></th>
-<th class="head"><p>8</p></th>
-<th class="head"><p>7</p></th>
-<th class="head"><p>6</p></th>
-<th class="head"><p>5</p></th>
-<th class="head"><p>4</p></th>
-<th class="head"><p>3</p></th>
-<th class="head"><p>2</p></th>
-<th class="head"><p>1</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Freq. (Hz)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ol class="arabic" start="5">
-<li><p><strong>Change your Max Repeat Rate</strong> to the equivalent frequency for 15 ms intervals.</p></li>
-<li><p>Change your Pulse Width to 0.2 ms and your Pulse Height to the threshold for your MGF.</p></li>
-<li><p><strong>Press &gt; Start</strong> to record a trial with two stimuli, separated by 15 ms.</p></li>
-<li><p>Right-click and choose <strong>Add Marker &gt; Clamp to Trace</strong> to place a marker at the moment the stimulus occurs. Move your cursor to the peak of the action potential. Look at the ΔV on the right-hand side to see the change in voltage from that point.</p></li>
-<li><p><strong>Measure the amplitude of your first and second action potentials.</strong> Determine how strong the second was relative to the first (e.g. if AP #2 amplitude was half as high as #1, it would be 50%). Record your response in row one of Table 3.</p></li>
-<li><p>Decrease the duration between stimuli by 1 ms by changing the Repeat Rate to the Hz for a 14 ms interval.</p></li>
-<li><p><strong>Record the amplitudes and corresponding percentages for each stimulus interval in Table 3.</strong></p></li>
-<li><p>At some point, AP #2 will diminish below 30% of AP #1. We can consider this our absolute refractory period.</p>
-<blockquote>
-<div><p><strong>Note:</strong> Depending on the latency of your MGF CAP, it may be difficult to see a CAP with a stimulus interval of 1 or 2 ms. Reduce the stimulus interval to as short as you can before the MGF CAP is cut off by the second stimulus. If the shortest stimulus interval is &gt;3 ms, you should move your pins closer together.</p>
-</div></blockquote>
-</li>
-<li><p>Save your LabChart file.</p>
-<blockquote>
-<div><p><strong>Note:</strong> If you have data that doesn’t seem quite right, you should repeat your experiment. You must be upfront about your number of repeats in your lab report, comprehensively reporting all of the data that you collected.</p>
-</div></blockquote>
-</li>
-</ol>
-<p><strong>Table 3.</strong> Amplitudes of CAPs elicited by stimuli with decreasing stimulus intervals.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Stimulus Interval (ms)</p></th>
-<th class="head"><p>#1 CAP Amplitude</p></th>
-<th class="head"><p>#2 CAP Amplitude</p></th>
-<th class="head"><p>% #2/#1</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>15</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>14</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>13</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>12</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>11</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Questions for reflection</p>
-<ul class="simple">
-<li><p>What was the shortest duration between stimuli where the second action potential was less than 90% but more than 30% of the original CAP amplitude?</p></li>
-<li><p>What was the shortest duration between stimuli where the second CAP was diminished below 30%?</p></li>
-<li><p>Which of these values is your absolute refractory period, and which is the relative refractory period?</p></li>
-</ul>
-</div>
-</section>
-<hr class="docutils" />
-<section id="v-compute-the-conduction-velocity">
-<h3>V. Compute the conduction velocity<a class="headerlink" href="#v-compute-the-conduction-velocity" title="Link to this heading">#</a></h3>
+<section id="iv-compute-the-conduction-velocity">
+<h3>IV. Compute the conduction velocity<a class="headerlink" href="#iv-compute-the-conduction-velocity" title="Link to this heading">#</a></h3>
 <p><em>(If you’re doing this on a different day, follow the same steps for preparing LabChart &amp; your earthworm as you did in the previous earthworm experiment.)</em></p>
 <ol class="arabic simple" start="0">
 <li><p>First, note the distance <em>in meters</em> between your reference electrode (−) and your cathode (−) stimulation pin?</p></li>
@@ -982,13 +802,13 @@
 <h4>Determine the MGF latency to spike<a class="headerlink" href="#determine-the-mgf-latency-to-spike" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to the peak of your elicited action potential.</p></li>
-<li><p>Repeat this <strong>10</strong> times and record your data in Table 4.</p></li>
+<li><p>Repeat this <strong>10</strong> times and record your data in Table 3.</p></li>
 </ol>
-<p><strong>Table 4.</strong> MGF conduction velocity data at room temperature.</p>
+<p><strong>Table 3.</strong> MGF conduction velocity data at room temperature.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Trial</p></th>
-<th class="head"><p>MGF Cold Temperature Latency (s)</p></th>
+<th class="head"><p>MGF Room Temperature Latency (s)</p></th>
 <th class="head"><p>Speed (m/s)</p></th>
 </tr>
 </thead>
@@ -1041,11 +861,11 @@
 </ol>
 </section>
 </section>
-<section id="vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">
-<h3>VI. Design your own experiment to test the impact of temperature on MGF conduction velocity<a class="headerlink" href="#vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity" title="Link to this heading">#</a></h3>
+<section id="v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">
+<h3>V. Design your own experiment to test the impact of temperature on MGF conduction velocity<a class="headerlink" href="#v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity" title="Link to this heading">#</a></h3>
 <p>For this final part, you will design your own experiment to test the impact of temperature on conduction velocity. We will provide ice and a thermometer, but the rest is up to you! If you are performing this experiment on a separate worm, be sure to measure the threshold for the MGF as described above.</p>
 <p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report. Think about what someone needs to know in order to replicate this experiment exactly as you did.</p>
-<p><strong>Table 5.</strong> MGF conduction velocity data.</p>
+<p><strong>Table 4.</strong> MGF conduction velocity data.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Trial</p></th>
@@ -1100,7 +920,7 @@
 <section id="conduct-your-experiment">
 <h4>Conduct your experiment<a class="headerlink" href="#conduct-your-experiment" title="Link to this heading">#</a></h4>
 <p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report.</p>
-<p>Record your results in the MGF Experimental AP Latency column of Table 4. You’ll need these later for the Results section of your lab report.</p>
+<p>Record your results in the MGF Experimental AP Latency column of Table 3. You’ll need these later for the Results section of your lab report.</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -1143,6 +963,8 @@
 </div>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1185,11 +1007,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../Leech/Introduction.html"
+       href="EarthwormRefractory.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Leech Electrophysiology</p>
+        <p class="prev-next-title">Earthworm Extension: Refractory Period</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1230,13 +1052,12 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers">Determine the threshold to recruit the Lateral Giant Fibers</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-calculate-the-rheobase">II. Calculate the rheobase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-determine-the-refractory-period">IV. Determine the refractory period</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-compute-the-conduction-velocity">V. Compute the conduction velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-calculate-the-rheobase">III. Calculate the rheobase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-compute-the-conduction-velocity">IV. Compute the conduction velocity</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">VI. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">V. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
 </ul>
 </li>
