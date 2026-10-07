@@ -145,7 +145,7 @@ In this experiment, you will send a stimulus into the earthworm while recording 
    - Pulse Height: 0.2 V
    - Pulse Width: 0.2 ms
    > **Note:** Leave the Stimulator Panel open — we'll need it throughout the experiment.
-3. **Press > Start.** LabChart should be in Scope View and display one 20 ms sweep every time you click Start. For each 20 ms sweep, a stimulus pulse is generated through the PowerLab Stimulator outputs.
+3. **Press > Start.** LabChart should be in Scope View and display one 20 ms sweep every time you click Start (in other words, the Duration should be set to 20 ms). For each 20 ms sweep, a stimulus pulse is generated through the PowerLab Stimulator outputs.
 4. **Examine the recording** — you should see a quick deflection very shortly after your stimulus pulse. The deflection just after the start of the sweep is your stimulus artifact, caused by spread of the stimulus voltage to the recording electrodes.
    > **Note:** The stimulus artifact can be very large in amplitude, and can exceed the range of the recording amplifier. It is okay if it is cut off.
 5. **Change the Pulse Height to 1 V.**
@@ -194,7 +194,7 @@ In the previous experiment, we gave a stimulus for 0.2 ms. Now, we'll modify the
 
 1. Write your MGF threshold in the column for 0.20 ms stimulus duration in Table 2.
 2. Change your Pulse Height to the threshold for your MGF.
-3. Systematically change the duration of your stimulus (Pulse Width) to the values in the table below. As necessary, change the stimulus voltage to successfully get a CAP from your MGF.
+3. Systematically change the duration of your stimulus (Pulse Width) to the values in the table below. As necessary, change the stimulus voltage (Pulse Height) to successfully get a CAP from your MGF.
 4. For each duration, record the stimulus voltage (Pulse Height) values that successfully elicit a CAP in Table 2.
    > **Note:** Be sure to label your pages in Scope view accordingly. You don't need to save the pages that do not elicit an action potential.
 
@@ -202,14 +202,12 @@ In the previous experiment, we gave a stimulus for 0.2 ms. Now, we'll modify the
 
 | Duration (ms) | 0.06 | 0.08 | 0.10 | 0.20 | 0.40 | 0.60 | 1.00 | 1.40 | 1.80 |
 |---|---|---|---|---|---|---|---| ---|---|
-| Stimulus Amplitude (V) | | | | | | | | | |
+| Required Pulse Height (V) | | | | | | | | | |
 
 ---
 
 
 ### IV. Compute the conduction velocity
-
-*(If you're doing this on a different day, follow the same steps for preparing LabChart & your earthworm as you did in the previous earthworm experiment.)*
 
 0. First, note the distance *in meters* between your reference electrode (−) and your cathode (−) stimulation pin?
 
@@ -264,9 +262,9 @@ Work with your group to determine a protocol for running your experiment — you
 
 #### Conduct your experiment
 
-Work with your group to determine a protocol for running your experiment — you'll need to include this in the Methods section of your lab report.
+Work with your group to determine a protocol for running your experiment — you'll need to include this in the Methods section of your lab report, so take notes!
 
-Record your results in the MGF Experimental AP Latency column of Table 3. You'll need these later for the Results section of your lab report.
+Record your results in Table 4. You'll need these later for the Results section of your lab report.
 
 ---
 
