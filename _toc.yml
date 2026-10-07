@@ -48,3 +48,4 @@ parts:
     hidden: true
     chapters:
       - file: Information/Syllabus_FA26.md
+      - file: Information/Syllabus_WI27.md
