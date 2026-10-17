@@ -25,3 +25,8 @@ html, html[data-theme="light"], html[data-theme="dark"] {
 @page {
     margin: 0.75in;
 }
+
+/* Hide the right-hand "On this page" sidebar when toggled (see custom.js) */
+.bd-sidebar-secondary.sidebar-hidden {
+    display: none;
+}

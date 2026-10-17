@@ -9,6 +9,8 @@ chapters:
   - file: RCcircuits
 - file: StringNervousSystems
 - file: Earthworm
+  sections:
+  - file: EarthwormProtocol
 - file: Leech/Introduction
   sections:
   - file: Leech/IntracellularLab
