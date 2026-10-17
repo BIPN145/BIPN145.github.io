@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e106c211" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=838bce2e" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,10 +63,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'LabManual/Earthworm';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="../_static/custom.js?v=01356269"></script>
+    <script src="../_static/custom.js?v=c02e5d93"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Earthworm Extension: Refractory Period" href="EarthwormRefractory.html" />
+    <link rel="next" title="Earthworm Electrophysiology: Lab Protocol" href="EarthwormProtocol.html" />
     <link rel="prev" title="String Nervous Systems" href="StringNervousSystems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -231,6 +231,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="StringNervousSystems.html">String Nervous Systems</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Earthworm Electrophysiology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="EarthwormProtocol.html">Earthworm Electrophysiology: Lab Protocol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EarthwormRefractory.html">Earthworm Extension: Refractory Period</a></li>
 </ul>
 </details></li>
@@ -426,30 +427,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparation">I. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-powerlab-26t">Setting up the PowerLab 26T</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-labchart-8">Setting up LabChart 8</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-earthworm">Setting up your earthworm</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-determining-the-threshold-of-your-fibers">II. Determining the threshold of your fibers</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-activate-the-medial-giant-fiber">Determine the threshold to activate the Medial Giant Fiber</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers">Determine the threshold to recruit the Lateral Giant Fibers</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-calculate-the-rheobase">III. Calculate the rheobase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-compute-the-conduction-velocity">IV. Compute the conduction velocity</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">V. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -488,7 +465,6 @@
 <p>The <strong>threshold</strong> is defined as the minimum stimulus voltage that elicits an action potential 50% of the time. We’ll determine this with short stimuli. Stimulus voltages that don’t elicit an action potential are called subthreshold; stimulus voltages that do elicit an action potential are called suprathreshold.</p>
 <p>In some neurons, we can elicit an action potential with a lower stimulus voltage if the stimulus length is longer. A longer stimulus length enables charge to build up that can ultimately elicit an action potential. However, there is a minimum stimulus voltage needed, even at infinite stimulus durations. The <strong>rheobase</strong> is defined as the minimum stimulus voltage that can elicit an action potential with very long durations of the stimulus. The stimulus duration at 2× the rheobase is called the <strong>chronaxie</strong>. Chronaxie is a useful measure of the excitability of a nerve — the most excitable nerves have the smallest chronaxie. We can plot this data in a strength duration curve:</p>
 <p><img alt="" src="../_images/bahringbauer2014.png" /></p>
-<p><em>An optional extension on the refractory period is available on the <a class="reference external" href="https://bipn145.github.io/LabManual/EarthwormRefractory.html">course website</a>.</em></p>
 <p><strong>In these experiments you will:</strong></p>
 <ul class="simple">
 <li><p>Stimulate the ventral nerve cord of the earthworm to elicit an action potential</p></li>
@@ -508,459 +484,7 @@
 <li><p>Rudell &amp; Fox (1991) The Propagation potential: An Axonal response with implications for scalp-recorded EEG. <em>Biophysical Journal</em> 60: 556-567.</p></li>
 <li><p>Shannon et al. (2014) Portable conduction velocity experiments using earthworms for the college and high school neuroscience teaching laboratory. <em>Advances in Physiology Education</em> 38(1): 62-70.</p></li>
 </ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="lab-protocol">
-<h2>Lab Protocol<a class="headerlink" href="#lab-protocol" title="Link to this heading">#</a></h2>
-<p>There are multiple days dedicated to these earthworm experiments. You are encouraged to complete as many of the experiments below while you have a functioning earthworm.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Supplies</strong></p></th>
-<th class="head"><p><strong>Cables &amp; connectors</strong></p></th>
-<th class="head"><p><strong>Solutions</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Earthworm</p></td>
-<td><p>BNC to single banana adapter (2)</p></td>
-<td><p>Earthworm saline</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dissection tray</p></td>
-<td><p>Banana plug cords (2)</p></td>
-<td><p>Earthworm anesthetic (10% ethanol in Ringers)</p></td>
-</tr>
-<tr class="row-even"><td><p>PowerLab 26T, connected to computer</p></td>
-<td><p>Alligator clip adapters (2)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>BioAmp</p></td>
-<td><p>Needle electrodes</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Sewing pins (3)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>Ruler</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Thermometer</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>Faraday Cage</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Large Petri Dish</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>Eyedropper</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr class="docutils" />
-<section id="i-preparation">
-<h3>I. Preparation<a class="headerlink" href="#i-preparation" title="Link to this heading">#</a></h3>
-<section id="setting-up-the-powerlab-26t">
-<h4>Setting up the PowerLab 26T<a class="headerlink" href="#setting-up-the-powerlab-26t" title="Link to this heading">#</a></h4>
-<p>Our first step is making sure our PowerLab &amp; Amplifier are wired up correctly.</p>
-<p>Make sure the PowerLab is turned off.</p>
-<ol class="arabic simple">
-<li><p><strong>Connect a single BNC adapter to the (+) Output</strong> of the PowerLab. Plug a red banana plug cable into the adapter.</p></li>
-<li><p><strong>Connect a single BNC to banana adapter to the (−) Output.</strong> Plug a black banana plug cable into the adapter.</p></li>
-<li><p>Make sure that the BioAmp is connected to the PowerLab, with three different needle electrodes plugged into it.</p></li>
-<li><p>Once you’re confident everything is connected correctly, turn on the PowerLab.</p></li>
-</ol>
-<p><img alt="" src="../_images/powerlab_front.png" /></p>
-</section>
-<section id="setting-up-labchart-8">
-<h4>Setting up LabChart 8<a class="headerlink" href="#setting-up-labchart-8" title="Link to this heading">#</a></h4>
-<ol class="arabic">
-<li><p><strong>Open LabChart 8 with the settings file you saved during the string experiment.</strong> Most settings are saved within this settings file. However, it’s always good to ensure that you have the correct settings before beginning.</p>
-<blockquote>
-<div><p><strong>Note:</strong> If for some reason you cannot access your settings file, you can find one at <a class="reference external" href="http://bit.ly/labchart">http://bit.ly/labchart</a>. Use the “Earthworm bioAmp Settings.”</p>
-</div></blockquote>
-</li>
-<li><p><strong>Go to Setup &gt; Channel Settings</strong> and confirm that you have three recording channels, and that the third (“BioAmp Recording”) is connected to the BioAmp.</p></li>
-<li><p><strong>Go to Setup &gt; Stimulator</strong> and change the Stimulator settings as follows. Make sure your Marker Channel is Channel 1.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Start Delay</p></td>
-<td><p>0.1 ms</p></td>
-</tr>
-<tr class="row-odd"><td><p>Repeats</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>Max Repeat Rate</p></td>
-<td><p>1 Hz</p></td>
-</tr>
-<tr class="row-odd"><td><p>Pulse Height</p></td>
-<td><p>0.2 V</p></td>
-</tr>
-<tr class="row-even"><td><p>Pulse Width</p></td>
-<td><p>0.2 ms</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ol>
-</section>
-<section id="setting-up-your-earthworm">
-<h4>Setting up your earthworm<a class="headerlink" href="#setting-up-your-earthworm" title="Link to this heading">#</a></h4>
-<p><img alt="" src="../_images/string_electrodes.png" /></p>
-<div class="danger admonition">
-<p class="admonition-title">Don’t stretch your worm!</p>
-<p>Throughout every step of this procedure, be careful not to stretch the earthworm. This will damage the nerve and your experiment will not work.</p>
-</div>
-<ol class="arabic">
-<li><p>Obtain a large, lively earthworm. Rinse it with saline if it is dirty.</p></li>
-<li><p><strong>Anesthetize the earthworm</strong> by placing it in the petri dish with 10% ethanol (in Earthworm Ringer’s solution) for 5 minutes.</p>
-<blockquote>
-<div><p><strong>Note:</strong> Do not leave your earthworm unattended in anesthesia. With too little anesthesia, the earthworm will move around during the experiment, and the resulting muscle electrical activity (electromyogram) will drown out the small neural electrical signals you are interested in. Too much anesthesia and the nerves will not fire.</p>
-<p><strong>Note #2:</strong> Your earthworm may still react to pressure after 5 minutes — you can proceed with the experiment as long as you are able to handle the worm and pin it down.</p>
-</div></blockquote>
-</li>
-<li><p><strong>When your earthworm is anesthetized enough to pin it down,</strong> remove the earthworm from the ethanol and place it on the dissection tray with the dorsal (darker side) up.</p></li>
-<li><p>Pin the earthworm to the tray using one sewing pin on each end of the worm.</p></li>
-<li><p>Place the ruler down next to your worm.</p></li>
-<li><p><strong>Insert a third sewing pin into the anterior end of the earthworm,</strong> ~1 cm from the first pin. Connect the anode &amp; cathode stimulating electrodes to the first two pins.</p>
-<blockquote>
-<div><p><strong>Note:</strong> The anterior end is the end nearest the clitellum, a smooth, non-segmented band.</p>
-</div></blockquote>
-</li>
-<li><p>To keep the worm anesthetized, apply a few drops of the earthworm anesthetic along the length of the earthworm with the eyedropper. Soak up any excess fluid.</p>
-<blockquote>
-<div><p><strong>Note:</strong> Make sure there isn’t a large puddle of solution — too much may interfere with your recording.</p>
-</div></blockquote>
-</li>
-<li><p>Insert the three recording needle electrodes into the worm (same configuration as the string experiment!).</p>
-<blockquote>
-<div><p><strong>Note:</strong> Make sure no wire is touching any other wire. Be careful when positioning the wires to avoid damaging the worm.</p>
-<p><strong>Note #2:</strong> It helps to place your recording electrodes as lateral as possible, while still holding down the worm.</p>
-</div></blockquote>
-</li>
-</ol>
-</section>
-</section>
-<section id="ii-determining-the-threshold-of-your-fibers">
-<h3>II. Determining the threshold of your fibers<a class="headerlink" href="#ii-determining-the-threshold-of-your-fibers" title="Link to this heading">#</a></h3>
-<p>In this experiment, you will send a stimulus into the earthworm while recording from it to determine the threshold voltage of the medial and lateral giant fibers.</p>
-<section id="determine-the-threshold-to-activate-the-medial-giant-fiber">
-<h4>Determine the threshold to activate the Medial Giant Fiber<a class="headerlink" href="#determine-the-threshold-to-activate-the-medial-giant-fiber" title="Link to this heading">#</a></h4>
-<ol class="arabic">
-<li><p><strong>Open your Input Amplifier (BioAmp)</strong> for your Action Potential channel to make sure that your signal looks reasonable. You shouldn’t see 60 Hz noise, but it should look like a physiological signal. (If you have noise, see Troubleshooting.)</p></li>
-<li><p><strong>Open the Stimulator Panel</strong> by going to the Setup menu. Your stimulator should start with:</p>
-<ul class="simple">
-<li><p>Max Repeat Rate: 1 Hz</p></li>
-<li><p>Pulse Height: 0.2 V</p></li>
-<li><p>Pulse Width: 0.2 ms</p></li>
-</ul>
-<blockquote>
-<div><p><strong>Note:</strong> Leave the Stimulator Panel open — we’ll need it throughout the experiment.</p>
-</div></blockquote>
-</li>
-<li><p><strong>Press &gt; Start.</strong> LabChart should be in Scope View and display one 20 ms sweep every time you click Start (in other words, the Duration should be set to 20 ms). For each 20 ms sweep, a stimulus pulse is generated through the PowerLab Stimulator outputs.</p></li>
-<li><p><strong>Examine the recording</strong> — you should see a quick deflection very shortly after your stimulus pulse. The deflection just after the start of the sweep is your stimulus artifact, caused by spread of the stimulus voltage to the recording electrodes.</p>
-<blockquote>
-<div><p><strong>Note:</strong> The stimulus artifact can be very large in amplitude, and can exceed the range of the recording amplifier. It is okay if it is cut off.</p>
-</div></blockquote>
-</li>
-<li><p><strong>Change the Pulse Height to 1 V.</strong></p></li>
-<li><p>Each time you change the stimulus, click Start and a new page will appear to the left of the Scope View Window. This is the Page Explorer. <strong>Label the individual pages</strong> of your recording as you go along.</p></li>
-<li><p><strong>Increase the Pulse Height in 0.1 V steps</strong> until you see an inflection after the stimulus artifact. This means you’ve successfully elicited a response from the medial giant fiber! Note the stimulus voltage as an estimate of the threshold stimulus strength.</p>
-<blockquote>
-<div><p><strong>Note:</strong> If you can’t see anything, right-click on the channel to change the scaling (or use the − and + buttons on the bottom left of the channel).</p>
-<p><strong>Note #2:</strong> If no response is seen with a stimulus of 3.5 V or greater, contact your instructor for assistance.</p>
-</div></blockquote>
-</li>
-<li><p><strong>Find a more accurate threshold</strong> by first reducing the stimulus by 0.2 V (or more) to diminish your response. Then, increase the stimulus by 0.05 V between each sweep. You should report a threshold (Table 1) to the hundredth decimal point (e.g. 1.25 V).</p></li>
-<li><p>Save your data, but do not close the file.</p></li>
-</ol>
-</section>
-<section id="determine-the-threshold-to-recruit-the-lateral-giant-fibers">
-<h4>Determine the threshold to recruit the Lateral Giant Fibers<a class="headerlink" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers" title="Link to this heading">#</a></h4>
-<p>In the next stage, you will attempt to elicit an action potential in the lateral giant fibers.</p>
-<blockquote>
-<div><p><strong>Note:</strong> Remember to keep the earthworm anesthetized!</p>
-</div></blockquote>
-<ol class="arabic">
-<li><p>Set the Pulse Height to your threshold for the MGF.</p></li>
-<li><p>Keep increasing the stimulus in 0.1 V steps until you see a second inflection in your recorded trace.</p></li>
-<li><p>Once you see a second inflection, follow the same procedure as above to determine the threshold where you can elicit an action potential from the lateral giant fiber about 50% of the time. Record the stimulus threshold in Table 1 below.</p></li>
-<li><p>Save your data, but do not close the file.</p>
-<blockquote>
-<div><p><strong>Note:</strong> In some worms, the median and lateral fiber responses may not be separated — they will appear to have the same threshold. Other worms may not show the second response, possibly because the lateral giant fibers are damaged.</p>
-</div></blockquote>
-</li>
-<li><p>Save your LabChart file.</p></li>
-</ol>
-<p><strong>Table 1.</strong> MGF and LGF compound action potential (CAP) properties.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Threshold</p></th>
-<th class="head"><p>Amplitude</p></th>
-<th class="head"><p>Latency</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>MGF</strong></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>LGF</strong></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Questions for reflection</p>
-<ul class="simple">
-<li><p>Did the shape or amplitude of the CAPs change with more stimulation voltage? What does this tell us about the action potential that is firing?</p></li>
-<li><p>Which fiber fires an action potential sooner (with a shorter latency)?</p></li>
-<li><p>Why would the MGF and LGF latencies differ?</p></li>
-</ul>
-</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="iii-calculate-the-rheobase">
-<h3>III. Calculate the rheobase<a class="headerlink" href="#iii-calculate-the-rheobase" title="Link to this heading">#</a></h3>
-<p>In Part III, we’ll change the stimulus amplitude and duration to calculate the rheobase and chronaxie of the earthworm medial giant fiber (read the Background if you forget what these are).</p>
-<p>In the previous experiment, we gave a stimulus for 0.2 ms. Now, we’ll modify the stimulus duration and amplitude to determine the minimum stimulus requirement, regardless of duration.</p>
-<ol class="arabic">
-<li><p>Write your MGF threshold in the column for 0.20 ms stimulus duration in Table 2.</p></li>
-<li><p>Change your Pulse Height to the threshold for your MGF.</p></li>
-<li><p>Systematically change the duration of your stimulus (Pulse Width) to the values in the table below. As necessary, change the stimulus voltage (Pulse Height) to successfully get a CAP from your MGF.</p></li>
-<li><p>For each duration, record the stimulus voltage (Pulse Height) values that successfully elicit a CAP in Table 2.</p>
-<blockquote>
-<div><p><strong>Note:</strong> Be sure to label your pages in Scope view accordingly. You don’t need to save the pages that do not elicit an action potential.</p>
-</div></blockquote>
-</li>
-</ol>
-<p><strong>Table 2.</strong> Data for strength-duration curve.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Duration (ms)</p></th>
-<th class="head"><p>0.06</p></th>
-<th class="head"><p>0.08</p></th>
-<th class="head"><p>0.10</p></th>
-<th class="head"><p>0.20</p></th>
-<th class="head"><p>0.40</p></th>
-<th class="head"><p>0.60</p></th>
-<th class="head"><p>1.00</p></th>
-<th class="head"><p>1.40</p></th>
-<th class="head"><p>1.80</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Required Pulse Height (V)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<hr class="docutils" />
-<section id="iv-compute-the-conduction-velocity">
-<h3>IV. Compute the conduction velocity<a class="headerlink" href="#iv-compute-the-conduction-velocity" title="Link to this heading">#</a></h3>
-<ol class="arabic simple" start="0">
-<li><p>First, note the distance <em>in meters</em> between your reference electrode (−) and your cathode (−) stimulation pin?</p></li>
-</ol>
-<p><strong>Distance (m)</strong>: ___________________</p>
-<ol class="arabic simple">
-<li><p><strong>In PowerLab, press Start.</strong> Confirm that you have two recording channels.</p></li>
-<li><p>Follow the same protocol as in the previous experiments to determine the threshold required to elicit an action potential from your medial giant fiber.</p></li>
-</ol>
-<p><strong>What is the stimulus voltage needed to elicit an MGF action potential from this worm?</strong> ______________________</p>
-<section id="determine-the-mgf-latency-to-spike">
-<h4>Determine the MGF latency to spike<a class="headerlink" href="#determine-the-mgf-latency-to-spike" title="Link to this heading">#</a></h4>
-<ol class="arabic simple">
-<li><p>Using the Marker tool, measure the latency (in seconds) from the peak of the stimulus artifact to the peak of your elicited action potential.</p></li>
-<li><p>Repeat this <strong>10</strong> times and record your data in Table 3.</p></li>
-</ol>
-<p><strong>Table 3.</strong> MGF conduction velocity data at room temperature.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Trial</p></th>
-<th class="head"><p>MGF Room Temperature Latency (s)</p></th>
-<th class="head"><p>Speed (m/s)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Since we know when the AP occurred and the distance between your electrodes, we can calculate the speed of the action potential. Record these values in the “Speed” column of the table above. <em>(Reminder: speed = distance/time.)</em></p></li>
-</ol>
-</section>
-</section>
-<section id="v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">
-<h3>V. Design your own experiment to test the impact of temperature on MGF conduction velocity<a class="headerlink" href="#v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity" title="Link to this heading">#</a></h3>
-<p>For this final part, you will design your own experiment to test the impact of temperature on conduction velocity. We will provide ice and a thermometer, but the rest is up to you! If you are performing this experiment on a separate worm, be sure to measure the threshold for the MGF as described above.</p>
-<p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report. Think about what someone needs to know in order to replicate this experiment exactly as you did.</p>
-<p><strong>Table 4.</strong> MGF conduction velocity data.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Trial</p></th>
-<th class="head"><p>MGF Cold Temperature Latency (s)</p></th>
-<th class="head"><p>Speed (m/s)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<section id="conduct-your-experiment">
-<h4>Conduct your experiment<a class="headerlink" href="#conduct-your-experiment" title="Link to this heading">#</a></h4>
-<p>Work with your group to determine a protocol for running your experiment — you’ll need to include this in the Methods section of your lab report, so take notes!</p>
-<p>Record your results in Table 4. You’ll need these later for the Results section of your lab report.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="troubleshooting">
-<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Observation</p></th>
-<th class="head"><p>Likely issue</p></th>
-<th class="head"><p>Possible solution</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>The recording trace is flat</p></td>
-<td><p>Something is disconnected</p></td>
-<td><p>Check all of your connections</p></td>
-</tr>
-<tr class="row-odd"><td><p>I can’t see a stimulus trace in the Stimulus channel</p></td>
-<td><p>You don’t have a marker channel set up</p></td>
-<td><p>Go to Setup &gt; Stimulator to set up the Marker Channel</p></td>
-</tr>
-<tr class="row-even"><td><p>I can’t see a stimulus artifact in my action potential channel</p></td>
-<td><p>Your electrodes may not be in the worm, or stimulus amplitude is too weak</p></td>
-<td><p>Ensure all electrodes are in the worm (but not too medial), and try stimulating at 0.5 V</p></td>
-</tr>
-<tr class="row-odd"><td><p>My worm is bleeding</p></td>
-<td><p>The electrode is through the blood vessel</p></td>
-<td><p>Move the electrode more lateral; if you don’t get an AP after this, get a new worm</p></td>
-</tr>
-<tr class="row-even"><td><p>There is a stimulus artifact, but no visible response to stimuli between 1–3 V</p></td>
-<td><p>Your electrodes may not be placed well, or your worm may be damaged</p></td>
-<td><p>Try to reposition the electrodes on a different place in the worm. If this doesn’t work, get a new worm.</p></td>
-</tr>
-<tr class="row-odd"><td><p>My recording just looks like a big up and down squiggle (like a sine wave)</p></td>
-<td><p>You’re picking up 60 Hz noise</p></td>
-<td><p>Ground everything (Faraday cage, ground recording pin, amplifier) to the ground pin on the back of the PowerLab. Averaging multiple trials can also get rid of noise.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>Next: the <a class="reference internal" href="EarthwormProtocol.html"><span class="std std-doc">lab protocol</span></a>.</p>
 </section>
 </section>
 <div class="toctree-wrapper compound">
@@ -1007,11 +531,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="EarthwormRefractory.html"
+       href="EarthwormProtocol.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Earthworm Extension: Refractory Period</p>
+        <p class="prev-next-title">Earthworm Electrophysiology: Lab Protocol</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1038,30 +562,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earthworm-nervous-system">Earthworm nervous system</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-action-potentials">Properties of action potentials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-protocol">Lab Protocol</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-preparation">I. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-powerlab-26t">Setting up the PowerLab 26T</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-labchart-8">Setting up LabChart 8</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-earthworm">Setting up your earthworm</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-determining-the-threshold-of-your-fibers">II. Determining the threshold of your fibers</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-activate-the-medial-giant-fiber">Determine the threshold to activate the Medial Giant Fiber</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-threshold-to-recruit-the-lateral-giant-fibers">Determine the threshold to recruit the Lateral Giant Fibers</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-calculate-the-rheobase">III. Calculate the rheobase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-compute-the-conduction-velocity">IV. Compute the conduction velocity</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-mgf-latency-to-spike">Determine the MGF latency to spike</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-design-your-own-experiment-to-test-the-impact-of-temperature-on-mgf-conduction-velocity">V. Design your own experiment to test the impact of temperature on MGF conduction velocity</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conduct-your-experiment">Conduct your experiment</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 </ul>

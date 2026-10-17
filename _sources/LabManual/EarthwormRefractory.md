@@ -1,6 +1,6 @@
 # Earthworm Extension: Refractory Period
 
-*This optional experiment extends the [Earthworm Electrophysiology](Earthworm.md) lab. It is not part of the printed Lab Manual.*
+*This optional experiment extends the [Earthworm Electrophysiology](EarthwormProtocol.md) lab. It is not part of the printed Lab Manual.*
 
 ## Background
 
@@ -11,7 +11,7 @@ After an action potential, the membrane of the axon is also hyperpolarized, due 
 **In this experiment you will:**
 - Estimate the absolute and relative refractory period between action potentials
 
-*Before you begin, prepare your PowerLab, LabChart, and earthworm as described in the [Earthworm Electrophysiology](Earthworm.md) lab, and determine the threshold for your MGF.*
+*Before you begin, prepare your PowerLab, LabChart, and earthworm as described in the [Earthworm Electrophysiology](EarthwormProtocol.md) lab, and determine the threshold for your MGF.*
 
 ## Determine the refractory period
 
