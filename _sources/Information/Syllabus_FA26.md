@@ -130,8 +130,8 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 |  | Lab | Intracellular Equipment |  |
 | **Week 4** |  |  |  |
 | Oct 19 | Lecture |  Leech Physiology & Cell Types |  |
-| Oct 21 | Lecture | Leech Paper Discussion (**MANDATORY**)   | **DUE** Earthworm Lab Report |
-| Oct 23 ([drop deadline](https://blink.ucsd.edu/instructors/courses/enrollment/calendars/index.html)) | Lecture | **Review for the exam** |  |
+| Oct 21 | Lecture | Leech Paper Discussion (**MANDATORY**)   |  |
+| Oct 23 ([drop deadline](https://blink.ucsd.edu/instructors/courses/enrollment/calendars/index.html)) | Lecture | **Review for the exam** | **DUE** Earthworm Lab Report |
 |  | Lab | Leech Experiments |  |
 | **Week 5** |  |  |  |
 | Oct 26 | Lecture | **Exam \#1**  |  |
@@ -144,18 +144,18 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 | Nov 6 | Lecture | Drosophila Optogenetics |  |
 |  | Lab | [Drosophila Behavior & Optogenetics](https://bipn145.github.io/LabManual/Drosophila_new/Introduction.html)|  |
 | **Week 7** |  |  |  |
-| Nov 9 | Lecture | Electroencephalography (EEG) |  **DUE Sunday, Nov 8 @ 11:59 pm**: Project proposals |
+| Nov 9 | Lecture | Spectral Analysis (**MANDATORY**) |  **DUE Sunday, Nov 8 @ 11:59 pm**: Project proposals |
 | Nov 11 | *No lecture* |  *Veterans Day* | **Submit** Final Project Equipment & Needs \[[Spreadsheet](https://docs.google.com/spreadsheets/d/14kze5zsIq6UysFW7IlHqHWGzS2Hxy9YtRlLK-9Qoq3s/edit?usp=sharing)] |
-| Nov 13 | Lecture | Drosophila Presentations | **DUE Thursday @ 11:59 pm:** Drosophila Presentation slides |
+| Nov 13 | *Asynchronous Lecture* | EEG |  |
 |  | Lab | [Measuring alpha waves using EEG](https://bipn145.github.io/LabManual/EEG.html) |  |
 | **Week 8** |  |  |  |
 | Nov 16 | Lecture | EEG Data Analysis (**MANDATORY**) |  |
-| Nov 18 | Lecture | Mapping neural circuits | **DUE** EEG Quiz & Results |
-| Nov 20 | Lecture | Final project planning |  |
+| Nov 18 | Lecture |   Drosophila Presentations | **DUE Tuesday @ 11:59 pm:** Drosophila Presentation slides | |
+| Nov 20 | Lecture | Mapping neural circuits | **DUE** EEG Quiz & Results |
 |  | Lab | Work on final projects |  |
 | **Week 9** |  |  |  |
-| Nov 23 | Lecture | 21st century neuroscience techniques |  |
-| Nov 25 | Lecture | Allen Institute data activity (**MANDATORY**)  |  |
+| Nov 23 | Lecture | Allen Institute data activity (**MANDATORY**)  |  |
+| Nov 25 | Lecture | 21st century neuroscience techniques  |  |
 | Nov 27 |  | *No lecture/lab — Thanksgiving* |  |
 | **Week 10** |  |  |  |
 | Nov 30 | Lecture | **Review for Exam \#2** |  |
