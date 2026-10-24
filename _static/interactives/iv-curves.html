@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I-V curves across the action potential</title>
+<style>
+:root{--bg:#ffffff;--text:#0b0b0b;--text2:#52514e;--muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;--accent-bg:#e6f1fb;--accent-text:#185fa5;--accent-border:#378add;--btn-border:rgba(11,11,11,0.25);--hover:#f5f4f0;--na:#eb6834;--k:#2a78d6}
+@media (prefers-color-scheme: dark){:root{--bg:#1a1a19;--text:#f0efec;--text2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--axis:#383835;--accent-bg:#0c447c;--accent-text:#b5d4f4;--accent-border:#85b7eb;--btn-border:rgba(255,255,255,0.25);--hover:#262624;--na:#d95926;--k:#3987e5}}
+*{box-sizing:border-box}
+body{margin:0;padding:16px;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.5}
+button{font:inherit;font-size:13px;padding:6px 12px;border-radius:8px;border:0.5px solid var(--btn-border);background:transparent;color:var(--text);cursor:pointer}
+button:hover{background:var(--hover)}
+button.on{border-color:var(--accent-border);background:var(--accent-bg);color:var(--accent-text)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.slider{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.slider label{font-size:14px;color:var(--text2)}
+.slider input{flex:1;accent-color:var(--accent-border)}
+.out{font-size:14px;font-weight:500;min-width:64px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:16px;align-items:start}
+@media (max-width:560px){.grid{grid-template-columns:minmax(0,1fr)}}
+.cap{font-size:13px;color:var(--text2);margin-bottom:4px}
+.note{font-size:13px;color:var(--text2);line-height:1.5;margin-top:6px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--text2);margin-bottom:4px}
+.legend span{display:flex;align-items:center;gap:6px}
+svg text{font-family:inherit}
+sub{font-size:0.85em}
+</style>
+</head>
+<body>
+<div class="row" id="btns"></div>
+<div class="slider">
+  <label for="t">Time into step</label>
+  <input type="range" id="t" min="0" max="12" step="0.05" value="0.3">
+  <span class="out" id="tout">0.30 ms</span>
+</div>
+<div class="grid">
+  <div>
+    <div class="cap">Action potential</div>
+    <svg id="ap" viewBox="0 0 200 200" width="100%" role="img" aria-label="Simulated action potential with the current phase marked"></svg>
+    <div class="note" id="note"></div>
+  </div>
+  <div>
+    <div class="legend">
+      <span><span style="width:14px;height:3px;background:var(--na)"></span>I<sub>Na</sub></span>
+      <span><span style="width:14px;height:3px;background:var(--k)"></span>I<sub>K</sub> (delayed rectifier)</span>
+      <span><span style="width:14px;border-top:2px dashed var(--text)"></span>Total (incl. leak)</span>
+    </div>
+    <svg id="iv" viewBox="0 0 440 320" width="100%" role="img" aria-label="Current-voltage curves at the selected time after a voltage step"></svg>
+  </div>
+</div>
+<script>
+// Hodgkin-Huxley squid axon parameters (modern sign convention: rest near -65 mV, inward current negative)
+const gNa = 120, ENa = 50, gK = 36, EK = -77, gL = 0.3, EL = -54.4, VH = -65;
+
+// x / (1 - exp(-x/y)), with the removable singularity at x = 0 handled
+function ef(x, y) { return Math.abs(x) < 1e-6 ? y : x / (1 - Math.exp(-x / y)); }
+
+// Rate constants (1/ms), V in mV
+const am = V => 0.1 * ef(V + 40, 10);
+const bm = V => 4 * Math.exp(-(V + 65) / 18);
+const ah = V => 0.07 * Math.exp(-(V + 65) / 20);
+const bh = V => 1 / (1 + Math.exp(-(V + 35) / 10));
+const an = V => 0.01 * ef(V + 55, 10);
+const bn = V => 0.125 * Math.exp(-(V + 65) / 80);
+
+const inf = (a, b, V) => a(V) / (a(V) + b(V));
+const tau = (a, b, V) => 1 / (a(V) + b(V));
+
+// Gates start at their steady-state values at the holding potential
+const m0 = inf(am, bm, VH), h0 = inf(ah, bh, VH), n0 = inf(an, bn, VH);
+
+// During a voltage step each gate relaxes exponentially toward its new steady state
+function gate(a, b, V, x0, t) {
+  const xi = inf(a, b, V);
+  return xi + (x0 - xi) * Math.exp(-t / tau(a, b, V));
+}
+
+// Currents (uA/cm^2) at test potential V, t ms after stepping from VH
+function currents(V, t) {
+  const m = gate(am, bm, V, m0, t), h = gate(ah, bh, V, h0, t), n = gate(an, bn, V, n0, t);
+  const iNa = gNa * m ** 3 * h * (V - ENa);
+  const iK = gK * n ** 4 * (V - EK);
+  const iL = gL * (V - EL);
+  return [iNa, iK, iNa + iK + iL];
+}
+
+// Simulate one action potential (current clamp, forward Euler) for the inset trace
+const ap = [];
+{
+  let v = VH, m = m0, h = h0, n = n0;
+  const dt = 0.01;
+  for (let i = 0; i <= 1600; i++) {
+    const t = i * dt;
+    ap.push([t, v]);
+    const I = (t >= 1 && t < 1.5) ? 40 : 0;
+    const dv = I - gNa * m ** 3 * h * (v - ENa) - gK * n ** 4 * (v - EK) - gL * (v - EL);
+    m += dt * (am(v) * (1 - m) - bm(v) * m);
+    h += dt * (ah(v) * (1 - h) - bh(v) * h);
+    n += dt * (an(v) * (1 - n) - bn(v) * n);
+    v += dt * dv;
+  }
+}
+
+// Locate landmark points on the simulated action potential
+let pk = 0;
+ap.forEach((p, i) => { if (p[1] > ap[pk][1]) pk = i; });
+let up = pk; while (up > 0 && ap[up][1] > -20) up--;
+let dn = pk; while (dn < ap.length - 1 && ap[dn][1] > -20) dn++;
+let lo = dn; for (let i = dn; i < ap.length; i++) if (ap[i][1] < ap[lo][1]) lo = i;
+
+const phases = [
+  { n: "Rest", t: 0, i: 20, d: "At t = 0 no gates have moved. Na⁺ channels are closed; the few K⁺ channels open at rest give a nearly straight, ohmic line." },
+  { n: "Upstroke", t: 0.3, i: up, d: "Na⁺ activation is fast, so a large inward current with a negative slope region appears. The delayed rectifier has barely moved." },
+  { n: "Peak", t: 0.8, i: pk, d: "Na⁺ current is near its maximum and starting to inactivate. K⁺ current is beginning to grow." },
+  { n: "Repolarization", t: 2.5, i: dn, d: "Na⁺ channels are mostly inactivated, while the delayed-rectifier K⁺ current is now large and outward at depolarized voltages." },
+  { n: "Undershoot", t: 8, i: lo, d: "Na⁺ current is essentially gone. K⁺ channels are fully activated, so the total current is outward everywhere above E_K." }
+];
+
+const btns = document.getElementById("btns");
+const sl = document.getElementById("t");
+let sel = 1;
+phases.forEach((p, k) => {
+  const e = document.createElement("button");
+  e.textContent = p.n;
+  e.onclick = () => { sl.value = p.t; sel = k; draw(); };
+  btns.appendChild(e);
+});
+sl.oninput = () => { sel = -1; draw(); };
+
+function draw() {
+  const t = +sl.value;
+  document.getElementById("tout").textContent = t.toFixed(2) + " ms";
+  [...btns.children].forEach((e, k) => e.classList.toggle("on", k === sel));
+  const near = sel >= 0 ? phases[sel] : phases.reduce((a, c) => Math.abs(c.t - t) < Math.abs(a.t - t) ? c : a);
+  document.getElementById("note").textContent = sel >= 0 ? near.d : "Free reading time. Closest phase: " + near.n.toLowerCase() + ".";
+
+  // I-V plot
+  const W = 440, H = 320, L = 48, R = 10, T = 10, B = 34, V0 = -100, V1 = 50, I0 = -2600, I1 = 3200;
+  const X = V => L + (V - V0) / (V1 - V0) * (W - L - R);
+  const Y = I => T + (1 - (I - I0) / (I1 - I0)) * (H - T - B);
+  let s = "";
+  for (let V = -100; V <= 50; V += 25)
+    s += `<line x1="${X(V)}" x2="${X(V)}" y1="${T}" y2="${H - B}" stroke="var(--grid)" stroke-width="0.5"/><text x="${X(V)}" y="${H - B + 15}" font-size="11" text-anchor="middle" fill="var(--muted)">${V}</text>`;
+  for (let I = -2000; I <= 3000; I += 1000)
+    s += `<line x1="${L}" x2="${W - R}" y1="${Y(I)}" y2="${Y(I)}" stroke="var(--grid)" stroke-width="0.5"/><text x="${L - 6}" y="${Y(I) + 4}" font-size="11" text-anchor="end" fill="var(--muted)">${I}</text>`;
+  s += `<line x1="${L}" x2="${W - R}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--axis)" stroke-width="1"/>`;
+  s += `<text x="${(L + W - R) / 2}" y="${H - 4}" font-size="12" text-anchor="middle" fill="var(--text2)">Test potential (mV)</text>`;
+  s += `<text x="12" y="${(T + H - B) / 2}" font-size="12" text-anchor="middle" fill="var(--text2)" transform="rotate(-90 12 ${(T + H - B) / 2})">Current (µA/cm²), inward negative</text>`;
+  const P = [[], [], []];
+  for (let V = V0; V <= V1; V += 1) {
+    const c = currents(V, t);
+    for (let j = 0; j < 3; j++) P[j].push(X(V).toFixed(1) + "," + Y(Math.max(I0, Math.min(I1, c[j]))).toFixed(1));
+  }
+  s += `<clipPath id="c"><rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}"/></clipPath><g clip-path="url(#c)">`;
+  s += `<polyline points="${P[0].join(" ")}" fill="none" stroke="var(--na)" stroke-width="2" stroke-linejoin="round"/>`;
+  s += `<polyline points="${P[1].join(" ")}" fill="none" stroke="var(--k)" stroke-width="2" stroke-linejoin="round"/>`;
+  s += `<polyline points="${P[2].join(" ")}" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="5 4"/></g>`;
+  s += `<line x1="${X(EK)}" x2="${X(EK)}" y1="${T}" y2="${H - B}" stroke="var(--k)" stroke-width="0.75" stroke-dasharray="2 3"/><text x="${X(EK) + 3}" y="${T + 12}" font-size="11" fill="var(--k)">E_K</text>`;
+  s += `<line x1="${X(ENa)}" x2="${X(ENa)}" y1="${T}" y2="${H - B}" stroke="var(--na)" stroke-width="0.75" stroke-dasharray="2 3"/><text x="${X(ENa) - 3}" y="${T + 12}" font-size="11" text-anchor="end" fill="var(--na)">E_Na</text>`;
+  document.getElementById("iv").innerHTML = s;
+
+  // Action potential inset
+  const aW = 200, aH = 200;
+  const aX = tt => 8 + tt / 16 * (aW - 16);
+  const aY = V => 10 + (1 - (V + 90) / 150) * (aH - 30);
+  let a = `<line x1="8" x2="${aW - 8}" y1="${aY(VH)}" y2="${aY(VH)}" stroke="var(--grid)" stroke-width="0.5"/>`;
+  a += `<polyline points="${ap.filter((_, i) => i % 4 === 0).map(p => aX(p[0]).toFixed(1) + "," + aY(p[1]).toFixed(1)).join(" ")}" fill="none" stroke="var(--text)" stroke-width="1.5"/>`;
+  const q = ap[near.i];
+  a += `<circle cx="${aX(q[0])}" cy="${aY(q[1])}" r="5" fill="var(--na)" stroke="var(--bg)" stroke-width="2"/>`;
+  a += `<text x="8" y="${aH - 4}" font-size="11" fill="var(--muted)">16 ms</text><text x="${aW - 8}" y="${aY(VH) - 4}" font-size="11" text-anchor="end" fill="var(--muted)">rest</text>`;
+  document.getElementById("ap").innerHTML = a;
+}
+draw();
+</script>
+</body>
+</html>
