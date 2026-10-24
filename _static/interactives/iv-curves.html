@@ -25,6 +25,17 @@ button.on{border-color:var(--accent-border);background:var(--accent-bg);color:va
 .legend span{display:flex;align-items:center;gap:6px}
 svg text{font-family:inherit}
 sub{font-size:0.85em}
+details{margin-top:24px;border-top:0.5px solid var(--btn-border);padding-top:12px}
+summary{cursor:pointer;font-size:15px;font-weight:500}
+.methods{font-size:14px;color:var(--text);max-width:720px}
+.methods h3{font-size:14px;font-weight:500;margin:18px 0 4px}
+.methods p,.methods li{color:var(--text2)}
+.methods code,.eq{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+.eq{display:block;margin:6px 0 6px 12px;color:var(--text);white-space:pre-wrap}
+.methods table{border-collapse:collapse;font-size:13px;margin:6px 0}
+.methods td,.methods th{border-bottom:0.5px solid var(--grid);padding:4px 12px 4px 0;text-align:left;color:var(--text2)}
+.methods th{color:var(--text);font-weight:500}
+.methods a{color:var(--accent-border)}
 </style>
 </head>
 <body>
@@ -49,6 +60,57 @@ sub{font-size:0.85em}
     <svg id="iv" viewBox="0 0 440 320" width="100%" role="img" aria-label="Current-voltage curves at the selected time after a voltage step"></svg>
   </div>
 </div>
+
+<details id="methods">
+<summary>How this model was built</summary>
+<div class="methods">
+
+<h3>The model</h3>
+<p>All curves come from the Hodgkin–Huxley model of the squid giant axon (<a href="https://doi.org/10.1113/jphysiol.1952.sp004764" target="_blank" rel="noopener">Hodgkin and Huxley, 1952, <i>J Physiol</i> 117:500–544</a>). The membrane carries three currents, each a conductance times a driving force:</p>
+<span class="eq">I_Na = g&#772;_Na · m³ · h · (V − E_Na)
+I_K  = g&#772;_K · n⁴ · (V − E_K)
+I_L  = g_L · (V − E_L)</span>
+<p>The gating variables <i>m</i> (Na⁺ activation), <i>h</i> (Na⁺ inactivation), and <i>n</i> (K⁺ activation) each range from 0 to 1 and change over time according to</p>
+<span class="eq">dx/dt = α_x(V) · (1 − x) − β_x(V) · x</span>
+<p>Currents use the modern convention: inward current is negative, and voltage is the actual membrane potential, with rest at about −65 mV. Hodgkin and Huxley measured voltage relative to rest and used the opposite sign, so their rate equations have been shifted to this convention.</p>
+
+<h3>Parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Value</th></tr>
+<tr><td>g&#772;_Na, E_Na</td><td>120 mS/cm², +50 mV</td></tr>
+<tr><td>g&#772;_K, E_K</td><td>36 mS/cm², −77 mV</td></tr>
+<tr><td>g_L, E_L</td><td>0.3 mS/cm², −54.4 mV</td></tr>
+<tr><td>Membrane capacitance</td><td>1 µF/cm²</td></tr>
+<tr><td>Holding potential</td><td>−65 mV</td></tr>
+</table>
+<p>Rate constants, in 1/ms with V in mV:</p>
+<span class="eq">α_m = 0.1(V + 40) / (1 − exp(−(V + 40)/10))
+β_m = 4 exp(−(V + 65)/18)
+α_h = 0.07 exp(−(V + 65)/20)
+β_h = 1 / (1 + exp(−(V + 35)/10))
+α_n = 0.01(V + 55) / (1 − exp(−(V + 55)/10))
+β_n = 0.125 exp(−(V + 65)/80)</span>
+
+<h3>Simulated voltage-clamp I-V curves</h3>
+<p>Each I-V curve simulates a family of voltage-clamp steps from the −65 mV holding potential to every test potential from −100 to +50 mV, in 1 mV increments. Before each step, every gate sits at its steady-state value for −65 mV. Because voltage is fixed during a step, each gate relaxes exponentially toward its new steady state, so no numerical integration is needed:</p>
+<span class="eq">x(t) = x∞(V) + (x₀ − x∞(V)) · exp(−t / τ_x(V))
+x∞ = α / (α + β),   τ_x = 1 / (α + β)</span>
+<p>The slider sets <i>t</i>, the time into the step at which current is read. The curves plot I_Na, I_K, and their sum with I_L at that moment for every test potential. Currents beyond the plotted range (−2600 to +3200 µA/cm²) are clipped at the edge of the plot.</p>
+
+<h3>The action potential trace</h3>
+<p>The small trace is a separate current-clamp simulation of the same model, integrated with the forward Euler method (time step 0.01 ms) for 16 ms. A 40 µA/cm² stimulus lasting 0.5 ms, starting at 1 ms, triggers the spike. The marker shows the phase each button refers to: the −20 mV crossing during the upstroke, the peak, the −20 mV crossing during repolarization, and the most negative point of the undershoot.</p>
+
+<h3>Matching phases to times</h3>
+<p>The time paired with each button (0, 0.3, 0.8, 2.5, and 8 ms) was chosen by hand to show what dominates during that phase. During a real action potential, voltage changes continuously and the channels never experience a clean step, so the pairing is an approximation. It works because the gating time constants are what give the action potential its shape: Na⁺ activation is fastest (well under a millisecond), Na⁺ inactivation and K⁺ activation take a few milliseconds.</p>
+
+<h3>What the model leaves out</h3>
+<ul>
+<li>The squid axon has only one Na⁺ and one K⁺ conductance. Mammalian neurons have many more channel types, including A-type K⁺ currents, Ca²⁺ currents, and Ca²⁺-activated K⁺ currents.</li>
+<li>The model has no space: every point on the membrane is at the same voltage, as in a perfect voltage clamp.</li>
+<li>Temperature is fixed at the 6.3 °C of the original experiments, so channel kinetics are several times slower than at body temperature.</li>
+</ul>
+</div>
+</details>
 <script>
 // Hodgkin-Huxley squid axon parameters (modern sign convention: rest near -65 mV, inward current negative)
 const gNa = 120, ENa = 50, gK = 36, EK = -77, gL = 0.3, EL = -54.4, VH = -65;
