@@ -92,10 +92,10 @@ I_L  = g_L · (V − E_L)</span>
 β_n = 0.125 exp(−(V + 65)/80)</span>
 
 <h3>Simulated voltage-clamp I-V curves</h3>
-<p>Each I-V curve simulates a family of voltage-clamp steps from the −65 mV holding potential to every test potential from −100 to +50 mV, in 1 mV increments. Before each step, every gate sits at its steady-state value for −65 mV. Because voltage is fixed during a step, each gate relaxes exponentially toward its new steady state, so no numerical integration is needed:</p>
+<p>Each I-V curve simulates a family of voltage-clamp steps from the −65 mV holding potential to every command potential from −100 to +50 mV, in 1 mV increments. Before each step, every gate sits at its steady-state value for −65 mV. Because voltage is fixed during a step, each gate relaxes exponentially toward its new steady state, so no numerical integration is needed:</p>
 <span class="eq">x(t) = x∞(V) + (x₀ − x∞(V)) · exp(−t / τ_x(V))
 x∞ = α / (α + β),   τ_x = 1 / (α + β)</span>
-<p>The slider sets <i>t</i>, the time into the step at which current is read. The curves plot I_Na, I_K, and their sum with I_L at that moment for every test potential. Currents beyond the plotted range (−2600 to +3200 µA/cm²) are clipped at the edge of the plot.</p>
+<p>The slider sets <i>t</i>, the time into the step at which current is read. The curves plot I_Na, I_K, and their sum with I_L at that moment for every command potential. Currents beyond the plotted range (−2600 to +3200 µA/cm²) are clipped at the edge of the plot.</p>
 
 <h3>The action potential trace</h3>
 <p>The small trace is a separate current-clamp simulation of the same model, integrated with the forward Euler method (time step 0.01 ms) for 16 ms. A 40 µA/cm² stimulus lasting 0.5 ms, starting at 1 ms, triggers the spike. The marker shows the phase each button refers to: the −20 mV crossing during the upstroke, the peak, the −20 mV crossing during repolarization, and the most negative point of the undershoot.</p>
@@ -138,7 +138,7 @@ function gate(a, b, V, x0, t) {
   return xi + (x0 - xi) * Math.exp(-t / tau(a, b, V));
 }
 
-// Currents (uA/cm^2) at test potential V, t ms after stepping from VH
+// Currents (uA/cm^2) at command potential V, t ms after stepping from VH
 function currents(V, t) {
   const m = gate(am, bm, V, m0, t), h = gate(ah, bh, V, h0, t), n = gate(an, bn, V, n0, t);
   const iNa = gNa * m ** 3 * h * (V - ENa);
@@ -207,7 +207,7 @@ function draw() {
   for (let I = -2000; I <= 3000; I += 1000)
     s += `<line x1="${L}" x2="${W - R}" y1="${Y(I)}" y2="${Y(I)}" stroke="var(--grid)" stroke-width="0.5"/><text x="${L - 6}" y="${Y(I) + 4}" font-size="11" text-anchor="end" fill="var(--muted)">${I}</text>`;
   s += `<line x1="${L}" x2="${W - R}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--axis)" stroke-width="1"/>`;
-  s += `<text x="${(L + W - R) / 2}" y="${H - 4}" font-size="12" text-anchor="middle" fill="var(--text2)">Test potential (mV)</text>`;
+  s += `<text x="${(L + W - R) / 2}" y="${H - 4}" font-size="12" text-anchor="middle" fill="var(--text2)">Command potential (mV)</text>`;
   s += `<text x="12" y="${(T + H - B) / 2}" font-size="12" text-anchor="middle" fill="var(--text2)" transform="rotate(-90 12 ${(T + H - B) / 2})">Current (µA/cm²), inward negative</text>`;
   const P = [[], [], []];
   for (let V = V0; V <= V1; V += 1) {
