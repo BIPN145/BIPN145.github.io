@@ -140,7 +140,7 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 |  | Lab | Leech Experiments (*Continued*) |  |
 | **Week 6** |  |  |  |
 | Nov 2 | Lecture | Leech Data Analysis (**MANDATORY**)  |  |
-| Nov 4 ([deadline to drop w/ "W"](https://blink.ucsd.edu/instructors/courses/enrollment/calendars/index.html)) | Lecture | Drosophila Behavior (**MANDATORY**)| **READ** your [Drosophila behavior handout](https://drive.google.com/drive/folders/1xpdF4kuvf3vWaiafQ82TdmQTqWK_qqoE?usp=drive_link) |
+| Nov 4 ([deadline to drop w/ "W"](https://blink.ucsd.edu/instructors/courses/enrollment/calendars/index.html)) | Lecture | Drosophila Behavior (**MANDATORY**)| **READ** your Drosophila behavior handout (see Canvas) |
 | Nov 6 | Lecture | Drosophila Optogenetics |  |
 |  | Lab | [Drosophila Behavior & Optogenetics](https://bipn145.github.io/LabManual/Drosophila_new/Introduction.html)|  |
 | **Week 7** |  |  |  |
