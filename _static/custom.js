@@ -17,22 +17,22 @@ document.addEventListener("DOMContentLoaded", function () {
 // The theme (sphinx-book-theme + pydata-sphinx-theme) only attaches click handlers
 // to the first .primary-toggle / .secondary-toggle in the DOM, which is the
 // (mobile-only) navbar icon, so the article-header buttons do nothing.
+// Above the breakpoint the sidebar is shown/hidden in place; below it the theme
+// shows the sidebar as a modal, so we open that via the navbar icon.
 document.addEventListener("DOMContentLoaded", function () {
-    var desktop = window.matchMedia("(min-width: 992px)");
+    var breakpoints = { primary: 992, secondary: 1200 };
     document.querySelectorAll("button.sidebar-toggle.btn").forEach(function (btn) {
+        var kind = btn.classList.contains("primary-toggle") ? "primary" : "secondary";
         btn.addEventListener("click", function (e) {
-            var primary = btn.classList.contains("primary-toggle");
-            if (primary && !desktop.matches) {
-                // Narrow screens: open the theme's modal sidebar via its navbar icon.
-                var nav = document.querySelector("button.pst-navbar-icon.primary-toggle");
-                if (nav) nav.click();
-            } else {
-                var target = document.querySelector(
-                    primary ? ".bd-sidebar-primary" : ".bd-sidebar-secondary");
-                if (target) target.classList.toggle(primary ? "pst-sidebar-hidden" : "sidebar-hidden");
-            }
             e.preventDefault();
             e.stopImmediatePropagation();
+            if (window.innerWidth >= breakpoints[kind]) {
+                document.querySelector(".bd-sidebar-" + kind)
+                    .classList.toggle(kind === "primary" ? "pst-sidebar-hidden" : "sidebar-hidden");
+            } else {
+                var nav = document.querySelector("button." + kind + "-toggle:not(.btn)");
+                if (nav) nav.click();
+            }
         }, true);
     });
 });

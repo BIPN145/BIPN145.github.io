@@ -150,7 +150,7 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 |  | Lab | [Measuring alpha waves using EEG](https://bipn145.github.io/LabManual/EEG.html) |  |
 | **Week 8** |  |  |  |
 | Nov 16 | Lecture | EEG Data Analysis (**MANDATORY**) |  |
-| Nov 18 | Lecture |   Drosophila Presentations | **DUE Tuesday @ 11:59 pm:** Drosophila Presentation slides | |
+| Nov 18 | Lecture |   Drosophila Presentations (**MANDATORY**) | **DUE Tuesday @ 11:59 pm:** Drosophila Presentation slides | |
 | Nov 20 | Lecture | Mapping neural circuits | **DUE** EEG Quiz & Results |
 |  | Lab | Work on final projects |  |
 | **Week 9** |  |  |  |
