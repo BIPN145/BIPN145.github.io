@@ -146,12 +146,12 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 | **Week 7** |  |  |  |
 | Nov 9 | Lecture | Spectral Analysis (**MANDATORY**) |  **DUE Sunday, Nov 8 @ 11:59 pm**: Project proposals |
 | Nov 11 | *No lecture* |  *Veterans Day* | **Submit** Final Project Equipment & Needs \[[Spreadsheet](https://docs.google.com/spreadsheets/d/14kze5zsIq6UysFW7IlHqHWGzS2Hxy9YtRlLK-9Qoq3s/edit?usp=sharing)] |
-| Nov 13 | *Asynchronous Lecture* | EEG |  |
+| Nov 13 | *Asynchronous Lecture* | EEG |  **DUE** Spectrum Tutorial Quiz |
 |  | Lab | [Measuring alpha waves using EEG](https://bipn145.github.io/LabManual/EEG.html) |  |
 | **Week 8** |  |  |  |
-| Nov 16 | Lecture | EEG Data Analysis (**MANDATORY**) |  |
+| Nov 16 | Lecture | EEG Data Analysis (**MANDATORY**) | **DUE** EEG Pre-Lab |
 | Nov 18 | Lecture |   Drosophila Presentations (**MANDATORY**) | **DUE Tuesday @ 11:59 pm:** Drosophila Presentation slides | |
-| Nov 20 | Lecture | Mapping neural circuits | **DUE** EEG Quiz & Results |
+| Nov 20 | Lecture | Mapping neural circuits | **DUE** EEG Results Quiz |
 |  | Lab | Work on final projects |  |
 | **Week 9** |  |  |  |
 | Nov 23 | Lecture | Allen Institute data activity (**MANDATORY**)  |  |

@@ -6,13 +6,13 @@ The cerebral cortex contains huge numbers of neurons. Activity of these neurons 
 
 ### Recording EEG signals
 
-EEG recording is technically difficult, mainly because of the small size of the voltage signals, which are typically 50 µV **peak-to-peak**. The signals are small because the recording electrodes are separated from the brain's surface by the scalp, the skull, and a layer of cerebrospinal fluid. 
+EEG recording is technically difficult, mainly because of the small size of the voltage signals, which are typically 50 µV **peak-to-peak** (*not* including large artifacts like blinking). The signals are small because the recording electrodes are separated from the brain's surface by the scalp, the skull, and a layer of cerebrospinal fluid. 
 
 The EEG recording reflects the sum of the electrical potential changes occurring from a large population of cells. More specifically, it reflects the post-synaptic potentials on pyramidal neurons in the cortex. 
 
 A specially designed amplifier, such as the Bio Amp built into the PowerLab, is essential to record EEGs. It is also important to use electrodes made of the right material and to connect them properly. Even with these precautions, recordings may be spoiled by a range of unwanted interfering influences, known as artifacts.
 
-In this lab, you will record EEG activity with an occipital electrode on the scalp at the back of the head. A third (ground or earth) electrode is also attached, to reduce electrical interference. In clinical EEG, it is usual to record many channels of activity from multiple recording electrodes placed in an array over the head.
+In this lab, you will record EEG activity using two recording electrodes: one on the scalp at the back of the head (over the occipital cortex) and a reference electrode on the forehead. As in our earthworm lab, the amplifier records the *difference* in voltage between them. A third (ground) electrode, placed on the temple, keeps the volunteer at the amplifier's reference potential so that noise common to both recording electrodes, like electrical hum from the room, is canceled out.
 
 ### Components of the EEG signal
 
@@ -41,7 +41,6 @@ The EEG signal contains component waves of different frequencies. These can be e
 * Electrode paste
 * Abrasive Gel (NuPrep)
 * Alcohol swabs
-* Medical tape
 * Elastic bandage
 * Cotton swab
 
