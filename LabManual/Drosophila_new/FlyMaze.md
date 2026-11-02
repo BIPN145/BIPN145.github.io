@@ -30,7 +30,7 @@ The fly maze has a **loading hole** on top, with holes on each side for the test
 
 1. Connect the red LED to the PowerLab Output using the BNC cable.
 2. Connect the 5V power to the LED.
-3. Configure LabChart to send 1 second pulses of red light every other second in Setup → Stimulator. This will allow you to control the pulse heights (2V-10V). More voltage will change LED intensity.
+3. Configure LabChart to send 1 second pulses of red light every other second (0.5 Hz) in Setup → Stimulator. This will allow you to control the pulse heights (2V-10V). More voltage will change LED intensity.
 4. Position the red LED next to the clear tube. Use the lux meter to measure the light intensity at this distance.
 4. Measure the output from your LED using a lightmeter on your phone.
 
