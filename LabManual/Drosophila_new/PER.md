@@ -57,7 +57,7 @@ Eye protection that can filter out red laser/light is essential when observing t
 
 7. Repeat with your wildtype flies.
 
-:::{admonition} Guesses, please!
+:::{admonition} Reflection
 :class: tip
-Based on your proboscis extension results, do you think you have Gr5a>CsChrimson or Gr66a>CsChrimson flies?
+Were your results what you were expecting?
 :::
