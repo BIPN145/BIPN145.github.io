@@ -20,7 +20,7 @@ This protocol follows Fu et al. (2023), "[Using Drosophila Two-Choice Assay to S
 
 ## Setting up the fly maze
 
-![](images/fly_maze_setup.png)
+![](../images/fly_maze_setup.png)
 
 The fly maze has a **loading hole** on top, with holes on each side for the testing. Two testing tubes — one clear, one wrapped in foil — insert into the two testing holes.
 
