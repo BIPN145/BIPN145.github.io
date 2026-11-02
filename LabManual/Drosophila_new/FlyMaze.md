@@ -40,8 +40,8 @@ The fly maze has a **loading hole** on top, with holes on each side for the test
 
 1. Place one of your vials of flies into ice until the flies are immobile. 
 2. Once the flies are immobile, using the funnel, tap flies from one vial into the top loading hole.
-3. Wait one minute, or until you see any fly emerge into the testing side. Once you do, start the red LED pulse.
-4. Wait one more minute for flies to move.
+3. Wait one minute, or until you see any fly emerge into the testing side. Tap all of the flies into the light vial, and then start the red LED pulse.
+4. Wait one minute.
 5. **Count the clear-tube (red-light side) flies:** Without moving the maze, quickly count how many flies are in the clear side. If you need to, you can take a picture!
 6. **Count the foil-tube (dark side) flies:** Carefully remove the foil from the dark side and quickly count the flies within. Include any flies that you see within the loading space in this count as well, since they never made it to the red-light tube.
 8. Record all three counts in a table.
