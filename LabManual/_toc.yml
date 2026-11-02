@@ -26,4 +26,6 @@ chapters:
   sections:
   - file: Drosophila_new/PER
   - file: Drosophila_new/FlyMaze
+  - file: Drosophila_new/Ethology
+  - file: Drosophila_new/Locomotion
 - file: EEG
