@@ -30,7 +30,7 @@ The fly maze has a **loading hole** on top, with holes on each side for the test
 
 1. Connect the red LED to the PowerLab Output using the BNC cable.
 2. Connect the 5V power to the LED.
-3. Configure LabChart to send 1 second pulses of red light every other second in Setup → Stimulator. This will allow you to control the pulse heights (2V-10V). More voltage will change LED intensity.
+3. Configure LabChart to send 1 second pulses of red light every other second (0.5 Hz) in Setup → Stimulator. This will allow you to control the pulse heights (2V-10V). More voltage will change LED intensity.
 4. Position the red LED next to the clear tube. Use the lux meter to measure the light intensity at this distance.
 4. Measure the output from your LED using a lightmeter on your phone.
 
@@ -40,7 +40,7 @@ The fly maze has a **loading hole** on top, with holes on each side for the test
 
 1. Place one of your vials of flies into ice until the flies are immobile. 
 2. Once the flies are immobile, using the funnel, tap flies from one vial into the top loading hole.
-3. Wait one minute, or until you see any fly emerge into the testing side. Once you do, start the red LED pulse.
+3. Wait one minute, or until you see any fly emerge into the testing side. Once you do, start the red LED pulse. Optionally, you could tap all flies into the testing side before starting the trial (make sure you do this with both groups of flies, though). 
 4. Wait one more minute for flies to move.
 5. **Count the clear-tube (red-light side) flies:** Without moving the maze, quickly count how many flies are in the clear side. If you need to, you can take a picture!
 6. **Count the foil-tube (dark side) flies:** Carefully remove the foil from the dark side and quickly count the flies within. Include any flies that you see within the loading space in this count as well, since they never made it to the red-light tube.
