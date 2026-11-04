@@ -28,6 +28,9 @@ parts:
           - file: LabManual/Drosophila_new/Ethology
           - file: LabManual/Drosophila_new/Locomotion
       - file: LabManual/EEG.md
+        sections:
+          - file: LabManual/EEGSpectralAnalysis.md
+          - file: LabManual/EEGAlphaWaves.md
   - caption: Tools & Data Analysis
     chapters:
       - file: LabChart/Introduction.md

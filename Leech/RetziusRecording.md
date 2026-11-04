@@ -73,7 +73,7 @@ See TROUBLESHOOTING at the end of this protocol for additional tips.
 
 Also take note of the shape of this action potential. Does it overshoot (past zero)? Does it undershoot?
 
-### Recording spontaneous action potentials ★
+### Recording spontaneous action potentials
 
 We'll collect 10 different 10 second windows of spontaneous action potentials from your cell, in order to estimate the spontaneous firing rate and measure the action potential height, spike width, and after-hyperpolarization of your cell.
 
@@ -85,7 +85,7 @@ We'll collect 10 different 10 second windows of spontaneous action potentials fr
 
 You will ultimately use this data to fill in Table 1, but don't take the time to do this now. Move on to stimulating your Retzius cell while you have one.
 
-## III. Stimulating the Retzius cell ★
+## III. Stimulating the Retzius cell
 
 Once you have characterized the spontaneous activity of your cell, we can also inject current to see how the cell responds to inputs.
 
@@ -100,7 +100,7 @@ Once you have characterized the spontaneous activity of your cell, we can also i
    | Pulse Height | 10 mV |
 
 2. Make sure that your CURRENT INJECTION toggles are on positive (+) and CONT.
-3. Configure Scope View in LabChart so that you can see one, 1 second sweep when a stimulus pulse is sent.
+3. Configure Scope View in LabChart so that you can see one, 1 second sweep when a stimulus pulse is sent. In other words, set the Duration to 1 second.
 4. Press Start to send current into your cell. Observe whether or not this elicits action potentials from the cell, and whether the cell adapts to the stimulus.
 5. Repeat the stimulation 10 times (or more, if it seems highly variable). You'll need these repeats for your spike train metrics in your lab report.
 

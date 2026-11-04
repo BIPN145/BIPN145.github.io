@@ -107,7 +107,7 @@ In order to view the filled cells, we first need to fix them with paraformaldehy
 6. Fill the dish with phosphate buffer and leave, covered, for 10 minutes.
 7. When you get the ganglia back from the IA, dump out the PB, and repeat the PB wash twice (for a total of three 10 minute rinses).
 
-### Mounting on a slide ★
+### Mounting on a slide
 
 Once your leech ganglion is fixed and washed, it's ready to be prepared on a microscope slide for imaging.
 

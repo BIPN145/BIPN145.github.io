@@ -29,3 +29,6 @@ chapters:
   - file: Drosophila_new/Ethology
   - file: Drosophila_new/Locomotion
 - file: EEG
+  sections:
+  - file: EEGSpectralAnalysis
+  - file: EEGAlphaWaves
