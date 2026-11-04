@@ -50,8 +50,8 @@ Optimizing the way your fly recording looks will make the tracking *much* easier
 2. A dialogue will pop up. Set up a 60 second recording with the following settings:
 
    - **Filename:** browse to create your own (make sure you label it as WT or Mystery). **SAVE YOUR FILE LOCALLY**, not on your username server. **Your video file will not save correctly if you do not do this.**
-   - 🔘 Capture for 60000 ms
-   - 🔘 Buffered
+   - Capture for 60000 ms
+   - Buffered
    - (Click on **Videos** tab)
    - **Video Recording Type:** M-JPEG
    - **Frame Rate:** 15.0
