@@ -151,7 +151,7 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 | **Week 8** |  |  |  |
 | Nov 16 | Lecture | EEG Data Analysis or Presentation Prep Time |  |
 | Nov 18 | Lecture |   Drosophila Presentations (**MANDATORY**) | **DUE Tuesday @ 11:59 pm:** Drosophila Presentation slides | |
-| Nov 20 | Lecture | Mapping neural circuits | **DUE** EEG Results Quiz |
+| Nov 20 | Lecture | Mapping neural circuits | **DUE** EEG Report |
 |  | Lab | Work on final projects |  |
 | **Week 9** |  |  |  |
 | Nov 23 | Lecture | Allen Institute data activity (**MANDATORY**)  |  |

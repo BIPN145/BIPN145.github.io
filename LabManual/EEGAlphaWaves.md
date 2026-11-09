@@ -44,10 +44,16 @@ In this exercise, you will learn to recognize some of the artifacts that can app
 - Why are we applying high- and low-pass filters to our data?
 :::
 
-3. **Start** recording. Add a **comment** "blinking," and have the volunteer blink repeatedly. **Stop** recording after 10 seconds.
-4. Repeat step 3, this time, have the volunteer make eye movements. Add a **comment** "eye movements." Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer's head is still and only the eyes move.
-5. Repeat step 3, this time, have the volunteer make head movements. Add a **comment** "head movements." Have the volunteer gently move his/her head in a repeated pattern.
-6. Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits. *It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving.* If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary. 
+3. **Start** recording. Have the participant sit still for 10 seconds with as little blinking or movement as possible. Examine the vertical scale at the left of the Chart View, and note the positions corresponding to +50 µV and −50 µV. **At rest (when your volunteer is not blinking or moving their head), the EEG recording should not exceed these limits.** If your signal exceeds these limits, please ensure that the electrode on the back of the head is making electrical contact with the scalp and reposition if necessary. 
+4. Add a **comment** "blinking," and have the volunteer blink repeatedly. **Stop** recording after 10 seconds.
+5. Repeat step 3, this time, have the volunteer make eye movements. Add a **comment** "eye movements." Have the volunteer gaze up-and-down and left-and-right in a repeated pattern. Make sure the volunteer's head is still and only the eyes move.
+6. Repeat step 3, this time, have the volunteer make head movements. Add a **comment** "head movements." Have the volunteer gently move his/her head in a repeated pattern.
+
+:::{admonition} Blinking will be high amplitude!
+:class: danger
+It is okay if it goes beyond -50 µV or above 50 µV when the person is blinking or moving.
+:::
+
 7. **Save your data**, and open a new file with the same settings.
 
 ## Exercise 2: Alpha Waves in the EEG
