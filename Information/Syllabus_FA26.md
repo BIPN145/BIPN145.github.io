@@ -149,9 +149,9 @@ Please note this is tentative. Please rely on Canvas for assignment due dates.
 | Nov 13 | *Asynchronous Lecture* | EEG |  **DUE** Spectrum Tutorial Quiz |
 |  | Lab | [Measuring alpha waves using EEG](https://bipn145.github.io/LabManual/EEG.html) | **DUE** EEG Pre-Lab |
 | **Week 8** |  |  |  |
-| Nov 16 | Lecture | EEG Data Analysis or Presentation Prep Time |  |
-| Nov 18 | Lecture |   Drosophila Presentations (**MANDATORY**) | **DUE Tuesday @ 11:59 pm:** Drosophila Presentation slides | |
-| Nov 20 | Lecture | Mapping neural circuits | **DUE** EEG Report |
+| Nov 16 | *No lecture* | *Lecture cancelled* |  |
+| Nov 18 | Lecture |  Mapping neural circuits   |  | |
+| Nov 20 | Lecture | Drosophila Presentations (**MANDATORY**)| **DUE Tuesday @ 11:59 pm:** Drosophila Presentation slides & EEG Report |
 |  | Lab | Work on final projects |  |
 | **Week 9** |  |  |  |
 | Nov 23 | Lecture | Allen Institute data activity (**MANDATORY**)  |  |
