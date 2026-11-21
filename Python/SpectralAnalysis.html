@@ -553,6 +553,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-125.95   , -124.95   , -139.2875 , ...,   69.21875,   63.8625 ,
+         59.76875])
+</pre></div>
+</div>
+</div>
 </div>
 <section id="remove-60-hz-line-noise">
 <h2>Remove 60 Hz line noise<a class="headerlink" href="#remove-60-hz-line-noise" title="Link to this heading">#</a></h2>
@@ -587,11 +593,53 @@
 </section>
 <section id="plot-the-data">
 <h2>Plot the data<a class="headerlink" href="#plot-the-data" title="Link to this heading">#</a></h2>
-<p>Now, we can plot the data!</p>
+<p>Now, we can plot the data! First, let’s make an <strong>interactive</strong> plot so you can scroll through your whole recording and look for interesting features (like alpha waves).</p>
+<p><strong>How to use the interactive plot</strong>:</p>
+<ul class="simple">
+<li><p><strong>Click and drag</strong> on the plot to scroll left and right through time.</p></li>
+<li><p>Drag the edges of the <strong>gray window in the slider</strong> under the plot to change how many seconds are shown, or drag the window itself to move through the recording.</p></li>
+<li><p><strong>Scroll</strong> (or pinch on a trackpad) to zoom in and out.</p></li>
+<li><p><strong>Double-click</strong> the plot to reset the view to the full recording.</p></li>
+<li><p>Hover over the trace to see exact time &amp; voltage values.</p></li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul class="simple">
+<li><p>To explore your eyes open data, change <code class="docutils literal notranslate"><span class="pre">closed_timestamps</span></code> to <code class="docutils literal notranslate"><span class="pre">open_timestamps</span></code> and <code class="docutils literal notranslate"><span class="pre">closed_recording</span></code> to <code class="docutils literal notranslate"><span class="pre">open_recording</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window_sec</span></code> sets how many seconds are shown when the plot first appears.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import interactive plotting package</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+<span class="c1"># Change the variables below if you'd like to explore eyes open instead</span>
+<span class="n">timestamps</span> <span class="o">=</span> <span class="n">closed_timestamps</span>
+<span class="n">recording</span> <span class="o">=</span> <span class="n">closed_recording</span>
+
+<span class="n">window_sec</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Number of seconds shown when the plot first appears</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">recording</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s1">'simple_white'</span><span class="p">,</span>
+    <span class="n">dragmode</span><span class="o">=</span><span class="s1">'pan'</span><span class="p">,</span> <span class="c1"># Click &amp; drag scrolls through time</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Time (s)'</span><span class="p">,</span> <span class="c1"># You may need to change the x label!</span>
+               <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">window_sec</span><span class="p">],</span>
+               <span class="n">rangeslider</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Voltage'</span><span class="p">,</span> <span class="n">fixedrange</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="c1"># You may need to change the y label!</span>
+    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">40</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">'scrollZoom'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you’ve found a section of data you’d like to show in your lab report, use the cell below to make a static figure of it.</p>
 <p><strong>Notes</strong>:</p>
 <ul class="simple">
 <li><p>You may want to change the x and y labels below.</p></li>
-<li><p>You can also uncomment the line that says <code class="docutils literal notranslate"><span class="pre">plt.xlim</span></code> to change how much of the data is plotted.</p></li>
+<li><p>Change the numbers in <code class="docutils literal notranslate"><span class="pre">plt.xlim</span></code> to the time window you want to show – for example, to zoom into alpha waves.</p></li>
 <li><p>You can use this same cell to plot your eyes open data by changing <code class="docutils literal notranslate"><span class="pre">closed_timestamps</span></code> to <code class="docutils literal notranslate"><span class="pre">open_timestamps</span></code> and <code class="docutils literal notranslate"><span class="pre">closed_recording</span></code> to <code class="docutils literal notranslate"><span class="pre">open_recording</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -612,11 +660,14 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Voltage'</span><span class="p">)</span>
 
 <span class="c1"># You can uncomment the line below to restrict the x axis plotting -- for example, to zoom into alpha waves</span>
-<span class="c1">#plt.xlim([45,50])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">45</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/303e88e89caf834d7e0a18c99163ebb371637a2299894ad0262300bbdc555477.png" src="../_images/303e88e89caf834d7e0a18c99163ebb371637a2299894ad0262300bbdc555477.png" />
 </div>
 </div>
 </section>
@@ -672,7 +723,7 @@
 <span class="c1">#plt.legend(['Closed','Open'])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Frequency (Hz)'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Power spectral density (pV^2 / Hz)'</span><span class="p">)</span> <span class="c1"># Check that these units make sense!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Power spectral density (pV^2 / Hz)'</span><span class="p">)</span>
 <span class="c1">#plt.xlim([0,75]) # Change x limit</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Welch's PSD"</span><span class="p">)</span>
